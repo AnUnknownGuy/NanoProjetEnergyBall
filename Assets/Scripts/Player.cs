@@ -12,11 +12,11 @@ public class Player : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     public float jump = 5;
 
-    public int WallsLayer = 0;
+    public LayerMask WallsLayer;
 
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f;
-    private bool onGround = false, onWall = false;
+    private bool onGround = false, onWallRight = false, onWallLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +31,18 @@ public class Player : MonoBehaviour
 
         //jump
         if (Input.GetButtonDown("Jump") && onGround) {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * jump;
+            GetComponent<Rigidbody2D>().velocity += Vector2.up * jump;
         }
         //wallJump
-        
+
+        if (Input.GetButtonDown("Jump") && onWallRight) {
+           
+        }
+
+        if (Input.GetButtonDown("Jump") && onWallLeft) {
+            
+        }
+
         ProcessJump();
 
 
@@ -42,6 +50,7 @@ public class Player : MonoBehaviour
     }
 
     private void Walk() {
+        //A CHANGER C NUL
         float x = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(x * speed , rb.velocity.y);
     }
@@ -56,16 +65,8 @@ public class Player : MonoBehaviour
     }
     private void UpdateBools() {
         onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer);
-        onWall = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer)
-            || Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
-
-        if (onGround ) {
-            Debug.Log("GROUND");
-        }
-
-        if (onGround || onWall) {
-            Debug.Log("WALL");
-        }
+        onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
+        onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
     }
 
     private void OnDrawGizmos() {
