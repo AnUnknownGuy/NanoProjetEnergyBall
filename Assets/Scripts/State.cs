@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class State : MonoBehaviour, StateInterface
+public abstract class State : StateInterface
 {
 
     protected Player player;

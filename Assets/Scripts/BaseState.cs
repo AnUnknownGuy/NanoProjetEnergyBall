@@ -10,7 +10,8 @@ public class BaseState : State {
     }
 
     override public void JumpSignal() {
-        this.player.Jump();
+        if (player.onGround)
+            this.player.Jump();
     }
 
     override public void WalkSignal() {

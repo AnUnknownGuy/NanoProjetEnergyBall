@@ -17,7 +17,9 @@ public class Player : MonoBehaviour
 
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f;
-    private bool onGround = false, onWallRight = false, onWallLeft = false;
+
+    [HideInInspector]
+    public bool onGround = false, onWallRight = false, onWallLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
     }
 
     public void Jump() {
-        GetComponent<Rigidbody2D>().velocity += Vector2.up * jump;
+        GetComponent<Rigidbody2D>().velocity = Vector2.up * jump;
     }
 
     public void Walk() {
