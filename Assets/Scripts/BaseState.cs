@@ -17,5 +17,9 @@ public class BaseState : State {
     override public void WalkSignal() {
         this.player.Walk();
     }
-    
+
+    override public void Update() {
+        player.LooseHealth();
+    }
+
 }

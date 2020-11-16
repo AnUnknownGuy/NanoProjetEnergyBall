@@ -4,10 +4,9 @@ using UnityEngine;
 
 public abstract class State : StateInterface
 {
-
     protected Player player;
 
-    new protected string name = "State";
+    protected string name = "State";
 
     protected State(Player player) {
         this.player = player;
@@ -25,7 +24,7 @@ public abstract class State : StateInterface
 
     }
 
-    public virtual void Reset() {
+    public virtual void Stop() {
 
     }
 
@@ -33,7 +32,11 @@ public abstract class State : StateInterface
 
     }
 
+    public virtual void Update() {
+    }
+
     public string GetName() {
         return name;
     }
+
 }

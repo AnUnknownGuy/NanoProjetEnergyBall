@@ -608,6 +608,8 @@ MonoBehaviour:
   fallMultiplier: 4
   lowJumpMultiplier: 4
   jump: 10
+  health: 1000
+  decay: 10
   WallsLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -615,6 +617,9 @@ MonoBehaviour:
   rightOffset: {x: 0.5, y: 0}
   leftOffset: {x: -0.5, y: 0}
   collisionRadius: 0.19
+  onGround: 0
+  onWallRight: 0
+  onWallLeft: 0
 --- !u!50 &2131133724
 Rigidbody2D:
   serializedVersion: 4
