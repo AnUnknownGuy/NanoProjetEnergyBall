@@ -34,6 +34,7 @@ public class Ball : MonoBehaviour
         if (!sleeping) {
             this.player = player;
             sleeping = true;
+            rb.Sleep();
             return true;
         }else {
             return false;
@@ -43,6 +44,7 @@ public class Ball : MonoBehaviour
     public void Freed() {
         this.player = null;
         sleeping = false;
+        rb.WakeUp();
     }
 
     private void OnDrawGizmos() {
