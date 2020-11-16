@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public float jump = 5;
+    public float health = 1000;
+    public float decay = 10;
+    [HideInInspector]
+    public Ball ball;
 
     public LayerMask WallsLayer;
 
@@ -50,6 +54,7 @@ public class Player : MonoBehaviour
 
         ProcessJump();
 
+        stateManager.Update();
 
         UpdateBools();
     }
@@ -76,6 +81,10 @@ public class Player : MonoBehaviour
         onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer);
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
+    }
+
+    public void LooseHealth() {
+        health -= decay * Time.deltaTime;
     }
 
     private void OnDrawGizmos() {

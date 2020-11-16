@@ -24,7 +24,7 @@ public class StateManager
     }
 
     private void ToNewState(State state) {
-        state.Reset();
+        state.Stop();
         currentState = state;
         currentState.Start();
     }
@@ -47,5 +47,8 @@ public class StateManager
 
     public void SendWalk() {
         currentState.WalkSignal();
+    }
+    public void Update() {
+        currentState.Update();
     }
 }

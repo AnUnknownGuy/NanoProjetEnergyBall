@@ -2,7 +2,8 @@
     void WalkSignal();
     void JumpSignal();
     void HitSignal();
-    void Reset();
+    void Stop();
     void Start();
+    void Update();
     string GetName();
 }
