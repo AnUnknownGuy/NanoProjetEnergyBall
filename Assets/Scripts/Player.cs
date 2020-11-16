@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private StateManager stateManager;
 
     private Rigidbody2D rb;
 
@@ -22,16 +23,18 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        stateManager = new StateManager(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Walk();
+
+        stateManager.SendWalk();
 
         //jump
-        if (Input.GetButtonDown("Jump") && onGround) {
-            GetComponent<Rigidbody2D>().velocity += Vector2.up * jump;
+        if (Input.GetButtonDown("Jump")) {
+            stateManager.SendJump();
         }
         //wallJump
 
@@ -49,7 +52,11 @@ public class Player : MonoBehaviour
         UpdateBools();
     }
 
-    private void Walk() {
+    public void Jump() {
+        GetComponent<Rigidbody2D>().velocity += Vector2.up * jump;
+    }
+
+    public void Walk() {
         //A CHANGER C NUL
         float x = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(x * speed , rb.velocity.y);
