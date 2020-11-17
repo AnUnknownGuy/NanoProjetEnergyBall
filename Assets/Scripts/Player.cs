@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     }
 
     public void Jump() {
-        GetComponent<Rigidbody2D>().velocity = (new Vector2(1,1) * jump);
+        GetComponent<Rigidbody2D>().velocity = (new Vector2(0,1) * jump);
     }
 
     public void Walk() {
