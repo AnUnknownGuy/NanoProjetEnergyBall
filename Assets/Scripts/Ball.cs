@@ -41,7 +41,13 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public void Freed() {
+    public void Throw(Vector2 dir, float force) {
+        if (!sleeping) {
+            Free();
+        }
+    }
+
+    public void Free() {
         this.player = null;
         sleeping = false;
         rb.WakeUp();

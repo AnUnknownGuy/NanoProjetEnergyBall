@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public float collisionRadius = 0.25f;
 
     [HideInInspector]
-    public bool onGround = false, onWallRight = false, onWallLeft = false;
+    public bool onGround = false, onWallRight = false, onWallLeft = false, alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,10 +57,12 @@ public class Player : MonoBehaviour
         stateManager.Update();
 
         UpdateBools();
+
+        alive = !(health < 10);
     }
 
     public void Jump() {
-        GetComponent<Rigidbody2D>().velocity = Vector2.up * jump;
+        GetComponent<Rigidbody2D>().velocity = (new Vector2(1,1) * jump);
     }
 
     public void Walk() {
