@@ -146,6 +146,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1065509722}
     m_Modifications:
+    - target: {fileID: 1939917153771332662, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939917154183439734, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2738413513923094199, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -246,6 +256,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2738413515076330238, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1065509721}
     - target: {fileID: 2738413515626052500, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -254,6 +269,11 @@ PrefabInstance:
     - target: {fileID: 2738413515626052500, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095602282584739110, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

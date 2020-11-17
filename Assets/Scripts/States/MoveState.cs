@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseState : State {
-
-
-    public BaseState(Player player) : base(player) {
+public class MoveState : State
+{
+    public MoveState(Player player) : base(player) {
         name = "BaseState";
     }
 
@@ -17,9 +16,4 @@ public class BaseState : State {
     override public void WalkSignal() {
         this.player.Walk();
     }
-
-    override public void Update() {
-        player.LooseHealth();
-    }
-
 }
