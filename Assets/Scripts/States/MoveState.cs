@@ -5,15 +5,22 @@ using UnityEngine;
 public class MoveState : State
 {
     public MoveState(Player player) : base(player) {
-        name = "BaseState";
+        name = "MoveState";
     }
 
     override public void JumpSignal() {
-        if (player.onGround)
-            this.player.Jump();
+        if (!player.onGround)
+            player.Jump();
     }
 
-    override public void WalkSignal() {
-        this.player.Walk();
+    override public void WalkSignal(float x) {
+        player.Walk(x);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        
+        player.ProcessJump();
     }
 }

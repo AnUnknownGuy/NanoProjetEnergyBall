@@ -9,7 +9,7 @@ public class TemporaryState : State
     protected float timeInState;
 
     protected TemporaryState(Player player, float time) : base(player) {
-        name = "StunState";
+        name = "TemporaryState";
         this.timeInState = time;
     }
 

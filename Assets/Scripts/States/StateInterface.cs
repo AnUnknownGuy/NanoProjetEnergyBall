@@ -1,6 +1,7 @@
 ﻿interface StateInterface {
-    void WalkSignal();
+    void WalkSignal(float x);
     void JumpSignal();
+    void FastFallSignal();
     void HitSignal();
     void Stop();
     void Start();

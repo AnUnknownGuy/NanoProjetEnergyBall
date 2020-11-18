@@ -20,8 +20,17 @@ public abstract class State : StateInterface
         
     }
 
-    public virtual void WalkSignal() {
+    public virtual void FastFallSignal() {
+        
+    }
 
+    public virtual void WalkSignal(float x) {
+
+    }
+
+    public virtual void RightstickSignal(Vector2 v) {
+        //temporary
+        Debug.Log(v);
     }
 
     public virtual void Stop() {

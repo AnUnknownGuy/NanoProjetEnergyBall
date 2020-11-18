@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public float inputThreshold = 0.5f;
+    
     private StateManager stateManager;
+    private PlayerControls playerControls;
 
     private Rigidbody2D rb;
 
     public float speed = 10;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    public float jump = 5;
+    public float jumpScale = 5;
     public float health = 1000;
     public float decay = 10;
 
@@ -23,65 +26,56 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector]
-    public bool onGround = false, onWallRight = false, onWallLeft = false, alive = true;
+    [HideInInspector] public bool onGround = false, onWallRight = false, onWallLeft = false, isJumping = false, alive = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stateManager = new StateManager(this);
+        BindControls();
+    }
+
+    void BindControls()
+    {
+        playerControls = new PlayerControls();
+        playerControls.Controls.Move.performed += stateManager.OnMove;
+        playerControls.Controls.Rightstick.performed += stateManager.OnRightStick;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        stateManager.SendWalk();
-
-        //jump
-        if (Input.GetButtonDown("Jump")) {
-            stateManager.SendJump();
-        }
-        //wallJump
-
-        if (Input.GetButtonDown("Jump") && onWallRight) {
-           
-        }
-
-        if (Input.GetButtonDown("Jump") && onWallLeft) {
-            
-        }
-
-        ProcessJump();
-
         stateManager.Update();
 
-        UpdateBools();
+        CheckContactPoints();
 
         alive = !(health < 10);
     }
 
-    public void Jump() {
-        GetComponent<Rigidbody2D>().velocity = (new Vector2(0,1) * jump);
-    }
-
-    public void Walk() {
-        //A CHANGER C NUL
-        float x = Input.GetAxis("Horizontal");
+    public void Walk(float x)
+    {
         rb.velocity = new Vector2(x * speed , rb.velocity.y);
     }
 
-    private void ProcessJump() {
+    public void Jump() 
+    {
+        GetComponent<Rigidbody2D>().velocity = (new Vector2(0,1) * jumpScale);
+        isJumping = true;
+    }
 
+    public void ProcessJump() 
+    {
         if (rb.velocity.y < 0) {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        } else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
+        } else if (rb.velocity.y > 0 && playerControls.Controls.Move.ReadValue<Vector2>().y > inputThreshold) {
+            rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
         }
     }
-    private void UpdateBools() {
+    private void CheckContactPoints() 
+    {
         onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer);
+        isJumping &= !onGround;
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
     }

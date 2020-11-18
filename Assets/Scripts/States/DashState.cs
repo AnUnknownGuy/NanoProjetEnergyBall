@@ -5,7 +5,7 @@ using UnityEngine;
 public class DashState : TemporaryState
 {
     public DashState(Player player, float stunTime) : base(player, stunTime) {
-        name = "StunState";
+        name = "DashState";
     }
 
     override public void NextState() {
