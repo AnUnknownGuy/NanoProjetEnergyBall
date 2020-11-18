@@ -5,6 +5,8 @@ using UnityEngine;
 public class StateManager 
 {
 
+    public float stunDuration = 0.4f;
+
     private Player player;
 
     private State currentState;
@@ -16,7 +18,7 @@ public class StateManager
     public StateManager(Player player) {
         this.player = player;
 
-        stunState = new StunState(player);
+        stunState = new StunState(player, stunDuration);
         holdState = new HoldState(player);
         baseState = new BaseState(player);
 
@@ -48,6 +50,11 @@ public class StateManager
     public void SendWalk() {
         currentState.WalkSignal();
     }
+
+    public void SendBallEntered(Ball ball) {
+        currentState.BallEntered(ball);
+    }
+
     public void Update() {
         currentState.Update();
     }

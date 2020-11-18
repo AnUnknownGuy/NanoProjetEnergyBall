@@ -5,5 +5,6 @@
     void Stop();
     void Start();
     void Update();
+    void BallEntered(Ball ball);
     string GetName();
 }

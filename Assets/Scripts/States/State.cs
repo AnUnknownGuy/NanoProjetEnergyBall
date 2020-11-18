@@ -35,8 +35,11 @@ public abstract class State : StateInterface
     public virtual void Update() {
     }
 
+    public virtual void BallEntered(Ball ball) {
+
+    }
+
     public string GetName() {
         return name;
     }
-
 }

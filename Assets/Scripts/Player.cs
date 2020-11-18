@@ -14,13 +14,14 @@ public class Player : MonoBehaviour
     public float jump = 5;
     public float health = 1000;
     public float decay = 10;
+
     [HideInInspector]
     public Ball ball;
 
     public LayerMask WallsLayer;
 
     public Vector2 bottomOffset, rightOffset, leftOffset;
-    public float collisionRadius = 0.25f;
+    public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
     [HideInInspector]
     public bool onGround = false, onWallRight = false, onWallLeft = false, alive = true;
@@ -83,6 +84,24 @@ public class Player : MonoBehaviour
         onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer);
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
+    }
+
+    public void BallEntered(Ball ball) {
+        stateManager.SendBallEntered(ball);
+    }
+
+    public void CatchBall(Ball ball) {
+        if (ball.Catch(this)) {
+            this.ball = ball;
+        }
+    }
+
+    public void ToHoldState() {
+        stateManager.ToHold();
+    }
+
+    public void ToBaseState() {
+        stateManager.ToBase();
     }
 
     public void LooseHealth() {
