@@ -4,10 +4,9 @@ using UnityEngine;
 
 public abstract class State : StateInterface
 {
-
     protected Player player;
 
-    new protected string name = "State";
+    protected string name = "State";
 
     protected State(Player player) {
         this.player = player;
@@ -21,15 +20,29 @@ public abstract class State : StateInterface
         
     }
 
-    public virtual void WalkSignal() {
+    public virtual void FastFallSignal() {
+        
+    }
+
+    public virtual void WalkSignal(float x) {
 
     }
 
-    public virtual void Reset() {
+    public virtual void RightstickSignal(Vector2 v) {
+    }
+
+    public virtual void Stop() {
 
     }
 
     public virtual void Start() {
+
+    }
+
+    public virtual void Update() {
+    }
+
+    public virtual void BallEntered(Ball ball) {
 
     }
 
