@@ -9,7 +9,7 @@ public class MoveState : State
     }
 
     override public void JumpSignal() {
-        if (!player.onGround)
+        if (player.onGround)
             player.Jump();
     }
 
@@ -21,6 +21,6 @@ public class MoveState : State
     {
         base.Update();
         
-        player.ProcessJump();
+        if (player.isJumping) player.ProcessJump();
     }
 }

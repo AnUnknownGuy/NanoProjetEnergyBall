@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -41,6 +42,9 @@ public class Player : MonoBehaviour
         playerControls = new PlayerControls();
         playerControls.Controls.Move.performed += stateManager.OnMove;
         playerControls.Controls.Rightstick.performed += stateManager.OnRightStick;
+
+        playerControls.Controls.Move.Enable();
+        playerControls.Controls.Rightstick.Enable();
     }
 
     // Update is called once per frame
