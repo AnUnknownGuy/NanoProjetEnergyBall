@@ -58,3 +58,17 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#WWise gitignore
+.cache/
+*.akd
+*.validationcache
+[Aa]ssets/WwiseSettings.xml
+[Aa]ssets/WwiseSettings.xml.meta
+
+#WWise gitignore
+*.akd
+*.prof
+.cache
+IncrementalSoundBankData.xml
+*.validationcache
+*.wsettings
