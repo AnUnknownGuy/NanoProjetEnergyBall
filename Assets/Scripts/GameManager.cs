@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Restart(float time) {
         yield return new WaitForSeconds(time);
+        level.Stop();
         Destroy(level.gameObject);
         CreateLevel();
         restarting = false;

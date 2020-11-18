@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
     }
 
     public bool Catch(Player player) {
-
+        Debug.Log("CATCH");
         if (!sleeping) {
             this.player = player;
             sleeping = true;

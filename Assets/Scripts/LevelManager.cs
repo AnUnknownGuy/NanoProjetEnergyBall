@@ -44,4 +44,8 @@ public class LevelManager : MonoBehaviour
         }
         
     }
+    public void Stop() {
+        player1.Stop();
+        player2.Stop();
+    }
 }

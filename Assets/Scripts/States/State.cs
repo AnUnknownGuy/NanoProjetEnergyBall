@@ -29,8 +29,6 @@ public abstract class State : StateInterface
     }
 
     public virtual void RightstickSignal(Vector2 v) {
-        //temporary
-        Debug.Log(v);
     }
 
     public virtual void Stop() {

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class StateManager 
 {
     public float stunDuration = 0.4f;
+    public float dashDuration = 0.4f;
 
     private Player player;
 
@@ -14,13 +15,15 @@ public class StateManager
     private StunState stunState;
     private HoldState holdState;
     private BaseState baseState;
-    
+    private DashState dashState;
+
     public StateManager(Player player) {
         this.player = player;
 
         stunState = new StunState(player, stunDuration);
         holdState = new HoldState(player);
         baseState = new BaseState(player);
+        dashState = new DashState(player, dashDuration);
 
         currentState = baseState;
     }
@@ -57,8 +60,11 @@ public class StateManager
     public void ToHold() {
         ToNewState(holdState);
     }
+    public void ToDash() {
+        ToNewState(dashState);
+    }
 
-    public void SendBallEntered(Ball ball) {
+    public void OnBallEntered(Ball ball) {
         currentState.BallEntered(ball);
     }
 

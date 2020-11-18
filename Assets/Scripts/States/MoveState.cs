@@ -17,6 +17,10 @@ public class MoveState : State
         player.Walk(x);
     }
 
+    public override void RightstickSignal(Vector2 v) {
+        player.ChangeDirectionAim(v);
+    }
+
     public override void Update()
     {
         base.Update();

@@ -8,7 +8,16 @@ public class DashState : TemporaryState
         name = "DashState";
     }
 
+    public override void BallEntered(Ball ball) {
+        player.CatchBall(ball);
+    }
+
     override public void NextState() {
-        player.ToBaseState();
+        if (player.HasBall()) {
+            player.ToHoldState();
+        } else {
+            player.ToBaseState();
+        }
+
     }
 }

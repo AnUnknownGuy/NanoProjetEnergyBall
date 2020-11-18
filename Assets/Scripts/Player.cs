@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Vector2 directionAim = Vector2.up;
+
     public float speed = 10;
+    public float dashPower = 12;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public float jumpScale = 5;
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector] public bool onGround = false, onWallRight = false, onWallLeft = false, isJumping = false, alive = true;
+    [HideInInspector] public bool onGround = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +60,30 @@ public class Player : MonoBehaviour
         alive = !(health < 10);
     }
 
+    public void Stop() {
+        playerControls.Disable();
+    }
+    
+    public void ChangeDirectionAim(Vector2 dir) {
+        directionAim = dir;
+    }
+
+    public void Dash() {
+        if (canDash) {
+            Vector2 newSpeed = directionAim.normalized;
+            newSpeed *= dashPower;
+
+            if (Mathf.Abs(rb.velocity.x) >= Mathf.Abs(newSpeed.x))
+                newSpeed.x = rb.velocity.x;
+            if (Mathf.Abs(rb.velocity.y) >= Mathf.Abs(newSpeed.y))
+                newSpeed.y = rb.velocity.y;
+
+            rb.velocity = newSpeed;
+
+            canDash = false;
+        }
+    }
+
     public void Walk(float x)
     {
         rb.velocity = new Vector2(x * speed , rb.velocity.y);
@@ -79,19 +106,27 @@ public class Player : MonoBehaviour
     private void CheckContactPoints() 
     {
         onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer);
+        if (onGround && rb.velocity.y <= 0)
+            canDash = true;
         isJumping &= !onGround;
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
     }
 
     public void BallEntered(Ball ball) {
-        stateManager.SendBallEntered(ball);
+        stateManager.OnBallEntered(ball);
     }
 
-    public void CatchBall(Ball ball) {
+    public bool CatchBall(Ball ball) {
         if (ball.Catch(this)) {
             this.ball = ball;
+            return true;
         }
+        return false;
+    }
+
+    public bool HasBall() {
+        return ball != null;
     }
 
     public void ToHoldState() {
@@ -100,6 +135,14 @@ public class Player : MonoBehaviour
 
     public void ToBaseState() {
         stateManager.ToBase();
+    }
+
+    public void ToDashState() {
+        stateManager.ToDash();
+    }
+
+    public void ToStunState() {
+        stateManager.ToStun();
     }
 
     public void LooseHealth() {
