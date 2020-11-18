@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     public float speed = 10;
     public float dashPower = 12;
+    public float throwPower = 1;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public float jumpScale = 5;
@@ -125,6 +126,14 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    public void ThrowBall() {
+        if (HasBall()) {
+            ball.Free();
+            ball.Throw(directionAim, throwPower);
+            ball = null;
+        }
+    }
+
     public bool HasBall() {
         return ball != null;
     }
@@ -146,7 +155,8 @@ public class Player : MonoBehaviour
     }
 
     public void LooseHealth() {
-        health -= decay * Time.deltaTime;
+        if (!HasBall())
+            health -= decay * Time.deltaTime;
     }
 
     private void OnDrawGizmos() {

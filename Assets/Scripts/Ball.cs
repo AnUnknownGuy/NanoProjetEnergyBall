@@ -30,7 +30,6 @@ public class Ball : MonoBehaviour
     }
 
     public bool Catch(Player player) {
-        Debug.Log("CATCH");
         if (!sleeping) {
             this.player = player;
             sleeping = true;
@@ -44,6 +43,7 @@ public class Ball : MonoBehaviour
     public void Throw(Vector2 dir, float force) {
         if (!sleeping) {
             Free();
+            rb.velocity += dir.normalized * force;
         }
     }
 
