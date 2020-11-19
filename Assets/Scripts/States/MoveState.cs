@@ -8,23 +8,21 @@ public class MoveState : State
         name = "MoveState";
     }
 
-    override public void JumpSignal() {
-        if (player.onGround)
+    override public bool JumpSignal() {
+        if (player.onGround) {
             player.Jump();
+            return true;
+        }
+        return false;
     }
 
     override public void WalkSignal(float x) {
         player.Walk(x);
     }
 
-    public override void RightstickSignal(Vector2 v) {
-        player.ChangeDirectionAim(v);
-    }
 
     public override void Update()
     {
         base.Update();
-        
-        if (player.isJumping) player.ProcessJump();
     }
 }

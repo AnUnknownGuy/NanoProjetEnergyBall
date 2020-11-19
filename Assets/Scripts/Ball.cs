@@ -7,6 +7,11 @@ public class Ball : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool sleeping;
+    private float timerUntilGravityChange;
+    private bool thrown = false;
+
+    public float gravityWhenThorwn = 0.2f;
+    public float gravity = 2f;
 
     [HideInInspector]
     public Player player;
@@ -18,6 +23,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = gravity;
         sleeping = false;
     }
 
@@ -43,6 +49,7 @@ public class Ball : MonoBehaviour
     public void Throw(Vector2 dir, float force) {
         if (!sleeping) {
             Free();
+            rb.velocity = Vector2.zero;
             rb.velocity += dir.normalized * force;
         }
     }
@@ -54,9 +61,9 @@ public class Ball : MonoBehaviour
     }
 
     private void OnDrawGizmos() {
-        Gizmos.color = Color.green;
+        //Gizmos.color = Color.green;
 
 
-        Gizmos.DrawWireSphere((Vector2)transform.position, collisionRadius);
+        //Gizmos.DrawWireSphere((Vector2)transform.position, collisionRadius);
     }
 }
