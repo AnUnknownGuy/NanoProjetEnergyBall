@@ -277,6 +277,6 @@ MonoBehaviour:
   inputSpeedThresholdJump: 0.2
   inputSpeedThresholdFastFall: 0.3
   inputBufferDuration: 0.2
-  actionOnSticks: 0
+  actionOnSticks: 1
   timeBetweenStickUpdate: 0.1
   player: {fileID: 4389660307696137376}
