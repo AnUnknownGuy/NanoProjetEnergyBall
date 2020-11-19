@@ -6,6 +6,7 @@ public class DashState : TemporaryState
 {
     public DashState(Player player, float stunTime) : base(player, stunTime) {
         name = "DashState";
+        color = Color.magenta;
     }
 
     public override void BallEntered(Ball ball) {

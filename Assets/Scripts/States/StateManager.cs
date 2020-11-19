@@ -10,7 +10,7 @@ public class StateManager
 
     private Player player;
 
-    private State currentState;
+    public State currentState;
 
     private StunState stunState;
     private HoldState holdState;
@@ -34,19 +34,22 @@ public class StateManager
         currentState.Start();
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    public void OnLeftStick(Vector2 dir)
     {
-        Vector2 direction = context.ReadValue<Vector2>();
-        
-        if (direction.y >= player.inputThreshold) currentState.JumpSignal();
-        else if (direction.y <= -player.inputThreshold) currentState.FastFallSignal();
-        
-        currentState.WalkSignal(direction.x);
+        currentState.WalkSignal(dir.x);
     }
 
-    public void OnRightStick(InputAction.CallbackContext context)
+    public bool OnJump() {
+        return currentState.JumpSignal();
+    }
+
+    public bool OnFastFall() {
+        return currentState.FastFallSignal();
+    }
+
+    public bool OnAction()
     {
-        currentState.RightstickSignal(context.ReadValue<Vector2>());
+        return currentState.ActionSignal();
     }
     
     public void ToStun() {

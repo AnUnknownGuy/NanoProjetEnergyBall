@@ -33,6 +33,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""499d8527-43e0-44d9-8acb-e4f7448f7dc4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2669177-00f4-4a12-a9ed-c6187265664f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -112,6 +128,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Rightstick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee68b36e-6cb0-4cd0-9ce7-156414f2b0d0"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""797e9e0b-fcc8-4b3b-b5a1-1bd00ddb9ce7"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -145,6 +183,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Controls = asset.FindActionMap("Controls", throwIfNotFound: true);
         m_Controls_Move = m_Controls.FindAction("Move", throwIfNotFound: true);
         m_Controls_Rightstick = m_Controls.FindAction("Rightstick", throwIfNotFound: true);
+        m_Controls_Jump = m_Controls.FindAction("Jump", throwIfNotFound: true);
+        m_Controls_Action = m_Controls.FindAction("Action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -196,12 +236,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IControlsActions m_ControlsActionsCallbackInterface;
     private readonly InputAction m_Controls_Move;
     private readonly InputAction m_Controls_Rightstick;
+    private readonly InputAction m_Controls_Jump;
+    private readonly InputAction m_Controls_Action;
     public struct ControlsActions
     {
         private @PlayerControls m_Wrapper;
         public ControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Controls_Move;
         public InputAction @Rightstick => m_Wrapper.m_Controls_Rightstick;
+        public InputAction @Jump => m_Wrapper.m_Controls_Jump;
+        public InputAction @Action => m_Wrapper.m_Controls_Action;
         public InputActionMap Get() { return m_Wrapper.m_Controls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -217,6 +261,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Rightstick.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnRightstick;
                 @Rightstick.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnRightstick;
                 @Rightstick.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnRightstick;
+                @Jump.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnJump;
+                @Action.started -= m_Wrapper.m_ControlsActionsCallbackInterface.OnAction;
+                @Action.performed -= m_Wrapper.m_ControlsActionsCallbackInterface.OnAction;
+                @Action.canceled -= m_Wrapper.m_ControlsActionsCallbackInterface.OnAction;
             }
             m_Wrapper.m_ControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -227,6 +277,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Rightstick.started += instance.OnRightstick;
                 @Rightstick.performed += instance.OnRightstick;
                 @Rightstick.canceled += instance.OnRightstick;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
             }
         }
     }
@@ -253,5 +309,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnRightstick(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnAction(InputAction.CallbackContext context);
     }
 }

@@ -60,7 +60,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.83
+  m_Radius: 0.55
 --- !u!1 &4389660307044624422
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 4389660307696137376}
   - component: {fileID: 4389660307696137382}
   - component: {fileID: 4389660307696137383}
+  - component: {fileID: 7433136271738114374}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -189,14 +190,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabc1127a1307b43a3d0ab586d348d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputThreshold: 0.5
-  speed: 10
-  dashPower: 12
-  fallMultiplier: 4
-  lowJumpMultiplier: 4
-  jumpScale: 5
+  inputManager: {fileID: 7433136271738114374}
+  speed: 5
+  dashPower: 15
+  throwPower: 10
+  fallMultiplier: 3
+  lowJumpMultiplier: 2
+  jumpScale: 10
   health: 1000
-  decay: 10
+  decay: 25
   ball: {fileID: 0}
   WallsLayer:
     serializedVersion: 2
@@ -221,7 +223,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4389660307696137378}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f8350961850d1894aba3071fa09e2bbf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -254,8 +256,27 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f8350961850d1894aba3071fa09e2bbf, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &7433136271738114374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389660307696137378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c47013cc0e55ec44ac620fe8af3de81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSpeedThresholdAction: 0.3
+  inputSpeedThresholdJump: 0.2
+  inputSpeedThresholdFastFall: 0.3
+  inputBufferDuration: 0.2
+  actionOnSticks: 0
+  timeBetweenStickUpdate: 0.1
+  player: {fileID: 4389660307696137376}

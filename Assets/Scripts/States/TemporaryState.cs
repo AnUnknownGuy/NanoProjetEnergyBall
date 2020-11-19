@@ -18,6 +18,7 @@ public class TemporaryState : State
     }
 
     override public void Update() {
+        base.Update();
         if (Time.time >= endingTime) {
             NextState();
         }

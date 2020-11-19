@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public Slider healthPlayer2;
     public Player player1;
     public Player player2;
+    public InputManager input1;
+    public InputManager input2;
 
     public GameManager gameManager;
 
@@ -38,14 +40,15 @@ public class LevelManager : MonoBehaviour
             }
 
             if (!player1.alive || !player2.alive) {
-                gameManager.RestartLevel();
+                if (gameManager != null)
+                    gameManager.RestartLevel();
                 restarting = true;
             }
         }
         
     }
     public void Stop() {
-        player1.Stop();
-        player2.Stop();
+        input1.Stop();
+        input2.Stop();
     }
 }

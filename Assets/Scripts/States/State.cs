@@ -8,6 +8,8 @@ public abstract class State : StateInterface
 
     protected string name = "State";
 
+    public Color color = Color.black;
+
     protected State(Player player) {
         this.player = player;
     }
@@ -16,19 +18,20 @@ public abstract class State : StateInterface
         
     }
 
-    public virtual void JumpSignal() {
-        
+    public virtual bool JumpSignal() {
+        return false;
     }
 
-    public virtual void FastFallSignal() {
-        
+    public virtual bool FastFallSignal() {
+        return false;
     }
 
     public virtual void WalkSignal(float x) {
 
     }
 
-    public virtual void RightstickSignal(Vector2 v) {
+    public virtual bool ActionSignal() {
+        return false;
     }
 
     public virtual void Stop() {
@@ -40,6 +43,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
+        if (!player.onGround) player.ProcessJump();
     }
 
     public virtual void BallEntered(Ball ball) {
