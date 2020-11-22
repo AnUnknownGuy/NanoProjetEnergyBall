@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public StateManager stateManager;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
 
     public InputManager inputManager;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     public float jumpScale = 5;
     public float health = 1000;
     public float decay = 10;
+    public float hitStunDuration = 0.8f;
+    public float hitSpeedTransfert = 0.8f;
 
     [HideInInspector]
     public Ball ball;
@@ -106,6 +109,10 @@ public class Player : MonoBehaviour
         stateManager.OnBallEntered(ball);
     }
 
+    public void DashEntered(Player otherPlayer) {
+        stateManager.OnDashEntered(otherPlayer);
+    }
+
     public bool CatchBall(Ball ball) {
         if (ball.Catch(this)) {
             this.ball = ball;
@@ -142,9 +149,16 @@ public class Player : MonoBehaviour
         stateManager.ToStun();
     }
 
+    public void ToStunState(float stunDuration) {
+        stateManager.ToStun(stunDuration);
+    }
+
     public void LooseHealth() {
         if (!HasBall())
             health -= decay * Time.deltaTime;
+    }
+    public void SetSpeed(Vector2 speed) {
+        rb.velocity = speed;
     }
 
     private void OnDrawGizmos() {

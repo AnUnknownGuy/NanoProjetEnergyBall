@@ -34,6 +34,12 @@ public class StateManager
         currentState.Start();
     }
 
+    private void ToNewState(State state, float param) {
+        state.Stop();
+        currentState = state;
+        currentState.Start(param);
+    }
+
     public void OnLeftStick(Vector2 dir)
     {
         currentState.WalkSignal(dir.x);
@@ -56,10 +62,13 @@ public class StateManager
         ToNewState(stunState);
     }
 
+    public void ToStun(float duration) {
+        ToNewState(stunState, duration);
+    }
+
     public void ToBase() {
         ToNewState(baseState);
     }
-
     public void ToHold() {
         ToNewState(holdState);
     }
@@ -69,6 +78,10 @@ public class StateManager
 
     public void OnBallEntered(Ball ball) {
         currentState.BallEntered(ball);
+    }
+
+    public void OnDashEntered(Player otherPlayer) {
+        currentState.DashEntered(otherPlayer);
     }
 
     public void Update() {
