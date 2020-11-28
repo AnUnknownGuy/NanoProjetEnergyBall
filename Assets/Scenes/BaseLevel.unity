@@ -323,6 +323,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4694724005529370768, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: actionOnSticks
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5955415980587435523, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: m_ColliderMask.m_Bits
