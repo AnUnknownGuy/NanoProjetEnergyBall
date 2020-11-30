@@ -22,6 +22,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(thrown.ToString()); // TODO: Remove this once this.thrown is used somewhere else.
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
