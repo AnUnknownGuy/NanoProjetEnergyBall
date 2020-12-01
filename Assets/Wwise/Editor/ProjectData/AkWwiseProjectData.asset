@@ -77,7 +77,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: aac4c458b5230443993348f7c83af6d1
     GuidInternal: 
-    m_lastTime: -8585954328959376169
+    m_lastTime: -8585950160618920359
     List: []
   - PhysicalPath: Events\InGame_Event.wwu
     PathAndIcons:
@@ -86,7 +86,7 @@ MonoBehaviour:
     ParentPath: InGame_Event
     guid: 3398e4a321d3d145a61a28a36d37720d
     GuidInternal: 
-    m_lastTime: -8585954328959316152
+    m_lastTime: -8585950160615978223
     List:
     - name: Play_Air_Velocity
       guid: 24e5ea332f7ce1429a14be7623a2991d
@@ -112,15 +112,27 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Dash
+    - name: Play_Dash_Haug
       guid: 1e562811ca0f1e428835fce5225fb88a
-      id: 2211787386
+      id: 223895672
       PathAndIcons:
       - ElementName: InGame_Event
         ObjectType: 12
-      - ElementName: Play_Dash
+      - ElementName: Play_Dash_Haug
         ObjectType: 3
-      Path: InGame_Event\Play_Dash
+      Path: InGame_Event\Play_Dash_Haug
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dash_Ruud
+      guid: cc144f1451f44845a75ef15346db6a78
+      id: 2666681873
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Dash_Ruud
+        ObjectType: 3
+      Path: InGame_Event\Play_Dash_Ruud
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -207,5 +219,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Nano_Projet
+  - /Nano_Projet/SoundBanks
+  - /Nano_Projet/SoundBanks/Nano_Projet
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
