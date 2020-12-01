@@ -45,7 +45,7 @@ public class InputManager : MonoBehaviour
             LeftStick();
         }
 
-        if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
+        if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) { 
             RightStick();
         }
 
