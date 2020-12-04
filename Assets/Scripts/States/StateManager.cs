@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class StateManager 
 {
     public float stunDuration = 0.4f;
-    public float dashDuration = 0.4f;
 
     private Player player;
 
@@ -23,19 +22,19 @@ public class StateManager
         stunState = new StunState(player, stunDuration);
         holdState = new HoldState(player);
         baseState = new BaseState(player);
-        dashState = new DashState(player, dashDuration);
+        dashState = new DashState(player, player.dashDuration);
 
         currentState = baseState;
     }
 
     private void ToNewState(State state) {
-        state.Stop();
+        currentState.Stop();
         currentState = state;
         currentState.Start();
     }
 
     private void ToNewState(State state, float param) {
-        state.Stop();
+        currentState.Stop();
         currentState = state;
         currentState.Start(param);
     }
@@ -82,6 +81,10 @@ public class StateManager
 
     public void OnDashEntered(Player otherPlayer) {
         currentState.DashEntered(otherPlayer);
+    }
+
+    public void OnWallCollided(Vector2 collisionDirection) {
+        currentState.WallCollided(collisionDirection);
     }
 
     public void Update() {

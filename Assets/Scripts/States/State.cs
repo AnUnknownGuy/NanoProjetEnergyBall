@@ -58,7 +58,7 @@ public abstract class State : StateInterface
         return name;
     }
 
-    public void DashEntered(Player otherPlayer) {
+    public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
             Ball ball = player.ball;
             ball.Free();
@@ -68,5 +68,9 @@ public abstract class State : StateInterface
             player.SetSpeed(otherPlayer.rb.velocity * player.hitSpeedTransfert);
             otherPlayer.SetSpeed(Vector2.zero);
         }
+    }
+
+    public virtual void WallCollided(Vector2 collisionDirection) {
+        
     }
 }
