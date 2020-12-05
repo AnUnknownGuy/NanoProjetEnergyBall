@@ -12,7 +12,7 @@ public class HoldState : MoveState
 
     public override bool ActionSignal() {
         player.ThrowBall();
-        player.ToStunState(); //à changer, pour eviter d'attrapper la balle tout de suite
+        player.ToStunState();
         return true;
     }
 

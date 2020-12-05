@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5554081505237045111}
   - component: {fileID: 3622745942546366339}
-  - component: {fileID: 3255586396498399627}
+  - component: {fileID: 1228441108391583034}
   m_Layer: 11
   m_Name: BallCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4389660307696137376}
---- !u!58 &3255586396498399627
-CircleCollider2D:
+--- !u!70 &1228441108391583034
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -59,8 +59,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.55
+  m_Size: {x: 0.67, y: 1}
+  m_Direction: 0
 --- !u!1 &4389660307044624422
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 4389660307044624422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3.85, y: 5.55, z: 1}
   m_Children: []
   m_Father: {fileID: 4389660307696137377}
   m_RootOrder: 0
@@ -152,12 +152,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4389660307696137377}
   - component: {fileID: 4389660307696137376}
-  - component: {fileID: 4389660307696137382}
+  - component: {fileID: 537298462269677206}
+  - component: {fileID: 8592178200580453279}
   - component: {fileID: 4389660307696137383}
   - component: {fileID: 7433136271738114374}
+  - component: {fileID: 3565814429772109132}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +177,7 @@ Transform:
   m_Children:
   - {fileID: 4389660307044624421}
   - {fileID: 5554081505237045111}
+  - {fileID: 7314039214166916274}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -190,20 +193,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eabc1127a1307b43a3d0ab586d348d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
   speed: 5
   dashPower: 15
+  dashDuration: 0.2
   throwPower: 10
   fallMultiplier: 3
   lowJumpMultiplier: 2
   jumpScale: 10
   health: 1000
   decay: 25
+  hitStunDuration: 0.8
+  hitSpeedTransfert: 0.8
+  gravity: 2
+  lowGravity: 1.5
+  highGravity: 6.29
   ball: {fileID: 0}
+  dashDirection: {x: 0, y: 0}
   WallsLayer:
     serializedVersion: 2
     m_Bits: 256
-  bottomOffset: {x: 0, y: -0.5}
+  bottomOffset: {x: 0, y: -0.38}
   rightOffset: {x: 0.5, y: 0}
   leftOffset: {x: -0.5, y: 0}
   collisionRadius: 0.19
@@ -214,8 +225,9 @@ MonoBehaviour:
   onWallLeft: 0
   isJumping: 0
   alive: 1
---- !u!61 &4389660307696137382
-BoxCollider2D:
+  isFastFalling: 0
+--- !u!70 &537298462269677206
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -228,18 +240,21 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.67, y: 1}
+  m_Direction: 0
+--- !u!114 &8592178200580453279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389660307696137378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d5cabde8c21e34cb7f71ec266ff59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4389660307696137376}
 --- !u!50 &4389660307696137383
 Rigidbody2D:
   serializedVersion: 4
@@ -280,3 +295,155 @@ MonoBehaviour:
   actionOnSticks: 1
   timeBetweenStickUpdate: 0.1
   player: {fileID: 4389660307696137376}
+--- !u!114 &3565814429772109132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4389660307696137378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e0cbb371131bec04f8e885eef2e52f8b,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: LeftStick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b3449ca0-93c9-4c79-8883-16789758329b
+    m_ActionName: Controls/Move[/XInputControllerWindows/leftStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: RightStick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c4719fcb-32b3-4ea6-b4e0-15a52b1e5117
+    m_ActionName: Controls/Rightstick[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: LeftShoulder
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 499d8527-43e0-44d9-8acb-e4f7448f7dc4
+    m_ActionName: Controls/Jump[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: RightShoulder
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d2669177-00f4-4a12-a9ed-c6187265664f
+    m_ActionName: Controls/Action[/XInputControllerWindows/rightShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Controller
+  m_DefaultActionMap: Controls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!1 &7429334354599953216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7314039214166916274}
+  - component: {fileID: 1616269487393463553}
+  - component: {fileID: 5744714937139745741}
+  m_Layer: 12
+  m_Name: DashCollider
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7314039214166916274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429334354599953216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4389660307696137377}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1616269487393463553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429334354599953216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4aa662963bf1e7439736e8aeb526930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4389660307696137376}
+--- !u!70 &5744714937139745741
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7429334354599953216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.67, y: 1}
+  m_Direction: 0

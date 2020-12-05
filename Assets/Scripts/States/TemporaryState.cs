@@ -17,6 +17,10 @@ public class TemporaryState : State
         endingTime = Time.time + timeInState;
     }
 
+    override public void Start(float param) {
+        endingTime = Time.time + param;
+    }
+
     override public void Update() {
         base.Update();
         if (Time.time >= endingTime) {
