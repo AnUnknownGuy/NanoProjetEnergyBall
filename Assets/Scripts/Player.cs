@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public float hitStunDuration = 0.8f;
     public float hitSpeedTransfert = 0.8f;
 
+    public float coyoteTime = 0.2f;
+
     public float gravity = 1;
     public float lowGravity = 0.7f;
     public float highGravity = 1.3f;
@@ -153,6 +155,10 @@ public class Player : MonoBehaviour
         stateManager.ToStun(stunDuration);
     }
 
+    public void ToHoldStunState(float stunDuration) {
+        stateManager.ToHoldStun(stunDuration);
+    }
+
     public void LooseHealth() {
         if (!HasBall())
             health -= decay * Time.deltaTime;
@@ -162,12 +168,15 @@ public class Player : MonoBehaviour
     }
 
     public void SetNormalGravity() {
+        Debug.Log("NORMAL");
         rb.gravityScale = gravity;
     }
     public void SetLowGravity() {
+        Debug.Log("LOW");
         rb.gravityScale = lowGravity;
     }
     public void SetHighGravity() {
+        Debug.Log("HIGH");
         rb.gravityScale = highGravity;
     }
     public void StopGravity() {

@@ -21,6 +21,9 @@ public abstract class State : StateInterface
     public virtual bool JumpSignal() {
         return false;
     }
+    public virtual bool JumpStopSignal() {
+        return false;
+    }
 
     public virtual bool FastFallSignal() {
         return false;
@@ -39,7 +42,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Start() {
-
+        Debug.Log(name);
     }
 
     public virtual void Start(float param) {

@@ -22,8 +22,10 @@ public class InputManager : MonoBehaviour
     [HideInInspector] private Input previousRightStickValue;
     [HideInInspector] private Vector2 rightSpeed;
 
+    public float stopJumpThreshhold = 0.5f;
 
-    private float jumpTimeStamp = 0;
+    private float jumpStartTimeStamp = 0;
+    private float jumpStopTimeStamp = 0;
     private float actionTimeStamp = 0;
     private float fastFallTimeStamp = 0;
 
@@ -33,7 +35,7 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         previousLeftStickValue = new Input(Vector2.zero, 0);
-        previousRightStickValue = new Input(Vector2.zero, 0);
+        previousRightStickValue = new Input(new Vector2(0, -0.1f), 0);
 
         leftSpeed = Vector2.zero;
         rightSpeed = Vector2.zero;
@@ -56,9 +58,14 @@ public class InputManager : MonoBehaviour
         }
         */
 
-        if (!OutDated(jumpTimeStamp) ) {
+        if (!OutDated(jumpStartTimeStamp) ) {
             if (player.stateManager.OnJump())
-                jumpTimeStamp = 0;
+                jumpStartTimeStamp = 0;
+
+        }
+        if (!OutDated(jumpStopTimeStamp)) {
+            if (player.stateManager.OnJumpStop())
+                jumpStopTimeStamp = 0;
 
         }
         if (!OutDated(actionTimeStamp)) {
@@ -149,6 +156,10 @@ public class InputManager : MonoBehaviour
             FastFall();
         }
 
+        if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold) {
+            JumpStop();
+        }
+
         previousLeftStickValue = new Input(value);
     }
 
@@ -160,7 +171,6 @@ public class InputManager : MonoBehaviour
     void RightShoulder() {
         RightShoulderProcess();
     }
-    
 
     void RightShoulderProcess() {
         actionTimeStamp = Time.time;
@@ -173,11 +183,13 @@ public class InputManager : MonoBehaviour
     public void LeftShoulder(InputAction.CallbackContext context) {
         if (context.performed) {
             LeftShoulderProcess();
+        } else if (context.canceled) {
+            JumpStop();
         }
     }
 
     void LeftShoulderProcess() {
-        jumpTimeStamp = Time.time;
+        jumpStartTimeStamp = Time.time;
     }
 
     public void FastFall(InputAction.CallbackContext context) {
@@ -194,6 +206,9 @@ public class InputManager : MonoBehaviour
         fastFallTimeStamp = Time.time;
     }
 
+    void JumpStop() {
+        jumpStopTimeStamp = Time.time;
+    }
 
     public bool GetFastFall() {
         return !OutDated(fastFallTimeStamp);

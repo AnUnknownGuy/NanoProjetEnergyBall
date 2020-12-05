@@ -2,29 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveState : State
-{
+public class MoveState : State {
     public MoveState(Player player) : base(player) {
         name = "MoveState";
     }
 
+    private bool isJumping = false;
+    private float coyoteTimer = 0;
 
     public override void Update() {
         base.Update();
         if (player.onGround) {
-            player.SetNormalGravity();
             if (player.inputManager.GetLeftStickValue().y > -0.3f) {
                 player.ToBaseLayer();
             }
+            coyoteTimer = Time.time;
         }
         if (player.inputManager.GetLeftStickValue().y < -0.3f) {
             FastFallSignal();
         }
+        if (player.rb.velocity.y <= 0 ) {
+            player.SetNormalGravity();
+        }
     }
 
     override public bool JumpSignal() {
-        if (player.onGround) {
+        if (coyoteTimer + player.coyoteTime > Time.time) {
+            isJumping = true;
             player.Jump();
+            player.SetLowGravity();
+            return true;
+        }
+        return false;
+    }
+
+    override public bool JumpStopSignal() {
+        if (isJumping) {
+            player.SetNormalGravity();
+            isJumping = false;
             return true;
         }
         return false;
@@ -34,6 +49,7 @@ public class MoveState : State
         base.Stop();
         player.SetNormalGravity();
         player.ToBaseLayer();
+        isJumping = false;
     }
 
     override public void WalkSignal(float x) {
@@ -46,5 +62,9 @@ public class MoveState : State
         player.SetHighGravity();
         player.ToFallingLayer();
         return true;
+    }
+
+    public override void WallCollided(Vector2 collisionDirection) {
+        player.SetNormalGravity();
     }
 }
