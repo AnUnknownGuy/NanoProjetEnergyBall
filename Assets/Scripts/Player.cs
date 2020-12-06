@@ -16,9 +16,8 @@ public class Player : MonoBehaviour
     public float speed = 10;
     public float dashPower = 12;
     public float dashDuration = 0.4f;
+    public float timeBetweenDash = 1f;
     public float throwPower = 1;
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
     public float jumpScale = 5;
     public float health = 1000;
     public float decay = 10;
@@ -79,16 +78,6 @@ public class Player : MonoBehaviour
         isJumping = true;
     }
 
-    public void ProcessJump() 
-    {
-        
-        if (rb.velocity.y < 0) {
-            rb.velocity += Vector2.up * (Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime);
-        } else if (rb.velocity.y > 0 && inputManager.GetFastFall()) {
-            rb.velocity += Vector2.up * (Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime);
-        }
-        
-    }
     private void CheckContactPoints() 
     {
         if (Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer) && rb.velocity.y <= 0) {
@@ -125,10 +114,13 @@ public class Player : MonoBehaviour
 
     public void ThrowBall() {
         if (HasBall()) {
-            ball.Free();
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
             ball = null;
         }
+    }
+
+    public void ThrowKnockBack() {
+        rb.velocity = -inputManager.GetRightStickValue() * 3;
     }
 
     public bool HasBall() {
@@ -168,15 +160,15 @@ public class Player : MonoBehaviour
     }
 
     public void SetNormalGravity() {
-        Debug.Log("NORMAL");
+        //Debug.Log("Normal");
         rb.gravityScale = gravity;
     }
     public void SetLowGravity() {
-        Debug.Log("LOW");
+        //Debug.Log("Low");
         rb.gravityScale = lowGravity;
     }
     public void SetHighGravity() {
-        Debug.Log("HIGH");
+        //Debug.Log("High");
         rb.gravityScale = highGravity;
     }
     public void StopGravity() {

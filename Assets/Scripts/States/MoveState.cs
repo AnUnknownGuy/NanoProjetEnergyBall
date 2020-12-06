@@ -8,7 +8,9 @@ public class MoveState : State {
     }
 
     private bool isJumping = false;
+    private bool fastFalling = false;
     private float coyoteTimer = 0;
+    private float dontResetTimerBefore = 0;
 
     public override void Update() {
         base.Update();
@@ -18,11 +20,15 @@ public class MoveState : State {
             }
             coyoteTimer = Time.time;
         }
-        if (player.inputManager.GetLeftStickValue().y < -0.3f) {
+        if (player.inputManager.GetLeftStickValue().y < -0.5f) {
             FastFallSignal();
+            fastFalling = true;
+        } else {
+            fastFalling = false;
         }
-        if (player.rb.velocity.y <= 0 ) {
+        if (isJumping && player.rb.velocity.y < 0 && !fastFalling) {
             player.SetNormalGravity();
+            isJumping = false;
         }
     }
 
