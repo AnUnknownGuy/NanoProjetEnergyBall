@@ -152,15 +152,14 @@ public class InputManager : MonoBehaviour
 
     void LeftStickProcess(Vector2 value)
     {
-        if (settings.jumpWithStick && previousLeftStickValue.value.magnitude < value.magnitude)
-        {
-            float verticalMovement = value.y - previousLeftStickValue.value.y;
-            
-            if (verticalMovement >= inputSpeedThresholdJump)
-                JumpProcess();
-            if (verticalMovement <= -inputSpeedThresholdFastFall)
-                FastFallProcess();
-        }
+        float verticalMovement = value.y - previousLeftStickValue.value.y;
+        
+        if (settings.jumpWithStick 
+            && verticalMovement >= inputSpeedThresholdJump
+            && previousLeftStickValue.value.magnitude < value.magnitude)
+            JumpProcess();
+        if (verticalMovement <= -inputSpeedThresholdFastFall)
+            FastFallProcess();
         if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold)
             JumpStop();
         
