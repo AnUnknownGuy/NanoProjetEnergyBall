@@ -47,6 +47,7 @@ public class SendLog : MonoBehaviour
 
     private void AddPlayer(Player player) {
         playerID++;
+        AddPlayerValue("remainingLife", player.health);
         AddPlayerValue("timeOnGround", player.timeOnGround);
         AddPlayerValue("timeInAir", player.timeInAir);
         AddPlayerValue("numberOfJump", player.stateManager.numberOfJumps);

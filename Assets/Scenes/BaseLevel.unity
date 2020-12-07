@@ -146,11 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1065509722}
     m_Modifications:
-    - target: {fileID: 1939917153771332662, guid: 03ecb21742420704f980aba7653934e4,
-        type: 3}
-      propertyPath: decay
-      value: 164.88
-      objectReference: {fileID: 0}
     - target: {fileID: 2738413514002475512, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: m_AnchorMax.x
