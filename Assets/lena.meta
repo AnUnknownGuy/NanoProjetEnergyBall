@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Gaelle.meta
+guid: 9527ce127b840294199ee8168ecc42ef
+=======
 guid: 5300584be80370c4bb9743b93920bc85
+>>>>>>> feature/lena:Assets/lena.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
