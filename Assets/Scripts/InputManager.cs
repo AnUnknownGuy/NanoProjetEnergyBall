@@ -82,9 +82,8 @@ public class InputManager : MonoBehaviour
 
     public void LeftShoulder(InputAction.CallbackContext context) {
         if (context.performed && !settings.jumpWithStick) {
-            if (previousLeftStickValue.value.y > 0) 
-                JumpProcess();
-            else 
+            JumpProcess();
+            if (previousLeftStickValue.value.y < 0) 
                 FastFallProcess();
         } else if (context.canceled) {
             JumpStop();
