@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\</ProjectRoot>
+		<SourceFilesRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Unity\NanoProjetEnergyBall\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="3025419588">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1166741976">
+			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
+			<ShortName>SB_Master</ShortName>
+			<Path>SB_Master.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2652654800" Name="Play_Air_Velocity" ObjectPath="\Events\InGame_Event\Play_Air_Velocity" GUID="{33EAE524-7C2F-42E1-9A14-BE7623A2991D}" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="83435579" Language="SFX">
+							<ShortName>Ball_Air_Crystal.wav</ShortName>
+							<Path>SFX\Ball_Air_Crystal_D79FB2B7.wem</Path>
+						</File>
+						<File Id="157536860" Language="SFX">
+							<ShortName>Ball_Air_Tone2.wav</ShortName>
+							<Path>SFX\Ball_Air_Tone2_D79FB2B7.wem</Path>
+						</File>
+						<File Id="164235642" Language="SFX">
+							<ShortName>Ball_Air_Wind.wav</ShortName>
+							<Path>SFX\Ball_Air_Wind_D79FB2B7.wem</Path>
+						</File>
+						<File Id="484311839" Language="SFX">
+							<ShortName>Ball_Air_Texture.wav</ShortName>
+							<Path>SFX\Ball_Air_Texture_D79FB2B7.wem</Path>
+						</File>
+						<File Id="928899835" Language="SFX">
+							<ShortName>Ball_Air_Tone1.wav</ShortName>
+							<Path>SFX\Ball_Air_Tone1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3465618802" Name="Play_Bounce" ObjectPath="\Events\InGame_Event\Play_Bounce" GUID="{CF842F4D-BEC7-4665-93AB-A5281E38855E}" DurationType="OneShot" DurationMin="0.771401" DurationMax="0.771401">
+					<IncludedMemoryFiles>
+						<File Id="574255877" Language="SFX">
+							<ShortName>Ball_bounce.wav</ShortName>
+							<Path>SFX\Ball_bounce_34E8D5D7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2211787386" Name="Play_Dash" ObjectPath="\Events\InGame_Event\Play_Dash" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.645414" DurationMax="0.808066">
+					<IncludedMemoryFiles>
+						<File Id="95179653" Language="SFX">
+							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
+							<Path>SFX\Dash_Golem_v3 (good)_2EF2D567.wem</Path>
+						</File>
+						<File Id="262242056" Language="SFX">
+							<ShortName>Dash_Golem_V5.wav</ShortName>
+							<Path>SFX\Dash_Golem_V5_198AF353.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3689126666" Name="Play_Jump" ObjectPath="\Events\InGame_Event\Play_Jump" GUID="{CC6DCFAA-BE78-4975-8DCA-632063355026}" DurationType="OneShot" DurationMin="0.401560" DurationMax="0.401560">
+					<IncludedMemoryFiles>
+						<File Id="333401990" Language="SFX">
+							<ShortName>Jump_Golem.wav</ShortName>
+							<Path>SFX\Jump_Golem_21D75251.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="145148864" Name="Ball_Velocity" ObjectPath="\Game Parameters\Default Work Unit\Ball\Ball_Velocity" GUID="{1CD115A3-D473-49FC-9EE2-682D699AF661}"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

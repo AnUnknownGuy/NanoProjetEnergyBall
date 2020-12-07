@@ -1,0 +1,23 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2211787386	Play_Dash			\InGame_Event\Play_Dash	
+	2652654800	Play_Air_Velocity			\InGame_Event\Play_Air_Velocity	
+	3465618802	Play_Bounce			\InGame_Event\Play_Bounce	
+	3689126666	Play_Jump			\InGame_Event\Play_Jump	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	145148864	Ball_Velocity			\Default Work Unit\Ball\Ball_Velocity	
+
+Effect plug-ins	ID	Name	Type				Notes
+	73137165	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	83435579	Ball_Air_Crystal	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Crystal_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		1805334
+	95179653	Dash_Golem_v3 (good)	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_v3 (good)_2EF2D567.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_v3 (good)		134608
+	157536860	Ball_Air_Tone2	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone2_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone2		1805334
+	164235642	Ball_Air_Wind	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Wind_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Wind		1805334
+	262242056	Dash_Golem_V5	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_V5_198AF353.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_V5		120684
+	333401990	Jump_Golem	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Jump_Golem_21D75251.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Jump\Jump_Golem		70900
+	484311839	Ball_Air_Texture	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Texture_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Texture		1805334
+	574255877	Ball_bounce	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_bounce_34E8D5D7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\Ball_bounce		68102
+	928899835	Ball_Air_Tone1	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone1		1805334
+

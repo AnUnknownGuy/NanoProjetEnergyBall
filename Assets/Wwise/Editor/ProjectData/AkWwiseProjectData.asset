@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f76f0813fe26034b9cff410fed68a37, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 583b14e3b3c94a4b8f4ae58307329722
+    GuidInternal: 
+    m_lastTime: -8585959911598180897
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 5f3607249adea54ca879f6d07d3c992e
+    GuidInternal: 
+    m_lastTime: -8585959911598470145
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 8b30934701b2b24da0ffb7fb576c55bb
+    GuidInternal: 
+    m_lastTime: -8585959909457941947
+    List: []
+  - PhysicalPath: SoundBanks\Nano_Projet.wwu
+    PathAndIcons:
+    - ElementName: Nano_Projet
+      ObjectType: 12
+    ParentPath: Nano_Projet
+    guid: b5eafceddf4542499f283653c15a0f36
+    GuidInternal: 
+    m_lastTime: -8585954331304579745
+    List:
+    - name: SB_Master
+      guid: 3a45f1dafbddbd4b8ef1a00708252bab
+      id: 1579730687
+      PathAndIcons:
+      - ElementName: Nano_Projet
+        ObjectType: 12
+      - ElementName: SB_Master
+        ObjectType: 7
+      Path: Nano_Projet\SB_Master
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: aac4c458b5230443993348f7c83af6d1
+    GuidInternal: 
+    m_lastTime: -8585950160618920359
+    List: []
+  - PhysicalPath: Events\InGame_Event.wwu
+    PathAndIcons:
+    - ElementName: InGame_Event
+      ObjectType: 12
+    ParentPath: InGame_Event
+    guid: 3398e4a321d3d145a61a28a36d37720d
+    GuidInternal: 
+    m_lastTime: -8585950160615978223
+    List:
+    - name: Play_Air_Velocity
+      guid: 24e5ea332f7ce1429a14be7623a2991d
+      id: 2652654800
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Air_Velocity
+        ObjectType: 3
+      Path: InGame_Event\Play_Air_Velocity
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Bounce
+      guid: 4d2f84cfc7be654693aba5281e38855e
+      id: 3465618802
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Bounce
+        ObjectType: 3
+      Path: InGame_Event\Play_Bounce
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dash_Haug
+      guid: 1e562811ca0f1e428835fce5225fb88a
+      id: 223895672
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Dash_Haug
+        ObjectType: 3
+      Path: InGame_Event\Play_Dash_Haug
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Dash_Ruud
+      guid: cc144f1451f44845a75ef15346db6a78
+      id: 2666681873
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Dash_Ruud
+        ObjectType: 3
+      Path: InGame_Event\Play_Dash_Ruud
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Jump
+      guid: aacf6dcc78be75498dca632063355026
+      id: 3689126666
+      PathAndIcons:
+      - ElementName: InGame_Event
+        ObjectType: 12
+      - ElementName: Play_Jump
+        ObjectType: 3
+      Path: InGame_Event\Play_Jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Menu_Event.wwu
+    PathAndIcons:
+    - ElementName: Menu_Event
+      ObjectType: 12
+    ParentPath: Menu_Event
+    guid: 0c1c1697ad6cb443a24626591f6bdfbc
+    GuidInternal: 
+    m_lastTime: -8585954336951424417
+    List: []
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 39a9922d2ce7bf4fa9b16c5db828d1e4
+    GuidInternal: 
+    m_lastTime: -8585954340602196268
+    List:
+    - name: Ball
+      guid: 371cf942b4afbd40825ff4da4d0cfca5
+      id: 1777984502
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ball
+        ObjectType: 4
+      Path: Default Work Unit\Ball
+    - name: Ball_Velocity
+      guid: a315d11c73d4fc499ee2682d699af661
+      id: 145148864
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ball
+        ObjectType: 4
+      - ElementName: Ball_Velocity
+        ObjectType: 13
+      Path: Default Work Unit\Ball\Ball_Velocity
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: f87fa68d7e21694387d1a9dbf3419a24
+    GuidInternal: 
+    m_lastTime: -8585959911598549938
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: a796b1a71417a040a41a2839968827c0
+    GuidInternal: 
+    m_lastTime: -8585959911598529982
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 5404db79d3c7e6438a1e2389dbb37b73
+    GuidInternal: 
+    m_lastTime: -8585959911598300606
+    List: []
+  ExpandedItems:
+  - /Nano_Projet
+  - /Nano_Projet/SoundBanks
+  - /Nano_Projet/SoundBanks/Nano_Projet
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
