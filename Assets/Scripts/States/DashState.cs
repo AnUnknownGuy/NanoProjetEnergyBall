@@ -6,6 +6,9 @@ public class DashState : TemporaryState
 {
     public float stunDurationDashInterruptedByWall = 0.2f;
 
+
+    private float dashStartTimestamp;
+
     public DashState(Player player, float stunTime) : base(player, stunTime) {
         name = "DashState";
         color = Color.magenta;
@@ -13,6 +16,8 @@ public class DashState : TemporaryState
 
     override public void Start() {
         base.Start();
+        player.stateManager.numberOfDash++;
+        dashStartTimestamp = Time.time;
         player.SetSpeed(Vector2.zero);
         player.canDash = false;
         player.SetDashDirection();
@@ -26,6 +31,7 @@ public class DashState : TemporaryState
 
     public override void Stop() {
         base.Stop();
+        player.stateManager.timeInDash += Time.time - dashStartTimestamp;
         player.SetSpeed(Vector2.zero);
         player.SetNormalGravity();
 

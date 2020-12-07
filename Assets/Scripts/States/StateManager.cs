@@ -11,11 +11,21 @@ public class StateManager
 
     public State currentState;
 
-    private StunState stunState;
-    private HoldState holdState;
+    public StunState stunState;
+    public HoldState holdState;
     private HoldStunState holdStunState;
-    private BaseState baseState;
-    private DashState dashState;
+    public BaseState baseState;
+    public DashState dashState;
+
+    //Log
+    public int numberHittedByDash = 0;
+    public int numberHittedByBall = 0;
+    public int numberOfJumps = 0;
+    public int numberOfFastFall = 0;
+    public int numberOfDash = 0;
+    public float timeInDash = 0;
+    public float timeInHold = 0;
+    public int numberOfBallCatched = 0;
 
     public StateManager(Player player) {
         this.player = player;
@@ -94,6 +104,7 @@ public class StateManager
     public void OnWallCollided(Vector2 collisionDirection) {
         currentState.WallCollided(collisionDirection);
     }
+
 
     public void Update() {
         currentState.Update();

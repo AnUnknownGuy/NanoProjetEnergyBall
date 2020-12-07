@@ -5,10 +5,9 @@ using UnityEngine;
 public abstract class State : StateInterface
 {
     protected Player player;
-
     protected string name = "State";
-
     public Color color = Color.black;
+
 
     protected State(Player player) {
         this.player = player;
@@ -54,7 +53,7 @@ public abstract class State : StateInterface
 
     public virtual void BallEntered(Ball ball) {
         if (ball.charged && ball.previousPlayer != player) {
-            Debug.Log(ball.previousPlayer);
+            player.stateManager.numberHittedByBall++;
             player.SetSpeed(ball.GetSpeed() * 0.2f);
             ball.FakeCollision();
             ball.Hit();
@@ -68,6 +67,7 @@ public abstract class State : StateInterface
 
     public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
+            player.stateManager.numberHittedByDash++;
             Ball ball = player.ball;
             ball.Free();
             player.ball = null;

@@ -12,6 +12,7 @@ public class MoveState : State {
     private float coyoteTimer = 0;
     private float dontResetTimerBefore = 0;
 
+
     public override void Update() {
         base.Update();
         if (player.onGround) {
@@ -19,13 +20,15 @@ public class MoveState : State {
                 player.ToBaseLayer();
             }
             coyoteTimer = Time.time;
-        }
-        if (player.inputManager.GetLeftStickValue().y < -0.5f) {
+        }/*
+        Debug.Log(player.inputManager.GetLeftStickValue().y);
+        if (player.inputManager.GetLeftStickValue().y < -0.5f && !fastFalling) {
             FastFallSignal();
             fastFalling = true;
         } else {
             fastFalling = false;
         }
+        */
         if (isJumping && player.rb.velocity.y < 0 && !fastFalling) {
             player.SetNormalGravity();
             isJumping = false;
@@ -34,6 +37,7 @@ public class MoveState : State {
 
     override public bool JumpSignal() {
         if (coyoteTimer + player.coyoteTime > Time.time) {
+            player.stateManager.numberOfJumps++;
             isJumping = true;
             player.Jump();
             player.SetLowGravity();
@@ -65,6 +69,7 @@ public class MoveState : State {
 
 
     public override bool FastFallSignal() {
+        player.stateManager.numberOfFastFall++;
         player.SetHighGravity();
         player.ToFallingLayer();
         return true;

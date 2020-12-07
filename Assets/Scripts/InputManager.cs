@@ -30,6 +30,10 @@ public class InputManager : MonoBehaviour
 
     public PlayerInput playerInput; 
     public PlayerSettings settings;
+	
+    private float timerBeforeInputStart = 0.5f;
+    private float timeStart;
+
     public Player player;
 
     void Start()
@@ -39,25 +43,35 @@ public class InputManager : MonoBehaviour
 
         leftSpeed = Vector2.zero;
         rightSpeed = Vector2.zero;
-        
         settings = new PlayerSettings(false, AimingControls.Rightstick);
+        timeStart = Time.time;
     }
 
     void Update()
     {
-        player.stateManager.OnLeftStick(previousLeftStickValue.value);
-        
-        if (!OutDated(jumpStartTimeStamp) && player.stateManager.OnJump())
-                jumpStartTimeStamp = 0;
-        
-        if (!OutDated(jumpStopTimeStamp) && player.stateManager.OnJumpStop())
-                jumpStopTimeStamp = 0;
-        
-        if (!OutDated(actionTimeStamp) && player.stateManager.OnAction())
-                actionTimeStamp = 0;
-        
-        if (!OutDated(fastFallTimeStamp) && player.stateManager.OnFastFall())
-                fastFallTimeStamp = 0;
+        if (Time.time > timeStart + timerBeforeInputStart) {
+            player.stateManager.OnLeftStick(previousLeftStickValue.value);
+
+            if (!OutDated(jumpStartTimeStamp)) {
+                if (player.stateManager.OnJump())
+                    jumpStartTimeStamp = 0;
+
+            }
+            if (!OutDated(jumpStopTimeStamp)) {
+                if (player.stateManager.OnJumpStop())
+                    jumpStopTimeStamp = 0;
+
+            }
+            if (!OutDated(actionTimeStamp)) {
+                if (player.stateManager.OnAction())
+                    actionTimeStamp = 0;
+
+            }
+            if (!OutDated(fastFallTimeStamp)) {
+                if (player.stateManager.OnFastFall())
+                    fastFallTimeStamp = 0;
+            }
+        }
     }
 
     public void RightStick(InputAction.CallbackContext context) {
