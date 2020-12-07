@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
     public void Jump() 
     {
-        GetComponent<Rigidbody2D>().velocity = (new Vector2(0,1) * jumpScale);
+        rb.velocity = (new Vector2(0,1) * jumpScale);
         isJumping = true;
     }
 

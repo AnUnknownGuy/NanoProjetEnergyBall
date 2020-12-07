@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public LevelManager levelPrefab;
+    public GameObject levelPrefab;
     public LevelManager level;
 
     public float timeBeforeRestart = 2;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void CreateLevel() {
-        level = Instantiate(levelPrefab);
+        level = Instantiate(levelPrefab).GetComponent<LevelManager>();
         level.gameManager = this;
     }
 }
