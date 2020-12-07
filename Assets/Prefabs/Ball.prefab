@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8257105204860484894}
   - component: {fileID: 8257105204860484889}
   - component: {fileID: 8257105204860484888}
+  - component: {fileID: 2554137973294974170}
   m_Layer: 10
   m_Name: Ball
   m_TagString: Untagged
@@ -83,8 +84,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c742f1edcd692c44c941e25cf86e5617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  material: {fileID: 6200000, guid: 1ce8d43831df13f45b0c8de5b9091043, type: 2}
+  gravityWhenThorwn: 0.2
+  gravity: 2
   player: {fileID: 0}
+  charged: 0
+  previousPlayer: {fileID: 0}
   collisionRadius: 0.36
+--- !u!58 &2554137973294974170
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8257105204860484892}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8257105205116417468
 GameObject:
   m_ObjectHideFlags: 0

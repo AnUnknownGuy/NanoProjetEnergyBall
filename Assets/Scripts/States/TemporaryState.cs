@@ -14,6 +14,7 @@ public class TemporaryState : State
     }
 
     override public void Start() {
+        base.Start();
         endingTime = Time.time + timeInState;
     }
 

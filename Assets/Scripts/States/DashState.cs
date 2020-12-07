@@ -44,7 +44,13 @@ public class DashState : TemporaryState
     }
 
     public override void WallCollided(Vector2 collisionDirection) {
-        player.ToStunState(stunDurationDashInterruptedByWall);
+
+        if (player.HasBall()) {
+            player.ToHoldStunState(stunDurationDashInterruptedByWall);
+        } else {
+            player.ToStunState(stunDurationDashInterruptedByWall);
+        }
+
         player.SetSpeed(collisionDirection * 4);
     }
 }

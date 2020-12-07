@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class SendLog : MonoBehaviour
 {
     void Start() {
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 5; i++) {
             StartCoroutine(Upload(i));
         }
     }
@@ -14,8 +14,9 @@ public class SendLog : MonoBehaviour
     IEnumerator Upload(int k) {
         WWWForm form = new WWWForm();
 
-        for (int i=0; i < Random.Range(1,10); i ++) {
-            form.AddField("Number "+i, ""+Random.Range(1, 10)+ "," + Random.Range(1, 10));
+        for (int i=0; i < 15; i ++) {
+            if (Random.value > 0.5f)
+                form.AddField("Number "+i, ""+Random.Range(1, 10));
         }
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://oscarglo.me:1234", form)) {

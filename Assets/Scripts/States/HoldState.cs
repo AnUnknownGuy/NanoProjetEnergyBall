@@ -12,6 +12,8 @@ public class HoldState : MoveState
 
     public override bool ActionSignal() {
         player.ThrowBall();
+        player.ThrowKnockBack();
+        player.ThrowKnockBack();
         player.ToStunState();
         return true;
     }

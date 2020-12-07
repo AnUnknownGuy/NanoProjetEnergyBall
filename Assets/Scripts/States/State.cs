@@ -21,6 +21,9 @@ public abstract class State : StateInterface
     public virtual bool JumpSignal() {
         return false;
     }
+    public virtual bool JumpStopSignal() {
+        return false;
+    }
 
     public virtual bool FastFallSignal() {
         return false;
@@ -39,7 +42,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Start() {
-
+        //Debug.Log(name);
     }
 
     public virtual void Start(float param) {
@@ -47,11 +50,16 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
-        if (!player.onGround) player.ProcessJump();
     }
 
     public virtual void BallEntered(Ball ball) {
-
+        if (ball.charged && ball.previousPlayer != player) {
+            Debug.Log(ball.previousPlayer);
+            player.SetSpeed(ball.GetSpeed() * 0.2f);
+            ball.FakeCollision();
+            ball.Hit();
+            player.ToStunState();
+        }
     }
 
     public string GetName() {
@@ -63,10 +71,11 @@ public abstract class State : StateInterface
             Ball ball = player.ball;
             ball.Free();
             player.ball = null;
-            otherPlayer.CatchBall(ball);
+            ball.SetSpeed(Vector2.up);
+            otherPlayer.ToBaseState();
+            otherPlayer.SetSpeed(Vector2.zero);
             player.ToStunState(player.hitStunDuration);
             player.SetSpeed(otherPlayer.rb.velocity * player.hitSpeedTransfert);
-            otherPlayer.SetSpeed(Vector2.zero);
         }
     }
 

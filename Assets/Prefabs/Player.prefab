@@ -198,15 +198,15 @@ MonoBehaviour:
   speed: 5
   dashPower: 15
   dashDuration: 0.2
-  throwPower: 10
-  fallMultiplier: 3
-  lowJumpMultiplier: 2
+  timeBetweenDash: 1
+  throwPower: 15
   jumpScale: 10
   health: 1000
   decay: 25
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
-  gravity: 2
+  coyoteTime: 0.2
+  gravity: 2.99
   lowGravity: 1.5
   highGravity: 6.29
   ball: {fileID: 0}
@@ -294,6 +294,7 @@ MonoBehaviour:
   inputBufferDuration: 0.2
   actionOnSticks: 1
   timeBetweenStickUpdate: 0.1
+  stopJumpThreshhold: 0.5
   player: {fileID: 4389660307696137376}
 --- !u!114 &3565814429772109132
 MonoBehaviour:

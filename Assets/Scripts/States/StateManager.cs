@@ -13,6 +13,7 @@ public class StateManager
 
     private StunState stunState;
     private HoldState holdState;
+    private HoldStunState holdStunState;
     private BaseState baseState;
     private DashState dashState;
 
@@ -21,6 +22,7 @@ public class StateManager
 
         stunState = new StunState(player, stunDuration);
         holdState = new HoldState(player);
+        holdStunState = new HoldStunState(player, stunDuration);
         baseState = new BaseState(player);
         dashState = new DashState(player, player.dashDuration);
 
@@ -48,6 +50,9 @@ public class StateManager
         return currentState.JumpSignal();
     }
 
+    public bool OnJumpStop() {
+        return currentState.JumpStopSignal();
+    }
     public bool OnFastFall() {
         return currentState.FastFallSignal();
     }
@@ -63,6 +68,9 @@ public class StateManager
 
     public void ToStun(float duration) {
         ToNewState(stunState, duration);
+    }
+    public void ToHoldStun(float duration) {
+        ToNewState(holdStunState, duration);
     }
 
     public void ToBase() {
