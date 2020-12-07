@@ -206,8 +206,8 @@ MonoBehaviour:
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
   coyoteTime: 0.2
-  gravity: 2.99
-  lowGravity: 1.5
+  gravity: 2.74
+  lowGravity: 1.66
   highGravity: 6.29
   ball: {fileID: 0}
   dashDirection: {x: 0, y: 0}

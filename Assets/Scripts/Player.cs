@@ -41,11 +41,17 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public bool onGround = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
 
+    //Log
+    [HideInInspector] public float timeOnGround = 0;
+    [HideInInspector] public float timeInAir = 0;
+    private float onGroundChangeTimeStamp;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stateManager = new StateManager(this);
+        onGroundChangeTimeStamp = Time.time;
     }
 
     
@@ -80,12 +86,23 @@ public class Player : MonoBehaviour
 
     private void CheckContactPoints() 
     {
+        bool previousOnground = onGround;
+
         if (Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer) && rb.velocity.y <= 0) {
             onGround = true;
             canDash = true;
             isJumping = false;
         } else {
             onGround = false;
+        }
+
+        if (previousOnground != onGround) {
+            if (onGround) {
+                timeInAir += Time.time - onGroundChangeTimeStamp;
+            } else {
+                timeOnGround += Time.time - onGroundChangeTimeStamp;
+            }
+            onGroundChangeTimeStamp = Time.time;
         }
             
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
@@ -181,6 +198,14 @@ public class Player : MonoBehaviour
 
     public void ToBaseLayer() {
         this.gameObject.layer = LayerMask.NameToLayer("Player");
+    }
+
+    public void ForceLogUpdate() {
+        if (onGround) {
+            timeOnGround += Time.time - onGroundChangeTimeStamp;
+        } else {
+            timeInAir += Time.time - onGroundChangeTimeStamp;
+        }
     }
 
     public void SetDashDirection() {

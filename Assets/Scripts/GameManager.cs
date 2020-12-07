@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public LevelManager levelPrefab;
     public LevelManager level;
+    public SendLog logger;
 
     public float timeBeforeRestart = 2;
 
@@ -33,12 +34,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Win(string winner) {
+        if (logger != null) {
+            Debug.Log("send !");
+            logger.Send(winner);
+        }
+    }
+
     private IEnumerator Restart(float time) {
         yield return new WaitForSeconds(time);
         level.Stop();
         Destroy(level.gameObject);
         CreateLevel();
         restarting = false;
+        if (logger != null) {
+            logger.Restart();
+        }
     }
 
     private void CreateLevel() {

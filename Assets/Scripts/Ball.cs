@@ -92,7 +92,6 @@ public class Ball : MonoBehaviour
     }
 
     public void FakeCollision() {
-        Debug.Log("fake");
         rb.velocity = -rb.velocity * material.bounciness;
     }
 

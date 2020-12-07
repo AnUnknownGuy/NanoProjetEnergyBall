@@ -29,6 +29,11 @@ public class InputManager : MonoBehaviour
     private float actionTimeStamp = 0;
     private float fastFallTimeStamp = 0;
 
+
+
+    private float timerBeforeInputStart = 0.5f;
+    private float timeStart;
+
     public Player player;
 
     // Start is called before the first frame update
@@ -41,43 +46,45 @@ public class InputManager : MonoBehaviour
         rightSpeed = Vector2.zero;
 
         BindControls();
+        timeStart = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        player.stateManager.OnLeftStick(previousLeftStickValue.value);
+        if (Time.time > timeStart + timerBeforeInputStart) {
+            player.stateManager.OnLeftStick(previousLeftStickValue.value);
 
-        /*
-        if (previousLeftStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
-            LeftStick();
-        }
+            /*
+            if (previousLeftStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
+                LeftStick();
+            }
 
-        if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
-            RightStick();
-        }
-        */
+            if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
+                RightStick();
+            }
+            */
 
-        if (!OutDated(jumpStartTimeStamp) ) {
-            if (player.stateManager.OnJump())
-                jumpStartTimeStamp = 0;
+            if (!OutDated(jumpStartTimeStamp)) {
+                if (player.stateManager.OnJump())
+                    jumpStartTimeStamp = 0;
 
-        }
-        if (!OutDated(jumpStopTimeStamp)) {
-            if (player.stateManager.OnJumpStop())
-                jumpStopTimeStamp = 0;
+            }
+            if (!OutDated(jumpStopTimeStamp)) {
+                if (player.stateManager.OnJumpStop())
+                    jumpStopTimeStamp = 0;
 
-        }
-        if (!OutDated(actionTimeStamp)) {
-            if (player.stateManager.OnAction())
-                actionTimeStamp = 0;
+            }
+            if (!OutDated(actionTimeStamp)) {
+                if (player.stateManager.OnAction())
+                    actionTimeStamp = 0;
 
+            }
+            if (!OutDated(fastFallTimeStamp)) {
+                if (player.stateManager.OnFastFall())
+                    fastFallTimeStamp = 0;
+            }
         }
-        if (!OutDated(fastFallTimeStamp)) {
-            if (player.stateManager.OnFastFall())
-                fastFallTimeStamp = 0;
-        }
-        
     }
 
     void BindControls() {
