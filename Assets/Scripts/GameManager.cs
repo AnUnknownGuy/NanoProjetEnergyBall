@@ -45,4 +45,15 @@ public class GameManager : MonoBehaviour
         level = Instantiate(levelPrefab).GetComponent<LevelManager>();
         level.gameManager = this;
     }
+    
+    
+    public static void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public static void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }

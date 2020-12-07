@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -107,12 +108,14 @@ public class InputManager : MonoBehaviour
                 {
                     pauseMenu.gameObject.SetActive(false);
                     playerInput.SwitchCurrentActionMap("Controls");
+                    GameManager.ResumeGame();
                 }
                 else
                 {
                     pauseMenu.gameObject.SetActive(true);
                     pauseMenu.TargetPlayer = this;
                     playerInput.SwitchCurrentActionMap("UI");
+                    GameManager.PauseGame();
                 }
             }
             else Debug.LogError("PauseMenu not found");
@@ -178,8 +181,11 @@ public class InputManager : MonoBehaviour
     public Vector2 GetLeftStickValue() {
         return previousLeftStickValue.value;
     }
-    public Vector2 GetRightStickValue() {
-        return previousRightStickValue.value;
+    public Vector2 GetRightStickValue()
+    {
+        return (settings.aimingControls == AimingControls.LeftstickButton)
+            ? previousLeftStickValue.value
+            : previousRightStickValue.value;
     }
 
     private void OnDrawGizmos() {

@@ -48,10 +48,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Navigate(InputAction.CallbackContext context)
     {
+        /*
         Selectable newSelection = selectedItem.FindSelectable(context.ReadValue<Vector2>());
         // Deselect selectedItem ?
         selectedItem = newSelection;
-        selectedItem.Select();
+        selectedItem.Select();*/
     }
 
     public void Select(InputAction.CallbackContext context)
