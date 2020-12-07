@@ -198,16 +198,16 @@ MonoBehaviour:
   speed: 5
   dashPower: 15
   dashDuration: 0.2
-  throwPower: 10
-  fallMultiplier: 3
-  lowJumpMultiplier: 2
+  timeBetweenDash: 1
+  throwPower: 15
   jumpScale: 10
   health: 1000
   decay: 25
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
-  gravity: 2
-  lowGravity: 1.5
+  coyoteTime: 0.2
+  gravity: 2.74
+  lowGravity: 1.66
   highGravity: 6.29
   ball: {fileID: 0}
   dashDirection: {x: 0, y: 0}
@@ -292,8 +292,9 @@ MonoBehaviour:
   inputSpeedThresholdJump: 0.2
   inputSpeedThresholdFastFall: 0.3
   inputBufferDuration: 0.2
-  actionOnSticks: 1
   timeBetweenStickUpdate: 0.1
+  stopJumpThreshhold: 0.5
+  playerInput: {fileID: 3565814429772109132}
   player: {fileID: 4389660307696137376}
 --- !u!114 &3565814429772109132
 MonoBehaviour:
@@ -381,6 +382,44 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d2669177-00f4-4a12-a9ed-c6187265664f
     m_ActionName: Controls/Action[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: ToggleMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b129c2e2-eb80-4fca-b9d6-657bb10d3e1a
+    m_ActionName: Controls/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 171be621-d3ba-4314-a4c3-c3f220467901
+    m_ActionName: UI/Navigate
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9168a0c4-b6a9-4cce-84ed-83f0d36ef0d0
+    m_ActionName: UI/Select
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7433136271738114374}
+        m_MethodName: ToggleMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e632f082-aba8-468e-acc9-c3654e9cffb2
+    m_ActionName: UI/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Controller
   m_DefaultActionMap: Controls

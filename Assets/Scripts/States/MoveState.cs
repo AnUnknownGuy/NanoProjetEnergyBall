@@ -2,29 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveState : State
-{
+public class MoveState : State {
     public MoveState(Player player) : base(player) {
         name = "MoveState";
     }
+
+    private bool isJumping = false;
+    private bool fastFalling = false;
+    private float coyoteTimer = 0;
+    private float dontResetTimerBefore = 0;
 
 
     public override void Update() {
         base.Update();
         if (player.onGround) {
-            player.SetNormalGravity();
             if (player.inputManager.GetLeftStickValue().y > -0.3f) {
                 player.ToBaseLayer();
             }
-        }
-        if (player.inputManager.GetLeftStickValue().y < -0.3f) {
+            coyoteTimer = Time.time;
+        }/*
+        Debug.Log(player.inputManager.GetLeftStickValue().y);
+        if (player.inputManager.GetLeftStickValue().y < -0.5f && !fastFalling) {
             FastFallSignal();
+            fastFalling = true;
+        } else {
+            fastFalling = false;
+        }
+        */
+        if (isJumping && player.rb.velocity.y < 0 && !fastFalling) {
+            player.SetNormalGravity();
+            isJumping = false;
         }
     }
 
     override public bool JumpSignal() {
-        if (player.onGround) {
+        if (coyoteTimer + player.coyoteTime > Time.time) {
+            player.stateManager.numberOfJumps++;
+            isJumping = true;
             player.Jump();
+            player.SetLowGravity();
+            return true;
+        }
+        return false;
+    }
+
+    override public bool JumpStopSignal() {
+        if (isJumping) {
+            player.SetNormalGravity();
+            isJumping = false;
             return true;
         }
         return false;
@@ -34,6 +59,7 @@ public class MoveState : State
         base.Stop();
         player.SetNormalGravity();
         player.ToBaseLayer();
+        isJumping = false;
     }
 
     override public void WalkSignal(float x) {
@@ -43,8 +69,13 @@ public class MoveState : State
 
 
     public override bool FastFallSignal() {
+        player.stateManager.numberOfFastFall++;
         player.SetHighGravity();
         player.ToFallingLayer();
         return true;
+    }
+
+    public override void WallCollided(Vector2 collisionDirection) {
+        player.SetNormalGravity();
     }
 }

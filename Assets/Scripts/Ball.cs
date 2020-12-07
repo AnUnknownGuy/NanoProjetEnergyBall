@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
+    
     private Rigidbody2D rb;
+
+    public PhysicsMaterial2D material;
+
     private bool sleeping;
     private float timerUntilGravityChange;
-    private bool thrown = false;
+
 
     public float gravityWhenThorwn = 0.2f;
     public float gravity = 2f;
 
     [HideInInspector]
     public Player player;
+
+    [HideInInspector]
+    public bool charged = false;
+    [HideInInspector]
+    public Player previousPlayer;
 
     public float collisionRadius = 0.25f;
 
@@ -47,17 +55,48 @@ public class Ball : MonoBehaviour
     }
 
     public void Throw(Vector2 dir, float force) {
-        if (!sleeping) {
+            Charge();
             Free();
             rb.velocity = Vector2.zero;
             rb.velocity += dir.normalized * force;
-        }
     }
 
     public void Free() {
-        this.player = null;
+        player = null;
         sleeping = false;
         rb.WakeUp();
+    }
+
+    public void Charge() {
+        previousPlayer = player;
+        rb.gravityScale = 0;
+        charged = true;
+    }
+
+    public void Uncharge() {
+        charged = false;
+        rb.gravityScale = gravity;
+    }
+
+    public void MoveToPreviousPlayer() {
+
+    }
+
+    public void Hit() {
+        Uncharge();
+        MoveToPreviousPlayer();
+    }
+
+    public void SetSpeed(Vector2 speed) {
+        rb.velocity = speed;
+    }
+
+    public void FakeCollision() {
+        rb.velocity = -rb.velocity * material.bounciness;
+    }
+
+    public Vector2 GetSpeed() {
+        return rb.velocity;
     }
 
     private void OnDrawGizmos() {
@@ -66,4 +105,15 @@ public class Ball : MonoBehaviour
 
         //Gizmos.DrawWireSphere((Vector2)transform.position, collisionRadius);
     }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Vector3 normal = collision.contacts[0].normal;
+        
+        if (charged) {
+            if (collision.gameObject.tag == "wall") {
+                Hit();
+            }
+        }
+    }
+
 }
