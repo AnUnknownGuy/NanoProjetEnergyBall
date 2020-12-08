@@ -37,9 +37,6 @@ public class DashState : TemporaryState
 
     }
 
-    override public void BallEntered(Ball ball) {
-        player.CatchBall(ball);
-    }
 
     override public void NextState() {
         if (player.HasBall()) {

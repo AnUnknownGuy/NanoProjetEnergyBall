@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     public float lowGravity = 0.7f;
     public float highGravity = 1.3f;
 
+    public float timeBeforeBeingAbleToThrow = 0.2f;
+
     [HideInInspector] public Ball ball;
 
     [HideInInspector] public Vector2 dashDirection;

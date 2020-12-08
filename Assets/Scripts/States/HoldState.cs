@@ -6,6 +6,7 @@ public class HoldState : MoveState
 {
 
 
+
     private float holdStartTimestamp;
 
     public HoldState(Player player): base(player) {
@@ -24,6 +25,7 @@ public class HoldState : MoveState
         base.Stop();
         player.stateManager.timeInHold = Time.time - holdStartTimestamp;
     }
+
     public override bool ActionSignal() {
         player.ThrowBall();
         player.ThrowKnockBack();
