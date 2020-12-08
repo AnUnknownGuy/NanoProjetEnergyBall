@@ -8,6 +8,20 @@ public class MoveState : State
         name = "MoveState";
     }
 
+
+    public override void Update() {
+        base.Update();
+        if (player.onGround) {
+            player.SetNormalGravity();
+            if (player.inputManager.GetLeftStickValue().y > -0.3f) {
+                player.ToBaseLayer();
+            }
+        }
+        if (player.inputManager.GetLeftStickValue().y < -0.3f) {
+            FastFallSignal();
+        }
+    }
+
     override public bool JumpSignal() {
         if (player.onGround) {
             player.Jump();
@@ -16,13 +30,21 @@ public class MoveState : State
         return false;
     }
 
+    public override void Stop() {
+        base.Stop();
+        player.SetNormalGravity();
+        player.ToBaseLayer();
+    }
+
     override public void WalkSignal(float x) {
         player.Walk(x);
     }
 
 
-    public override void Update()
-    {
-        base.Update();
+
+    public override bool FastFallSignal() {
+        player.SetHighGravity();
+        player.ToFallingLayer();
+        return true;
     }
 }

@@ -16,12 +16,13 @@ public class BaseState : MoveState {
     }
 
     public override bool ActionSignal() {
-        if (player.Dash()) {
+        if (player.canDash) {
             player.ToDashState();
             return true;
         } else {
             return false;
         }
     }
+
 
 }

@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour
         
     }
     public void Stop() {
-        input1.Stop();
-        input2.Stop();
+        //input1.Stop();
+        //input2.Stop();
     }
 }

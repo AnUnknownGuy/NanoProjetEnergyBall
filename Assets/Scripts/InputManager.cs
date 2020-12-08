@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
 
     public float inputSpeedThresholdAction = 0.3f;
     public float inputSpeedThresholdJump = 0.3f;
-    public float inputSpeedThresholdFastFall = 0.3f;
+    public float inputSpeedThresholdFastFall = 0.2f;
     public float inputBufferDuration = 0.2f;
     public bool actionOnSticks = true;
 
@@ -17,7 +17,10 @@ public class InputManager : MonoBehaviour
     private float minimumRightStickSize = 0.05f;
 
     [HideInInspector] private Input previousLeftStickValue;
+    [HideInInspector] private Vector2 leftSpeed;
+
     [HideInInspector] private Input previousRightStickValue;
+    [HideInInspector] private Vector2 rightSpeed;
 
 
     private float jumpTimeStamp = 0;
@@ -26,12 +29,14 @@ public class InputManager : MonoBehaviour
 
     public Player player;
 
-    private PlayerControls playerControls;
     // Start is called before the first frame update
     void Start()
     {
         previousLeftStickValue = new Input(Vector2.zero, 0);
         previousRightStickValue = new Input(Vector2.zero, 0);
+
+        leftSpeed = Vector2.zero;
+        rightSpeed = Vector2.zero;
 
         BindControls();
     }
@@ -39,8 +44,9 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player.stateManager.OnLeftStick(playerControls.Controls.Move.ReadValue<Vector2>());
+        player.stateManager.OnLeftStick(previousLeftStickValue.value);
 
+        /*
         if (previousLeftStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
             LeftStick();
         }
@@ -48,6 +54,7 @@ public class InputManager : MonoBehaviour
         if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) { 
             RightStick();
         }
+        */
 
         if (!OutDated(jumpTimeStamp) ) {
             if (player.stateManager.OnJump())
@@ -62,13 +69,13 @@ public class InputManager : MonoBehaviour
         if (!OutDated(fastFallTimeStamp)) {
             if (player.stateManager.OnFastFall())
                 fastFallTimeStamp = 0;
-
         }
+        
     }
 
     void BindControls() {
-        playerControls = new PlayerControls();
 
+        /*
         playerControls.Controls.Move.performed += LeftStick;
         playerControls.Controls.Rightstick.performed += RightStick;
         playerControls.Controls.Jump.started += LeftShoulder;
@@ -78,17 +85,24 @@ public class InputManager : MonoBehaviour
         playerControls.Controls.Rightstick.Enable();
         playerControls.Controls.Jump.Enable();
         playerControls.Controls.Action.Enable();
+        */
     }
 
+    /*
     void RightStick() {
         Vector2 value = playerControls.Controls.Rightstick.ReadValue<Vector2>();
 
         RightStickProcess(value);
     }
-    void RightStick(InputAction.CallbackContext context) {
-        Vector2 value = context.ReadValue<Vector2>();
+    */
 
-        RightStickProcess(value);
+    public void RightStick(InputAction.CallbackContext context) {
+
+        if (context.performed) {
+            Vector2 value = context.ReadValue<Vector2>();
+
+            RightStickProcess(value);
+        }
     }
 
     void RightStickProcess(Vector2 value) {
@@ -109,37 +123,44 @@ public class InputManager : MonoBehaviour
 
     }
 
+    /*
     void LeftStick() {
         Vector2 value = playerControls.Controls.Move.ReadValue<Vector2>();
         LeftStickProcess(value);
     }
+    */
 
-    void LeftStick(InputAction.CallbackContext context) {
-        Vector2 value = context.ReadValue<Vector2>();
-        LeftStickProcess(value);
+    public void LeftStick(InputAction.CallbackContext context) {
+        if (context.performed) {
+            LeftStickProcess(context.ReadValue<Vector2>());
+        } else if (context.canceled) {
+            LeftStickProcess(Vector2.zero);
+        }
     }
 
     void LeftStickProcess(Vector2 value) {
         if (actionOnSticks)
             //si la différence est assez grande et que le stick ne revient pas vers la position position 0,0
-            if ((value.y - previousLeftStickValue.value.y) >= inputSpeedThresholdJump && previousLeftStickValue.value.magnitude < value.magnitude) {
+            if (value.y - previousLeftStickValue.value.y /*/ (Time.time - previousLeftStickValue.timeStamp)*/ >= inputSpeedThresholdJump && previousLeftStickValue.value.magnitude < value.magnitude) {
                 LeftShoulder();
             }
 
-        if ((value.y - previousLeftStickValue.value.y) <= -inputSpeedThresholdFastFall && previousLeftStickValue.value.magnitude < value.magnitude) {
+        if ((value.y - previousLeftStickValue.value.y) /*/ (Time.time - previousLeftStickValue.timeStamp)*/ <= -inputSpeedThresholdFastFall && previousLeftStickValue.value.magnitude < value.magnitude) {
             FastFall();
         }
 
         previousLeftStickValue = new Input(value);
     }
 
-    void RightShoulder(InputAction.CallbackContext context) {
-        RightShoulderProcess();
+    public void RightShoulder(InputAction.CallbackContext context) {
+        if (context.performed) {
+            RightShoulderProcess();
+        }
     }
-
     void RightShoulder() {
         RightShoulderProcess();
     }
+    
 
     void RightShoulderProcess() {
         actionTimeStamp = Time.time;
@@ -149,16 +170,20 @@ public class InputManager : MonoBehaviour
         LeftShoulderProcess();
     }
 
-    void LeftShoulder(InputAction.CallbackContext context) {
-        LeftShoulderProcess();
+    public void LeftShoulder(InputAction.CallbackContext context) {
+        if (context.performed) {
+            LeftShoulderProcess();
+        }
     }
 
     void LeftShoulderProcess() {
         jumpTimeStamp = Time.time;
     }
 
-    void FastFall(InputAction.CallbackContext context) {
-        FastFallProcess();
+    public void FastFall(InputAction.CallbackContext context) {
+        if (context.performed) {
+            FastFallProcess();
+        }
     }
 
     void FastFall() {
@@ -178,6 +203,7 @@ public class InputManager : MonoBehaviour
         return previousLeftStickValue.value;
     }
 
+    /*
     public Vector2 GetRightStickValue() {
 
         Vector2 actualPosition = playerControls.Controls.Rightstick.ReadValue<Vector2>();
@@ -187,12 +213,17 @@ public class InputManager : MonoBehaviour
         } else {
             return previousRightStickValue.value;
         }
+    }*/
 
+    public Vector2 GetRightStickValue() {
+        return previousRightStickValue.value;
     }
 
+    /*
     public void Stop() {
         playerControls.Disable();
     }
+    */
 
     public bool OutDated(float timeStamp) {
         return timeStamp + inputBufferDuration < Time.time;

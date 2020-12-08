@@ -42,6 +42,10 @@ public abstract class State : StateInterface
 
     }
 
+    public virtual void Start(float param) {
+
+    }
+
     public virtual void Update() {
         if (!player.onGround) player.ProcessJump();
     }
@@ -52,5 +56,21 @@ public abstract class State : StateInterface
 
     public string GetName() {
         return name;
+    }
+
+    public virtual void DashEntered(Player otherPlayer) {
+        if (player.HasBall()) {
+            Ball ball = player.ball;
+            ball.Free();
+            player.ball = null;
+            otherPlayer.CatchBall(ball);
+            player.ToStunState(player.hitStunDuration);
+            player.SetSpeed(otherPlayer.rb.velocity * player.hitSpeedTransfert);
+            otherPlayer.SetSpeed(Vector2.zero);
+        }
+    }
+
+    public virtual void WallCollided(Vector2 collisionDirection) {
+        
     }
 }
