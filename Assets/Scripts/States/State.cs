@@ -7,10 +7,12 @@ public abstract class State : StateInterface
     protected Player player;
     protected string name = "State";
     public Color color = Color.black;
+    protected AudioManager audioManager;
 
-
-    protected State(Player player) {
+    protected State(Player player, AudioManager audioManager) {
         this.player = player;
+        this.audioManager = audioManager;
+        Debug.Log(audioManager == null);
     }
 
     public virtual void HitSignal() {

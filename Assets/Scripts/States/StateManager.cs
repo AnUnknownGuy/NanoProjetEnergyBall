@@ -27,14 +27,14 @@ public class StateManager
     public float timeInHold = 0;
     public int numberOfBallCatched = 0;
 
-    public StateManager(Player player) {
+    public StateManager(Player player, AudioManager audioManager) {
         this.player = player;
 
-        stunState = new StunState(player, stunDuration);
-        holdState = new HoldState(player);
-        holdStunState = new HoldStunState(player, stunDuration);
-        baseState = new BaseState(player);
-        dashState = new DashState(player, player.dashDuration);
+        stunState = new StunState(player, audioManager, stunDuration);
+        holdState = new HoldState(player, audioManager);
+        holdStunState = new HoldStunState(player, audioManager, stunDuration);
+        baseState = new BaseState(player, audioManager);
+        dashState = new DashState(player, audioManager, player.dashDuration);
 
         currentState = baseState;
     }

@@ -9,7 +9,7 @@ public class DashState : TemporaryState
 
     private float dashStartTimestamp;
 
-    public DashState(Player player, float stunTime) : base(player, stunTime) {
+    public DashState(Player player, AudioManager audioManager, float stunTime) : base(player, audioManager, stunTime) {
         name = "DashState";
         color = Color.magenta;
     }

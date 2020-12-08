@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     public float decay = 10;
     public float hitStunDuration = 0.8f;
     public float hitSpeedTransfert = 0.8f;
-
+    public AudioManager audioManager;
     public float coyoteTime = 0.2f;
 
     public float gravity = 1;
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        stateManager = new StateManager(this);
+        stateManager = new StateManager(this, audioManager);
         onGroundChangeTimeStamp = Time.time;
     }
 

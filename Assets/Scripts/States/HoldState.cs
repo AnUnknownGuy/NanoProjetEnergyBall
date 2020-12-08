@@ -8,7 +8,7 @@ public class HoldState : MoveState
 
     private float holdStartTimestamp;
 
-    public HoldState(Player player): base(player) {
+    public HoldState(Player player, AudioManager audioManager) : base(player, audioManager) {
         name = "HoldState";
         color = Color.blue;
     }

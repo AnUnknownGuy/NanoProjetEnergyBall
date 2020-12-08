@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1648095864	Play_Validate			\Master_Event\Menu_Event\Play_Validate	
+	2228153899	Play_Menu_music			\Master_Event\Menu_Event\Play_Menu_music	
+	2375588297	Play_Begin			\Master_Event\Menu_Event\Play_Begin	
+	3893482503	Play_Navigate			\Master_Event\Menu_Event\Play_Navigate	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	66757109	Begin	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Begin_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Begin\Begin		896544
+	178322872	Validate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Validate_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Validate\Validate		44164
+	860187217	Navigate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Golem_FT_tight-008_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Navigate\Navigate		16300
+	1034375273	Menu_music	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\zic_menu_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\Menu_music\Menu_music		15727056
+

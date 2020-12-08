@@ -3,14 +3,14 @@ Event	ID	Name			Wwise Object Path	Notes
 	1648095864	Play_Validate			\Master_Event\Menu_Event\Play_Validate	
 	1977644338	Play_Throw			\Master_Event\Battle_Event\Golem\Play_Throw	
 	2228153899	Play_Menu_music			\Master_Event\Menu_Event\Play_Menu_music	
-	2301463414	Play_Fight_Announcement			\Master_Event\Play_Fight_Announcement	
+	2301463414	Play_Fight_Announcement			\Master_Event\Battle_Event\Play_Fight_Announcement	
 	2354553126	Play_Get			\Master_Event\Battle_Event\Ball\Play_Get	
 	2375588297	Play_Begin			\Master_Event\Menu_Event\Play_Begin	
 	2481879868	Play_Dash_Hit			\Master_Event\Battle_Event\Golem\Play_Dash_Hit	
 	2652654800	Play_Air_Velocity			\Master_Event\Battle_Event\Ball\Play_Air_Velocity	
 	2666681873	Play_Dash_Ruud			\Master_Event\Battle_Event\Golem\Play_Dash_Ruud	
-	2862166672	Play_Battle_music			\Master_Event\Play_Battle_music	
-	2956245481	Play_Horn			\Master_Event\Play_Horn	
+	2862166672	Play_Battle_music			\Master_Event\Battle_Event\Play_Battle_music	
+	2956245481	Play_Horn			\Master_Event\Battle_Event\Play_Horn	
 	3286906532	Play_Throw_Hit			\Master_Event\Battle_Event\Ball\Play_Throw_Hit	
 	3465618802	Play_Bounce			\Master_Event\Battle_Event\Ball\Play_Bounce	
 	3689126666	Play_Jump			\Master_Event\Battle_Event\Golem\Play_Jump	

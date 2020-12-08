@@ -8,7 +8,7 @@ public class TemporaryState : State
     protected float endingTime;
     protected float timeInState;
 
-    protected TemporaryState(Player player, float time) : base(player) {
+    protected TemporaryState(Player player, AudioManager audioManager, float time) : base(player, audioManager) {
         name = "TemporaryState";
         this.timeInState = time;
     }

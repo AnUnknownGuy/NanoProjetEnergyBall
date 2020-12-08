@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveState : State {
-    public MoveState(Player player) : base(player) {
+    public MoveState(Player player, AudioManager audioManager) : base(player, audioManager) {
         name = "MoveState";
     }
 

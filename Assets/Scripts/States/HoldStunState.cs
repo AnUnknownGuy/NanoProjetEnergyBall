@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoldStunState : StunState {
 
 
-    public HoldStunState(Player player, float stunTime) : base(player, stunTime) {
+    public HoldStunState(Player player, AudioManager audioManager, float stunTime) : base(player, audioManager, stunTime) {
         name = "HoldStunState";
         color = Color.red;
     }
