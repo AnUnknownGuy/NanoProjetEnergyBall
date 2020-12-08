@@ -58,8 +58,26 @@ MonoBehaviour:
     ParentPath: Nano_Projet
     guid: b5eafceddf4542499f283653c15a0f36
     GuidInternal: 
-    m_lastTime: -8585944329333299655
+    m_lastTime: -8585941685300504294
     List:
+    - name: Battle_Scene
+      guid: 8c20c8d68be8774f8385374699a9b82c
+      id: 3688459634
+      PathAndIcons:
+      - ElementName: Nano_Projet
+        ObjectType: 12
+      - ElementName: Battle_Scene
+        ObjectType: 7
+      Path: Nano_Projet\Battle_Scene
+    - name: Main_Menu
+      guid: c739ac562a5df24e8b183ff499462b7b
+      id: 2005704188
+      PathAndIcons:
+      - ElementName: Nano_Projet
+        ObjectType: 12
+      - ElementName: Main_Menu
+        ObjectType: 7
+      Path: Nano_Projet\Main_Menu
     - name: SB_Master
       guid: 3a45f1dafbddbd4b8ef1a00708252bab
       id: 1579730687
@@ -86,7 +104,7 @@ MonoBehaviour:
     ParentPath: Master_Event
     guid: 3398e4a321d3d145a61a28a36d37720d
     GuidInternal: 
-    m_lastTime: -8585941770012347771
+    m_lastTime: -8585941685300916356
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -128,18 +146,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Menu_Event
-      guid: 513522d7e65b4b46a1fd38e7d48ab41f
-      id: 2456358317
-      PathAndIcons:
-      - ElementName: Master_Event
-        ObjectType: 12
-      - ElementName: Menu_Event
-        ObjectType: 4
-      Path: Master_Event\Menu_Event
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Play_Air_Velocity
       guid: 24e5ea332f7ce1429a14be7623a2991d
       id: 2652654800
@@ -165,20 +171,6 @@ MonoBehaviour:
       - ElementName: Play_Battle_music
         ObjectType: 3
       Path: Master_Event\Play_Battle_music
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Begin
-      guid: 17331385f7e9c04f97d1b5c0c655e8cc
-      id: 2375588297
-      PathAndIcons:
-      - ElementName: Master_Event
-        ObjectType: 12
-      - ElementName: Menu_Event
-        ObjectType: 4
-      - ElementName: Play_Begin
-        ObjectType: 3
-      Path: Master_Event\Menu_Event\Play_Begin
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -302,34 +294,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Menu_music
-      guid: 47c1b6a743c4ee42997201a2ed8222a6
-      id: 2228153899
-      PathAndIcons:
-      - ElementName: Master_Event
-        ObjectType: 12
-      - ElementName: Menu_Event
-        ObjectType: 4
-      - ElementName: Play_Menu_music
-        ObjectType: 3
-      Path: Master_Event\Menu_Event\Play_Menu_music
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Navigate
-      guid: e2a03d67c05a994ba5c9e5f9447bbfc2
-      id: 3893482503
-      PathAndIcons:
-      - ElementName: Master_Event
-        ObjectType: 12
-      - ElementName: Menu_Event
-        ObjectType: 4
-      - ElementName: Play_Navigate
-        ObjectType: 3
-      Path: Master_Event\Menu_Event\Play_Navigate
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Play_Throw
       guid: 6cbca579b2f9ba4fa2375d20556ad0d3
       id: 1977644338
@@ -362,6 +326,59 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+  - PhysicalPath: Events\Menu_Event.wwu
+    PathAndIcons:
+    - ElementName: Master_Event
+      ObjectType: 12
+    - ElementName: Menu_Event
+      ObjectType: 12
+    ParentPath: Master_Event\Menu_Event
+    guid: d513c5fcc4507c46b8be2452a4cb6bcc
+    GuidInternal: 
+    m_lastTime: -8585941685300404281
+    List:
+    - name: Play_Begin
+      guid: 17331385f7e9c04f97d1b5c0c655e8cc
+      id: 2375588297
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Menu_Event
+        ObjectType: 12
+      - ElementName: Play_Begin
+        ObjectType: 3
+      Path: Master_Event\Menu_Event\Play_Begin
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Menu_music
+      guid: 47c1b6a743c4ee42997201a2ed8222a6
+      id: 2228153899
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Menu_Event
+        ObjectType: 12
+      - ElementName: Play_Menu_music
+        ObjectType: 3
+      Path: Master_Event\Menu_Event\Play_Menu_music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Navigate
+      guid: e2a03d67c05a994ba5c9e5f9447bbfc2
+      id: 3893482503
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Menu_Event
+        ObjectType: 12
+      - ElementName: Play_Navigate
+        ObjectType: 3
+      Path: Master_Event\Menu_Event\Play_Navigate
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Validate
       guid: 453bf294d1c5c0478546be1c82de6f3c
       id: 1648095864
@@ -369,7 +386,7 @@ MonoBehaviour:
       - ElementName: Master_Event
         ObjectType: 12
       - ElementName: Menu_Event
-        ObjectType: 4
+        ObjectType: 12
       - ElementName: Play_Validate
         ObjectType: 3
       Path: Master_Event\Menu_Event\Play_Validate
@@ -440,5 +457,7 @@ MonoBehaviour:
   - /Nano_Projet
   - /Nano_Projet/Events
   - /Nano_Projet/Events/Master_Event
+  - /Nano_Projet/Events/Master_Event/Battle_Event
+  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
