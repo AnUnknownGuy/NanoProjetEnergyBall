@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\</ProjectRoot>
+		<SourceFilesRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Unity\NanoProjetEnergyBall\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3343939872">
+			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
+			<ShortName>SB_Master</ShortName>
+			<Path>SB_Master.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2652654800" Name="Play_Air_Velocity" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Air_Velocity" GUID="{33EAE524-7C2F-42E1-9A14-BE7623A2991D}" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="83435579" Language="SFX">
+							<ShortName>Ball_Air_Crystal.wav</ShortName>
+							<Path>SFX\Ball_Air_Crystal_D79FB2B7.wem</Path>
+						</File>
+						<File Id="157536860" Language="SFX">
+							<ShortName>Ball_Air_Tone2.wav</ShortName>
+							<Path>SFX\Ball_Air_Tone2_D79FB2B7.wem</Path>
+						</File>
+						<File Id="164235642" Language="SFX">
+							<ShortName>Ball_Air_Wind.wav</ShortName>
+							<Path>SFX\Ball_Air_Wind_D79FB2B7.wem</Path>
+						</File>
+						<File Id="317348648" Language="SFX">
+							<ShortName>Ball_Air_Low.wav</ShortName>
+							<Path>SFX\Ball_Air_Low_28FB5E6E.wem</Path>
+						</File>
+						<File Id="464439783" Language="SFX">
+							<ShortName>Ball_Air_Tone3.wav</ShortName>
+							<Path>SFX\Ball_Air_Tone3_D79FB2B7.wem</Path>
+						</File>
+						<File Id="484311839" Language="SFX">
+							<ShortName>Ball_Air_Texture.wav</ShortName>
+							<Path>SFX\Ball_Air_Texture_D79FB2B7.wem</Path>
+						</File>
+						<File Id="928899835" Language="SFX">
+							<ShortName>Ball_Air_Tone1.wav</ShortName>
+							<Path>SFX\Ball_Air_Tone1_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
+					<IncludedMemoryFiles>
+						<File Id="664081031" Language="SFX">
+							<ShortName>Battle_music.wav</ShortName>
+							<Path>SFX\Battle_music_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2375588297" Name="Play_Begin" ObjectPath="\Events\Master_Event\Menu_Event\Play_Begin" GUID="{85133317-E9F7-4FC0-97D1-B5C0C655E8CC}" DurationType="OneShot" DurationMin="5.081723" DurationMax="5.081723">
+					<IncludedMemoryFiles>
+						<File Id="66757109" Language="SFX">
+							<ShortName>Begin.wav</ShortName>
+							<Path>SFX\Begin_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3465618802" Name="Play_Bounce" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Bounce" GUID="{CF842F4D-BEC7-4665-93AB-A5281E38855E}" DurationType="OneShot" DurationMin="0.598979" DurationMax="0.598979">
+					<IncludedMemoryFiles>
+						<File Id="527997742" Language="SFX">
+							<ShortName>Bounce_light.wav</ShortName>
+							<Path>SFX\Bounce_light_4589D2E2.wem</Path>
+						</File>
+						<File Id="1017460660" Language="SFX">
+							<ShortName>Bounce_fullspeed.wav</ShortName>
+							<Path>SFX\Bounce_fullspeed_4589D2E2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="223895672" Name="Play_Dash_Haug" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Haug" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.645414" DurationMax="0.808066">
+					<IncludedMemoryFiles>
+						<File Id="95179653" Language="SFX">
+							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
+							<Path>SFX\Dash_Golem_v3 (good)_2EF2D567.wem</Path>
+						</File>
+						<File Id="262242056" Language="SFX">
+							<ShortName>Dash_Golem_V5.wav</ShortName>
+							<Path>SFX\Dash_Golem_V5_198AF353.wem</Path>
+						</File>
+						<File Id="547198134" Language="SFX">
+							<ShortName>Dash_Golem_V5_02.wav</ShortName>
+							<Path>SFX\Dash_Golem_V5_02_F2CDE86B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2481879868" Name="Play_Dash_Hit" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Hit" GUID="{E0AFC7B6-F6EB-4405-8565-EAB41013967E}" DurationType="OneShot" DurationMin="0.861408" DurationMax="0.966898">
+					<IncludedMemoryFiles>
+						<File Id="983204019" Language="SFX">
+							<ShortName>Dash_hit.wav</ShortName>
+							<Path>SFX\Dash_hit_73E760FE.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2666681873" Name="Play_Dash_Ruud" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Ruud" GUID="{144F14CC-F451-4548-A75E-F15346DB6A78}" DurationType="OneShot" DurationMin="0.659941" DurationMax="0.909312">
+					<IncludedMemoryFiles>
+						<File Id="532619175" Language="SFX">
+							<ShortName>Dash_Golem-001.wav</ShortName>
+							<Path>SFX\Dash_Golem-001_10C4C929.wem</Path>
+						</File>
+						<File Id="541730044" Language="SFX">
+							<ShortName>Dash_Golem-003.wav</ShortName>
+							<Path>SFX\Dash_Golem-003_10C4C929.wem</Path>
+						</File>
+						<File Id="711092926" Language="SFX">
+							<ShortName>Dash_Golem-002.wav</ShortName>
+							<Path>SFX\Dash_Golem-002_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2301463414" Name="Play_Fight_Announcement" ObjectPath="\Events\Master_Event\Play_Fight_Announcement" GUID="{2CBBB0DD-9E90-45E3-8C8D-5B5630630F52}" DurationType="OneShot" DurationMin="3.185706" DurationMax="3.185706">
+					<IncludedMemoryFiles>
+						<File Id="622696685" Language="SFX">
+							<ShortName>Fight_Announcement.wav</ShortName>
+							<Path>SFX\Fight_Announcement_D8003D4D.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2354553126" Name="Play_Get" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Get" GUID="{52F6D1EE-21F3-4DD4-AD4B-E1E40994D33D}" DurationType="OneShot" DurationMin="0.527211" DurationMax="0.527211">
+					<IncludedMemoryFiles>
+						<File Id="21645767" Language="SFX">
+							<ShortName>Ball_get.wav</ShortName>
+							<Path>SFX\Ball_get_1BC5A01F.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="8.043265" DurationMax="8.043265">
+					<IncludedMemoryFiles>
+						<File Id="538924343" Language="SFX">
+							<ShortName>Start_Horn.wav</ShortName>
+							<Path>SFX\Start_Horn_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3689126666" Name="Play_Jump" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Jump" GUID="{CC6DCFAA-BE78-4975-8DCA-632063355026}" DurationType="OneShot" DurationMin="0.100924" DurationMax="0.116603">
+					<IncludedMemoryFiles>
+						<File Id="1028325921" Language="SFX">
+							<ShortName>Jump.wav</ShortName>
+							<Path>SFX\Jump_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2228153899" Name="Play_Menu_music" ObjectPath="\Events\Master_Event\Menu_Event\Play_Menu_music" GUID="{A7B6C147-C443-42EE-9972-01A2ED8222A6}" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1034375273" Language="SFX">
+							<ShortName>zic_menu.wav</ShortName>
+							<Path>SFX\zic_menu_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3893482503" Name="Play_Navigate" ObjectPath="\Events\Master_Event\Menu_Event\Play_Navigate" GUID="{673DA0E2-5AC0-4B99-A5C9-E5F9447BBFC2}" DurationType="OneShot" DurationMin="0.092041" DurationMax="0.092041">
+					<IncludedMemoryFiles>
+						<File Id="860187217" Language="SFX">
+							<ShortName>Golem_FT_tight-008.wav</ShortName>
+							<Path>SFX\Golem_FT_tight-008_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.993734" DurationMax="1.993734">
+					<IncludedMemoryFiles>
+						<File Id="59480555" Language="SFX">
+							<ShortName>Throw_ball.wav</ShortName>
+							<Path>SFX\Throw_ball_05BF4FBE.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3286906532" Name="Play_Throw_Hit" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Throw_Hit" GUID="{5B083C2C-291B-44F6-8C54-8648F15BB398}" DurationType="OneShot" DurationMin="0.910952" DurationMax="0.910952">
+					<IncludedMemoryFiles>
+						<File Id="984157997" Language="SFX">
+							<ShortName>Throw_hit.wav</ShortName>
+							<Path>SFX\Throw_hit_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1648095864" Name="Play_Validate" ObjectPath="\Events\Master_Event\Menu_Event\Play_Validate" GUID="{94F23B45-C5D1-47C0-8546-BE1C82DE6F3C}" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000">
+					<IncludedMemoryFiles>
+						<File Id="178322872" Language="SFX">
+							<ShortName>Validate.wav</ShortName>
+							<Path>SFX\Validate_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="145148864" Name="Ball_Velocity" ObjectPath="\Game Parameters\Default Work Unit\Ball\Ball_Velocity" GUID="{1CD115A3-D473-49FC-9EE2-682D699AF661}"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
