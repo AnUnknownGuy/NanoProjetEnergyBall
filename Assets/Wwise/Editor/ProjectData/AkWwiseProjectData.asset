@@ -445,7 +445,7 @@ MonoBehaviour:
   - /Nano_Projet/Events
   - /Nano_Projet/Events/Master_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event
-  - /Nano_Projet/SoundBanks
-  - /Nano_Projet/SoundBanks/Nano_Projet
+  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
+  - /Nano_Projet/Events/Master_Event/Menu_Event
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

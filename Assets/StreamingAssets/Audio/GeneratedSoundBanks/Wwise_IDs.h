@@ -39,8 +39,6 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID BATTLE_SCENE = 3688459634U;
-        static const AkUniqueID MAIN_MENU = 2005704188U;
         static const AkUniqueID SB_MASTER = 1579730687U;
     } // namespace BANKS
 

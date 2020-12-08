@@ -25,6 +25,7 @@ public class HoldState : MoveState
         player.stateManager.timeInHold = Time.time - holdStartTimestamp;
     }
     public override bool ActionSignal() {
+        audioManager.Throw_ball.Post(player.gameObject);
         player.ThrowBall();
         player.ThrowKnockBack();
         player.ThrowKnockBack();

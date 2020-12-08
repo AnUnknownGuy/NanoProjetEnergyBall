@@ -39,6 +39,7 @@ public class DashState : TemporaryState
 
     override public void BallEntered(Ball ball) {
         player.CatchBall(ball);
+        audioManager.Ball_get.Post(player.gameObject);
     }
 
     override public void NextState() {
