@@ -24,6 +24,13 @@ public class Ball : MonoBehaviour
     [HideInInspector]
     public Player previousPlayer;
 
+    [HideInInspector]
+    public Player previousPlayertouched;
+    [HideInInspector]
+    public float previousPlayertouchedTimeStamp;
+    [HideInInspector]
+    public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
+
     public float collisionRadius = 0.25f;
 
 

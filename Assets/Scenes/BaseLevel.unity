@@ -383,7 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4793a7d82877a445a4829f6d6faab52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 0}
+  levelPrefab: {fileID: 2738413515076330232, guid: 03ecb21742420704f980aba7653934e4,
+    type: 3}
   level: {fileID: 83759099}
   logger: {fileID: 1065509723}
   timeBeforeRestart: 2

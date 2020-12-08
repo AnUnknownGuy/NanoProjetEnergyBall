@@ -58,7 +58,11 @@ public abstract class State : StateInterface
             ball.FakeCollision();
             ball.Hit();
             player.ToStunState();
+        } else if (!ball.charged && !(ball.previousPlayertouched == player || ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time)) {
+            player.CatchBall(ball);
         }
+        ball.previousPlayertouched = player;
+        ball.previousPlayertouchedTimeStamp = Time.time;
     }
 
     public string GetName() {
