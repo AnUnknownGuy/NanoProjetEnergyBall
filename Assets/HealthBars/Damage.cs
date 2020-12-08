@@ -1,12 +1,9 @@
-﻿using System.Xml.Xsl;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace HealthBarsPackage
 {
-    public class Fade : MonoBehaviour
+    public class Damage : MonoBehaviour
     {
         enum Mode {
             slide,
@@ -16,10 +13,9 @@ namespace HealthBarsPackage
         [SerializeField][Range(0, 2)] private float delay = default;
         [SerializeField][Range(0.1f, 2)] private float timeToFade = 1.0f;
         [SerializeField] private Mode mode = default;
-
-        private Slider healthSlider; // autofind
-        private Slider fadeSlider; // autofind
-        [SerializeField] private Image fill = default;
+        [SerializeField] private Image health = default;
+        
+        private Image fill; // autofind
         private Color baseFillColor; // autofind
 
         // internal logic
@@ -29,10 +25,11 @@ namespace HealthBarsPackage
         private float fadeLerpRatio = 0;
 
         private void Awake() {
-            healthSlider = transform.parent.GetComponent<Slider>();
-            fadeSlider = GetComponent<Slider>();
-            previousHealthValue = healthSlider.value;
+            fill = GetComponent<Image>();
+            health.GetComponent<Health>().RegisterFade(this);
+            previousHealthValue = 1;
             baseFillColor = fill.color;
+            fill.fillAmount = 1;
         }
 
         // Update is called once per frame
@@ -46,7 +43,7 @@ namespace HealthBarsPackage
             switch (mode)
             {
                 case Mode.slide :
-                    fadeSlider.value -= fadeSpeed * Time.deltaTime;
+                    fill.fillAmount -= fadeSpeed * Time.deltaTime;
                     break;
 
                 case Mode.fade:
@@ -63,11 +60,10 @@ namespace HealthBarsPackage
         public void Set()
         {
             delayCounter = delay;
-            
             switch (mode)
             {
                 case Mode.slide :
-                    fadeSpeed = (previousHealthValue - healthSlider.value)/timeToFade;
+                    fadeSpeed = (previousHealthValue - health.fillAmount)/timeToFade;
                     break;
 
                 case Mode.fade:
@@ -78,8 +74,8 @@ namespace HealthBarsPackage
                 default:
                     return;
             }
-            fadeSlider.value = previousHealthValue;
-            previousHealthValue = healthSlider.value;
+            fill.fillAmount = previousHealthValue;
+            previousHealthValue = health.fillAmount;
         }
     }
 }
