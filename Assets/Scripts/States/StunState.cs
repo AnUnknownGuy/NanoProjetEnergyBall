@@ -5,7 +5,7 @@ using UnityEngine;
 public class StunState : TemporaryState {
 
 
-    public StunState(Player player, AudioManager audioManager, float stunTime) : base(player, audioManager, stunTime) {
+    public StunState(Player player, float stunTime) : base(player, stunTime) {
         name = "StunState";
         color = Color.red;
     }

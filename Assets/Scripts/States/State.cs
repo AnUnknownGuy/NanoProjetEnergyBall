@@ -7,12 +7,9 @@ public abstract class State : StateInterface
     protected Player player;
     protected string name = "State";
     public Color color = Color.black;
-    protected AudioManager audioManager;
 
-    protected State(Player player, AudioManager audioManager) {
+    protected State(Player player) {
         this.player = player;
-        this.audioManager = audioManager;
-        Debug.Log(audioManager == null);
     }
 
     public virtual void HitSignal() {
@@ -55,7 +52,7 @@ public abstract class State : StateInterface
 
     public virtual void BallEntered(Ball ball) {
         if (ball.charged && ball.previousPlayer != player) {
-            audioManager.Ball_hit.Post(player.gameObject);
+            AudioManager.Ball_Hit(player.gameObject);
             player.stateManager.numberHittedByBall++;
             player.SetSpeed(ball.GetSpeed() * 0.2f);
             ball.FakeCollision();
@@ -70,7 +67,7 @@ public abstract class State : StateInterface
 
     public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
-            audioManager.Dash_hit.Post(player.gameObject);
+            AudioManager.Dash_Hit(player.gameObject);
             player.stateManager.numberHittedByDash++;
             Ball ball = player.ball;
             ball.Free();

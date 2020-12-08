@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveState : State {
-    public MoveState(Player player, AudioManager audioManager) : base(player, audioManager) {
+    public MoveState(Player player) : base(player) {
         name = "MoveState";
     }
 
@@ -37,7 +37,7 @@ public class MoveState : State {
 
     override public bool JumpSignal() {
         if (coyoteTimer + player.coyoteTime > Time.time) {
-            audioManager.Jump.Post(player.gameObject);
+            AudioManager.Jump(player.gameObject);
             player.stateManager.numberOfJumps++;
             isJumping = true;
             player.Jump();

@@ -7,7 +7,7 @@ public class BaseState : MoveState {
     private float lastDashTimestamp = 0;
     
 
-    public BaseState(Player player, AudioManager audioManager) : base(player, audioManager) {
+    public BaseState(Player player) : base(player) {
         name = "BaseState";
         color = Color.green;
     }
@@ -20,8 +20,8 @@ public class BaseState : MoveState {
     public override bool ActionSignal() {
         if (player.canDash && lastDashTimestamp + player.timeBetweenDash < Time.time) {
             player.ToDashState();
-            
-            audioManager.Dash.Post(player.gameObject);
+
+            AudioManager.Dash(player.gameObject);
             lastDashTimestamp = Time.time;
             return true;
         } else {

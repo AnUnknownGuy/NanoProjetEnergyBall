@@ -9,7 +9,7 @@ public class DashState : TemporaryState
 
     private float dashStartTimestamp;
 
-    public DashState(Player player, AudioManager audioManager, float stunTime) : base(player, audioManager, stunTime) {
+    public DashState(Player player, float stunTime) : base(player, stunTime) {
         name = "DashState";
         color = Color.magenta;
     }
@@ -39,7 +39,7 @@ public class DashState : TemporaryState
 
     override public void BallEntered(Ball ball) {
         player.CatchBall(ball);
-        audioManager.Ball_get.Post(player.gameObject);
+        AudioManager.Ball_Get(player.gameObject);
     }
 
     override public void NextState() {
