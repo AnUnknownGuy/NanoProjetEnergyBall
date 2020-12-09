@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ball
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Player
   - Ball
   - PlayerBallCollider
-  - 
-  - 
+  - PlayerDashCollider
+  - PlayerFalling
   - 
   - 
   - 

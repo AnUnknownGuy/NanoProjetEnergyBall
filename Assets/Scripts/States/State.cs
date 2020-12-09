@@ -5,10 +5,9 @@ using UnityEngine;
 public abstract class State : StateInterface
 {
     protected Player player;
-
     protected string name = "State";
-
     public Color color = Color.black;
+
 
     protected State(Player player) {
         this.player = player;
@@ -19,6 +18,9 @@ public abstract class State : StateInterface
     }
 
     public virtual bool JumpSignal() {
+        return false;
+    }
+    public virtual bool JumpStopSignal() {
         return false;
     }
 
@@ -39,7 +41,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Start() {
-
+        //Debug.Log(name);
     }
 
     public virtual void Start(float param) {
@@ -47,26 +49,37 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
-        if (!player.onGround) player.ProcessJump();
     }
 
     public virtual void BallEntered(Ball ball) {
-
+        if (ball.charged && ball.previousPlayer != player) {
+            player.stateManager.numberHittedByBall++;
+            player.SetSpeed(ball.GetSpeed() * 0.2f);
+            ball.FakeCollision();
+            ball.Hit();
+            player.ToStunState();
+        }
     }
 
     public string GetName() {
         return name;
     }
 
-    public void DashEntered(Player otherPlayer) {
+    public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
+            player.stateManager.numberHittedByDash++;
             Ball ball = player.ball;
             ball.Free();
             player.ball = null;
-            otherPlayer.CatchBall(ball);
+            ball.SetSpeed(Vector2.up);
+            otherPlayer.ToBaseState();
+            otherPlayer.SetSpeed(Vector2.zero);
             player.ToStunState(player.hitStunDuration);
             player.SetSpeed(otherPlayer.rb.velocity * player.hitSpeedTransfert);
-            otherPlayer.SetSpeed(Vector2.zero);
         }
+    }
+
+    public virtual void WallCollided(Vector2 collisionDirection) {
+        
     }
 }
