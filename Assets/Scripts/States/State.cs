@@ -58,8 +58,8 @@ public abstract class State : StateInterface
                 player.SetSpeed(ball.GetSpeed() * 0.2f);
 				AudioManager.Ball_Hit(player.gameObject);
                 ball.FakeCollision();
-                Debug.Log("hit!");
                 ball.Hit();
+                player.looseHealthBallHit();
                 player.ToStunState();
             } else if (!ball.charged) {
                 if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
@@ -104,7 +104,7 @@ public abstract class State : StateInterface
 
             otherPlayer.SetSpeed(Vector2.zero);
             otherPlayer.ToBaseState();
-            Debug.Log("hit");
+            player.looseHealthDashHit();
         }
     }
 
