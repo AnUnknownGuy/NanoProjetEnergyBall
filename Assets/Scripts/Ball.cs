@@ -16,7 +16,9 @@ public class Ball : MonoBehaviour
 
     public float gravityWhenThorwn = 0.2f;
     public float gravity = 2f;
-    public float maxSpeedSound = 15;
+
+    private float maxSpeedSound = 15;
+    private float speedSound = 0;
 
     [HideInInspector]
     public Player player;
@@ -109,14 +111,18 @@ public class Ball : MonoBehaviour
         return rb.velocity;
     }
 
-    public float GetSpeedSound() {
-        float speed = rb.velocity.magnitude;
-        if (speed < 0)
-            speed = 0;
-        if (speed > 15)
-            speed = 15;
+    public void GetSpeedSound() {
+        if (!sleeping) {
+            float speed = rb.velocity.magnitude;
+            if (speed < 0)
+                speed = 0;
+            if (speed > 15)
+                speed = 15;
 
-        return speed / maxSpeedSound;
+            speedSound =((speed / maxSpeedSound) * 100);
+        } else {
+            speedSound = 0;
+        }
     }
 
     private void OnDrawGizmos() {
