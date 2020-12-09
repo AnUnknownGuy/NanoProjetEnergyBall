@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5f3607249adea54ca879f6d07d3c992e
     GuidInternal: 
-    m_lastTime: -8585940769179456475
+    m_lastTime: -8585940739385721190
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,28 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: e631bfb07d7c2840b35fdd7871fa55d6
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music
+    - name: SFX
+      guid: d3f8e87a965e934eb4bab2e716784e15
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -79,7 +101,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585941569442729992
+    m_lastTime: -8585940739385760636
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -322,7 +344,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Menu_Event
     guid: d513c5fcc4507c46b8be2452a4cb6bcc
     GuidInternal: 
-    m_lastTime: -8585941685300404281
+    m_lastTime: -8585940739385890618
     List:
     - name: Play_Begin
       guid: 17331385f7e9c04f97d1b5c0c655e8cc
@@ -388,7 +410,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 39a9922d2ce7bf4fa9b16c5db828d1e4
     GuidInternal: 
-    m_lastTime: -8585954340602196268
+    m_lastTime: -8585940734811897794
     List:
     - name: Ball
       guid: 371cf942b4afbd40825ff4da4d0cfca5
@@ -418,7 +440,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: f87fa68d7e21694387d1a9dbf3419a24
     GuidInternal: 
-    m_lastTime: -8585940829315553435
+    m_lastTime: -8585940737505385250
     List:
     - name: Ball
       guid: 4c60914e2a58ff43a8e12277438a1ef6
