@@ -144,18 +144,24 @@ public class Ball : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        Vector3 normal = collision.contacts[0].normal;
 
-        if (collision.gameObject.tag == "wall")
-        {
-            AudioManager.Ball_Bounce(gameObject);
-        }
-        if (charged) {
-            if (collision.gameObject.tag == "wall") {
+
+        if (!sleeping) {
+
+            Vector3 normal = collision.contacts[0].normal;
+
+            if ((collision.gameObject.tag == "plateform") && collision.GetContact(0).normalImpulse != 0) {
                 AudioManager.Ball_Bounce(gameObject);
                 Hit();
             }
+            if (charged) {
+                if (collision.gameObject.tag == "wall") {
+                    AudioManager.Ball_Bounce(gameObject);
+                    Hit();
+                }
+            }
         }
+        
     }
 
 }
