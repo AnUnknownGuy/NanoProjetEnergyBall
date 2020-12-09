@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6250999111172347809}
   m_Layer: 8
   m_Name: Sprite
-  m_TagString: wall
+  m_TagString: plateform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 9020835749124483479}
   m_Layer: 8
   m_Name: Plateform
-  m_TagString: wall
+  m_TagString: plateform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

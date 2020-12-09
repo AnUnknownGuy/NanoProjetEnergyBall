@@ -13,7 +13,6 @@ public class BaseState : MoveState {
 
     override public void Update() {
         base.Update();
-        player.LooseHealth();
     }
 
     public override bool ActionSignal() {

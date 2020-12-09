@@ -9,9 +9,10 @@ public class Ball : MonoBehaviour
 
     public PhysicsMaterial2D material;
 
-    private bool sleeping;
-    private float timerUntilGravityChange;
+    public bool sleeping;
+    private float timerUntilCatchable = 0;
 
+    public Vector2 speedWhenFreeFromDash = new Vector2(0, 10);
 
     public float gravityWhenThorwn = 0.2f;
     public float gravity = 2f;
@@ -51,7 +52,7 @@ public class Ball : MonoBehaviour
     }
 
     public bool Catch(Player player) {
-        if (!sleeping) {
+        if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -72,6 +73,7 @@ public class Ball : MonoBehaviour
         player = null;
         sleeping = false;
         rb.WakeUp();
+        timerUntilCatchable = Time.time;
     }
 
     public void Charge() {
@@ -111,6 +113,10 @@ public class Ball : MonoBehaviour
 
 
         //Gizmos.DrawWireSphere((Vector2)transform.position, collisionRadius);
+    }
+
+    public void SetSpeedWhenFreeFromDash() {
+        SetSpeed(speedWhenFreeFromDash);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

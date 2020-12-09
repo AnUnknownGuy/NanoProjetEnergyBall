@@ -49,47 +49,57 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
+        player.LooseHealth();
     }
 
     public virtual void BallEntered(Ball ball) {
-        if (ball.charged && ball.previousPlayer != player) {
-            player.stateManager.numberHittedByBall++;
-            player.SetSpeed(ball.GetSpeed() * 0.2f);
-            ball.FakeCollision();
-            Debug.Log("hit!");
-            ball.Hit();
-            player.ToStunState();
-        } else if (!ball.charged) {
-            if(ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
+        if (!ball.sleeping) {
+            if (ball.charged && ball.previousPlayer != player) {
+                player.stateManager.numberHittedByBall++;
+                player.SetSpeed(ball.GetSpeed() * 0.2f);
+                ball.FakeCollision();
+                Debug.Log("hit!");
+                ball.Hit();
+                player.ToStunState();
+            } else if (!ball.charged) {
+                if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
 
-                player.CatchBall(ball);
-                player.ToHoldState();
+                    if (player.CatchBall(ball))
+                        player.ToHoldState();
 
-            } else if(ball.previousPlayertouched != player) {
+                } else if (ball.previousPlayertouched != player) {
 
-                player.CatchBall(ball);
-                player.ToHoldState();
+                    if (player.CatchBall(ball))
+                        player.ToHoldState();
+                }
             }
+            ball.previousPlayertouched = player;
+            ball.previousPlayertouchedTimeStamp = Time.time;
         }
-        ball.previousPlayertouched = player;
-        ball.previousPlayertouchedTimeStamp = Time.time;
+        
     }
 
     public string GetName() {
         return name;
     }
 
+
     public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
             player.stateManager.numberHittedByDash++;
+
             Ball ball = player.ball;
             ball.Free();
             player.ball = null;
-            ball.SetSpeed(Vector2.up);
-            otherPlayer.ToBaseState();
-            otherPlayer.SetSpeed(Vector2.zero);
+            ball.SetSpeedWhenFreeFromDash();
+
+
             player.ToStunState(player.hitStunDuration);
             player.SetSpeed(otherPlayer.rb.velocity * player.hitSpeedTransfert);
+
+            otherPlayer.SetSpeed(Vector2.zero);
+            otherPlayer.ToBaseState();
+            Debug.Log("hit");
         }
     }
 
