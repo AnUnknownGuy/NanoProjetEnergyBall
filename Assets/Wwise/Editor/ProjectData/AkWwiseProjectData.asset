@@ -473,8 +473,9 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Nano_Projet
-  - /Nano_Projet/States
-  - /Nano_Projet/States/Default Work Unit
-  - /Nano_Projet/States/Default Work Unit/Ball
+  - /Nano_Projet/Events
+  - /Nano_Projet/Events/Master_Event
+  - /Nano_Projet/Events/Master_Event/Battle_Event
+  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

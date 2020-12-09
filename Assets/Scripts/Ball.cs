@@ -41,6 +41,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Ball_Idle();
         AudioManager.Ball_Air(gameObject);
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
@@ -51,8 +52,8 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        AudioManager.Ball_Velocity(GetSpeedSound());
+        GetSpeedSound();
+        AudioManager.Ball_Velocity(speedSound);
         if (player != null) {
             transform.position = player.transform.position;
         }
@@ -84,12 +85,14 @@ public class Ball : MonoBehaviour
     }
 
     public void Charge() {
+        AudioManager.Ball_Charegd();
         previousPlayer = player;
         rb.gravityScale = 0;
         charged = true;
     }
 
     public void Uncharge() {
+        AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
     }
@@ -142,9 +145,14 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         Vector3 normal = collision.contacts[0].normal;
-        
+
+        if (collision.gameObject.tag == "wall")
+        {
+            AudioManager.Ball_Bounce(gameObject);
+        }
         if (charged) {
             if (collision.gameObject.tag == "wall") {
+                AudioManager.Ball_Bounce(gameObject);
                 Hit();
             }
         }

@@ -77,6 +77,18 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_velocity.SetGlobalValue(value);
     }
 
+    public static void Ball_Idle()
+    {
+        //Debug.Log(value);
+        if (exist) instance.ball_idle.SetValue();
+    }
+
+    public static void Ball_Charegd()
+    {
+        //Debug.Log(value);
+        if (exist) instance.ball_charged.SetValue();
+    }
+
 
 
     void update()

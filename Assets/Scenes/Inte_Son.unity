@@ -310,6 +310,11 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1083435300}
+    - target: {fileID: 1939917153771332663, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.52
+      objectReference: {fileID: 0}
     - target: {fileID: 1939917154183439734, guid: 03ecb21742420704f980aba7653934e4,
         type: 3}
       propertyPath: audioManager
@@ -535,6 +540,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a2f1ef9afb32ecb4e8fb270bef14978a, type: 2}
+    - target: {fileID: 6699391805238686535, guid: 03ecb21742420704f980aba7653934e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03ecb21742420704f980aba7653934e4, type: 3}
 --- !u!1 &547652809 stripped
@@ -674,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1065509721}
-  activated: 1
+  activated: 0
 --- !u!1 &1083435298
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +746,8 @@ MonoBehaviour:
   ball_get:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: fb717bf3696934c43962fa6426b407dd,
+      type: 2}
   throw_ball:
     idInternal: 0
     valueGuidInternal: 
