@@ -150,6 +150,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""09d191ca-33c9-47ba-beb6-baba5c65bf17"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""797e9e0b-fcc8-4b3b-b5a1-1bd00ddb9ce7"",
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
