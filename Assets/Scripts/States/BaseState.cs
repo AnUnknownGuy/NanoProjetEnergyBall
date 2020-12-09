@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BaseState : MoveState {
 
-    private float lastDashTimestamp = 0;
 
     public BaseState(Player player) : base(player) {
         name = "BaseState";
@@ -17,12 +16,12 @@ public class BaseState : MoveState {
     }
 
     public override bool ActionSignal() {
-        if (player.canDash && lastDashTimestamp + player.timeBetweenDash < Time.time) {
+        if (player.Dash()) {
             player.ToDashState();
-            lastDashTimestamp = Time.time;
             return true;
         } else {
             return false;
         }
     }
+
 }

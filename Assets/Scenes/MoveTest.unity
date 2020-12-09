@@ -133,16 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain
       objectReference: {fileID: 0}
-    - target: {fileID: 8405176862202613564, guid: 5005b0e063f033941860bb2523fe578b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8405176862202613564, guid: 5005b0e063f033941860bb2523fe578b,
-        type: 3}
-      propertyPath: m_TagString
-      value: wall
-      objectReference: {fileID: 0}
     - target: {fileID: 8405176862202613565, guid: 5005b0e063f033941860bb2523fe578b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,16 +188,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8861335633064822038, guid: 5005b0e063f033941860bb2523fe578b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861335634312125139, guid: 5005b0e063f033941860bb2523fe578b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5005b0e063f033941860bb2523fe578b, type: 3}
 --- !u!1001 &827425365
@@ -217,30 +197,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4389660307696137376, guid: a24adbfda363d9c4b87d251d47a68731,
-        type: 3}
-      propertyPath: dashPower
-      value: 15.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4389660307696137376, guid: a24adbfda363d9c4b87d251d47a68731,
-        type: 3}
-      propertyPath: highGravity
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4389660307696137376, guid: a24adbfda363d9c4b87d251d47a68731,
-        type: 3}
-      propertyPath: jumpScale
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4389660307696137376, guid: a24adbfda363d9c4b87d251d47a68731,
-        type: 3}
-      propertyPath: throwPower
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 4389660307696137377, guid: a24adbfda363d9c4b87d251d47a68731,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.26
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 4389660307696137377, guid: a24adbfda363d9c4b87d251d47a68731,
         type: 3}
@@ -296,11 +256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4389660307696137383, guid: a24adbfda363d9c4b87d251d47a68731,
-        type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7433136271738114374, guid: a24adbfda363d9c4b87d251d47a68731,
         type: 3}

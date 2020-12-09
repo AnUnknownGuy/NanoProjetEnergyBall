@@ -2,145 +2,103 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
+
     public float inputSpeedThresholdAction = 0.3f;
     public float inputSpeedThresholdJump = 0.3f;
-    public float inputSpeedThresholdFastFall = 0.2f;
+    public float inputSpeedThresholdFastFall = 0.3f;
     public float inputBufferDuration = 0.2f;
+    public bool actionOnSticks = true;
 
     public float timeBetweenStickUpdate = 0.1f;
 
     private float minimumRightStickSize = 0.05f;
 
-    private Input previousLeftStickValue;
-    private Vector2 leftSpeed;
+    [HideInInspector] private Input previousLeftStickValue;
+    [HideInInspector] private Input previousRightStickValue;
 
-    private Input previousRightStickValue;
-    private Vector2 rightSpeed;
 
-    public float stopJumpThreshhold = 0.5f;
-
-    private float jumpStartTimeStamp = 0;
-    private float jumpStopTimeStamp = 0;
+    private float jumpTimeStamp = 0;
     private float actionTimeStamp = 0;
     private float fastFallTimeStamp = 0;
 
-    public PlayerInput playerInput; 
-    public PlayerSettings settings;
-	
-    private float timerBeforeInputStart = 0.5f;
-    private float timeStart;
-
     public Player player;
 
+    private PlayerControls playerControls;
+    // Start is called before the first frame update
     void Start()
     {
         previousLeftStickValue = new Input(Vector2.zero, 0);
-        previousRightStickValue = new Input(new Vector2(0, -0.1f), 0);
+        previousRightStickValue = new Input(Vector2.zero, 0);
 
-        leftSpeed = Vector2.zero;
-        rightSpeed = Vector2.zero;
-        settings = new PlayerSettings(false, AimingControls.Rightstick);
-        timeStart = Time.time;
+        BindControls();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (Time.time > timeStart + timerBeforeInputStart) {
-            player.stateManager.OnLeftStick(previousLeftStickValue.value);
+        player.stateManager.OnLeftStick(playerControls.Controls.Move.ReadValue<Vector2>());
 
-            if (!OutDated(jumpStartTimeStamp)) {
-                if (player.stateManager.OnJump())
-                    jumpStartTimeStamp = 0;
+        if (previousLeftStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
+            LeftStick();
+        }
 
-            }
-            if (!OutDated(jumpStopTimeStamp)) {
-                if (player.stateManager.OnJumpStop())
-                    jumpStopTimeStamp = 0;
+        if (previousRightStickValue.timeStamp + timeBetweenStickUpdate <= Time.time) {
+            RightStick();
+        }
 
-            }
-            if (!OutDated(actionTimeStamp)) {
-                if (player.stateManager.OnAction())
-                    actionTimeStamp = 0;
+        if (!OutDated(jumpTimeStamp) ) {
+            if (player.stateManager.OnJump())
+                jumpTimeStamp = 0;
 
-            }
-            if (!OutDated(fastFallTimeStamp)) {
-                if (player.stateManager.OnFastFall())
-                    fastFallTimeStamp = 0;
-            }
+        }
+        if (!OutDated(actionTimeStamp)) {
+            if (player.stateManager.OnAction())
+                actionTimeStamp = 0;
+
+        }
+        if (!OutDated(fastFallTimeStamp)) {
+            if (player.stateManager.OnFastFall())
+                fastFallTimeStamp = 0;
+
         }
     }
 
-    public void RightStick(InputAction.CallbackContext context) {
-        if (context.performed) {
-            RightStickProcess(context.ReadValue<Vector2>());
-        }
+    void BindControls() {
+        playerControls = new PlayerControls();
+
+        playerControls.Controls.Move.performed += LeftStick;
+        playerControls.Controls.Rightstick.performed += RightStick;
+        playerControls.Controls.Jump.started += LeftShoulder;
+        playerControls.Controls.Action.started += RightShoulder;
+
+        playerControls.Controls.Move.Enable();
+        playerControls.Controls.Rightstick.Enable();
+        playerControls.Controls.Jump.Enable();
+        playerControls.Controls.Action.Enable();
     }
 
-    public void LeftStick(InputAction.CallbackContext context) {
-        if (context.performed) {
-            LeftStickProcess(context.ReadValue<Vector2>());
-        } else if (context.canceled) {
-            LeftStickProcess(Vector2.zero);
-        }
-    }
+    void RightStick() {
+        Vector2 value = playerControls.Controls.Rightstick.ReadValue<Vector2>();
 
-    public void RightShoulder(InputAction.CallbackContext context) {
-        if (context.performed && settings.aimingControls != AimingControls.Rightstick) {
-            ActionProcess();
-        }
+        RightStickProcess(value);
     }
+    void RightStick(InputAction.CallbackContext context) {
+        Vector2 value = context.ReadValue<Vector2>();
 
-    public void LeftShoulder(InputAction.CallbackContext context) {
-        if (context.performed && !settings.jumpWithStick) {
-            JumpProcess();
-            if (previousLeftStickValue.value.y < 0) 
-                FastFallProcess();
-        } else if (context.canceled) {
-            JumpStop();
-        }
-    }
-
-    public void FastFall(InputAction.CallbackContext context) {
-        if (context.performed) {
-            FastFallProcess();
-        }
-    }
-    
-    public void ToggleMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            PauseMenu pauseMenu = PauseMenu.Instance;
-            if (pauseMenu != null)
-            {
-                if (pauseMenu.gameObject.activeSelf)
-                {
-                    pauseMenu.gameObject.SetActive(false);
-                    playerInput.SwitchCurrentActionMap("Controls");
-                    GameManager.ResumeGame();
-                }
-                else
-                {
-                    pauseMenu.gameObject.SetActive(true);
-                    pauseMenu.TargetPlayer = this;
-                    playerInput.SwitchCurrentActionMap("UI");
-                    GameManager.PauseGame();
-                }
-            }
-            else Debug.LogError("PauseMenu not found");
-        }
+        RightStickProcess(value);
     }
 
     void RightStickProcess(Vector2 value) {
-        if (settings.aimingControls == AimingControls.Rightstick
-            && (value - previousRightStickValue.value).magnitude >= inputSpeedThresholdAction 
-            && previousRightStickValue.value.magnitude < value.magnitude)
-            ActionProcess();
-        
+
+        if (actionOnSticks)
+            //si la différence est assez grande et que le stick ne revient pas vers la position position 0,0
+            if ((value - previousRightStickValue.value).magnitude >= inputSpeedThresholdAction && previousRightStickValue.value.magnitude < value.magnitude) {
+                RightShoulder();
+            }
+
         if (value.magnitude >= minimumRightStickSize) {
             previousRightStickValue = new Input(value);
         } else if (value.magnitude != 0) {
@@ -148,43 +106,69 @@ public class InputManager : MonoBehaviour
         } else {
             previousRightStickValue = new Input(previousRightStickValue.value.normalized / (1 / minimumRightStickSize));
         }
+
     }
 
-    void LeftStickProcess(Vector2 value)
-    {
-        float verticalMovement = value.y - previousLeftStickValue.value.y;
-        
-        if (settings.jumpWithStick 
-            && verticalMovement >= inputSpeedThresholdJump
-            && previousLeftStickValue.value.magnitude < value.magnitude)
-            JumpProcess();
-        if (verticalMovement <= -inputSpeedThresholdFastFall)
-            FastFallProcess();
-        if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold)
-            JumpStop();
-        
+    void LeftStick() {
+        Vector2 value = playerControls.Controls.Move.ReadValue<Vector2>();
+        LeftStickProcess(value);
+    }
+
+    void LeftStick(InputAction.CallbackContext context) {
+        Vector2 value = context.ReadValue<Vector2>();
+        LeftStickProcess(value);
+    }
+
+    void LeftStickProcess(Vector2 value) {
+        if (actionOnSticks)
+            //si la différence est assez grande et que le stick ne revient pas vers la position position 0,0
+            if ((value.y - previousLeftStickValue.value.y) >= inputSpeedThresholdJump && previousLeftStickValue.value.magnitude < value.magnitude) {
+                LeftShoulder();
+            }
+
+        if ((value.y - previousLeftStickValue.value.y) <= -inputSpeedThresholdFastFall && previousLeftStickValue.value.magnitude < value.magnitude) {
+            FastFall();
+        }
+
         previousLeftStickValue = new Input(value);
     }
 
-    void ActionProcess() {
+    void RightShoulder(InputAction.CallbackContext context) {
+        RightShoulderProcess();
+    }
+
+    void RightShoulder() {
+        RightShoulderProcess();
+    }
+
+    void RightShoulderProcess() {
         actionTimeStamp = Time.time;
     }
 
-    void JumpProcess() {
-        jumpStartTimeStamp = Time.time;
+    void LeftShoulder() {
+        LeftShoulderProcess();
+    }
+
+    void LeftShoulder(InputAction.CallbackContext context) {
+        LeftShoulderProcess();
+    }
+
+    void LeftShoulderProcess() {
+        jumpTimeStamp = Time.time;
+    }
+
+    void FastFall(InputAction.CallbackContext context) {
+        FastFallProcess();
+    }
+
+    void FastFall() {
+        FastFallProcess();
     }
 
     void FastFallProcess() {
         fastFallTimeStamp = Time.time;
     }
 
-    void JumpStop() {
-        jumpStopTimeStamp = Time.time;
-    }
-
-    public bool OutDated(float timeStamp) {
-        return timeStamp + inputBufferDuration < Time.time;
-    }
 
     public bool GetFastFall() {
         return !OutDated(fastFallTimeStamp);
@@ -193,17 +177,33 @@ public class InputManager : MonoBehaviour
     public Vector2 GetLeftStickValue() {
         return previousLeftStickValue.value;
     }
-    public Vector2 GetRightStickValue()
-    {
-        return (settings.aimingControls == AimingControls.LeftstickButton)
-            ? previousLeftStickValue.value
-            : previousRightStickValue.value;
+
+    public Vector2 GetRightStickValue() {
+
+        Vector2 actualPosition = playerControls.Controls.Rightstick.ReadValue<Vector2>();
+
+        if (actualPosition.magnitude >= 0.05f) {
+            return actualPosition;
+        } else {
+            return previousRightStickValue.value;
+        }
+
+    }
+
+    public void Stop() {
+        playerControls.Disable();
+    }
+
+    public bool OutDated(float timeStamp) {
+        return timeStamp + inputBufferDuration < Time.time;
     }
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, (Vector2)(transform.position) + previousRightStickValue.value);
     }
+
+
 }
 
 struct Input {
@@ -219,9 +219,4 @@ struct Input {
         timeStamp = Time.time;
     }
 
-}
-
-public enum AimingControls
-{
-    Rightstick, RightStickButton, LeftstickButton
 }

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-interface StateInterface {
+﻿interface StateInterface {
     void WalkSignal(float x);
     bool JumpSignal();
     bool ActionSignal();
@@ -12,6 +10,5 @@ interface StateInterface {
     void Update();
     void BallEntered(Ball ball);
     void DashEntered(Player player);
-    void WallCollided(Vector2 collisionDirection);
     string GetName();
 }
