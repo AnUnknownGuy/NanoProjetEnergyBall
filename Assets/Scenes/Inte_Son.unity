@@ -736,8 +736,7 @@ MonoBehaviour:
   ball_get:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fb717bf3696934c43962fa6426b407dd,
-      type: 2}
+    WwiseObjectReference: {fileID: 0}
   throw_ball:
     idInternal: 0
     valueGuidInternal: 
@@ -752,6 +751,35 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: df132bc99fc7e0b4abbe9e2237240794,
+      type: 2}
+  ball_bounce:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8cdd6125a41d90d4b844218911de0e30,
+      type: 2}
+  ball_air:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6fabd91430cbd8340996049bd502e2f2,
+      type: 2}
+  ball_velocity:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 02c6f285e0e48e04cbde97fca0cbedf2,
+      type: 2}
+  ball_idle:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 04bf23204a94bfd40a5375f1a05f6042,
+      type: 2}
+  ball_charged:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f9c4f8e2a0f8bc041bfe4977f6b2caef,
       type: 2}
 --- !u!1 &1172253083
 GameObject:
