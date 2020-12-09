@@ -216,9 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9580ea2170de8d94cba521ca9470f1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  updateOnDamage: 0
   delay: 0
   timeToFade: 1
-  mode: 1
+  mode: 0
   health: {fileID: 1904760046736349406}
 --- !u!1 &8307341561482144340
 GameObject:
