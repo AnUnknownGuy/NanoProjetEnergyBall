@@ -33,12 +33,13 @@ public class AudioManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         exist = true;
         instance = this;
 
         Battle_Scene(gameObject);
+        
     }
 
     public static void Dash(GameObject gameObject) {
@@ -66,14 +67,21 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_bounce.Post(gameObject);
     }
     public static void Ball_Air(GameObject gameObject) {
+        Debug.Log("coucou");
         if (exist) instance.ball_air.Post(gameObject);
+    }
+
+    public static void Ball_Velocity(float value)
+    {
+        //Debug.Log(value);
+        if (exist) instance.ball_velocity.SetGlobalValue(value);
     }
 
 
 
     void update()
     {
-        ball_velocity.SetGlobalValue(0);
+        
     }
 }
 

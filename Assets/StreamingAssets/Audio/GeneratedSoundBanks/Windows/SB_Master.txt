@@ -41,7 +41,6 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	21645767	Ball_get	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_get_57480CCF.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Get\Ball_get		7786
-	59480555	Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_ball_68942D94.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Throw\Throw_ball		16707
 	66757109	Begin	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Begin_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Begin\Begin		71593
 	83435579	Ball_Air_Crystal	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Crystal_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		214256
 	95179653	Dash_Golem_v3 (good)	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_v3 (good)_15969AB7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_v3 (good)		7941

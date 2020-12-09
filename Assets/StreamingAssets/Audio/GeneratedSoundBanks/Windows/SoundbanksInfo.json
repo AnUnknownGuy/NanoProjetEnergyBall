@@ -28,7 +28,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "1000075758",
+    "Hash": "1387083864",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -322,15 +322,9 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Throw",
       "GUID": "{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}",
       "DurationType": "OneShot",
-      "DurationMin": "1.813768",
-      "DurationMax": "1.813768",
+      "DurationMin": "1.155159",
+      "DurationMax": "1.155159",
       "IncludedMemoryFiles": [
-       {
-        "Id": "59480555",
-        "Language": "SFX",
-        "ShortName": "Throw_ball.wav",
-        "Path": "SFX\\Throw_ball_68942D94.wem"
-       },
        {
         "Id": "412828376",
         "Language": "SFX",

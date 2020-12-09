@@ -39,14 +39,18 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Ball_Air(gameObject);
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        AudioManager.Ball_Velocity(GetSpeedSound());
         if (player != null) {
             transform.position = player.transform.position;
         }
@@ -116,7 +120,7 @@ public class Ball : MonoBehaviour
         if (speed > 15)
             speed = 15;
 
-        return speed / maxSpeedSound;
+        return (speed / maxSpeedSound)*100;
     }
 
     private void OnDrawGizmos() {

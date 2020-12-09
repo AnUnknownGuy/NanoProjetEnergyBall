@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1000075758">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1387083864">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -161,12 +161,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.813768" DurationMax="1.813768">
+				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.155159" DurationMax="1.155159">
 					<IncludedMemoryFiles>
-						<File Id="59480555" Language="SFX">
-							<ShortName>Throw_ball.wav</ShortName>
-							<Path>SFX\Throw_ball_68942D94.wem</Path>
-						</File>
 						<File Id="412828376" Language="SFX">
 							<ShortName>Long_Throw_ball.wav</ShortName>
 							<Path>SFX\Long_Throw_ball_C5B11D74.wem</Path>
