@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5f3607249adea54ca879f6d07d3c992e
     GuidInternal: 
-    m_lastTime: -8585959911598470145
+    m_lastTime: -8585940769179456475
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -476,6 +476,6 @@ MonoBehaviour:
   - /Nano_Projet/Events
   - /Nano_Projet/Events/Master_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event
-  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
+  - /Nano_Projet/Events/Master_Event/Battle_Event/Golem
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
