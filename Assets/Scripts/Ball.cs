@@ -154,12 +154,13 @@ public class Ball : MonoBehaviour
                 AudioManager.Ball_Bounce(gameObject);
                 Hit();
             }
-            if (charged) {
-                if (collision.gameObject.tag == "wall") {
-                    AudioManager.Ball_Bounce(gameObject);
+            if (collision.gameObject.tag == "wall") {
+                if (charged) {
                     Hit();
                 }
+                AudioManager.Ball_Bounce(gameObject);
             }
+            
         }
         
     }
