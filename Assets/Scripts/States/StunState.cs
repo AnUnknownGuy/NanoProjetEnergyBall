@@ -13,4 +13,7 @@ public class StunState : TemporaryState {
     override public void NextState() {
         player.ToBaseState();
     }
+    public override void BallEntered(Ball ball) {
+
+    }
 }

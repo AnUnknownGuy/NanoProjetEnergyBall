@@ -13,22 +13,33 @@ public class Player : MonoBehaviour
 
     public InputManager inputManager;
 
+    [Space(10)]
+    [Header("Move settings")]
     public float speed = 10;
     public float dashPower = 12;
     public float dashDuration = 0.4f;
     public float timeBetweenDash = 1f;
-    public float throwPower = 1;
     public float jumpScale = 5;
-    public float health = 1000;
-    public float decay = 10;
-    public float hitStunDuration = 0.8f;
-    public float hitSpeedTransfert = 0.8f;
-
     public float coyoteTime = 0.2f;
 
     public float gravity = 1;
     public float lowGravity = 0.7f;
     public float highGravity = 1.3f;
+
+    [Space(10)]
+    [Header("Interaction settings")]
+
+    public float throwPower = 1;
+    public float hitStunDuration = 0.8f;
+    public float hitSpeedTransfert = 0.8f;
+
+    public float health = 1000;
+    public float decay = 10;
+
+    public float healthLostOnDashHit = 50;
+    public float healthLostOnBallHit = 20;
+
+    public float timeBeforeBeingAbleToThrow = 0.2f;
 
     [HideInInspector] public Ball ball;
 
@@ -134,6 +145,14 @@ public class Player : MonoBehaviour
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
             ball = null;
         }
+    }
+
+    public void looseHealthBallHit() {
+        health -= healthLostOnBallHit;
+    }
+
+    public void looseHealthDashHit() {
+        health -= healthLostOnDashHit;
     }
 
     public void ThrowKnockBack() {
