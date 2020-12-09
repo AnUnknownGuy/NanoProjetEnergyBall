@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
 
-    public Slider healthPlayer1;
-    public Slider healthPlayer2;
     public Player player1;
     public Player player2;
     public InputManager input1;
@@ -20,16 +18,12 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthPlayer1.maxValue = player1.health;
-        healthPlayer2.maxValue = player2.health;
     }
 
     // Update is called once per frame
     void Update() {
 
         if (!restarting) {
-            healthPlayer1.value = player1.health;
-            healthPlayer2.value = player2.health;
 
             if (!player1.alive || !player2.alive) {
                 player1.ForceLogUpdate();
