@@ -28,7 +28,6 @@ Custom State	ID	Name	State Group	Owner		Notes
 	233876661	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		
 	497509348	Idle	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		
 	547450265	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		
-	647263719	Idle	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity		
 	686924025	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Texture		
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
