@@ -30,7 +30,8 @@ public class HoldState : MoveState
         player.ThrowBall();
         player.ThrowKnockBack();
         player.ThrowKnockBack();
-        player.ToStunState();
+        //player.ToStunState();
+        player.ToBaseState();
         return true;
     }
 

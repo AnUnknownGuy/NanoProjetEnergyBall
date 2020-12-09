@@ -56,11 +56,20 @@ public abstract class State : StateInterface
             player.stateManager.numberHittedByBall++;
             player.SetSpeed(ball.GetSpeed() * 0.2f);
             ball.FakeCollision();
+            Debug.Log("hit!");
             ball.Hit();
             player.ToStunState();
-        } else if (!ball.charged && !(ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time)) {
-            player.CatchBall(ball);
-            player.ToHoldState();
+        } else if (!ball.charged) {
+            if(ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
+
+                player.CatchBall(ball);
+                player.ToHoldState();
+
+            } else if(ball.previousPlayertouched != player) {
+
+                player.CatchBall(ball);
+                player.ToHoldState();
+            }
         }
         ball.previousPlayertouched = player;
         ball.previousPlayertouchedTimeStamp = Time.time;
