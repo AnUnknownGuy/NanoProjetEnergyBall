@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3209325646">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2661771600">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -45,7 +45,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
+				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
 					<IncludedMemoryFiles>
 						<File Id="664081031" Language="SFX">
 							<ShortName>Battle_music.wav</ShortName>
@@ -113,7 +113,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2301463414" Name="Play_Fight_Announcement" ObjectPath="\Events\Master_Event\Play_Fight_Announcement" GUID="{2CBBB0DD-9E90-45E3-8C8D-5B5630630F52}" DurationType="OneShot" DurationMin="3.185706" DurationMax="3.185706">
+				<Event Id="2301463414" Name="Play_Fight_Announcement" ObjectPath="\Events\Master_Event\Battle_Event\Play_Fight_Announcement" GUID="{2CBBB0DD-9E90-45E3-8C8D-5B5630630F52}" DurationType="OneShot" DurationMin="3.185706" DurationMax="3.185706">
 					<IncludedMemoryFiles>
 						<File Id="622696685" Language="SFX">
 							<ShortName>Fight_Announcement.wav</ShortName>
@@ -129,7 +129,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="8.043265" DurationMax="8.043265">
+				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="8.043265" DurationMax="8.043265">
 					<IncludedMemoryFiles>
 						<File Id="538924343" Language="SFX">
 							<ShortName>Start_Horn.wav</ShortName>

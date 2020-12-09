@@ -8,7 +8,6 @@ public abstract class State : StateInterface
     protected string name = "State";
     public Color color = Color.black;
 
-
     protected State(Player player) {
         this.player = player;
     }
@@ -57,6 +56,7 @@ public abstract class State : StateInterface
             if (ball.charged && ball.previousPlayer != player) {
                 player.stateManager.numberHittedByBall++;
                 player.SetSpeed(ball.GetSpeed() * 0.2f);
+				AudioManager.Ball_Hit(player.gameObject);
                 ball.FakeCollision();
                 Debug.Log("hit!");
                 ball.Hit();
@@ -64,13 +64,17 @@ public abstract class State : StateInterface
             } else if (!ball.charged) {
                 if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
 
-                    if (player.CatchBall(ball))
+                    if (player.CatchBall(ball)) {
                         player.ToHoldState();
+						AudioManager.Ball_Get(player.gameObject);
+					}
 
                 } else if (ball.previousPlayertouched != player) {
 
-                    if (player.CatchBall(ball))
+                    if (player.CatchBall(ball)) {
                         player.ToHoldState();
+						AudioManager.Ball_Get(player.gameObject);
+					}
                 }
             }
             ball.previousPlayertouched = player;
@@ -86,6 +90,7 @@ public abstract class State : StateInterface
 
     public virtual void DashEntered(Player otherPlayer) {
         if (player.HasBall()) {
+            AudioManager.Dash_Hit(player.gameObject);
             player.stateManager.numberHittedByDash++;
 
             Ball ball = player.ball;
