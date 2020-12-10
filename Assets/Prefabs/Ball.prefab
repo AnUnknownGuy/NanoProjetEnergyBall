@@ -70,7 +70,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 1ce8d43831df13f45b0c8de5b9091043, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &8257105204860484888
 MonoBehaviour:
@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 6200000, guid: 1ce8d43831df13f45b0c8de5b9091043, type: 2}
   sleeping: 0
+  speedWhenFreeFromDash: {x: 0, y: 10}
   gravityWhenThorwn: 0.2
   gravity: 2
   player: {fileID: 0}
