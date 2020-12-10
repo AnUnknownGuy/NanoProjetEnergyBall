@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
 
     [Space(10)]
     [Header("Move settings")]
-    public float speed = 10;
+    public float speedWithBall = 5;
+    public float speedWithoutBall = 6;
     public float dashPower = 12;
     public float dashDuration = 0.4f;
     public float timeBetweenDash = 1f;
@@ -85,7 +86,11 @@ public class Player : MonoBehaviour
 
     public void Walk(float x)
     {
-        rb.velocity = new Vector2(x * speed , rb.velocity.y);
+        if (HasBall()) {
+            rb.velocity = new Vector2(x * speedWithBall, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
+        }
     }
 
     public void Jump() 

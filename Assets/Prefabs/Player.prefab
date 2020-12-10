@@ -195,7 +195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
-  speed: 5
+  speedWithBall: 5
+  speedWithoutBall: 6
   dashPower: 15
   dashDuration: 0.2
   timeBetweenDash: 1
