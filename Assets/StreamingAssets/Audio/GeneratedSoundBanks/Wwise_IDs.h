@@ -31,6 +31,22 @@ namespace AK
         static const AkUniqueID PLAY_VALIDATE = 1648095864U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace BALL
+        {
+            static const AkUniqueID GROUP = 1777984502U;
+
+            namespace STATE
+            {
+                static const AkUniqueID CHARGED = 3146088667U;
+                static const AkUniqueID IDLE = 1874288895U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace BALL
+
+    } // namespace STATES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BALL_VELOCITY = 145148864U;

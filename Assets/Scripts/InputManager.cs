@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
-    public float inputSpeedThresholdAction = 0.3f;
     public float inputSpeedThresholdJump = 0.3f;
     public float inputSpeedThresholdFastFall = 0.2f;
     public float inputBufferDuration = 0.2f;
+
+    private float deadZoneRightStick = 0.2f;
+    private bool canHaveActionOnRightStick = true;
 
     public float timeBetweenStickUpdate = 0.1f;
 
@@ -77,6 +76,8 @@ public class InputManager : MonoBehaviour
     public void RightStick(InputAction.CallbackContext context) {
         if (context.performed) {
             RightStickProcess(context.ReadValue<Vector2>());
+        } else if(context.canceled) {
+            RightStickProcess(Vector2.zero);
         }
     }
 
@@ -136,10 +137,15 @@ public class InputManager : MonoBehaviour
     }
 
     void RightStickProcess(Vector2 value) {
-        if (settings.aimingControls == AimingControls.Rightstick
-            && (value - previousRightStickValue.value).magnitude >= inputSpeedThresholdAction 
-            && previousRightStickValue.value.magnitude < value.magnitude)
-            ActionProcess();
+        if (settings.aimingControls == AimingControls.Rightstick) {
+            if (value.magnitude >= deadZoneRightStick && canHaveActionOnRightStick) {
+
+                ActionProcess();
+                canHaveActionOnRightStick = false;
+            } else if (value.magnitude < deadZoneRightStick) {
+                canHaveActionOnRightStick = true;
+            }
+        }
         
         if (value.magnitude >= minimumRightStickSize) {
             previousRightStickValue = new Input(value);

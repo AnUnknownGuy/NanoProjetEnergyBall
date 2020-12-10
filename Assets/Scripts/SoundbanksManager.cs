@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -102,3 +101,5 @@ public class SoundbanksManager : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+#endif

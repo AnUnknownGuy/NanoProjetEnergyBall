@@ -22,6 +22,7 @@ public class DashState : TemporaryState
         player.canDash = false;
         player.SetDashDirection();
         player.StopGravity();
+        player.ToFallingLayer();
     }
 
     public override void Update() {
@@ -34,12 +35,10 @@ public class DashState : TemporaryState
         player.stateManager.timeInDash += Time.time - dashStartTimestamp;
         player.SetSpeed(Vector2.zero);
         player.SetNormalGravity();
+        player.ToBaseLayer();
 
     }
 
-    override public void BallEntered(Ball ball) {
-        player.CatchBall(ball);
-    }
 
     override public void NextState() {
         if (player.HasBall()) {
@@ -52,8 +51,10 @@ public class DashState : TemporaryState
     public override void WallCollided(Vector2 collisionDirection) {
 
         if (player.HasBall()) {
+            Debug.Log("stuned");
             player.ToHoldStunState(stunDurationDashInterruptedByWall);
         } else {
+            Debug.Log("stuned");
             player.ToStunState(stunDurationDashInterruptedByWall);
         }
 

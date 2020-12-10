@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using UnityEditor;
+
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEditor;
@@ -90,3 +93,5 @@ public class SoundBankBehaviour
             Debug.LogWarning("Bank " + bank.Name + " not loaded. Aborting unloading.");
     }
 }
+
+#endif
