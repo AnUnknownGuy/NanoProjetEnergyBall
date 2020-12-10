@@ -10,6 +10,7 @@ namespace HealthBarsPackage
             fade
         }
 
+        [SerializeField] private bool updateOnDamage = true;
         [SerializeField][Range(0, 2)] private float delay = default;
         [SerializeField][Range(0.1f, 2)] private float timeToFade = 1.0f;
         [SerializeField] private Mode mode = default;
@@ -20,7 +21,7 @@ namespace HealthBarsPackage
 
         // internal logic
         private float previousHealthValue;
-        private float fadeSpeed = 0;
+        [SerializeField] private float fadeSpeed = 0;
         private float delayCounter = 0;
         private float fadeLerpRatio = 0;
 
@@ -63,7 +64,7 @@ namespace HealthBarsPackage
             switch (mode)
             {
                 case Mode.slide :
-                    fadeSpeed = (previousHealthValue - health.fillAmount)/timeToFade;
+                    fadeSpeed = (fill.fillAmount - health.fillAmount)/timeToFade;
                     break;
 
                 case Mode.fade:
@@ -74,7 +75,10 @@ namespace HealthBarsPackage
                 default:
                     return;
             }
-            fill.fillAmount = previousHealthValue;
+            if(updateOnDamage || health.fillAmount > fill.fillAmount || mode == Mode.fade)
+            {
+                fill.fillAmount = previousHealthValue;                
+            }
             previousHealthValue = health.fillAmount;
         }
     }

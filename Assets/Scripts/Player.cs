@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
 
     [Space(10)]
     [Header("Move settings")]
-    public float speed = 10;
+    public float speedWithBall = 5;
+    public float speedWithoutBall = 6;
     public float dashPower = 12;
     public float dashDuration = 0.4f;
     public float timeBetweenDash = 1f;
@@ -54,6 +55,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public float timeInAir = 0;
     private float onGroundChangeTimeStamp;
 
+    public SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +86,11 @@ public class Player : MonoBehaviour
 
     public void Walk(float x)
     {
-        rb.velocity = new Vector2(x * speed , rb.velocity.y);
+        if (HasBall()) {
+            rb.velocity = new Vector2(x * speedWithBall, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
+        }
     }
 
     public void Jump() 
@@ -216,6 +223,20 @@ public class Player : MonoBehaviour
         this.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
+    public void ShowDashNotReady() {
+        Color c = sprite.material.color;
+        if (c.a >= 1)
+            c.a = 0.5f;
+        sprite.material.color = c;
+    }
+
+    public void ShowDashReady() {
+        Color c = sprite.material.color;
+        if (c.a < 1)
+            c.a = 1;
+        sprite.material.color = c;
+    }
+
     public void ForceLogUpdate() {
         if (onGround) {
             timeOnGround += Time.time - onGroundChangeTimeStamp;
@@ -234,8 +255,6 @@ public class Player : MonoBehaviour
 
 
         Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset, collisionRadius);
         
         if (stateManager != null)
             Gizmos.color = stateManager.currentState.color;
