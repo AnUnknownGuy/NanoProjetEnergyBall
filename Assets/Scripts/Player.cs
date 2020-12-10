@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public float timeInAir = 0;
     private float onGroundChangeTimeStamp;
 
+    public SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -216,6 +218,20 @@ public class Player : MonoBehaviour
         this.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
+    public void ShowDashNotReady() {
+        Color c = sprite.material.color;
+        if (c.a >= 1)
+            c.a = 0.5f;
+        sprite.material.color = c;
+    }
+
+    public void ShowDashReady() {
+        Color c = sprite.material.color;
+        if (c.a < 1)
+            c.a = 1;
+        sprite.material.color = c;
+    }
+
     public void ForceLogUpdate() {
         if (onGround) {
             timeOnGround += Time.time - onGroundChangeTimeStamp;
@@ -234,8 +250,6 @@ public class Player : MonoBehaviour
 
 
         Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset, collisionRadius);
         
         if (stateManager != null)
             Gizmos.color = stateManager.currentState.color;

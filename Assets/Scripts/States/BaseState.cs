@@ -14,11 +14,14 @@ public class BaseState : MoveState {
 
     override public void Update() {
         base.Update();
+        if (lastDashTimestamp + player.timeBetweenDash < Time.time)
+            player.ShowDashReady();
     }
 
     public override bool ActionSignal() {
         if (player.canDash && lastDashTimestamp + player.timeBetweenDash < Time.time) {
             player.ToDashState();
+            player.ShowDashNotReady();
 
             AudioManager.Dash(player.gameObject);
             lastDashTimestamp = Time.time;
