@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera mainCam;
     public static CameraManager Instance;
     
+    [SerializeField] private Camera mainCam;
+
     void Awake()
     {
         if (Instance == null)
@@ -20,29 +22,30 @@ public class CameraManager : MonoBehaviour
     
     public void Shake(float amount, float duration)
     {
-        float startTime = Time.time;
-        float lastTime = 0;
-        
-        while (Time.time - startTime < duration)
-        {
-            if (lastTime + 0.1f < Time.time)
-            {
-                DoShake(amount);
-                lastTime = Time.time;
-            }
-        }
+        transform.DOComplete();
+        transform.DOShakePosition(duration, amount);
+        transform.DOShakeRotation(duration, new Vector3(0, amount));
     }
- 
-    void DoShake(float amount)
+
+    public void Zoom(Vector3 targetPosition, float zoomDuration = 1.0f, float timeScale = 0.1f, float zoomFactor = 3.0f)
     {
-        if (amount > 0)
-        {
-            Vector3 camPos = mainCam.transform.position;
- 
-            camPos.x += Random.value * amount * 2 - amount;
-            camPos.y += Random.value * amount * 2 - amount;
- 
-            mainCam.transform.position = camPos;
-        }
+        targetPosition.z = transform.localPosition.z;
+        Vector3 initialPos = transform.localPosition;
+        float initialSize = mainCam.orthographicSize;
+            
+        transform.DOLocalMove(targetPosition, zoomDuration * timeScale).SetEase(Ease.OutExpo)
+            .OnComplete(() => transform.DOLocalMove(initialPos, zoomDuration).SetEase(Ease.InOutCubic));
+        
+        mainCam.DOOrthoSize(initialSize/zoomFactor, zoomDuration * timeScale).SetEase(Ease.OutExpo)
+            .OnComplete(() => mainCam.DOOrthoSize(initialSize, zoomDuration).SetEase(Ease.OutCubic));
+        
+        Time.timeScale = timeScale;
+        StartCoroutine(ResetTimeScale(zoomDuration, timeScale));
+    }
+
+    private IEnumerator ResetTimeScale(float zoomDuration, float timeScale)
+    {
+        yield return new WaitForSeconds(zoomDuration * timeScale);
+        Time.timeScale = 1f;
     }
 }
