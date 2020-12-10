@@ -19,7 +19,7 @@ namespace HealthBarsPackage
 
         private Slider healthSlider; // autofind
         private Slider fadeSlider; // autofind
-        [SerializeField] private Image fill;
+        [SerializeField] private Image fill = default;
         private Color baseFillColor; // autofind
 
         // internal logic

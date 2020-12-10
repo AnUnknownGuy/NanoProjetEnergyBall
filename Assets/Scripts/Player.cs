@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -13,22 +10,34 @@ public class Player : MonoBehaviour
 
     public InputManager inputManager;
 
-    public float speed = 10;
+    [Space(10)]
+    [Header("Move settings")]
+    public float speedWithBall = 5;
+    public float speedWithoutBall = 6;
     public float dashPower = 12;
     public float dashDuration = 0.4f;
     public float timeBetweenDash = 1f;
-    public float throwPower = 1;
     public float jumpScale = 5;
-    public float health = 1000;
-    public float decay = 10;
-    public float hitStunDuration = 0.8f;
-    public float hitSpeedTransfert = 0.8f;
-
     public float coyoteTime = 0.2f;
 
     public float gravity = 1;
     public float lowGravity = 0.7f;
     public float highGravity = 1.3f;
+
+    [Space(10)]
+    [Header("Interaction settings")]
+
+    public float throwPower = 1;
+    public float hitStunDuration = 0.8f;
+    public float hitSpeedTransfert = 0.8f;
+
+    public float health = 1000;
+    public float decay = 10;
+
+    public float healthLostOnDashHit = 50;
+    public float healthLostOnBallHit = 20;
+
+    public float timeBeforeBeingAbleToThrow = 0.2f;
 
     [HideInInspector] public Ball ball;
 
@@ -45,6 +54,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public float timeOnGround = 0;
     [HideInInspector] public float timeInAir = 0;
     private float onGroundChangeTimeStamp;
+
+    public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +86,11 @@ public class Player : MonoBehaviour
 
     public void Walk(float x)
     {
-        rb.velocity = new Vector2(x * speed , rb.velocity.y);
+        if (HasBall()) {
+            rb.velocity = new Vector2(x * speedWithBall, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
+        }
     }
 
     public void Jump() 
@@ -134,6 +149,14 @@ public class Player : MonoBehaviour
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
             ball = null;
         }
+    }
+
+    public void looseHealthBallHit() {
+        health -= healthLostOnBallHit;
+    }
+
+    public void looseHealthDashHit() {
+        health -= healthLostOnDashHit;
     }
 
     public void ThrowKnockBack() {
@@ -200,6 +223,20 @@ public class Player : MonoBehaviour
         this.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 
+    public void ShowDashNotReady() {
+        Color c = sprite.material.color;
+        if (c.a >= 1)
+            c.a = 0.5f;
+        sprite.material.color = c;
+    }
+
+    public void ShowDashReady() {
+        Color c = sprite.material.color;
+        if (c.a < 1)
+            c.a = 1;
+        sprite.material.color = c;
+    }
+
     public void ForceLogUpdate() {
         if (onGround) {
             timeOnGround += Time.time - onGroundChangeTimeStamp;
@@ -218,8 +255,6 @@ public class Player : MonoBehaviour
 
 
         Gizmos.DrawWireSphere((Vector2)transform.position + bottomOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + rightOffset, collisionRadius);
-        //Gizmos.DrawWireSphere((Vector2)transform.position + leftOffset, collisionRadius);
         
         if (stateManager != null)
             Gizmos.color = stateManager.currentState.color;

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
@@ -9,12 +7,16 @@ public class Ball : MonoBehaviour
 
     public PhysicsMaterial2D material;
 
-    private bool sleeping;
-    private float timerUntilGravityChange;
+    public bool sleeping;
+    private float timerUntilCatchable = 0;
 
+    public Vector2 speedWhenFreeFromDash = new Vector2(0, 10);
 
     public float gravityWhenThorwn = 0.2f;
     public float gravity = 2f;
+
+    private float maxSpeedSound = 15;
+    private float speedSound = 0;
 
     [HideInInspector]
     public Player player;
@@ -24,27 +26,39 @@ public class Ball : MonoBehaviour
     [HideInInspector]
     public Player previousPlayer;
 
+    [HideInInspector]
+    public Player previousPlayertouched;
+    [HideInInspector]
+    public float previousPlayertouchedTimeStamp;
+    [HideInInspector]
+    public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
+
     public float collisionRadius = 0.25f;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Ball_Idle();
+        AudioManager.Ball_Air(gameObject);
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        GetSpeedSound();
+        AudioManager.Ball_Velocity(speedSound);
         if (player != null) {
             transform.position = player.transform.position;
         }
     }
 
     public bool Catch(Player player) {
-        if (!sleeping) {
+        if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -65,15 +79,18 @@ public class Ball : MonoBehaviour
         player = null;
         sleeping = false;
         rb.WakeUp();
+        timerUntilCatchable = Time.time;
     }
 
     public void Charge() {
+        AudioManager.Ball_Charegd();
         previousPlayer = player;
         rb.gravityScale = 0;
         charged = true;
     }
 
     public void Uncharge() {
+        AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
     }
@@ -99,6 +116,20 @@ public class Ball : MonoBehaviour
         return rb.velocity;
     }
 
+    public void GetSpeedSound() {
+        if (!sleeping) {
+            float speed = rb.velocity.magnitude;
+            if (speed < 0)
+                speed = 0;
+            if (speed > 15)
+                speed = 15;
+
+            speedSound =((speed / maxSpeedSound) * 100);
+        } else {
+            speedSound = 0;
+        }
+    }
+
     private void OnDrawGizmos() {
         //Gizmos.color = Color.green;
 
@@ -106,14 +137,30 @@ public class Ball : MonoBehaviour
         //Gizmos.DrawWireSphere((Vector2)transform.position, collisionRadius);
     }
 
+    public void SetSpeedWhenFreeFromDash() {
+        SetSpeed(speedWhenFreeFromDash);
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
-        Vector3 normal = collision.contacts[0].normal;
-        
-        if (charged) {
-            if (collision.gameObject.tag == "wall") {
+
+
+        if (!sleeping) {
+
+            Vector3 normal = collision.contacts[0].normal;
+
+            if ((collision.gameObject.tag == "plateform") && collision.GetContact(0).normalImpulse != 0) {
+                AudioManager.Ball_Bounce(gameObject);
                 Hit();
             }
+            if (collision.gameObject.tag == "wall") {
+                if (charged) {
+                    Hit();
+                }
+                AudioManager.Ball_Bounce(gameObject);
+            }
+            
         }
+        
     }
 
 }

@@ -37,6 +37,7 @@ public class MoveState : State {
 
     override public bool JumpSignal() {
         if (coyoteTimer + player.coyoteTime > Time.time) {
+            AudioManager.Jump(player.gameObject);
             player.stateManager.numberOfJumps++;
             isJumping = true;
             player.Jump();
