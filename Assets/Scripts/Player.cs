@@ -152,10 +152,12 @@ public class Player : MonoBehaviour
     }
 
     public void looseHealthBallHit() {
+        CameraManager.Instance.Shake(0.2f, 0.5f);
         health -= healthLostOnBallHit;
     }
 
     public void looseHealthDashHit() {
+        CameraManager.Instance.Shake(0.5f, 0.5f);
         health -= healthLostOnDashHit;
     }
 
