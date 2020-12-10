@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 4389660307044624422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.85, y: 5.55, z: 1}
+  m_LocalScale: {x: 3.8499997, y: 5.5499997, z: 1}
   m_Children: []
   m_Father: {fileID: 4389660307696137377}
   m_RootOrder: 0
@@ -195,20 +195,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
-  speed: 5
+  speedWithBall: 5
+  speedWithoutBall: 6
   dashPower: 15
   dashDuration: 0.2
   timeBetweenDash: 1
-  throwPower: 25
   jumpScale: 14
-  health: 1000
-  decay: 25
-  hitStunDuration: 0.8
-  hitSpeedTransfert: 0.8
   coyoteTime: 0.2
   gravity: 2.74
   lowGravity: 1.66
   highGravity: 8
+  throwPower: 25
+  hitStunDuration: 0.8
+  hitSpeedTransfert: 0.8
+  health: 1000
+  decay: 25
+  healthLostOnDashHit: 50
+  healthLostOnBallHit: 20
   timeBeforeBeingAbleToThrow: 0.2
   ball: {fileID: 0}
   dashDirection: {x: 0, y: 0}
@@ -229,6 +232,7 @@ MonoBehaviour:
   isFastFalling: 0
   timeOnGround: 0
   timeInAir: 0
+  sprite: {fileID: 4389660307044624420}
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

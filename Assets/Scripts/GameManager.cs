@@ -37,16 +37,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetHealthBars() {
-        Debug.Log(level.player1);
         health1.player = level.player1;
-        Debug.Log(level.player1);
         health2.player = level.player2;
-        Debug.Log(level.player1);
     }
 
     public void Win(string winner) {
         if (logger != null) {
-            Debug.Log("send !");
             logger.Send(winner);
         }
     }
