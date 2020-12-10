@@ -1,0 +1,94 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "12",
+  "SoundbankVersion": "135",
+  "RootPaths": {
+   "ProjectRoot": "D:\\Enjmin\\Projets\\Nano_Projet\\Repo_Wwise\\Nano_Projet\\",
+   "SourceFilesRoot": "D:\\Enjmin\\Projets\\Nano_Projet\\Repo_Wwise\\Nano_Projet\\.cache\\Windows\\",
+   "SoundBanksRoot": "D:\\Enjmin\\Projets\\Nano_Projet\\Repo_Unity\\NanoProjetEnergyBall\\Assets\\StreamingAssets\\Audio\\GeneratedSoundBanks\\Windows\\",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "D:\\Enjmin\\Projets\\Nano_Projet\\Repo_Wwise\\Nano_Projet\\GeneratedSoundBanks\\Windows"
+  },
+  "SoundBanks": [
+   {
+    "Id": "2005704188",
+    "GUID": "{56AC39C7-5D2A-4EF2-8B18-3FF499462B7B}",
+    "Language": "SFX",
+    "Hash": "1145228444",
+    "ObjectPath": "\\SoundBanks\\Nano_Projet\\Main_Menu",
+    "ShortName": "Main_Menu",
+    "Path": "Main_Menu.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "2375588297",
+      "Name": "Play_Begin",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Begin",
+      "GUID": "{85133317-E9F7-4FC0-97D1-B5C0C655E8CC}",
+      "DurationType": "OneShot",
+      "DurationMin": "5.081723",
+      "DurationMax": "5.081723",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "66757109",
+        "Language": "SFX",
+        "ShortName": "Begin.wav",
+        "Path": "SFX\\Begin_10C4C929.wem"
+       }
+      ]
+     },
+     {
+      "Id": "2228153899",
+      "Name": "Play_Menu_music",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Menu_music",
+      "GUID": "{A7B6C147-C443-42EE-9972-01A2ED8222A6}",
+      "DurationType": "Infinite",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "1034375273",
+        "Language": "SFX",
+        "ShortName": "zic_menu.wav",
+        "Path": "SFX\\zic_menu_D79FB2B7.wem"
+       }
+      ]
+     },
+     {
+      "Id": "3893482503",
+      "Name": "Play_Navigate",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Navigate",
+      "GUID": "{673DA0E2-5AC0-4B99-A5C9-E5F9447BBFC2}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.092041",
+      "DurationMax": "0.092041",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "860187217",
+        "Language": "SFX",
+        "ShortName": "Golem_FT_tight-008.wav",
+        "Path": "SFX\\Golem_FT_tight-008_10C4C929.wem"
+       }
+      ]
+     },
+     {
+      "Id": "1648095864",
+      "Name": "Play_Validate",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Validate",
+      "GUID": "{94F23B45-C5D1-47C0-8546-BE1C82DE6F3C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.500000",
+      "DurationMax": "0.500000",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "178322872",
+        "Language": "SFX",
+        "ShortName": "Validate.wav",
+        "Path": "SFX\\Validate_10C4C929.wem"
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}
