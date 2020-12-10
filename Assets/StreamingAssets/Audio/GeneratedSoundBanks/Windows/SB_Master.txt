@@ -62,6 +62,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	711092926	Dash_Golem-002	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem-002_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Dash\Dash_var\Dash_Golem-002		151464
 	860187217	Navigate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Golem_FT_tight-008_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Navigate\Navigate		16300
 	928899835	Ball_Air_Tone1	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone1_D79FB2B7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone1		1805334
+	968729543	End_tail	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\End_tail-zic_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\End_tail\End_tail		8240904
 	983204019	Dash_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_hit_73E760FE.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash_Hit\Dash_hit		80558
 	984157997	Throw_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_10C4C929.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Throw_Hit\Throw_hit		80410
 	1017460660	bounce_ballV2	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Bounce_fullspeed_4589D2E2.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\bounce_ballV2		105724

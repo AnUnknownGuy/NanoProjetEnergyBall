@@ -28,7 +28,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "193823299",
+    "Hash": "740778918",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -90,14 +90,20 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Battle_music",
       "GUID": "{767A7F56-7A68-44A8-B7B0-6D53702D50EF}",
       "DurationType": "OneShot",
-      "DurationMin": "180.807297",
-      "DurationMax": "180.807297",
+      "DurationMin": "220.716782",
+      "DurationMax": "220.716782",
       "IncludedMemoryFiles": [
        {
         "Id": "664081031",
         "Language": "SFX",
         "ShortName": "Battle_music.wav",
         "Path": "SFX\\Battle_music_10C4C929.wem"
+       },
+       {
+        "Id": "968729543",
+        "Language": "SFX",
+        "ShortName": "End_tail-zic.wav",
+        "Path": "SFX\\End_tail-zic_10C4C929.wem"
        }
       ]
      },

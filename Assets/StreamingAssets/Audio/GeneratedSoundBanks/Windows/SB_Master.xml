@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="193823299">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="740778918">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -45,11 +45,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
+				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="220.716782" DurationMax="220.716782">
 					<IncludedMemoryFiles>
 						<File Id="664081031" Language="SFX">
 							<ShortName>Battle_music.wav</ShortName>
 							<Path>SFX\Battle_music_10C4C929.wem</Path>
+						</File>
+						<File Id="968729543" Language="SFX">
+							<ShortName>End_tail-zic.wav</ShortName>
+							<Path>SFX\End_tail-zic_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
