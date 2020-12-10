@@ -1,0 +1,69 @@
+Event	ID	Name			Wwise Object Path	Notes
+	223895672	Play_Dash_Haug			\Master_Event\Battle_Event\Golem\Play_Dash_Haug	
+	1648095864	Play_Validate			\Master_Event\Menu_Event\Play_Validate	
+	1977644338	Play_Throw			\Master_Event\Battle_Event\Golem\Play_Throw	
+	2228153899	Play_Menu_music			\Master_Event\Menu_Event\Play_Menu_music	
+	2301463414	Play_Fight_Announcement			\Master_Event\Battle_Event\Play_Fight_Announcement	
+	2354553126	Play_Get			\Master_Event\Battle_Event\Ball\Play_Get	
+	2375588297	Play_Begin			\Master_Event\Menu_Event\Play_Begin	
+	2481879868	Play_Dash_Hit			\Master_Event\Battle_Event\Golem\Play_Dash_Hit	
+	2652654800	Play_Air_Velocity			\Master_Event\Battle_Event\Ball\Play_Air_Velocity	
+	2666681873	Play_Dash_Ruud			\Master_Event\Battle_Event\Golem\Play_Dash_Ruud	
+	2862166672	Play_Battle_music			\Master_Event\Battle_Event\Play_Battle_music	
+	2956245481	Play_Horn			\Master_Event\Battle_Event\Play_Horn	
+	3286906532	Play_Throw_Hit			\Master_Event\Battle_Event\Ball\Play_Throw_Hit	
+	3465618802	Play_Bounce			\Master_Event\Battle_Event\Ball\Play_Bounce	
+	3689126666	Play_Jump			\Master_Event\Battle_Event\Golem\Play_Jump	
+	3893482503	Play_Navigate			\Master_Event\Menu_Event\Play_Navigate	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1777984502	Ball			\Default Work Unit\Ball	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Ball			
+	1874288895	Idle	Ball			
+	3146088667	Charged	Ball			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	233876661	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		
+	497509348	Idle	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		
+	547450265	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		
+	686924025	Charged	Ball	\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Texture		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	145148864	Ball_Velocity			\Default Work Unit\Ball\Ball_Velocity	
+
+Effect plug-ins	ID	Name	Type				Notes
+	73137165	Wwise_Guitar_Distortion_(Custom)	Wwise Guitar Distortion			
+	412290869	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
+	684814039	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	21645767	Ball_get	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_get_57480CCF.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Get\Ball_get		7786
+	66757109	Begin	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Begin_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Begin\Begin		71593
+	83435579	Ball_Air_Crystal	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Crystal_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		214256
+	95179653	Dash_Golem_v3 (good)	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_v3 (good)_15969AB7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_v3 (good)		7941
+	157536860	Ball_Air_Tone2	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone2_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone2		158671
+	164235642	Ball_Air_Wind	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Wind_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Wind		190641
+	178322872	Validate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Validate_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Validate\Validate		5775
+	262242056	Dash_Golem_V5	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_V5_01CC9B23.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_V5		8746
+	317348648	Ball_Air_Low	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Low_07B7385E.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		160192
+	412828376	Long_Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Long_Throw_ball_C5B11D74.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Throw\Long_Throw_ball		10941
+	464439783	Ball_Air_Tone3	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone3_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone3		167973
+	484311839	Ball_Air_Texture	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Texture_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Texture		184654
+	527997742	Bounce_light	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Bounce_light_ED380BF2.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\Bounce_light		7764
+	532619175	Dash_Golem-001	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem-001_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Dash\Dash_var\Dash_Golem-001		9337
+	538924343	Start_Horn	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Start_Horn_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Start\Horn\Start_Horn		104027
+	541730044	Dash_Golem-003	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem-003_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Dash\Dash_var\Dash_Golem-003		8430
+	547198134	Dash_Golem_V5_02	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_V5_02_29D3A7BB.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash\Dash_var\Dash_Golem_V5_02		8742
+	622696685	Fight	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Fight_Announcement_1DCF14DD.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Start\Fight_Announcement\Fight		29792
+	664081031	Battle_music	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Battle_music_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\Battle_music\Battle_music		3691560
+	711092926	Dash_Golem-002	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem-002_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Ruud\Dash\Dash_var\Dash_Golem-002		10459
+	860187217	Navigate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Golem_FT_tight-008_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Menu\Navigate\Navigate		2065
+	928899835	Ball_Air_Tone1	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone1_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone1		206530
+	983204019	Dash_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_hit_8DBD26AE.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Dash_Hit\Dash_hit		9667
+	984157997	Throw_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Throw_Hit\Throw_hit		5689
+	1017460660	bounce_ballV2	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Bounce_fullspeed_ED380BF2.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\bounce_ballV2		7712
+	1028325921	Jump	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Jump_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Haug\Jump\Jump		1470
+	1034375273	Menu_music	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\zic_menu_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\Menu_music\Menu_music		1872006
+

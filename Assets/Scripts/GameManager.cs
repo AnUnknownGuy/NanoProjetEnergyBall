@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using HealthBarsPackage;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
     public GameObject levelPrefab;
+    public Health health1, health2;
     public LevelManager level;
     public SendLog logger;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if (level == null) {
             CreateLevel();
+            SetHealthBars();
         }
     }
 
@@ -34,9 +36,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetHealthBars() {
+        health1.player = level.player1;
+        health2.player = level.player2;
+    }
+
     public void Win(string winner) {
         if (logger != null) {
-            Debug.Log("send !");
             logger.Send(winner);
         }
     }
@@ -46,6 +52,7 @@ public class GameManager : MonoBehaviour
         level.Stop();
         Destroy(level.gameObject);
         CreateLevel();
+        SetHealthBars();
         restarting = false;
         if (logger != null) {
             logger.Restart();

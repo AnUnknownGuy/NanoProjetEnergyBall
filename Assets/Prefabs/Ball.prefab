@@ -70,7 +70,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 1ce8d43831df13f45b0c8de5b9091043, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &8257105204860484888
 MonoBehaviour:
@@ -84,13 +84,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c742f1edcd692c44c941e25cf86e5617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   material: {fileID: 6200000, guid: 1ce8d43831df13f45b0c8de5b9091043, type: 2}
+  sleeping: 0
+  speedWhenFreeFromDash: {x: 0, y: 10}
   gravityWhenThorwn: 0.2
   gravity: 2
   player: {fileID: 0}
   charged: 0
   previousPlayer: {fileID: 0}
+  previousPlayertouched: {fileID: 0}
+  previousPlayertouchedTimeStamp: 0
+  timeBeforeballCanBeCatchBySamePlayer: 0.2
   collisionRadius: 0.36
 --- !u!58 &2554137973294974170
 CircleCollider2D:
@@ -166,7 +170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: -9192717024546476118, guid: 32fedbd6cfab8974792b785a0a59c187, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -6,9 +6,10 @@ public class HoldState : MoveState
 {
 
 
+
     private float holdStartTimestamp;
 
-    public HoldState(Player player): base(player) {
+    public HoldState(Player player) : base(player) {
         name = "HoldState";
         color = Color.blue;
     }
@@ -24,12 +25,16 @@ public class HoldState : MoveState
         base.Stop();
         player.stateManager.timeInHold = Time.time - holdStartTimestamp;
     }
+
     public override bool ActionSignal() {
+        AudioManager.Throw_Ball(player.gameObject);
         player.ThrowBall();
         player.ThrowKnockBack();
         player.ThrowKnockBack();
-        player.ToStunState();
+        //player.ToStunState();
+        player.ToBaseState();
         return true;
     }
+
 
 }
