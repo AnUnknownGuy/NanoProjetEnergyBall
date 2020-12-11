@@ -19,7 +19,6 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.gameObject.tag == "plateform") {
 
-            Debug.Log("rev");
             player.PlateformCollided(collision.gameObject);
         }
     }
