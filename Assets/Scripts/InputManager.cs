@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public float inputSpeedThresholdJump = 0.3f;
-    public float inputSpeedThresholdFastFall = 0.2f;
+    public float inputThresholdJump = 0.3f;
+    public float inputThresholdFastFall = 0.1f;
     public float inputBufferDuration = 0.2f;
 
     private float deadZoneRightStick = 0.2f;
@@ -158,13 +158,13 @@ public class InputManager : MonoBehaviour
 
     void LeftStickProcess(Vector2 value)
     {
-        float verticalMovement = value.y - previousLeftStickValue.value.y;
+        float verticalMovement = value.y;
         
         if (settings.jumpWithStick 
-            && verticalMovement >= inputSpeedThresholdJump
+            && verticalMovement >= inputThresholdJump
             && previousLeftStickValue.value.magnitude < value.magnitude)
             JumpProcess();
-        if (verticalMovement <= -inputSpeedThresholdFastFall)
+        if (verticalMovement <= -inputThresholdFastFall)
             FastFallProcess();
         if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold)
             JumpStop();

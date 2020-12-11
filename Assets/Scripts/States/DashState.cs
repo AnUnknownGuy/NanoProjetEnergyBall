@@ -23,6 +23,7 @@ public class DashState : TemporaryState
         player.SetDashDirection();
         player.StopGravity();
         player.ToFallingLayer();
+        player.animator.Play("dash go");
     }
 
     public override void Update() {

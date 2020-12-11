@@ -58,6 +58,7 @@ public abstract class State : StateInterface
                 player.SetSpeed(ball.GetSpeed() * 0.2f);
 				AudioManager.Ball_Hit(player.gameObject);
                 ball.FakeCollision();
+                player.animator.Play("hit");
                 ball.Hit();
                 player.looseHealthBallHit();
                 player.ToStunState();
@@ -110,5 +111,9 @@ public abstract class State : StateInterface
 
     public virtual void WallCollided(Vector2 collisionDirection) {
         
+    }
+
+    public virtual void PlateformCollided(GameObject plateforme) {
+        player.lastPlateformTouched = plateforme;
     }
 }
