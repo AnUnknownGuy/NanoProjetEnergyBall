@@ -21,7 +21,7 @@ MonoBehaviour:
     x: 454
     y: -225
     width: 2695
-    height: 2160
+    height: 2161
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":2.9960784912109377,"g":1.0994112491607667,"b":0.0,"a":0.239215686917305}'
+      m_SerializableObject: '{"r":7.849056720733643,"g":6.528871536254883,"b":1.814168930053711,"a":0.239215686917305}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -89,19 +89,6 @@ MonoBehaviour:
       m_SerializableObject: 1
     min: 0.2
     max: 1
-    descendantCount: 0
-  - name: Sparks
-    path: Sparks
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 20
-    min: -Infinity
-    max: Infinity
     descendantCount: 0
   m_GraphVersion: 4
   m_saved: 1
@@ -3755,7 +3742,7 @@ VisualEffectResource:
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 10
-          m_Value: {x: 2.9960785, y: 1.0994112, z: 0, w: 0.23921569}
+          m_Value: {x: 7.8490567, y: 6.5288715, z: 1.8141689, w: 0.23921569}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 0
@@ -12491,7 +12478,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -12555,7 +12542,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":2.9960784912109377,"g":1.0994112491607667,"b":0.0,"a":0.239215686917305}'
+      m_SerializableObject: '{"r":7.849056720733643,"g":6.528871536254883,"b":1.814168930053711,"a":0.239215686917305}'
     m_Space: 2147483647
   m_Property:
     name: o

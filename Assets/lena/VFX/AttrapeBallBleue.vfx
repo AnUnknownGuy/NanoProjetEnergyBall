@@ -138,7 +138,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.0,"g":1.8071595430374146,"b":2.401679277420044,"a":1.0}'
+      m_SerializableObject: '{"r":0.0,"g":7.242760181427002,"b":9.60671615600586,"a":1.0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -2289,8 +2289,8 @@ VisualEffectResource:
       SetAttribute_D5151642( /*inout */attributes.scaleX,  /*inout */attributes.scaleY, 
       /*inout */attributes.scaleZ, float3(0.100000001, 1, 1));\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7DF18693(
       /*inout */attributes.size, attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(135.587036, 135.587036,
-      135.587036));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
+      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(28.193634, 170.772888,
+      95.5678177));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
       */attributes.lifetime, (float)1);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
@@ -2496,8 +2496,8 @@ VisualEffectResource:
       SetAttribute_D5151642( /*inout */attributes.scaleX,  /*inout */attributes.scaleY, 
       /*inout */attributes.scaleZ, float3(0.100000001, 1, 1));\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7DF18693(
       /*inout */attributes.size, attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(135.587036, 135.587036,
-      135.587036));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
+      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(28.193634, 170.772888,
+      95.5678177));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
       */attributes.lifetime, (float)1);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
@@ -2901,8 +2901,8 @@ VisualEffectResource:
       SetAttribute_D5151642( /*inout */attributes.scaleX,  /*inout */attributes.scaleY, 
       /*inout */attributes.scaleZ, float3(0.100000001, 1, 1));\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7DF18693(
       /*inout */attributes.size, attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(135.587036, 135.587036,
-      135.587036));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
+      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(28.193634, 170.772888,
+      95.5678177));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
       */attributes.lifetime, (float)1);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
@@ -3108,8 +3108,8 @@ VisualEffectResource:
       SetAttribute_D5151642( /*inout */attributes.scaleX,  /*inout */attributes.scaleY, 
       /*inout */attributes.scaleZ, float3(0.100000001, 1, 1));\n\t\t\t\t}\n\t\t\t\tAttributeFromCurve_7DF18693(
       /*inout */attributes.size, attributes.age, attributes.lifetime, Size_c);\n\t\t\t\t{\n\t\t\t\t   
-      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(135.587036, 135.587036,
-      135.587036));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
+      SetAttribute_FDD06EC7( /*inout */attributes.color, float3(28.193634, 170.772888,
+      95.5678177));\n\t\t\t\t}\n\t\t\t\t{\n\t\t\t\t    SetAttribute_E89EAA93( /*inout
       */attributes.lifetime, (float)1);\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
@@ -3565,7 +3565,7 @@ VisualEffectResource:
       /*inout */attributes.size,  /*inout */attributes.seed, Size_d);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
       Color_e);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_545F0ED( /*inout */attributes.color,
-      float3(9.00768661, 9.9764719, 0));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      float3(13.2068768, 13.3193731, 12.1256561));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -3785,7 +3785,7 @@ VisualEffectResource:
       /*inout */attributes.size,  /*inout */attributes.seed, Size_d);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
       Color_e);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_545F0ED( /*inout */attributes.color,
-      float3(9.00768661, 9.9764719, 0));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      float3(13.2068768, 13.3193731, 12.1256561));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -4297,7 +4297,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 14
           m_Value: {x: 0, y: 0, z: 45}
         - m_ExpressionIndex: 19
-          m_Value: {x: 135.58704, y: 135.58704, z: 135.58704}
+          m_Value: {x: 28.193634, y: 170.77289, z: 95.56782}
         - m_ExpressionIndex: 20
           m_Value: {x: 0, y: 0, z: -45}
         - m_ExpressionIndex: 27
@@ -4317,11 +4317,11 @@ VisualEffectResource:
         - m_ExpressionIndex: 43
           m_Value: {x: 50, y: 50, z: -50}
         - m_ExpressionIndex: 56
-          m_Value: {x: 9.007687, y: 9.976472, z: 0}
+          m_Value: {x: 13.206877, y: 13.319373, z: 12.125656}
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 0
-          m_Value: {x: 0, y: 1.8071595, z: 2.4016793, w: 1}
+          m_Value: {x: 0, y: 7.24276, z: 9.606716, w: 1}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 46
@@ -6793,7 +6793,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.0,"g":1.8071595430374146,"b":2.401679277420044,"a":1.0}'
+      m_SerializableObject: '{"r":0.0,"g":7.242760181427002,"b":9.60671615600586,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -13431,7 +13431,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":135.5870361328125,"g":135.5870361328125,"b":135.5870361328125,"a":0.0}'
+      m_SerializableObject: '{"r":28.193634033203126,"g":170.77288818359376,"b":95.56781768798828,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -16136,7 +16136,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":9.007686614990235,"g":9.976471900939942,"b":0.0,"a":0.0}'
+      m_SerializableObject: '{"r":13.206876754760743,"g":13.31937313079834,"b":12.125656127929688,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
