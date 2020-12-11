@@ -273,7 +273,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseHealthTick() {
-        if (!HasBall() && health - decay * Time.deltaTime > 10)
+        if (!HasBall())
             LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
