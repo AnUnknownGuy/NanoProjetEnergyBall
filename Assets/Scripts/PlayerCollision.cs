@@ -16,5 +16,11 @@ public class PlayerCollision : MonoBehaviour
                 player.WallCollided(collision.contacts[0].normal);
             }
         }
+
+        if (collision.gameObject.tag == "plateform") {
+
+            Debug.Log("rev");
+            player.PlateformCollided(collision.gameObject);
+        }
     }
 }

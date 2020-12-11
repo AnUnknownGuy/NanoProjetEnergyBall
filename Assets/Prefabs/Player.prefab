@@ -224,6 +224,7 @@ MonoBehaviour:
   collisionRadius: 0.19
   catchRadius: 0.3
   onGround: 0
+  onPlateform: 0
   canDash: 1
   onWallRight: 0
   onWallLeft: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   isFastFalling: 0
   timeOnGround: 0
   timeInAir: 0
+  lastPlateformTouched: {fileID: 0}
   sprite: {fileID: 4389660307044624420}
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
@@ -246,9 +248,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.67, y: 1}
-  m_Direction: 0
+  m_Offset: {x: 0, y: -0.49}
+  m_Size: {x: 0.42, y: 0.03}
+  m_Direction: 1
 --- !u!114 &8592178200580453279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,8 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c47013cc0e55ec44ac620fe8af3de81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSpeedThresholdJump: 0.2
-  inputSpeedThresholdFastFall: 0.3
+  inputThresholdJump: 0.3
+  inputThresholdFastFall: 0.1
   inputBufferDuration: 0.2
   timeBetweenStickUpdate: 0.1
   stopJumpThreshhold: 0.5

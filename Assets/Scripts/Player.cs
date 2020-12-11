@@ -48,12 +48,13 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector] public bool onGround = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
+    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
 
     //Log
     [HideInInspector] public float timeOnGround = 0;
     [HideInInspector] public float timeInAir = 0;
     private float onGroundChangeTimeStamp;
+    [HideInInspector] public GameObject lastPlateformTouched;
 
     public SpriteRenderer sprite;
 
@@ -134,6 +135,10 @@ public class Player : MonoBehaviour
 
     public void WallCollided(Vector2 collisionDirection) {
         stateManager.OnWallCollided(collisionDirection);
+    }
+
+    public void PlateformCollided(GameObject plateforme) {
+        stateManager.OnPlateformCollided(plateforme);
     }
 
     public bool CatchBall(Ball ball) {

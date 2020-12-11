@@ -20,7 +20,8 @@ public class MoveState : State {
                 player.ToBaseLayer();
             }
             coyoteTimer = Time.time;
-        }/*
+        }
+        /*
         Debug.Log(player.inputManager.GetLeftStickValue().y);
         if (player.inputManager.GetLeftStickValue().y < -0.5f && !fastFalling) {
             FastFallSignal();
@@ -36,6 +37,7 @@ public class MoveState : State {
     }
 
     override public bool JumpSignal() {
+        Debug.Log("Jump !");
         if (coyoteTimer + player.coyoteTime > Time.time) {
             AudioManager.Jump(player.gameObject);
             player.stateManager.numberOfJumps++;
