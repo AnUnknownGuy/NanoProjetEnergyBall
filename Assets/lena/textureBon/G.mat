@@ -34,7 +34,7 @@ Material:
     - Vector1_405EDB97: 0
     - Vector1_A6E8740C: 2.55
     m_Colors:
-    - Color_CFCE8651: {r: 4, g: 1.4064769, b: 0.32075477, a: 1}
+    - Color_CFCE8651: {r: 2.4686356, g: 0.54952914, b: 0.05822253, a: 1}
     - Color_F530118A: {r: 5.3403134, g: 1.7824417, b: 0.5289933, a: 1}
     - Vector2_34F3EAD9: {r: 4, g: 2, b: 0, a: 0}
     - Vector2_3565AEA4: {r: 0, g: 0.05, b: 0, a: 0}
