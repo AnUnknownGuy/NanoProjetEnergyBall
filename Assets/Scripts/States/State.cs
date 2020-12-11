@@ -94,6 +94,7 @@ public abstract class State : StateInterface
             AudioManager.Dash_Hit(player.gameObject);
             player.stateManager.numberHittedByDash++;
 
+            player.animator.Play("hit");
             Ball ball = player.ball;
             ball.Free();
             player.ball = null;
