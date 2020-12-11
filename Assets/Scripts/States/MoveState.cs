@@ -11,14 +11,14 @@ public class MoveState : State {
     private bool fallingNormal = true;
     private bool fastFalling = false;
     private float coyoteTimer = 0;
-    private float dontResetTimerBefore = 0;
+    private float dontJumpBefore = 0;
 
 
     public override void Update() {
         base.Update();
 
-        if (player.onGround) {
-            if (player.inputManager.GetLeftStickValue().y > -0.3f) {
+        if (player.onGround && player.rb.velocity.y <= 0) {
+            if (player.inputManager.GetLeftStickValue().y > player.inputManager.inputThresholdFastFall) {
                 player.ToBaseLayer();
             }
 
@@ -34,7 +34,7 @@ public class MoveState : State {
     }
 
     override public bool JumpSignal() {
-        if (coyoteTimer + player.coyoteTime > Time.time && player.rb.velocity.y <= 0) {
+        if (coyoteTimer + player.coyoteTime > Time.time && player.rb.velocity.y <= 0 && dontJumpBefore + player.timeBetweenJump <= Time.time) {
             AudioManager.Jump(player.gameObject);
             player.stateManager.numberOfJumps++;
             isJumping = true;
@@ -42,6 +42,7 @@ public class MoveState : State {
             fallingNormal = false;
             player.Jump();
             player.SetLowGravity();
+            dontJumpBefore = Time.time;
             return true;
         }
         return false;
@@ -86,5 +87,8 @@ public class MoveState : State {
 
     public override void WallCollided(Vector2 collisionDirection) {
         player.SetNormalGravity();
+
+        player.canDash = true;
+        player.isJumping = false;
     }
 }
