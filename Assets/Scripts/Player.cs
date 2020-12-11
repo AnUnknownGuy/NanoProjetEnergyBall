@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class Player : MonoBehaviour
 
     public float timeBeforeBeingAbleToThrow = 0.2f;
 
+    [Space(10)]
+
+    public bool facingRight = true;
+
     [HideInInspector] public Ball ball;
 
     [HideInInspector] public Vector2 dashDirection;
@@ -56,6 +61,7 @@ public class Player : MonoBehaviour
     private float onGroundChangeTimeStamp;
 
     public SpriteRenderer sprite;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -63,9 +69,15 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         stateManager = new StateManager(this);
         onGroundChangeTimeStamp = Time.time;
+
+        if (facingRight) {
+            transform.rotation = Quaternion.Euler(0,0,0);
+        } else {
+            transform.rotation = Quaternion.Euler(0,180,0);
+        }
     }
 
-    
+
 
     // Update is called once per frame
     void Update()
@@ -76,22 +88,74 @@ public class Player : MonoBehaviour
 
         alive = !(health < 10);
 
+        
+        AnimJump(isJumping);
+        AnimFalling(!onGround);
+        AnimRecovery(onGround);
+
     }
 
     public void Dash() {
-        Vector2 newSpeed = dashDirection * dashPower;
 
+        Vector2 newSpeed = dashDirection * dashPower;
         rb.velocity = newSpeed;
+
+
+        facingRight = (rb.velocity.x > 0);
+        UpdateFacingDirection(0.1f);
     }
 
     public void Walk(float x)
     {
-        if (HasBall()) {
-            rb.velocity = new Vector2(x * speedWithBall, rb.velocity.y);
+        if (Mathf.Abs(x) > 0.05f) {
+            if (HasBall()) {
+                rb.velocity = new Vector2(x * speedWithBall, rb.velocity.y);
+            } else {
+                rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
+            }
+
+            facingRight = (rb.velocity.x > 0);
+
+            UpdateFacingDirection(0.2f);
+            AnimRun(true);
         } else {
-            rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
+            AnimRun(false);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
+
+    public void UpdateFacingDirection(float duration) {
+        DOTween.KillAll();
+
+        if (facingRight) {
+            //transform.rotation = Quaternion.Euler(0,0,0);
+
+            transform.DORotateQuaternion(Quaternion.Euler(0, 0, 0), duration);
+
+        } else {
+            //transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.DORotateQuaternion(Quaternion.Euler(0, 180, 0), duration);
+        }
+
+    }
+
+    public void AnimRun(bool bol) {
+        animator.SetBool("IsRunning", bol);
+    }
+
+
+    public void AnimJump(bool bol) {
+        animator.SetBool("IsJumping", bol);
+    }
+
+    public void AnimFalling(bool bol) {
+        animator.SetBool("IsFalling", bol);
+    }
+
+    public void AnimRecovery(bool bol) {
+        animator.SetBool("OnGround", bol);
+    }
+
 
     public void Jump() 
     {
@@ -147,6 +211,9 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
+
+            facingRight = inputManager.GetRightStickValue().x > 0;
+            UpdateFacingDirection(0.1f);
             ball = null;
         }
     }
