@@ -112,4 +112,8 @@ public abstract class State : StateInterface
     public virtual void WallCollided(Vector2 collisionDirection) {
         
     }
+
+    public virtual void PlateformCollided(GameObject plateforme) {
+        player.lastPlateformTouched = plateforme;
+    }
 }
