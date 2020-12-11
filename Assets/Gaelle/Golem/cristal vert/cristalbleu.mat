@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: cristal vert 1
-  m_Shader: {fileID: -6465566751694194690, guid: 20b019d39561dc74f8e6e614ecb994e0,
+  m_Name: cristalbleu
+  m_Shader: {fileID: -6465566751694194690, guid: b3af053f0d285a24f8faf88f2b8e278f,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -19,14 +19,11 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_285AB461:
-        m_Texture: {fileID: 2800000, guid: a1b6381158942134da9eb2eca529a683, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
-    - Vector1_ABAB68D5: 0.2
-    - Vector1_FBF4DC0E: 0
+    - Vector1_5C48E2F4: 4
+    - Vector1_76AFE8D1: 0
+    - Vector1_EEABD770: 5
     m_Colors:
-    - Color_CFF51568: {r: 5.460324, g: 0, b: 0, a: 1}
-    - Color_FA29C18B: {r: 0, g: 0, b: 0, a: 1}
+    - Color_264C613F: {r: 0, g: 1, b: 0.9811893, a: 0}
+    - Color_36BF788C: {r: 0, g: 0.8264365, b: 1, a: 0}
