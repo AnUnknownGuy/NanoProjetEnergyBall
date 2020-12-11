@@ -214,6 +214,7 @@ MonoBehaviour:
   healthLostOnDashHit: 50
   healthLostOnBallHit: 20
   timeBeforeBeingAbleToThrow: 0.2
+  facingRight: 1
   ball: {fileID: 0}
   dashDirection: {x: 0, y: 0}
   WallsLayer:
@@ -300,9 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputThresholdJump: 0.3
-  inputThresholdFastFall: 0.1
+  inputThresholdFastFall: -0.2
   inputBufferDuration: 0.2
-  timeBetweenStickUpdate: 0.1
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}
   player: {fileID: 4389660307696137376}

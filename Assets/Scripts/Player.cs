@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         AnimJump(isJumping);
         AnimFalling(!onGround);
         AnimRecovery(onGround);
-
+        Debug.Log(rb.gravityScale);
     }
 
     public void Dash() {
