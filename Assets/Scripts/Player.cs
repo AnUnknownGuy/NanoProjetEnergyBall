@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public float timeBetweenDash = 1f;
     public float jumpScale = 5;
     public float coyoteTime = 0.2f;
+    public float timeBetweenJump = 0.3f;
 
     public float gravity = 1;
     public float lowGravity = 0.7f;
@@ -167,8 +168,7 @@ public class Player : MonoBehaviour
 
         if (Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, WallsLayer) && rb.velocity.y <= 0) {
             onGround = true;
-            canDash = true;
-            isJumping = false;
+            ResetJump();
         } else {
             onGround = false;
         }
@@ -184,6 +184,12 @@ public class Player : MonoBehaviour
             
         onWallRight = Physics2D.OverlapCircle((Vector2)transform.position + rightOffset, collisionRadius, WallsLayer);
         onWallLeft = Physics2D.OverlapCircle((Vector2)transform.position + leftOffset, collisionRadius, WallsLayer);
+    }
+
+    public void ResetJump() {
+
+        canDash = true;
+        isJumping = false;
     }
 
     public void BallEntered(Ball ball) {
