@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1065509721}
-  activated: 0
+  activated: 1
 --- !u!1 &1172253083
 GameObject:
   m_ObjectHideFlags: 0
