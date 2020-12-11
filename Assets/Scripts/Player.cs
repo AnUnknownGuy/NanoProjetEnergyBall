@@ -86,9 +86,6 @@ public class Player : MonoBehaviour
         stateManager.Update();
 
         CheckContactPoints();
-
-        alive = !(health < 10);
-
         
         AnimJump(isJumping);
         AnimFalling(!onGround);
@@ -223,14 +220,24 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void looseHealthBallHit() {
-        if (CameraManager.Instance != null) CameraManager.Instance.Shake(0.2f, 0.5f);
-        health -= healthLostOnBallHit;
+    public void LoseHealth(float amount)
+    {
+        health -= amount;
+        if (health < 10 && alive)
+        {
+            alive = false;
+            CameraManager.Instance.Zoom(transform.position);
+        }
     }
 
-    public void looseHealthDashHit() {
-        if (CameraManager.Instance != null) CameraManager.Instance.Shake(0.5f, 0.5f);
-        health -= healthLostOnDashHit;
+    public void LoseHealthBallHit() {
+        CameraManager.Instance.Shake(0.2f, 0.5f);
+        LoseHealth(healthLostOnBallHit);
+    }
+
+    public void LoseHealthDashHit() {
+        CameraManager.Instance.Shake(0.5f, 0.5f);
+        LoseHealth(healthLostOnDashHit);
     }
 
     public void ThrowKnockBack() {
@@ -265,9 +272,9 @@ public class Player : MonoBehaviour
         stateManager.ToHoldStun(stunDuration);
     }
 
-    public void LooseHealth() {
-        if (!HasBall())
-            health -= decay * Time.deltaTime;
+    public void LoseHealthTick() {
+        if (!HasBall() && health - decay * Time.deltaTime > 10)
+            LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
         rb.velocity = speed;
