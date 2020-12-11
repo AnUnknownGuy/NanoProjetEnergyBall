@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance;
-    
+
     [SerializeField] private Camera mainCam;
 
     void Awake()

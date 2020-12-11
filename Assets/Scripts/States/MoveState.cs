@@ -8,6 +8,7 @@ public class MoveState : State {
     }
 
     private bool isJumping = false;
+    private bool fallingNormal = true;
     private bool fastFalling = false;
     private float coyoteTimer = 0;
     private float dontResetTimerBefore = 0;
@@ -15,31 +16,30 @@ public class MoveState : State {
 
     public override void Update() {
         base.Update();
+
         if (player.onGround) {
             if (player.inputManager.GetLeftStickValue().y > -0.3f) {
                 player.ToBaseLayer();
             }
+
             coyoteTimer = Time.time;
-        }/*
-        Debug.Log(player.inputManager.GetLeftStickValue().y);
-        if (player.inputManager.GetLeftStickValue().y < -0.5f && !fastFalling) {
-            FastFallSignal();
-            fastFalling = true;
-        } else {
-            fastFalling = false;
         }
-        */
+
+
         if (isJumping && player.rb.velocity.y < 0 && !fastFalling) {
+            fallingNormal = true;
             player.SetNormalGravity();
             isJumping = false;
         }
     }
 
     override public bool JumpSignal() {
-        if (coyoteTimer + player.coyoteTime > Time.time) {
+        if (coyoteTimer + player.coyoteTime > Time.time && player.rb.velocity.y <= 0) {
             AudioManager.Jump(player.gameObject);
             player.stateManager.numberOfJumps++;
             isJumping = true;
+            fastFalling = false;
+            fallingNormal = false;
             player.Jump();
             player.SetLowGravity();
             return true;
@@ -48,9 +48,11 @@ public class MoveState : State {
     }
 
     override public bool JumpStopSignal() {
-        if (isJumping) {
+        if (isJumping || player.onGround) {
             player.SetNormalGravity();
             isJumping = false;
+            fallingNormal = true;
+            fastFalling = false;
             return true;
         }
         return false;
@@ -70,9 +72,15 @@ public class MoveState : State {
 
 
     public override bool FastFallSignal() {
+        if (fallingNormal || isJumping) {
+            fallingNormal = false;
+            isJumping = false;
+        }
+
         player.stateManager.numberOfFastFall++;
         player.SetHighGravity();
         player.ToFallingLayer();
+        fastFalling = true;
         return true;
     }
 

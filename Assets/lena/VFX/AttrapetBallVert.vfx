@@ -79,9 +79,9 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: -1477
-    y: -942
-    width: 4198
-    height: 2588
+    y: -881
+    width: 4173
+    height: 3183
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.15020573139190675,"g":4.80335807800293,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":0.6035634875297546,"g":19.213438034057618,"b":0.0,"a":1.0}'
     min: -Infinity
     max: Infinity
     descendantCount: 0
@@ -1758,7 +1758,7 @@ VisualEffectResource:
       /*inout */attributes.size,  /*inout */attributes.seed, Size_d);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
       Color_e);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_545F0ED( /*inout */attributes.color,
-      float3(6.60889864, 8.47180939, 0));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      float3(10.6887493, 11.3105326, 8.48289967));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -1978,7 +1978,7 @@ VisualEffectResource:
       /*inout */attributes.size,  /*inout */attributes.seed, Size_d);\n\t\t\t\tAttributeFromCurve_48A86161(
       /*inout */attributes.color,  /*inout */attributes.alpha, attributes.age, attributes.lifetime,
       Color_e);\n\t\t\t\t{\n\t\t\t\t    SetAttribute_545F0ED( /*inout */attributes.color,
-      float3(6.60889864, 8.47180939, 0));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
+      float3(10.6887493, 11.3105326, 8.48289967));\n\t\t\t\t}\n\t\t\t\t\n\n\t\t\t\t\n\t\t\t#if
       !HAS_STRIPS\n\t\t\t\tif (!attributes.alive)\n\t\t\t\t\treturn o;\n\t\t\t#endif\n\t\t\t\t\n\t\t\t#if
       VFX_PRIMITIVE_QUAD\n\t\t\t\n\t\t\t#if HAS_STRIPS\n\t\t\t#if VFX_STRIPS_UV_STRECHED\n\t\t\t\to.VFX_VARYING_UV.x
       = (float)(currentIndex) / (stripData.nextIndex - 1);\n\t\t\t#elif VFX_STRIPS_UV_PER_SEGMENT\n\t\t\t\to.VFX_VARYING_UV.x
@@ -4295,7 +4295,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 16
           m_Value: {x: 0.2, y: 1, z: 1}
         - m_ExpressionIndex: 20
-          m_Value: {x: 6.6088986, y: 8.471809, z: 0}
+          m_Value: {x: 10.688749, y: 11.310533, z: 8.4829}
         - m_ExpressionIndex: 22
           m_Value: {x: 0, y: 0, z: 45}
         - m_ExpressionIndex: 24
@@ -4321,7 +4321,7 @@ VisualEffectResource:
       m_Vector4f:
         m_Array:
         - m_ExpressionIndex: 0
-          m_Value: {x: 0.15020573, y: 4.803358, z: 0, w: 1}
+          m_Value: {x: 0.6035635, y: 19.213438, z: 0, w: 1}
       m_Uint:
         m_Array:
         - m_ExpressionIndex: 46
@@ -15488,7 +15488,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.15020573139190675,"g":4.80335807800293,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":0.6035634875297546,"g":19.213438034057618,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -16135,7 +16135,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":6.608898639678955,"g":8.471809387207032,"b":0.0,"a":0.0}'
+      m_SerializableObject: '{"r":10.688749313354493,"g":11.310532569885254,"b":8.48289966583252,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o

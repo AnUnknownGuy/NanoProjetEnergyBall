@@ -102,6 +102,10 @@ public class StateManager
         currentState.WallCollided(collisionDirection);
     }
 
+    public void OnPlateformCollided(GameObject plateforme) {
+        currentState.PlateformCollided(plateforme);
+    }
+
 
     public void Update() {
         currentState.Update();
