@@ -778,7 +778,7 @@ MonoBehaviour:
   health2: {fileID: 1913530858}
   level: {fileID: 0}
   logger: {fileID: 1065509723}
-  transitionPanel: {fileID: 342518202}
+  transitionPanel: {fileID: 0}
   point1: {fileID: 307674388}
   point2: {fileID: 977091361}
   point3: {fileID: 472639300}

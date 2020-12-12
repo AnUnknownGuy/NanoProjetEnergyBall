@@ -236,7 +236,7 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
-            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, transform.position);
+            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, BallTransform.position);
             Vibration.Vibrate(inputManager.playerInput, 0.5f, 0.2f);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
