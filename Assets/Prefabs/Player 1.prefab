@@ -61,6 +61,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.67, y: 1}
   m_Direction: 0
+--- !u!1 &4200211176789748091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909395786908513041}
+  m_Layer: 9
+  m_Name: BallPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &909395786908513041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200211176789748091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.22, y: 0.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4389660307696137377}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4389660307044624422
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +209,7 @@ Transform:
   - {fileID: 5554081505237045111}
   - {fileID: 7314039214166916274}
   - {fileID: 7125973535598716447}
+  - {fileID: 909395786908513041}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -245,6 +276,7 @@ MonoBehaviour:
   catchVFXPrefab: {fileID: 5856979016380894863, guid: 434953e356192f9449c1b44eeca7deac,
     type: 3}
   deathDestroyDelay: 0.25
+  BallTransform: {fileID: 909395786908513041}
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

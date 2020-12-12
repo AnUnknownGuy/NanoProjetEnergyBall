@@ -56,7 +56,7 @@ public class Ball : MonoBehaviour
         GetSpeedSound();
         AudioManager.Ball_Velocity(speedSound);
         if (player != null) {
-            transform.position = player.transform.position;
+            transform.position = player.BallTransform.position;
         }
     }
 
