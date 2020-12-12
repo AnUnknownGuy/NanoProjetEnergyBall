@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8410035859475464689}
   - component: {fileID: 5898302499651252479}
   - component: {fileID: 3523568365335521459}
+  - component: {fileID: 7084427558260435001}
   m_Layer: 0
   m_Name: jump_front
   m_TagString: Untagged
@@ -102,6 +103,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &7084427558260435001
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13554622553347319}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a64ff1a66a2ad044ebf3e31996a30b3b, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a64ff1a66a2ad044ebf3e31996a30b3b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &5286434492113579669
 PrefabInstance:
   m_ObjectHideFlags: 0

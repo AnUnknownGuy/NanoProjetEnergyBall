@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel() {
         if (!restarting) {
+            AudioManager.Start_Horn(gameObject);
             StartCoroutine(Restart(timeBeforeRestart));
             restarting = true;
         }

@@ -237,6 +237,7 @@ public class Player : MonoBehaviour
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
             VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, transform.position);
+            Vibration.Vibrate(inputManager.playerInput, 0.5f, 0.2f);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
             UpdateFacingDirection(0.1f);
@@ -267,11 +268,13 @@ public class Player : MonoBehaviour
     public void LoseHealthBallHit() {
         CameraManager.Instance.Shake(0.2f, 0.5f);
         LoseHealth(healthLostOnBallHit);
+        Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.2f);
     }
 
     public void LoseHealthDashHit() {
         CameraManager.Instance.Shake(0.5f, 0.5f);
         LoseHealth(healthLostOnDashHit);
+        Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.5f);
     }
 
     public void ThrowKnockBack() {
