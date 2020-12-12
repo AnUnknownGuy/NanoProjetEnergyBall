@@ -247,7 +247,7 @@ MonoBehaviour:
   inputManager: {fileID: 7433136271738114374}
   speedWithBall: 5
   speedWithoutBall: 6
-  dashPower: 15
+  dashPower: 17
   dashDuration: 0.2
   timeBetweenDash: 1
   jumpScale: 14

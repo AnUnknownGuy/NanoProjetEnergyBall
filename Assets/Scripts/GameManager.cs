@@ -32,11 +32,15 @@ public class GameManager : MonoBehaviour
         if (level == null) {
             CreateLevel();
             SetHealthBars();
+
+            //AudioManager.Battle_Scene_Stop(gameObject);
+            //AudioManager.Battle_Scene(gameObject);
         }
     }
 
     void Update() {
         if (Input.GetKeyDown("r")) {
+            AudioManager.Battle_Scene_Stop();
             SceneManager.LoadScene("BaseLevel");
         }
     }

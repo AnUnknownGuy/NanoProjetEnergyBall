@@ -44,7 +44,6 @@ public class AudioManager : MonoBehaviour
 
         Battle_Scene(gameObject);
         Ambiance(gameObject);
-
     }
 
 
@@ -61,6 +60,11 @@ public class AudioManager : MonoBehaviour
     public static void Battle_Scene(GameObject gameObject) {
         if (exist) instance.battle_Scene.Post(gameObject);
     }
+
+    public static void Battle_Scene_Stop() {
+        if (exist) instance.battle_Scene.Stop(instance.gameObject);
+    }
+
     public static void Music_Menu(GameObject gameObject)
     {
         if (exist) instance.music_menu.Post(gameObject);
