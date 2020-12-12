@@ -28,6 +28,7 @@ public class HoldState : MoveState
 
     public override bool ActionSignal() {
         AudioManager.Throw_Ball(player.gameObject);
+        player.animator.Play("lancer");
         player.ThrowBall();
         player.ThrowKnockBack();
         player.ThrowKnockBack();
