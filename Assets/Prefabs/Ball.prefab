@@ -96,7 +96,7 @@ MonoBehaviour:
   previousPlayertouchedTimeStamp: 0
   timeBeforeballCanBeCatchBySamePlayer: 0.2
   collisionRadius: 0.36
-  ballColor: {r: 0.7490196, g: 0.62352943, b: 0.1764706, a: 0.23921569}
+  ballColor: {r: 1, g: 0.9634524, b: 0.8349056, a: 1}
   ballEffect: {fileID: 5748852595879151655}
 --- !u!58 &2554137973294974170
 CircleCollider2D:
@@ -210,7 +210,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 7.8490567, y: 6.5288715, z: 1.8141689, w: 0.23921569}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
