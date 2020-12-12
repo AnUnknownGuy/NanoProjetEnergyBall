@@ -28,7 +28,8 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event ambiance;
     public AK.Wwise.Event navigate;
     public AK.Wwise.Event validate;
-    public AK.Wwise.Event begin;
+    public AK.Wwise.Event begin_game;
+    public AK.Wwise.Event countdown;
 
 
     [Space(10)]
@@ -105,7 +106,11 @@ public class AudioManager : MonoBehaviour
     }
     public static void Begin(GameObject gameObject)
     {
-        if (exist) instance.begin.Post(gameObject);
+        if (exist) instance.begin_game.Post(gameObject);
+    }
+    public static void Countdown(GameObject gameObject)
+    {
+        if (exist) instance.countdown.Post(gameObject);
     }
 
 
