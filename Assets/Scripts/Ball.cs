@@ -63,7 +63,10 @@ public class Ball : MonoBehaviour
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
             ballEffect.SetVector4("Color", player.color);
+
+            if (previousPlayer != null) previousPlayer.StartDecay();
             this.player = player;
+            player.StopDecay();
             sleeping = true;
             rb.Sleep();
             return true;
@@ -80,6 +83,7 @@ public class Ball : MonoBehaviour
     }
 
     public void Free() {
+        previousPlayer = player;
         player = null;
         sleeping = false;
         rb.WakeUp();

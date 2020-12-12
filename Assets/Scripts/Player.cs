@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
     public Transform BallTransform;
     public DashCooldownIndicator dashCooldownIndicator;
 
+
+    private bool isDecaying = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -169,6 +171,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void StopDecay() {
+        isDecaying = false;
+    }
+
+    public void StartDecay() {
+        isDecaying = true;
+    }
 
     public void AnimJump(bool bol) {
         if (!animator.GetBool("IsJumping") && bol) {
@@ -333,7 +342,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseHealthTick() {
-        if (!HasBall())
+        if (isDecaying)
             LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
