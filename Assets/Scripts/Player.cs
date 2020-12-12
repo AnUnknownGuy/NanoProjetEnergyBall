@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    enum PlayerNumber
+    {
+        Joueur1,
+        Joueur2
+    }
+    [SerializeField] private PlayerNumber playerNumber;
+
     [HideInInspector]
     public StateManager stateManager;
-
+    
     [HideInInspector]
     public Rigidbody2D rb;
 
@@ -72,6 +79,7 @@ public class Player : MonoBehaviour
     public float deathDestroyDelay;
     
     public Transform BallTransform;
+    public DashCooldownIndicator dashCooldownIndicator;
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +87,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         stateManager = new StateManager(this);
         onGroundChangeTimeStamp = Time.time;
-
+        dashCooldownIndicator.Player = this;
         if (facingRight) {
             transform.rotation = Quaternion.Euler(0,0,0);
         } else {
@@ -134,12 +142,17 @@ public class Player : MonoBehaviour
 
         if (facingRight) {
             //transform.rotation = Quaternion.Euler(0,0,0);
-
-            transform.DORotateQuaternion(Quaternion.Euler(0, 0, 0), duration);
+            if(playerNumber == PlayerNumber.Joueur1)
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 0, 0), duration);
+            else
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 90, 0), duration);
 
         } else {
             //transform.rotation = Quaternion.Euler(0, 180, 0);
-            transform.DORotateQuaternion(Quaternion.Euler(0, 180, 0), duration);
+            if(playerNumber == PlayerNumber.Joueur1)
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 180, 0), duration);
+            else
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, -90, 0), duration);
         }
 
     }
