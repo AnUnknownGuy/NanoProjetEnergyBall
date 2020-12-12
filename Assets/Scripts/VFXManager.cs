@@ -13,6 +13,7 @@ public class VFXManager : MonoBehaviour
     public GameObject Jump;
     public GameObject FallImpact;
     public GameObject BallImpact;
+    public GameObject ThrowMuzzle;
 
     void Start()
     {
