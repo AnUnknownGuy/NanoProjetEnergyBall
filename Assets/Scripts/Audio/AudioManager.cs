@@ -76,36 +76,34 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_bounce.Post(gameObject);
     }
     public static void Ball_Air(GameObject gameObject) {
-        Debug.Log("coucou");
         if (exist) instance.ball_air.Post(gameObject);
     }
+    public static void Ball_Air_Stop(GameObject gameObject) {
+        if (exist) instance.ball_air.Stop(gameObject);
+    }
+
     public static void Start_Horn(GameObject gameObject)
     {
-        Debug.Log("coucou");
         if (exist) instance.start_horn.Post(gameObject);
     }
     public static void Ambiance(GameObject gameObject)
     {
-        Debug.Log("coucou");
         if (exist) instance.ambiance.Post(gameObject);
     }
 
 
     public static void Ball_Velocity(float value)
     {
-        //Debug.Log(value);
         if (exist) instance.ball_velocity.SetGlobalValue(value);
     }
 
     public static void Ball_Idle()
     {
-        //Debug.Log(value);
         if (exist) instance.ball_idle.SetValue();
     }
 
     public static void Ball_Charegd()
     {
-        //Debug.Log(value);
         if (exist) instance.ball_charged.SetValue();
     }
 

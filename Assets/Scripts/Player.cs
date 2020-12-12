@@ -249,11 +249,11 @@ public class Player : MonoBehaviour
         if (health < 10 && alive)
         {
             alive = false;
-            CameraManager.Instance.Zoom(transform.position).onComplete += () =>
-            {
+            // CameraManager.Instance.Zoom(currentPos).onComplete += () =>
+            // {
                 VFXManager.Spawn(deathVFXPrefab, transform.position);
                 StartCoroutine(Death());
-            };
+            // };
         }
     }
 

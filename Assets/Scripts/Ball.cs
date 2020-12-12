@@ -35,8 +35,8 @@ public class Ball : MonoBehaviour
     public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
 
     public float collisionRadius = 0.25f;
-    public Color ballColor;
     public VisualEffect ballEffect;
+    private Color ballColor;
 
 
     // Start is called before the first frame update
@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
-        
+        ballColor = ballEffect.GetVector4("Color");
     }
 
     // Update is called once per frame
@@ -136,6 +136,10 @@ public class Ball : MonoBehaviour
         } else {
             speedSound = 0;
         }
+    }
+
+    public void StopSound() {
+        AudioManager.Ball_Air_Stop(gameObject);
     }
 
     private void OnDrawGizmos() {

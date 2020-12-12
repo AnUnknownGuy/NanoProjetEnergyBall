@@ -52,6 +52,7 @@ MonoBehaviour:
   player2: {fileID: 6854957935387030453}
   input1: {fileID: 4694724004871897552}
   input2: {fileID: 355020381916272211}
+  ball: {fileID: 6095602282584739104}
   gameManager: {fileID: 0}
 --- !u!1001 &108812564050756492
 PrefabInstance:
@@ -512,6 +513,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2738413515797360696}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6095602282584739104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8257105204860484888, guid: da3b70ada985b7d4986fee96ffa0b9e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2738413515797360696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c742f1edcd692c44c941e25cf86e5617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7190708354679899925
 PrefabInstance:
   m_ObjectHideFlags: 0

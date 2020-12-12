@@ -31,7 +31,7 @@ public class CameraManager : MonoBehaviour
         targetPosition.z = transform.localPosition.z;
         Vector3 initialPos = transform.localPosition;
         float initialSize = mainCam.orthographicSize;
-            
+        
         transform.DOLocalMove(targetPosition, zoomDuration * timeScale).SetEase(Ease.OutExpo)
             .OnComplete(() => transform.DOLocalMove(initialPos, zoomDuration).SetEase(Ease.InOutCubic));
         
