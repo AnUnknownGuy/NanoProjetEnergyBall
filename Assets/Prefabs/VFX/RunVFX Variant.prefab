@@ -9,9 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: 9a1b6f2acda659141918938acbd4caf9, type: 2}
+      objectReference: {fileID: 7400000, guid: cfbd8781c82edd445b70ca9707ea391f, type: 2}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: cfbd8781c82edd445b70ca9707ea391f, type: 2}
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 2566076499716737801, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
       propertyPath: m_Name
-      value: RunVFX
+      value: RunVFX Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7522147023269178824, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}

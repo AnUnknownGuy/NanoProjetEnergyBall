@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13554622553347319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4826438727189624401}
@@ -111,7 +111,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
       propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 1227b96ee58411a47b1e8a9347c8b687, type: 2}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
       value: 
       objectReference: {fileID: 7400000, guid: 1227b96ee58411a47b1e8a9347c8b687, type: 2}
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
@@ -127,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
@@ -169,6 +179,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2013214298586765715, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
       propertyPath: m_Controller
@@ -183,7 +203,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2576075752240879455, guid: f9ce70c4985eb434b86d9a5b22ebb987,
+      objectReference: {fileID: -1230306669262166264, guid: f9ce70c4985eb434b86d9a5b22ebb987,
         type: 3}
     - target: {fileID: 7522147023269178824, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}

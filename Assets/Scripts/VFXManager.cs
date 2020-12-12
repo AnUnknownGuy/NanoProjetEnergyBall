@@ -12,8 +12,6 @@ public class VFXManager : MonoBehaviour
     public GameObject Run;
     public GameObject Jump;
     public GameObject FallImpact;
-    public GameObject BlueExplosion;
-    public GameObject GreenExplosion;
     public GameObject BallImpact;
 
     void Start()

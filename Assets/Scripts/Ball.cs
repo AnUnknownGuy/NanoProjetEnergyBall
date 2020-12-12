@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 
 public class Ball : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Ball : MonoBehaviour
     public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
 
     public float collisionRadius = 0.25f;
+    public Color ballColor;
+    public VisualEffect ballEffect;
 
 
     // Start is called before the first frame update
@@ -59,6 +62,7 @@ public class Ball : MonoBehaviour
 
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
+            ballEffect.SetVector4("Color", player.color);
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -89,7 +93,11 @@ public class Ball : MonoBehaviour
         charged = true;
     }
 
-    public void Uncharge() {
+    public void Uncharge()
+    {
+        if (charged)
+            VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color);
+        ballEffect.SetVector4("Color", ballColor);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;

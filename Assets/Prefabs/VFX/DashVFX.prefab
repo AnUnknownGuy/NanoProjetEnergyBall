@@ -9,9 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: 74421f0359ff0a648a6c30e736cd1d61, type: 2}
+      objectReference: {fileID: 7400000, guid: 00614056ee54ad243a140fdfcf4416bc, type: 2}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 00614056ee54ad243a140fdfcf4416bc, type: 2}
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
       propertyPath: m_LocalPosition.x

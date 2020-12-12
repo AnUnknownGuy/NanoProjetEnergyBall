@@ -43,3 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73f97b3c1b48304ba28e9f4ed0ad1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dash: {fileID: 4480113566074851689, guid: 3b84d49e603b0594a97d0ce499d4f507, type: 3}
+  Run: {fileID: 7379520916832766188, guid: 4d69198a05318eb4d803ef62988fa7bc, type: 3}
+  Jump: {fileID: 7692632852601857436, guid: d250db6c73d290747aead1ca9b08250a, type: 3}
+  FallImpact: {fileID: 5477424619959522764, guid: 0c3721513a9a1ec48a334118e463a9f6,
+    type: 3}
+  BallImpact: {fileID: 5856979016380894863, guid: f8db4d2061e64474fbd5fb6b1e9d62d9,
+    type: 3}

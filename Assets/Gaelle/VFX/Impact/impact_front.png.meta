@@ -11,6 +11,24 @@ TextureImporter:
   - first:
       213: 4333283870218021683
     second: front_2
+  - first:
+      213: -5002367616190813392
+    second: impact_front_0
+  - first:
+      213: -6204882408339842405
+    second: impact_front_1
+  - first:
+      213: -6365764859847420957
+    second: impact_front_2
+  - first:
+      213: -6975268414612325896
+    second: impact_front_0
+  - first:
+      213: -6388493333122654514
+    second: impact_front_1
+  - first:
+      213: 4510144109478723865
+    second: impact_front_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -96,64 +114,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: front_0
+      name: impact_front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1000
         height: 719
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5154526c6268aad0800000000000000
-      internalID: -2690792559708188323
+      spriteID: 8f9b70e555ed23f90800000000000000
+      internalID: -6975268414612325896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front_1
+      name: impact_front_1
       rect:
         serializedVersion: 2
         x: 1000
         y: 0
         width: 1000
         height: 719
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 435579d3ec1c7cf70800000000000000
-      internalID: 9207541054723020084
+      spriteID: eced54549238757a0800000000000000
+      internalID: -6388493333122654514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front_2
+      name: impact_front_2
       rect:
         serializedVersion: 2
         x: 2000
         y: 0
         width: 1000
         height: 719
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33b6643a8bae22c30800000000000000
-      internalID: 4333283870218021683
+      spriteID: 911cc4bfb20479e30800000000000000
+      internalID: 4510144109478723865
       vertices: []
       indices: 
       edges: []

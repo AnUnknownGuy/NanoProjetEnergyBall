@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -64,6 +66,9 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer sprite;
     public Animator animator;
+    public Color color;
+    public GameObject deathVFXPrefab;
+    public float deathDestroyDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -139,11 +144,18 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRun(bool bol) {
-        animator.SetBool("IsRunning", bol);
+        if (onGround)
+        {
+            if (!animator.GetBool("IsRunning") && bol)
+                VFXManager.Spawn(VFXManager.Instance.Run, transform.position, facingRight);
+            animator.SetBool("IsRunning", bol);
+        }
     }
 
 
     public void AnimJump(bool bol) {
+        if (!animator.GetBool("IsJumping") && bol)
+            VFXManager.Spawn(VFXManager.Instance.Jump, transform.position);
         animator.SetBool("IsJumping", bol);
     }
 
@@ -152,6 +164,8 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRecovery(bool bol) {
+        if (!animator.GetBool("OnGround") && bol)
+            VFXManager.Spawn(VFXManager.Instance.FallImpact, transform.position);
         animator.SetBool("OnGround", bol);
     }
 
@@ -232,8 +246,18 @@ public class Player : MonoBehaviour
         if (health < 10 && alive)
         {
             alive = false;
-            CameraManager.Instance.Zoom(transform.position);
+            CameraManager.Instance.Zoom(transform.position).onComplete += () =>
+            {
+                VFXManager.Spawn(deathVFXPrefab, transform.position);
+                StartCoroutine(Death());
+            };
         }
+    }
+
+    private IEnumerator Death()
+    {
+        yield return new WaitForSeconds(deathDestroyDelay);
+        Destroy(gameObject);
     }
 
     public void LoseHealthBallHit() {
@@ -334,6 +358,7 @@ public class Player : MonoBehaviour
 
     public void SetDashDirection() {
         dashDirection = inputManager.GetRightStickValue().normalized;
+        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, facingRight);
     }
 
     private void OnDrawGizmos() {
