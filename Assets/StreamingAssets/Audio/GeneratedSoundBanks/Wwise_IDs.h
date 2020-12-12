@@ -14,12 +14,13 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_AIR_VELOCITY = 2652654800U;
+        static const AkUniqueID PLAY_AMBIANCE_LP = 2857391773U;
         static const AkUniqueID PLAY_BATTLE_MUSIC = 2862166672U;
         static const AkUniqueID PLAY_BEGIN = 2375588297U;
         static const AkUniqueID PLAY_BOUNCE = 3465618802U;
-        static const AkUniqueID PLAY_DASH_HAUG = 223895672U;
+        static const AkUniqueID PLAY_DASH_BLUE = 3719516685U;
+        static const AkUniqueID PLAY_DASH_GREEN = 1446058966U;
         static const AkUniqueID PLAY_DASH_HIT = 2481879868U;
-        static const AkUniqueID PLAY_DASH_RUUD = 2666681873U;
         static const AkUniqueID PLAY_FIGHT_ANNOUNCEMENT = 2301463414U;
         static const AkUniqueID PLAY_GET = 2354553126U;
         static const AkUniqueID PLAY_HORN = 2956245481U;
@@ -50,6 +51,11 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID BALL_VELOCITY = 145148864U;
+        static const AkUniqueID HORN_VOLUME = 2177191951U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
+        static const AkUniqueID MUSICVOLUME = 2346531308U;
+        static const AkUniqueID SFXVOLUME = 988953028U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -60,6 +66,8 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIANCE = 2981377429U;
+        static const AkUniqueID HORN = 3600847130U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX = 393239870U;
