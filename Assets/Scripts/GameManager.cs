@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
                 break;
             case "P2":
                 p2win++;
-                if (!pointP2A.IsActive()) pointP2A.SetBlue();
-                else pointP2B.SetBlue();
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
                 break;
             default: // DRAW
                 p1win++;
