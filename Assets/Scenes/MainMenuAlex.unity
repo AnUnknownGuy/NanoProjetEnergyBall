@@ -1562,8 +1562,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518941684}
-  m_LocalRotation: {x: -0.04214269, y: -0.011834375, z: -0.0004992225, w: 0.99904144}
-  m_LocalPosition: {x: 308.6012, y: 395.1151, z: 1153.9214}
+  m_LocalRotation: {x: -0.042244546, y: -0.011824416, z: -0.0004999984, w: 0.9990372}
+  m_LocalPosition: {x: 363, y: 200, z: -1145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2400,7 +2400,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842369971}
-  m_LocalRotation: {x: -0.04214269, y: -0.011834375, z: -0.0004992225, w: 0.99904144}
+  m_LocalRotation: {x: -0.042142686, y: -0.011834375, z: -0.00049921224, w: 0.99904144}
   m_LocalPosition: {x: -586, y: 378, z: -1295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 14
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 20183441}
   m_Follow: {fileID: 0}
@@ -3960,7 +3960,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCaemra
+        m_MethodName: UpdateCamera
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1617274253}
@@ -3970,7 +3970,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &1198060829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4462,7 +4462,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCaemra
+        m_MethodName: UpdateCamera
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2028257070}
@@ -4472,7 +4472,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &1251583233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,7 +5730,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617274251}
-  m_LocalRotation: {x: 0.013999356, y: 0.63999975, z: -0.011663886, w: 0.7681591}
+  m_LocalRotation: {x: 0.0139994435, y: 0.63999975, z: -0.011663783, w: 0.76815903}
   m_LocalPosition: {x: -956, y: 141, z: -1864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5754,7 +5754,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 13
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1271726064}
   m_Follow: {fileID: 0}
@@ -5856,7 +5856,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCaemra
+        m_MethodName: UpdateCamera
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 842369973}
@@ -7366,7 +7366,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 11
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 20183441}
   m_Follow: {fileID: 0}
@@ -7392,7 +7392,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951003497}
-  m_LocalRotation: {x: -0.042244546, y: -0.011824416, z: -0.00049999816, w: 0.9990372}
+  m_LocalRotation: {x: -0.042244546, y: -0.011824416, z: -0.0004999984, w: 0.9990372}
   m_LocalPosition: {x: -531.6012, y: 182.88489, z: -3593.9214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7907,7 +7907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028257068}
-  m_LocalRotation: {x: -0.02878585, y: -0.6319296, z: -0.0068956288, w: 0.77446043}
+  m_LocalRotation: {x: -0.02065079, y: -0.63224757, z: -0.016862057, w: 0.7743076}
   m_LocalPosition: {x: 53, y: 239, z: -2193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7931,7 +7931,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 12
+  m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1799491895}
   m_Follow: {fileID: 0}
