@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1870082513185493911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3008860780208246999}
+  m_Layer: 9
+  m_Name: BallPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3008860780208246999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870082513185493911}
+  m_LocalRotation: {x: -0.0077179037, y: -0.7070742, z: 0.007717978, w: 0.70705515}
+  m_LocalPosition: {x: -0, y: 0.0095, z: 0.0069}
+  m_LocalScale: {x: 0.058823455, y: 0.058796447, z: 0.058797125}
+  m_Children: []
+  m_Father: {fileID: 114346701852543416}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2530761188865246948
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +294,7 @@ MonoBehaviour:
   catchVFXPrefab: {fileID: 5856979016380894863, guid: 2c3c269710b06894da2f5d260e66c066,
     type: 3}
   deathDestroyDelay: 0.25
+  BallTransform: {fileID: 3008860780208246999}
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -529,6 +560,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4389660307696137377}
     m_Modifications:
+    - target: {fileID: -9193639376269183011, guid: bc1d4958856a56c4d9b21bbae4c13493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc1d4958856a56c4d9b21bbae4c13493,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -599,6 +635,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.17
       objectReference: {fileID: 0}
+    - target: {fileID: -6696292653951051337, guid: bc1d4958856a56c4d9b21bbae4c13493,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1063094714816996356, guid: bc1d4958856a56c4d9b21bbae4c13493,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -635,6 +676,12 @@ GameObject:
 --- !u!4 &2729964069023032872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bc1d4958856a56c4d9b21bbae4c13493,
+    type: 3}
+  m_PrefabInstance: {fileID: 2479370846986027459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &114346701852543416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2593584231945291899, guid: bc1d4958856a56c4d9b21bbae4c13493,
     type: 3}
   m_PrefabInstance: {fileID: 2479370846986027459}
   m_PrefabAsset: {fileID: 0}

@@ -70,6 +70,8 @@ public class Player : MonoBehaviour
     public GameObject deathVFXPrefab;
     public GameObject catchVFXPrefab;
     public float deathDestroyDelay;
+    
+    public Transform BallTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -361,7 +363,7 @@ public class Player : MonoBehaviour
 
     public void SetDashDirection() {
         dashDirection = inputManager.GetRightStickValue().normalized;
-        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, facingRight);
+        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, dashDirection.x > 0);
     }
 
     private void OnDrawGizmos() {
