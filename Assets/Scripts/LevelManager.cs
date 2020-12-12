@@ -29,20 +29,17 @@ public class LevelManager : MonoBehaviour
             }
 
             if (!player1.alive && !player2.alive) {
-                Debug.Log("DRAW !");
+                //Debug.Log("DRAW !");
                 gameManager.Win("DRAW");
             } else if (!player1.alive) {
-                Debug.Log("PLAYER 2 WINS !");
+                //Debug.Log("PLAYER 2 WINS !");
                 gameManager.Win("P2");
             } else if (!player2.alive) {
-                Debug.Log("PLAYER 1 WINS !");
+                //Debug.Log("PLAYER 1 WINS !");
                 gameManager.Win("P1");
             }
 
             if (!player1.alive || !player2.alive) {
-                if (gameManager != null) {
-                    gameManager.RestartLevel();
-                }
                 restarting = true;
             }
         }

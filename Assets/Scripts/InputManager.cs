@@ -12,10 +12,10 @@ public class InputManager : MonoBehaviour
 
     private float minimumRightStickSize = 0.05f;
 
-    private Input previousLeftStickValue;
+    private CustomInput previousLeftStickValue;
     private Vector2 leftSpeed;
 
-    private Input previousRightStickValue;
+    private CustomInput previousRightStickValue;
     private Vector2 rightSpeed;
 
     public float stopJumpThreshhold = 0.5f;
@@ -35,8 +35,8 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
-        previousLeftStickValue = new Input(Vector2.zero, 0);
-        previousRightStickValue = new Input(new Vector2(0, -0.1f), 0);
+        previousLeftStickValue = new CustomInput(Vector2.zero, 0);
+        previousRightStickValue = new CustomInput(new Vector2(0, -0.1f), 0);
 
         leftSpeed = Vector2.zero;
         rightSpeed = Vector2.zero;
@@ -146,11 +146,11 @@ public class InputManager : MonoBehaviour
         }
         
         if (value.magnitude >= minimumRightStickSize) {
-            previousRightStickValue = new Input(value);
+            previousRightStickValue = new CustomInput(value);
         } else if (value.magnitude != 0) {
-            previousRightStickValue = new Input(value.normalized / (1 / minimumRightStickSize));
+            previousRightStickValue = new CustomInput(value.normalized / (1 / minimumRightStickSize));
         } else {
-            previousRightStickValue = new Input(previousRightStickValue.value.normalized / (1 / minimumRightStickSize));
+            previousRightStickValue = new CustomInput(previousRightStickValue.value.normalized / (1 / minimumRightStickSize));
         }
     }
 
@@ -170,7 +170,7 @@ public class InputManager : MonoBehaviour
             JumpStop();
         }
         
-        previousLeftStickValue = new Input(value);
+        previousLeftStickValue = new CustomInput(value);
     }
 
     void ActionProcess() {
@@ -213,15 +213,15 @@ public class InputManager : MonoBehaviour
     }
 }
 
-struct Input {
+struct CustomInput {
     public Vector2 value;
     public float timeStamp;
 
-    public Input(Vector2 v) : this(v, Time.time) {
+    public CustomInput(Vector2 v) : this(v, Time.time) {
 
     }
 
-    public Input(Vector2 v, float t) {
+    public CustomInput(Vector2 v, float t) {
         value = v;
         timeStamp = Time.time;
     }

@@ -49,6 +49,13 @@ public class DashState : TemporaryState
         }
     }
 
+    public override void BallEntered(Ball ball) {
+        if (player.CatchBall(ball)) {
+            player.ToHoldState();
+            AudioManager.Ball_Get(player.gameObject);
+        }
+    }
+
     public override void WallCollided(Vector2 collisionDirection) {
 
         if (player.HasBall()) {

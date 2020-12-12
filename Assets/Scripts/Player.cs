@@ -99,7 +99,6 @@ public class Player : MonoBehaviour
         AnimJump(isJumping);
         AnimFalling(!onGround);
         AnimRecovery(onGround);
-        //Debug.Log(rb.gravityScale);
     }
 
     public void Dash() {
@@ -132,7 +131,6 @@ public class Player : MonoBehaviour
     }
 
     public void UpdateFacingDirection(float duration) {
-        DOTween.KillAll();
 
         if (facingRight) {
             //transform.rotation = Quaternion.Euler(0,0,0);
@@ -237,7 +235,8 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
-            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, transform.position);
+            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, BallTransform.position);
+            Vibration.Vibrate(inputManager.playerInput, 0.5f, 0.2f);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
             UpdateFacingDirection(0.1f);
@@ -251,11 +250,11 @@ public class Player : MonoBehaviour
         if (health < 10 && alive)
         {
             alive = false;
-            // CameraManager.Instance.Zoom(currentPos).onComplete += () =>
-            // {
+            CameraManager.Instance.Zoom(transform.position).onComplete += () =>
+            {
                 VFXManager.Spawn(deathVFXPrefab, transform.position);
                 StartCoroutine(Death());
-            // };
+            };
         }
     }
 
@@ -268,11 +267,13 @@ public class Player : MonoBehaviour
     public void LoseHealthBallHit() {
         CameraManager.Instance.Shake(0.2f, 0.5f);
         LoseHealth(healthLostOnBallHit);
+        Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.2f);
     }
 
     public void LoseHealthDashHit() {
         CameraManager.Instance.Shake(0.5f, 0.5f);
         LoseHealth(healthLostOnDashHit);
+        Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.5f);
     }
 
     public void ThrowKnockBack() {

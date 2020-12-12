@@ -41,7 +41,6 @@ Effect plug-ins	ID	Name	Type				Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	15777823	Throw_hit_electricty	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_electricty_E2CE090D.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\Throw_hit_electricty		14437
-	21645767	Ball_get	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_get_57480CCF.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Get\Ball_get		7786
 	59480555	Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_ball_BEE76F35.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Throw\Throw_ball		17187
 	66757109	Begin	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Begin_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Menu\Begin\Begin		71593
 	83435579	Ball_Air_Crystal	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Crystal_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		214256
@@ -50,8 +49,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	164235642	Ball_Air_Wind	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Wind_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Wind		190641
 	178322872	Validate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Validate_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Menu\Validate\Validate		5775
 	262242056	Dash_Golem_V5	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_V5_01CC9B23.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Green\Dash\Dash_var\Dash_Golem_V5		8746
+	307369711	Ball_get_short	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_get_short_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Get\Ball_get_short		3991
 	317348648	Ball_Air_Low	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Low_07B7385E.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Low		160192
-	412828376	Long_Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Long_Throw_ball_435D306E.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Throw\Long_Throw_ball		10460
+	412828376	Long_Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Long_Throw_ball_A90AF04F.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Throw\Long_Throw_ball		10460
 	426454150	Lava_amb_02	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Lava_amb_AD50A9CF.wem		\Actor-Mixer Hierarchy\Nano_Projet\Ambience\Ambiance_lp\Lava_amb_02		174815
 	464439783	Ball_Air_Tone3	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone3_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone3		167973
 	484311839	Ball_Air_Texture	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Texture_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Texture		184654
