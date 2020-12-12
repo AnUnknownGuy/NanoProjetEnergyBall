@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2056
+  m_CustomRenderQueue: 2046
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -134,6 +134,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_ABDA3E00: 0.1
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -218,7 +219,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _QueueOffset: -6
+    - _QueueOffset: 4
     - _ReceiveShadows: 1
     - _ReceivesSSR: 1
     - _RefractionModel: 0
@@ -269,6 +270,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
+    - Color_15FFF93E: {r: 0.10392157, g: 0.021568628, b: 0, a: 0.99215686}
+    - Color_FA82BF5: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 0.7440252, b: 0.11792451, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 0.7102041, b: 0, a: 1}

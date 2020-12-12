@@ -3,14 +3,12 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public float inputSpeedThresholdJump = 0.3f;
-    public float inputSpeedThresholdFastFall = 0.2f;
+    public float inputThresholdJump = 0.3f;
+    public float inputThresholdFastFall = -0.1f;
     public float inputBufferDuration = 0.2f;
 
     private float deadZoneRightStick = 0.2f;
     private bool canHaveActionOnRightStick = true;
-
-    public float timeBetweenStickUpdate = 0.1f;
 
     private float minimumRightStickSize = 0.05f;
 
@@ -98,7 +96,7 @@ public class InputManager : MonoBehaviour
     public void LeftShoulder(InputAction.CallbackContext context) {
         if (context.performed && !settings.jumpWithStick) {
             JumpProcess();
-            if (previousLeftStickValue.value.y < 0) 
+            if (previousLeftStickValue.value.y < inputThresholdFastFall) 
                 FastFallProcess();
         } else if (context.canceled) {
             JumpStop();
@@ -158,16 +156,19 @@ public class InputManager : MonoBehaviour
 
     void LeftStickProcess(Vector2 value)
     {
-        float verticalMovement = value.y - previousLeftStickValue.value.y;
+        float verticalMovement = value.y;
         
         if (settings.jumpWithStick 
-            && verticalMovement >= inputSpeedThresholdJump
-            && previousLeftStickValue.value.magnitude < value.magnitude)
+            && verticalMovement >= inputThresholdJump
+            && previousLeftStickValue.value.magnitude < value.magnitude) {
             JumpProcess();
-        if (verticalMovement <= -inputSpeedThresholdFastFall)
+        }
+        if (verticalMovement <= inputThresholdFastFall) {
             FastFallProcess();
-        if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold)
+        }
+        if (settings.jumpWithStick && previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold) {
             JumpStop();
+        }
         
         previousLeftStickValue = new Input(value);
     }
