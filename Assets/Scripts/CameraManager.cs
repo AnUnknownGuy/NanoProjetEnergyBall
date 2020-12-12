@@ -22,12 +22,11 @@ public class CameraManager : MonoBehaviour
     
     public void Shake(float amount, float duration)
     {
-        transform.DOComplete();
         transform.DOShakePosition(duration, amount);
         transform.DOShakeRotation(duration, new Vector3(0, amount));
     }
 
-    public void Zoom(Vector3 targetPosition, float zoomDuration = 1.0f, float timeScale = 0.1f, float zoomFactor = 3.0f)
+    public Tween Zoom(Vector3 targetPosition, float zoomDuration = 1f, float timeScale = 0.1f, float zoomFactor = 3f)
     {
         targetPosition.z = transform.localPosition.z;
         Vector3 initialPos = transform.localPosition;
@@ -36,16 +35,18 @@ public class CameraManager : MonoBehaviour
         transform.DOLocalMove(targetPosition, zoomDuration * timeScale).SetEase(Ease.OutExpo)
             .OnComplete(() => transform.DOLocalMove(initialPos, zoomDuration).SetEase(Ease.InOutCubic));
         
-        mainCam.DOOrthoSize(initialSize/zoomFactor, zoomDuration * timeScale).SetEase(Ease.OutExpo)
-            .OnComplete(() => mainCam.DOOrthoSize(initialSize, zoomDuration).SetEase(Ease.OutCubic));
+        Tween zoom = mainCam.DOOrthoSize(initialSize/zoomFactor, zoomDuration * timeScale).SetEase(Ease.OutExpo);
+        zoom.OnComplete(() => mainCam.DOOrthoSize(initialSize, zoomDuration).SetEase(Ease.OutCubic));
         
         Time.timeScale = timeScale;
-        StartCoroutine(ResetTimeScale(zoomDuration, timeScale));
+        StartCoroutine(ResetTimeScale(zoomDuration));
+
+        return zoom;
     }
 
-    private IEnumerator ResetTimeScale(float zoomDuration, float timeScale)
+    private IEnumerator ResetTimeScale(float zoomDuration)
     {
-        yield return new WaitForSeconds(zoomDuration * timeScale);
+        yield return new WaitForSecondsRealtime(zoomDuration);
         Time.timeScale = 1f;
     }
 }

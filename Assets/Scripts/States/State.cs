@@ -48,7 +48,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
-        player.LooseHealth();
+        player.LoseHealthTick();
     }
 
     public virtual void BallEntered(Ball ball) {
@@ -60,7 +60,7 @@ public abstract class State : StateInterface
                 ball.FakeCollision();
                 player.animator.Play("hit");
                 ball.Hit();
-                player.looseHealthBallHit();
+                player.LoseHealthBallHit();
                 player.ToStunState();
             } else if (!ball.charged) {
                 if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
@@ -106,7 +106,7 @@ public abstract class State : StateInterface
 
             otherPlayer.SetSpeed(Vector2.zero);
             otherPlayer.ToBaseState();
-            player.looseHealthDashHit();
+            player.LoseHealthDashHit();
         }
     }
 

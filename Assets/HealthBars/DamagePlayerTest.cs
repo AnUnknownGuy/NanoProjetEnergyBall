@@ -9,7 +9,7 @@ public class DamagePlayerTest : MonoBehaviour
 
     public void Damage()
     {
-        player.health -= damage;
+        player.LoseHealth(damage);
     }
     
 }
