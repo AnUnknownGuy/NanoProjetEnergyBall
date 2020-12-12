@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public Player player2;
     public InputManager input1;
     public InputManager input2;
+    public Ball ball;
 
     public GameManager gameManager;
 
@@ -50,5 +51,6 @@ public class LevelManager : MonoBehaviour
     public void Stop() {
         //input1.Stop();
         //input2.Stop();
+        ball.StopSound();
     }
 }

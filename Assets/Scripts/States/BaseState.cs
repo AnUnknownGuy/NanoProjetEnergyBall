@@ -23,7 +23,7 @@ public class BaseState : MoveState {
             player.ToDashState();
             player.ShowDashNotReady();
 
-            AudioManager.Dash(player.gameObject);
+            AudioManager.Dash_Blue(player.gameObject);
             lastDashTimestamp = Time.time;
             return true;
         } else {

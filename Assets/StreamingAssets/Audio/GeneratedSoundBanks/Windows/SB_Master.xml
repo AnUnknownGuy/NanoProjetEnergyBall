@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1295042314">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2045269690">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -45,11 +45,31 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
+				<Event Id="2857391773" Name="Play_Ambiance_lp" ObjectPath="\Events\Master_Event\Menu_Event\Play_Ambiance_lp" GUID="{F1966669-83B7-44F6-A179-428E37F6CD0C}" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="426454150" Language="SFX">
+							<ShortName>Lava_amb.wav</ShortName>
+							<Path>SFX\Lava_amb_AD50A9CF.wem</Path>
+						</File>
+						<File Id="783420610" Language="SFX">
+							<ShortName>Lava_amb.wav</ShortName>
+							<Path>SFX\Lava_amb_012C6986.wem</Path>
+						</File>
+						<File Id="879510387" Language="SFX">
+							<ShortName>Lava_amb.wav</ShortName>
+							<Path>SFX\Lava_amb_6EDAC622.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="220.716782" DurationMax="220.716782">
 					<IncludedMemoryFiles>
 						<File Id="664081031" Language="SFX">
 							<ShortName>Battle_music.wav</ShortName>
 							<Path>SFX\Battle_music_05842A19.wem</Path>
+						</File>
+						<File Id="968729543" Language="SFX">
+							<ShortName>End_tail-zic.wav</ShortName>
+							<Path>SFX\End_tail-zic_05842A19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -61,8 +81,12 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3465618802" Name="Play_Bounce" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Bounce" GUID="{CF842F4D-BEC7-4665-93AB-A5281E38855E}" DurationType="OneShot" DurationMin="0.598979" DurationMax="0.598979">
+				<Event Id="3465618802" Name="Play_Bounce" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Bounce" GUID="{CF842F4D-BEC7-4665-93AB-A5281E38855E}" DurationType="OneShot" DurationMin="1.586508" DurationMax="1.586508">
 					<IncludedMemoryFiles>
+						<File Id="15777823" Language="SFX">
+							<ShortName>Throw_hit_electricty.wav</ShortName>
+							<Path>SFX\Throw_hit_electricty_E2CE090D.wem</Path>
+						</File>
 						<File Id="527997742" Language="SFX">
 							<ShortName>Bounce_light.wav</ShortName>
 							<Path>SFX\Bounce_light_ED380BF2.wem</Path>
@@ -73,7 +97,23 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="223895672" Name="Play_Dash_Haug" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Haug" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.609190" DurationMax="0.808066">
+				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{144F14CC-F451-4548-A75E-F15346DB6A78}" DurationType="OneShot" DurationMin="0.659941" DurationMax="0.909312">
+					<IncludedMemoryFiles>
+						<File Id="532619175" Language="SFX">
+							<ShortName>Dash_Golem-001.wav</ShortName>
+							<Path>SFX\Dash_Golem-001_05842A19.wem</Path>
+						</File>
+						<File Id="541730044" Language="SFX">
+							<ShortName>Dash_Golem-003.wav</ShortName>
+							<Path>SFX\Dash_Golem-003_05842A19.wem</Path>
+						</File>
+						<File Id="711092926" Language="SFX">
+							<ShortName>Dash_Golem-002.wav</ShortName>
+							<Path>SFX\Dash_Golem-002_05842A19.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1446058966" Name="Play_Dash_Green" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Green" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.609190" DurationMax="0.808066">
 					<IncludedMemoryFiles>
 						<File Id="95179653" Language="SFX">
 							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
@@ -94,22 +134,6 @@
 						<File Id="983204019" Language="SFX">
 							<ShortName>Dash_hit.wav</ShortName>
 							<Path>SFX\Dash_hit_8DBD26AE.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2666681873" Name="Play_Dash_Ruud" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Ruud" GUID="{144F14CC-F451-4548-A75E-F15346DB6A78}" DurationType="OneShot" DurationMin="0.659941" DurationMax="0.909312">
-					<IncludedMemoryFiles>
-						<File Id="532619175" Language="SFX">
-							<ShortName>Dash_Golem-001.wav</ShortName>
-							<Path>SFX\Dash_Golem-001_05842A19.wem</Path>
-						</File>
-						<File Id="541730044" Language="SFX">
-							<ShortName>Dash_Golem-003.wav</ShortName>
-							<Path>SFX\Dash_Golem-003_05842A19.wem</Path>
-						</File>
-						<File Id="711092926" Language="SFX">
-							<ShortName>Dash_Golem-002.wav</ShortName>
-							<Path>SFX\Dash_Golem-002_05842A19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -161,16 +185,28 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.155159" DurationMax="1.155159">
+				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.831412" DurationMax="1.831412">
 					<IncludedMemoryFiles>
+						<File Id="59480555" Language="SFX">
+							<ShortName>Throw_ball.wav</ShortName>
+							<Path>SFX\Throw_ball_BEE76F35.wem</Path>
+						</File>
 						<File Id="412828376" Language="SFX">
 							<ShortName>Long_Throw_ball.wav</ShortName>
-							<Path>SFX\Long_Throw_ball_C5B11D74.wem</Path>
+							<Path>SFX\Long_Throw_ball_435D306E.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3286906532" Name="Play_Throw_Hit" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Throw_Hit" GUID="{5B083C2C-291B-44F6-8C54-8648F15BB398}" DurationType="OneShot" DurationMin="0.910952" DurationMax="0.910952">
+				<Event Id="3286906532" Name="Play_Throw_Hit" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Throw_Hit" GUID="{5B083C2C-291B-44F6-8C54-8648F15BB398}" DurationType="OneShot" DurationMin="1.586508" DurationMax="1.586508">
 					<IncludedMemoryFiles>
+						<File Id="15777823" Language="SFX">
+							<ShortName>Throw_hit_electricty.wav</ShortName>
+							<Path>SFX\Throw_hit_electricty_E2CE090D.wem</Path>
+						</File>
+						<File Id="593916673" Language="SFX">
+							<ShortName>Throw_hit_bass.wav</ShortName>
+							<Path>SFX\Throw_hit_bass_05842A19.wem</Path>
+						</File>
 						<File Id="984157997" Language="SFX">
 							<ShortName>Throw_hit.wav</ShortName>
 							<Path>SFX\Throw_hit_05842A19.wem</Path>

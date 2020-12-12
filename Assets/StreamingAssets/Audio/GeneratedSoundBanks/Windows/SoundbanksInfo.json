@@ -19,16 +19,48 @@
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "3548532596",
+    "Hash": "3602638939",
     "ObjectPath": "Init",
     "ShortName": "Init",
-    "Path": "Init.bnk"
+    "Path": "Init.bnk",
+    "GameParameters": [
+     {
+      "Id": "988953028",
+      "Name": "SFXVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\VolumeSettings\\SFXVolume",
+      "GUID": "{3A6EF91B-713A-4727-817C-B19EB81EBB22}"
+     },
+     {
+      "Id": "1006694123",
+      "Name": "Music_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Volume",
+      "GUID": "{0ED2C6EA-CC18-406D-89F3-E541F7BADBF3}"
+     },
+     {
+      "Id": "2177191951",
+      "Name": "Horn_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Horn_Volume",
+      "GUID": "{2494DFA6-0DE1-41C2-956F-649E836A2362}"
+     },
+     {
+      "Id": "2346531308",
+      "Name": "MusicVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\VolumeSettings\\MusicVolume",
+      "GUID": "{CEBDAF46-4B98-4ED8-99DC-A20BDD4F5797}"
+     },
+     {
+      "Id": "2918011349",
+      "Name": "MasterVolume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\VolumeSettings\\MasterVolume",
+      "GUID": "{C746E66C-CA61-44CA-8E2B-FFF43F6B79D9}"
+     }
+    ]
    },
    {
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "1295042314",
+    "Hash": "2045269690",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -85,19 +117,52 @@
       ]
      },
      {
+      "Id": "2857391773",
+      "Name": "Play_Ambiance_lp",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Ambiance_lp",
+      "GUID": "{F1966669-83B7-44F6-A179-428E37F6CD0C}",
+      "DurationType": "Infinite",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "426454150",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_AD50A9CF.wem"
+       },
+       {
+        "Id": "783420610",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_012C6986.wem"
+       },
+       {
+        "Id": "879510387",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_6EDAC622.wem"
+       }
+      ]
+     },
+     {
       "Id": "2862166672",
       "Name": "Play_Battle_music",
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Battle_music",
       "GUID": "{767A7F56-7A68-44A8-B7B0-6D53702D50EF}",
       "DurationType": "OneShot",
-      "DurationMin": "180.807297",
-      "DurationMax": "180.807297",
+      "DurationMin": "220.716782",
+      "DurationMax": "220.716782",
       "IncludedMemoryFiles": [
        {
         "Id": "664081031",
         "Language": "SFX",
         "ShortName": "Battle_music.wav",
         "Path": "SFX\\Battle_music_05842A19.wem"
+       },
+       {
+        "Id": "968729543",
+        "Language": "SFX",
+        "ShortName": "End_tail-zic.wav",
+        "Path": "SFX\\End_tail-zic_05842A19.wem"
        }
       ]
      },
@@ -124,9 +189,15 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Ball\\Play_Bounce",
       "GUID": "{CF842F4D-BEC7-4665-93AB-A5281E38855E}",
       "DurationType": "OneShot",
-      "DurationMin": "0.598979",
-      "DurationMax": "0.598979",
+      "DurationMin": "1.586508",
+      "DurationMax": "1.586508",
       "IncludedMemoryFiles": [
+       {
+        "Id": "15777823",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_electricty.wav",
+        "Path": "SFX\\Throw_hit_electricty_E2CE090D.wem"
+       },
        {
         "Id": "527997742",
         "Language": "SFX",
@@ -142,9 +213,38 @@
       ]
      },
      {
-      "Id": "223895672",
-      "Name": "Play_Dash_Haug",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Haug",
+      "Id": "3719516685",
+      "Name": "Play_Dash_Blue",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Blue",
+      "GUID": "{144F14CC-F451-4548-A75E-F15346DB6A78}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.659941",
+      "DurationMax": "0.909312",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "532619175",
+        "Language": "SFX",
+        "ShortName": "Dash_Golem-001.wav",
+        "Path": "SFX\\Dash_Golem-001_05842A19.wem"
+       },
+       {
+        "Id": "541730044",
+        "Language": "SFX",
+        "ShortName": "Dash_Golem-003.wav",
+        "Path": "SFX\\Dash_Golem-003_05842A19.wem"
+       },
+       {
+        "Id": "711092926",
+        "Language": "SFX",
+        "ShortName": "Dash_Golem-002.wav",
+        "Path": "SFX\\Dash_Golem-002_05842A19.wem"
+       }
+      ]
+     },
+     {
+      "Id": "1446058966",
+      "Name": "Play_Dash_Green",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Green",
       "GUID": "{1128561E-0FCA-421E-8835-FCE5225FB88A}",
       "DurationType": "OneShot",
       "DurationMin": "0.609190",
@@ -184,35 +284,6 @@
         "Language": "SFX",
         "ShortName": "Dash_hit.wav",
         "Path": "SFX\\Dash_hit_8DBD26AE.wem"
-       }
-      ]
-     },
-     {
-      "Id": "2666681873",
-      "Name": "Play_Dash_Ruud",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Ruud",
-      "GUID": "{144F14CC-F451-4548-A75E-F15346DB6A78}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.659941",
-      "DurationMax": "0.909312",
-      "IncludedMemoryFiles": [
-       {
-        "Id": "532619175",
-        "Language": "SFX",
-        "ShortName": "Dash_Golem-001.wav",
-        "Path": "SFX\\Dash_Golem-001_05842A19.wem"
-       },
-       {
-        "Id": "541730044",
-        "Language": "SFX",
-        "ShortName": "Dash_Golem-003.wav",
-        "Path": "SFX\\Dash_Golem-003_05842A19.wem"
-       },
-       {
-        "Id": "711092926",
-        "Language": "SFX",
-        "ShortName": "Dash_Golem-002.wav",
-        "Path": "SFX\\Dash_Golem-002_05842A19.wem"
        }
       ]
      },
@@ -322,14 +393,20 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Throw",
       "GUID": "{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}",
       "DurationType": "OneShot",
-      "DurationMin": "1.155159",
-      "DurationMax": "1.155159",
+      "DurationMin": "1.831412",
+      "DurationMax": "1.831412",
       "IncludedMemoryFiles": [
+       {
+        "Id": "59480555",
+        "Language": "SFX",
+        "ShortName": "Throw_ball.wav",
+        "Path": "SFX\\Throw_ball_BEE76F35.wem"
+       },
        {
         "Id": "412828376",
         "Language": "SFX",
         "ShortName": "Long_Throw_ball.wav",
-        "Path": "SFX\\Long_Throw_ball_C5B11D74.wem"
+        "Path": "SFX\\Long_Throw_ball_435D306E.wem"
        }
       ]
      },
@@ -339,9 +416,21 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Ball\\Play_Throw_Hit",
       "GUID": "{5B083C2C-291B-44F6-8C54-8648F15BB398}",
       "DurationType": "OneShot",
-      "DurationMin": "0.910952",
-      "DurationMax": "0.910952",
+      "DurationMin": "1.586508",
+      "DurationMax": "1.586508",
       "IncludedMemoryFiles": [
+       {
+        "Id": "15777823",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_electricty.wav",
+        "Path": "SFX\\Throw_hit_electricty_E2CE090D.wem"
+       },
+       {
+        "Id": "593916673",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_bass.wav",
+        "Path": "SFX\\Throw_hit_bass_05842A19.wem"
+       },
        {
         "Id": "984157997",
         "Language": "SFX",
