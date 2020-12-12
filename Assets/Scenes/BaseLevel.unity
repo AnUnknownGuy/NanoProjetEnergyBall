@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 1172253087}
   - component: {fileID: 1172253085}
   - component: {fileID: 1172253089}
+  - component: {fileID: 1172253090}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -717,6 +718,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDuration: 0.1
+--- !u!114 &1172253090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172253083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fc363dca00e0b478a08b1ba34058a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 1172253086}
 --- !u!1001 &1267301699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -779,6 +793,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
+        type: 3}
+      propertyPath: dash.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: fead847aa17315144afefcfa0421c91a,
+        type: 2}
     - target: {fileID: 2188522885565807407, guid: 60df29cc47916e6408d8affc94c2300a,
         type: 3}
       propertyPath: m_Name
@@ -850,7 +870,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1329471933 stripped
 MonoBehaviour:

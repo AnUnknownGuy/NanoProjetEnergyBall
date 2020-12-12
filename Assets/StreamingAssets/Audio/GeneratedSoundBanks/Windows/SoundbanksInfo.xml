@@ -11,12 +11,12 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="3548532596">
+		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="582297288">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1295042314">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="740778918">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -25,39 +25,43 @@
 					<IncludedMemoryFiles>
 						<File Id="83435579" Language="SFX">
 							<ShortName>Ball_Air_Crystal.wav</ShortName>
-							<Path>SFX\Ball_Air_Crystal_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Crystal_D79FB2B7.wem</Path>
 						</File>
 						<File Id="157536860" Language="SFX">
 							<ShortName>Ball_Air_Tone2.wav</ShortName>
-							<Path>SFX\Ball_Air_Tone2_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Tone2_D79FB2B7.wem</Path>
 						</File>
 						<File Id="164235642" Language="SFX">
 							<ShortName>Ball_Air_Wind.wav</ShortName>
-							<Path>SFX\Ball_Air_Wind_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Wind_D79FB2B7.wem</Path>
 						</File>
 						<File Id="317348648" Language="SFX">
 							<ShortName>Ball_Air_Low.wav</ShortName>
-							<Path>SFX\Ball_Air_Low_07B7385E.wem</Path>
+							<Path>SFX\Ball_Air_Low_28FB5E6E.wem</Path>
 						</File>
 						<File Id="464439783" Language="SFX">
 							<ShortName>Ball_Air_Tone3.wav</ShortName>
-							<Path>SFX\Ball_Air_Tone3_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Tone3_D79FB2B7.wem</Path>
 						</File>
 						<File Id="484311839" Language="SFX">
 							<ShortName>Ball_Air_Texture.wav</ShortName>
-							<Path>SFX\Ball_Air_Texture_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Texture_D79FB2B7.wem</Path>
 						</File>
 						<File Id="928899835" Language="SFX">
 							<ShortName>Ball_Air_Tone1.wav</ShortName>
-							<Path>SFX\Ball_Air_Tone1_6AF693E7.wem</Path>
+							<Path>SFX\Ball_Air_Tone1_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="180.807297" DurationMax="180.807297">
+				<Event Id="2862166672" Name="Play_Battle_music" ObjectPath="\Events\Master_Event\Battle_Event\Play_Battle_music" GUID="{767A7F56-7A68-44A8-B7B0-6D53702D50EF}" DurationType="OneShot" DurationMin="220.716782" DurationMax="220.716782">
 					<IncludedMemoryFiles>
 						<File Id="664081031" Language="SFX">
 							<ShortName>Battle_music.wav</ShortName>
-							<Path>SFX\Battle_music_05842A19.wem</Path>
+							<Path>SFX\Battle_music_10C4C929.wem</Path>
+						</File>
+						<File Id="968729543" Language="SFX">
+							<ShortName>End_tail-zic.wav</ShortName>
+							<Path>SFX\End_tail-zic_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -65,7 +69,7 @@
 					<IncludedMemoryFiles>
 						<File Id="66757109" Language="SFX">
 							<ShortName>Begin.wav</ShortName>
-							<Path>SFX\Begin_05842A19.wem</Path>
+							<Path>SFX\Begin_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -73,11 +77,11 @@
 					<IncludedMemoryFiles>
 						<File Id="527997742" Language="SFX">
 							<ShortName>Bounce_light.wav</ShortName>
-							<Path>SFX\Bounce_light_ED380BF2.wem</Path>
+							<Path>SFX\Bounce_light_4589D2E2.wem</Path>
 						</File>
 						<File Id="1017460660" Language="SFX">
 							<ShortName>Bounce_fullspeed.wav</ShortName>
-							<Path>SFX\Bounce_fullspeed_ED380BF2.wem</Path>
+							<Path>SFX\Bounce_fullspeed_4589D2E2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -85,15 +89,15 @@
 					<IncludedMemoryFiles>
 						<File Id="95179653" Language="SFX">
 							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
-							<Path>SFX\Dash_Golem_v3 (good)_15969AB7.wem</Path>
+							<Path>SFX\Dash_Golem_v3 (good)_2EF2D567.wem</Path>
 						</File>
 						<File Id="262242056" Language="SFX">
 							<ShortName>Dash_Golem_V5.wav</ShortName>
-							<Path>SFX\Dash_Golem_V5_01CC9B23.wem</Path>
+							<Path>SFX\Dash_Golem_V5_198AF353.wem</Path>
 						</File>
 						<File Id="547198134" Language="SFX">
 							<ShortName>Dash_Golem_V5_02.wav</ShortName>
-							<Path>SFX\Dash_Golem_V5_02_29D3A7BB.wem</Path>
+							<Path>SFX\Dash_Golem_V5_02_F2CDE86B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -101,7 +105,7 @@
 					<IncludedMemoryFiles>
 						<File Id="983204019" Language="SFX">
 							<ShortName>Dash_hit.wav</ShortName>
-							<Path>SFX\Dash_hit_8DBD26AE.wem</Path>
+							<Path>SFX\Dash_hit_73E760FE.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -109,15 +113,15 @@
 					<IncludedMemoryFiles>
 						<File Id="532619175" Language="SFX">
 							<ShortName>Dash_Golem-001.wav</ShortName>
-							<Path>SFX\Dash_Golem-001_05842A19.wem</Path>
+							<Path>SFX\Dash_Golem-001_10C4C929.wem</Path>
 						</File>
 						<File Id="541730044" Language="SFX">
 							<ShortName>Dash_Golem-003.wav</ShortName>
-							<Path>SFX\Dash_Golem-003_05842A19.wem</Path>
+							<Path>SFX\Dash_Golem-003_10C4C929.wem</Path>
 						</File>
 						<File Id="711092926" Language="SFX">
 							<ShortName>Dash_Golem-002.wav</ShortName>
-							<Path>SFX\Dash_Golem-002_05842A19.wem</Path>
+							<Path>SFX\Dash_Golem-002_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -125,7 +129,7 @@
 					<IncludedMemoryFiles>
 						<File Id="622696685" Language="SFX">
 							<ShortName>Fight_Announcement.wav</ShortName>
-							<Path>SFX\Fight_Announcement_1DCF14DD.wem</Path>
+							<Path>SFX\Fight_Announcement_D8003D4D.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -133,7 +137,7 @@
 					<IncludedMemoryFiles>
 						<File Id="21645767" Language="SFX">
 							<ShortName>Ball_get.wav</ShortName>
-							<Path>SFX\Ball_get_57480CCF.wem</Path>
+							<Path>SFX\Ball_get_1BC5A01F.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -141,7 +145,7 @@
 					<IncludedMemoryFiles>
 						<File Id="538924343" Language="SFX">
 							<ShortName>Start_Horn.wav</ShortName>
-							<Path>SFX\Start_Horn_05842A19.wem</Path>
+							<Path>SFX\Start_Horn_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -149,7 +153,7 @@
 					<IncludedMemoryFiles>
 						<File Id="1028325921" Language="SFX">
 							<ShortName>Jump.wav</ShortName>
-							<Path>SFX\Jump_05842A19.wem</Path>
+							<Path>SFX\Jump_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -157,7 +161,7 @@
 					<IncludedMemoryFiles>
 						<File Id="1034375273" Language="SFX">
 							<ShortName>zic_menu.wav</ShortName>
-							<Path>SFX\zic_menu_6AF693E7.wem</Path>
+							<Path>SFX\zic_menu_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -165,15 +169,19 @@
 					<IncludedMemoryFiles>
 						<File Id="860187217" Language="SFX">
 							<ShortName>Golem_FT_tight-008.wav</ShortName>
-							<Path>SFX\Golem_FT_tight-008_05842A19.wem</Path>
+							<Path>SFX\Golem_FT_tight-008_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.155159" DurationMax="1.155159">
+				<Event Id="1977644338" Name="Play_Throw" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Throw" GUID="{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}" DurationType="OneShot" DurationMin="1.817297" DurationMax="1.817297">
 					<IncludedMemoryFiles>
+						<File Id="59480555" Language="SFX">
+							<ShortName>Throw_ball.wav</ShortName>
+							<Path>SFX\Throw_ball_2C45B386.wem</Path>
+						</File>
 						<File Id="412828376" Language="SFX">
 							<ShortName>Long_Throw_ball.wav</ShortName>
-							<Path>SFX\Long_Throw_ball_C5B11D74.wem</Path>
+							<Path>SFX\Long_Throw_ball_B9785EE4.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -181,7 +189,7 @@
 					<IncludedMemoryFiles>
 						<File Id="984157997" Language="SFX">
 							<ShortName>Throw_hit.wav</ShortName>
-							<Path>SFX\Throw_hit_05842A19.wem</Path>
+							<Path>SFX\Throw_hit_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -189,7 +197,7 @@
 					<IncludedMemoryFiles>
 						<File Id="178322872" Language="SFX">
 							<ShortName>Validate.wav</ShortName>
-							<Path>SFX\Validate_05842A19.wem</Path>
+							<Path>SFX\Validate_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

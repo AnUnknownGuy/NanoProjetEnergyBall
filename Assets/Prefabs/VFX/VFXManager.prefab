@@ -50,3 +50,5 @@ MonoBehaviour:
     type: 3}
   BallImpact: {fileID: 5856979016380894863, guid: f8db4d2061e64474fbd5fb6b1e9d62d9,
     type: 3}
+  ThrowMuzzle: {fileID: 5856979016380894863, guid: a078b0ce7e5bcc64b8c1cbfef561bd25,
+    type: 3}

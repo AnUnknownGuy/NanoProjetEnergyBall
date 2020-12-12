@@ -242,6 +242,8 @@ MonoBehaviour:
   color: {r: 0.09803922, g: 0.54901963, b: 0.7490196, a: 0.23921569}
   deathVFXPrefab: {fileID: 5613484594186088430, guid: 6663260c031fbeb46a9d14ffa77177b2,
     type: 3}
+  catchVFXPrefab: {fileID: 5856979016380894863, guid: 434953e356192f9449c1b44eeca7deac,
+    type: 3}
   deathDestroyDelay: 0.25
 --- !u!70 &537298462269677206
 CapsuleCollider2D:

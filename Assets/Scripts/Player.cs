@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Color color;
     public GameObject deathVFXPrefab;
+    public GameObject catchVFXPrefab;
     public float deathDestroyDelay;
 
     // Start is called before the first frame update
@@ -225,6 +226,7 @@ public class Player : MonoBehaviour
     public bool CatchBall(Ball ball) {
         if (ball.Catch(this)) {
             this.ball = ball;
+            VFXManager.Spawn(catchVFXPrefab, transform.position);
             return true;
         }
         return false;
@@ -233,6 +235,7 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
+            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, transform.position);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
             UpdateFacingDirection(0.1f);
