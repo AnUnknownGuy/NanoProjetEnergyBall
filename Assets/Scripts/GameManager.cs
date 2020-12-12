@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
 
-    private int p1win = 0;
-    private int p2win = 0;
     [SerializeField] private Point pointP1A;
     [SerializeField] private Point pointP1B;
     [SerializeField] private Point pointP2A;
@@ -60,18 +58,18 @@ public class GameManager : MonoBehaviour
         switch (winner)
         {
             case "P1":
-                p1win++;
                 if (!pointP1A.IsActive()) pointP1A.SetBlue();
                 else pointP1B.SetBlue();
                 break;
             case "P2":
-                p2win++;
                 if (!pointP2A.IsActive()) pointP2A.SetGreen();
                 else pointP2B.SetGreen();
                 break;
             default: // DRAW
-                p1win++;
-                p2win++;
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
                 break;
         }
         if(pointP1B.IsActive() || pointP2B.IsActive())
