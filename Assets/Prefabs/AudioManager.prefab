@@ -63,6 +63,11 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b28dd416358daa44b951caf08460669b,
       type: 2}
+  music_menu:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ba6b9e9832c17d7429a7c0d6f2d489a6,
+      type: 2}
   ball_get:
     idInternal: 0
     valueGuidInternal: 

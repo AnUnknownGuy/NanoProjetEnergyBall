@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event dash_blue;
     public AK.Wwise.Event jump;
     public AK.Wwise.Event battle_Scene;
+    public AK.Wwise.Event music_menu;
     public AK.Wwise.Event ball_get;
     public AK.Wwise.Event throw_ball;
     public AK.Wwise.Event dash_hit;
@@ -59,6 +60,10 @@ public class AudioManager : MonoBehaviour
     }
     public static void Battle_Scene(GameObject gameObject) {
         if (exist) instance.battle_Scene.Post(gameObject);
+    }
+    public static void Music_Menu(GameObject gameObject)
+    {
+        if (exist) instance.music_menu.Post(gameObject);
     }
     public static void Ball_Get(GameObject gameObject) {
         if (exist) instance.ball_get.Post(gameObject);

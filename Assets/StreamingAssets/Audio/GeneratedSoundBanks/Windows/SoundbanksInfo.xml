@@ -23,7 +23,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\MasterVolume" GUID="{C746E66C-CA61-44CA-8E2B-FFF43F6B79D9}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3169683090">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3478454159">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -160,11 +160,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2354553126" Name="Play_Get" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Get" GUID="{52F6D1EE-21F3-4DD4-AD4B-E1E40994D33D}" DurationType="OneShot" DurationMin="0.527211" DurationMax="0.527211">
+				<Event Id="2354553126" Name="Play_Get" ObjectPath="\Events\Master_Event\Battle_Event\Ball\Play_Get" GUID="{52F6D1EE-21F3-4DD4-AD4B-E1E40994D33D}" DurationType="OneShot" DurationMin="0.306825" DurationMax="0.306825">
 					<IncludedMemoryFiles>
-						<File Id="21645767" Language="SFX">
-							<ShortName>Ball_get.wav</ShortName>
-							<Path>SFX\Ball_get_57480CCF.wem</Path>
+						<File Id="307369711" Language="SFX">
+							<ShortName>Ball_get_short.wav</ShortName>
+							<Path>SFX\Ball_get_short_05842A19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -208,7 +208,7 @@
 						</File>
 						<File Id="412828376" Language="SFX">
 							<ShortName>Long_Throw_ball.wav</ShortName>
-							<Path>SFX\Long_Throw_ball_435D306E.wem</Path>
+							<Path>SFX\Long_Throw_ball_A90AF04F.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
