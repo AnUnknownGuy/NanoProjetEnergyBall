@@ -254,10 +254,10 @@ MonoBehaviour:
   WallsLayer:
     serializedVersion: 2
     m_Bits: 256
-  bottomOffset: {x: 0, y: -0.38}
+  bottomOffset: {x: 0, y: -0.71}
   rightOffset: {x: 0.5, y: 0}
   leftOffset: {x: -0.5, y: 0}
-  collisionRadius: 0.19
+  collisionRadius: 0.29
   catchRadius: 0.3
   onGround: 0
   onPlateform: 0
