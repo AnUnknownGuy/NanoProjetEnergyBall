@@ -147,16 +147,23 @@ public class Player : MonoBehaviour
     public void AnimRun(bool bol) {
         if (onGround)
         {
-            if (!animator.GetBool("IsRunning") && bol)
-                VFXManager.Spawn(VFXManager.Instance.Run, transform.position, facingRight);
+            if (!animator.GetBool("IsRunning") && bol) {
+                Vector2 p = transform.position;
+                p  += bottomOffset/2;
+                VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
+            }
             animator.SetBool("IsRunning", bol);
         }
     }
 
 
     public void AnimJump(bool bol) {
-        if (!animator.GetBool("IsJumping") && bol)
-            VFXManager.Spawn(VFXManager.Instance.Jump, transform.position);
+        if (!animator.GetBool("IsJumping") && bol) {
+            Vector2 p = transform.position;
+            p += bottomOffset/2;
+            VFXManager.Spawn(VFXManager.Instance.Jump, p);
+        }
+
         animator.SetBool("IsJumping", bol);
     }
 
@@ -165,8 +172,12 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRecovery(bool bol) {
-        if (!animator.GetBool("OnGround") && bol)
-            VFXManager.Spawn(VFXManager.Instance.FallImpact, transform.position);
+        if (!animator.GetBool("OnGround") && bol) {
+
+            Vector2 p = transform.position;
+            p += bottomOffset/2;
+            VFXManager.Spawn(VFXManager.Instance.FallImpact, p);
+        }
         animator.SetBool("OnGround", bol);
     }
 
@@ -364,7 +375,12 @@ public class Player : MonoBehaviour
 
     public void SetDashDirection() {
         dashDirection = inputManager.GetRightStickValue().normalized;
-        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, dashDirection.x > 0);
+
+        Vector2 p = transform.position;
+        p += bottomOffset / 2;
+        VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
+
+        VFXManager.Spawn(VFXManager.Instance.Dash, p, dashDirection.x > 0);
     }
 
     private void OnDrawGizmos() {
