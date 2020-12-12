@@ -8,6 +8,11 @@ public class StunState : TemporaryState {
         color = Color.red;
     }
 
+    public override void Start() {
+        base.Start();
+        player.AnimRun(false);
+    }
+
     override public void NextState() {
         player.ToBaseState();
     }
