@@ -10,6 +10,11 @@
     "DLL": "AkGuitarDistortion"
    },
    {
+    "Name": "Wwise Meter",
+    "ID": "8454147",
+    "DLL": "AkSoundEngineDLL"
+   },
+   {
     "Name": "Wwise Time Stretch",
     "ID": "8519683",
     "DLL": "AkTimeStretch"

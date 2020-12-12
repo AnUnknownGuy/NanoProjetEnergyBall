@@ -13,7 +13,8 @@ public class AudioManager : MonoBehaviour
     
 
     //Wwise Events
-    public AK.Wwise.Event dash;
+    public AK.Wwise.Event dash_green;
+    public AK.Wwise.Event dash_blue;
     public AK.Wwise.Event jump;
     public AK.Wwise.Event battle_Scene;
     public AK.Wwise.Event ball_get;
@@ -22,6 +23,8 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event ball_hit;
     public AK.Wwise.Event ball_bounce;
     public AK.Wwise.Event ball_air;
+    public AK.Wwise.Event start_horn;
+    public AK.Wwise.Event ambiance;
 
     [Space(10)]
     [Header("Game Parameters")]
@@ -39,12 +42,17 @@ public class AudioManager : MonoBehaviour
         instance = this;
 
         Battle_Scene(gameObject);
-        
+        Ambiance(gameObject);
+
     }
 
 
-    public static void Dash(GameObject gameObject) {
-        if (exist) instance.dash.Post(gameObject);
+    public static void Dash_Green(GameObject gameObject) {
+        if (exist) instance.dash_green.Post(gameObject);
+    }
+    public static void Dash_Blue(GameObject gameObject)
+    {
+        if (exist) instance.dash_blue.Post(gameObject);
     }
     public static void Jump(GameObject gameObject) {
         if (exist) instance.jump.Post(gameObject);
@@ -71,6 +79,17 @@ public class AudioManager : MonoBehaviour
         Debug.Log("coucou");
         if (exist) instance.ball_air.Post(gameObject);
     }
+    public static void Start_Horn(GameObject gameObject)
+    {
+        Debug.Log("coucou");
+        if (exist) instance.start_horn.Post(gameObject);
+    }
+    public static void Ambiance(GameObject gameObject)
+    {
+        Debug.Log("coucou");
+        if (exist) instance.ambiance.Post(gameObject);
+    }
+
 
     public static void Ball_Velocity(float value)
     {
