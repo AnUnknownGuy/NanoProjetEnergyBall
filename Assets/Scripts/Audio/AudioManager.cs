@@ -49,7 +49,6 @@ public class AudioManager : MonoBehaviour
 
         Battle_Scene(gameObject);
         Ambiance(gameObject);
-
     }
 
 
@@ -66,6 +65,11 @@ public class AudioManager : MonoBehaviour
     public static void Battle_Scene(GameObject gameObject) {
         if (exist) instance.battle_Scene.Post(gameObject);
     }
+
+    public static void Battle_Scene_Stop() {
+        if (exist) instance.battle_Scene.Stop(instance.gameObject);
+    }
+
     public static void Music_Menu(GameObject gameObject)
     {
         if (exist) instance.music_menu.Post(gameObject);
@@ -88,8 +92,12 @@ public class AudioManager : MonoBehaviour
     public static void Ball_Air(GameObject gameObject) {
         if (exist) instance.ball_air.Post(gameObject);
     }
+    public static void Ball_Air_Stop(GameObject gameObject) {
+        if (exist) instance.ball_air.Stop(gameObject);
+    }
+
     public static void Start_Horn(GameObject gameObject)
-    { 
+    {
         if (exist) instance.start_horn.Post(gameObject);
     }
     public static void Ambiance(GameObject gameObject)
@@ -116,19 +124,16 @@ public class AudioManager : MonoBehaviour
 
     public static void Ball_Velocity(float value)
     {
-        //Debug.Log(value);
         if (exist) instance.ball_velocity.SetGlobalValue(value);
     }
 
     public static void Ball_Idle()
     {
-        //Debug.Log(value);
         if (exist) instance.ball_idle.SetValue();
     }
 
     public static void Ball_Charegd()
     {
-        //Debug.Log(value);
         if (exist) instance.ball_charged.SetValue();
     }
 

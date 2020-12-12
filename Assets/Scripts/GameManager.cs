@@ -1,6 +1,9 @@
-﻿using HealthBarsPackage;
+﻿using DG.Tweening;
+using HealthBarsPackage;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +13,15 @@ public class GameManager : MonoBehaviour
     public LevelManager level;
     public SendLog logger;
 
+    public Image transitionPanel;
+
+    [SerializeField] private Point pointP1A;
+    [SerializeField] private Point pointP1B;
+    [SerializeField] private Point pointP2A;
+    [SerializeField] private Point pointP2B;
+
     public float timeBeforeRestart = 2;
+    public float fadeTime = 0.5f;
 
     private bool restarting = false;
 
@@ -19,19 +30,23 @@ public class GameManager : MonoBehaviour
         if (level == null) {
             CreateLevel();
             SetHealthBars();
+
+            //AudioManager.Battle_Scene_Stop(gameObject);
+            //AudioManager.Battle_Scene(gameObject);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (Input.GetKeyDown("r")) {
+            AudioManager.Battle_Scene_Stop();
+            SceneManager.LoadScene("BaseLevel");
+        }
     }
 
     public void RestartLevel() {
         if (!restarting) {
             AudioManager.Start_Horn(gameObject);
-            StartCoroutine(Restart(timeBeforeRestart));
+            StartCoroutine(Restart(fadeTime));
             restarting = true;
         }
     }
@@ -41,14 +56,43 @@ public class GameManager : MonoBehaviour
         health2.player = level.player2;
     }
 
-    public void Win(string winner) {
-        if (logger != null) {
-            logger.Send(winner);
+    
+    public void Win(string winner)
+    {
+        switch (winner)
+        {
+            case "P1":
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                break;
+            case "P2":
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
+            default: // DRAW
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
         }
+        if(pointP1B.IsActive() || pointP2B.IsActive())
+        {
+            End(winner);
+            return;
+        }
+        RestartLevel();
+    }
+
+    public void End(string winner) {
+        Debug.Log("winner is :" + winner);
     }
 
     private IEnumerator Restart(float time) {
+
+        transitionPanel.DOFade(1, time/2);
         yield return new WaitForSeconds(time);
+
         level.Stop();
         Destroy(level.gameObject);
         CreateLevel();
@@ -57,6 +101,8 @@ public class GameManager : MonoBehaviour
         if (logger != null) {
             logger.Restart();
         }
+
+        transitionPanel.DOFade(0, time / 2);
     }
 
     private void CreateLevel() {
@@ -74,4 +120,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
 }

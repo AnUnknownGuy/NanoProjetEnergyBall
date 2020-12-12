@@ -38,6 +38,39 @@ TextureImporter:
   - first:
       213: 4269874891800129516
     second: jump_back_2
+  - first:
+      213: -5650384716705411897
+    second: jump_back_3
+  - first:
+      213: -7026358055542794376
+    second: jump_back_4
+  - first:
+      213: -7955356346387979396
+    second: jump_back_5
+  - first:
+      213: 8974748781331724665
+    second: jump_back_6
+  - first:
+      213: 2110295189312447446
+    second: jump_back_7
+  - first:
+      213: 1425617144637664469
+    second: jump_back_8
+  - first:
+      213: 3951995066634139165
+    second: jump_back_9
+  - first:
+      213: 6275848882319243435
+    second: jump_back_10
+  - first:
+      213: 6817560333994805218
+    second: jump_back_11
+  - first:
+      213: 6518924989735109470
+    second: jump_back_12
+  - first:
+      213: 2906662847908874770
+    second: jump_back_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -131,7 +164,7 @@ TextureImporter:
         width: 1000
         height: 606
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.5, y: 1.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +185,7 @@ TextureImporter:
         width: 1000
         height: 606
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.5, y: 1.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +206,7 @@ TextureImporter:
         width: 1000
         height: 606
       alignment: 9
-      pivot: {x: 0.5, y: 1}
+      pivot: {x: 0.5, y: 1.1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -9,7 +9,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
         type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
       propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: f9b97f330a3eb7340be43198bc129094, type: 2}
+    - target: {fileID: 751719748332715970, guid: 71096c2debe950c4bae43c8a80fb6dd0,
+        type: 3}
+      propertyPath: m_Animations.Array.data[0]
       value: 
       objectReference: {fileID: 7400000, guid: f9b97f330a3eb7340be43198bc129094, type: 2}
     - target: {fileID: 839855746465011908, guid: 71096c2debe950c4bae43c8a80fb6dd0,
