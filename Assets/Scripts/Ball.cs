@@ -62,9 +62,10 @@ public class Ball : MonoBehaviour
 
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
-            ballEffect.SetVector4("Color", player.color);
 
             if (previousPlayer != null) previousPlayer.StartDecay();
+
+            ballEffect.SetVector4("Color", player.color * 3);
             this.player = player;
             player.StopDecay();
             sleeping = true;
