@@ -138,6 +138,10 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void StopSound() {
+        AudioManager.Ball_Air_Stop(gameObject);
+    }
+
     private void OnDrawGizmos() {
         //Gizmos.color = Color.green;
 
