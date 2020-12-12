@@ -132,7 +132,6 @@ public class Player : MonoBehaviour
     }
 
     public void UpdateFacingDirection(float duration) {
-        DOTween.KillAll();
 
         if (facingRight) {
             //transform.rotation = Quaternion.Euler(0,0,0);
