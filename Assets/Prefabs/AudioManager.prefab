@@ -108,6 +108,21 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: a4a2a4d18edd2d644abc4bf6ddc541cd,
       type: 2}
+  navigate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1604e05860a3ad0409a10e2dc1570943,
+      type: 2}
+  validate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0987fb8fd5955f048b5c7fe52087406a,
+      type: 2}
+  begin:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 82215db320dc3d94291d898ba9208981,
+      type: 2}
   ball_velocity:
     idInternal: 0
     valueGuidInternal: 

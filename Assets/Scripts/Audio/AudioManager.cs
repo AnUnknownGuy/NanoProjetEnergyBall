@@ -26,6 +26,10 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event ball_air;
     public AK.Wwise.Event start_horn;
     public AK.Wwise.Event ambiance;
+    public AK.Wwise.Event navigate;
+    public AK.Wwise.Event validate;
+    public AK.Wwise.Event begin;
+
 
     [Space(10)]
     [Header("Game Parameters")]
@@ -90,6 +94,18 @@ public class AudioManager : MonoBehaviour
     public static void Ambiance(GameObject gameObject)
     {
         if (exist) instance.ambiance.Post(gameObject);
+    }
+    public static void Navigate(GameObject gameObject)
+    {
+        if (exist) instance.navigate.Post(gameObject);
+    }
+    public static void Validate(GameObject gameObject)
+    {
+        if (exist) instance.validate.Post(gameObject);
+    }
+    public static void Begin(GameObject gameObject)
+    {
+        if (exist) instance.begin.Post(gameObject);
     }
 
 

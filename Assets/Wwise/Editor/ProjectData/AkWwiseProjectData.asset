@@ -125,7 +125,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585938260275243878
+    m_lastTime: -8585938159053052074
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -249,6 +249,38 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Death_Blue
+      guid: fc5a92fb9042574e93473a0a782ccf70
+      id: 3889313835
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Golem
+        ObjectType: 4
+      - ElementName: Play_Death_Blue
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Golem\Play_Death_Blue
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Death_Green
+      guid: 561a3d1fc9c3074e93bd2e7b636f6489
+      id: 44671744
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Golem
+        ObjectType: 4
+      - ElementName: Play_Death_Green
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Golem\Play_Death_Green
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Fight_Announcement
       guid: ddb0bb2c909ee3458c8d5b5630630f52
       id: 2301463414
@@ -260,6 +292,20 @@ MonoBehaviour:
       - ElementName: Play_Fight_Announcement
         ObjectType: 3
       Path: Master_Event\Battle_Event\Play_Fight_Announcement
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Fill_Round
+      guid: c4fbc29f203a924babb189d31adddefd
+      id: 640421124
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Fill_Round
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Fill_Round
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -348,7 +394,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: aac4c458b5230443993348f7c83af6d1
     GuidInternal: 
-    m_lastTime: -8585939160296097797
+    m_lastTime: -8585938159053124599
     List: []
   - PhysicalPath: Events\Master_Event.wwu
     PathAndIcons:
@@ -597,5 +643,6 @@ MonoBehaviour:
   - /Nano_Projet/Events/Master_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event/Golem
+  - /Nano_Projet/Events/Master_Event/Menu_Event
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

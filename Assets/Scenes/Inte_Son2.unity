@@ -372,6 +372,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
+        type: 3}
+      propertyPath: navigate.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1604e05860a3ad0409a10e2dc1570943,
+        type: 2}
+    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
+        type: 3}
+      propertyPath: validate.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 0987fb8fd5955f048b5c7fe52087406a,
+        type: 2}
+    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
+        type: 3}
+      propertyPath: begin.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 82215db320dc3d94291d898ba9208981,
+        type: 2}
     - target: {fileID: 2188522885565807407, guid: 60df29cc47916e6408d8affc94c2300a,
         type: 3}
       propertyPath: m_Name
