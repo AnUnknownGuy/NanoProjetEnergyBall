@@ -46,12 +46,12 @@ MonoBehaviour:
   dash_green:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fead847aa17315144afefcfa0421c91a,
+    WwiseObjectReference: {fileID: 11400000, guid: 98a7c122b56999646b7e580e13301d94,
       type: 2}
   dash_blue:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 98a7c122b56999646b7e580e13301d94,
+    WwiseObjectReference: {fileID: 11400000, guid: fead847aa17315144afefcfa0421c91a,
       type: 2}
   jump:
     idInternal: 0

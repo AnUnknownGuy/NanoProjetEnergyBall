@@ -76,17 +76,14 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_bounce.Post(gameObject);
     }
     public static void Ball_Air(GameObject gameObject) {
-        Debug.Log("coucou");
         if (exist) instance.ball_air.Post(gameObject);
     }
     public static void Start_Horn(GameObject gameObject)
-    {
-        Debug.Log("coucou");
+    { 
         if (exist) instance.start_horn.Post(gameObject);
     }
     public static void Ambiance(GameObject gameObject)
     {
-        Debug.Log("coucou");
         if (exist) instance.ambiance.Post(gameObject);
     }
 

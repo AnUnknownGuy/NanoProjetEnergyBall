@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2045269690">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3169683090">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -97,23 +97,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{144F14CC-F451-4548-A75E-F15346DB6A78}" DurationType="OneShot" DurationMin="0.659941" DurationMax="0.909312">
-					<IncludedMemoryFiles>
-						<File Id="532619175" Language="SFX">
-							<ShortName>Dash_Golem-001.wav</ShortName>
-							<Path>SFX\Dash_Golem-001_05842A19.wem</Path>
-						</File>
-						<File Id="541730044" Language="SFX">
-							<ShortName>Dash_Golem-003.wav</ShortName>
-							<Path>SFX\Dash_Golem-003_05842A19.wem</Path>
-						</File>
-						<File Id="711092926" Language="SFX">
-							<ShortName>Dash_Golem-002.wav</ShortName>
-							<Path>SFX\Dash_Golem-002_05842A19.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1446058966" Name="Play_Dash_Green" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Green" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.609190" DurationMax="0.808066">
+				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.609190" DurationMax="0.808066">
 					<IncludedMemoryFiles>
 						<File Id="95179653" Language="SFX">
 							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
@@ -126,6 +110,22 @@
 						<File Id="547198134" Language="SFX">
 							<ShortName>Dash_Golem_V5_02.wav</ShortName>
 							<Path>SFX\Dash_Golem_V5_02_29D3A7BB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1446058966" Name="Play_Dash_Green" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Green" GUID="{144F14CC-F451-4548-A75E-F15346DB6A78}" DurationType="OneShot" DurationMin="0.659941" DurationMax="0.909312">
+					<IncludedMemoryFiles>
+						<File Id="532619175" Language="SFX">
+							<ShortName>Dash_Golem-001.wav</ShortName>
+							<Path>SFX\Dash_Golem-001_05842A19.wem</Path>
+						</File>
+						<File Id="541730044" Language="SFX">
+							<ShortName>Dash_Golem-003.wav</ShortName>
+							<Path>SFX\Dash_Golem-003_05842A19.wem</Path>
+						</File>
+						<File Id="711092926" Language="SFX">
+							<ShortName>Dash_Golem-002.wav</ShortName>
+							<Path>SFX\Dash_Golem-002_05842A19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

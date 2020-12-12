@@ -125,7 +125,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585938990609250680
+    m_lastTime: -8585938260275243878
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -202,7 +202,7 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: Play_Dash_Blue
-      guid: cc144f1451f44845a75ef15346db6a78
+      guid: 1e562811ca0f1e428835fce5225fb88a
       id: 3719516685
       PathAndIcons:
       - ElementName: Master_Event
@@ -218,7 +218,7 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: Play_Dash_Green
-      guid: 1e562811ca0f1e428835fce5225fb88a
+      guid: cc144f1451f44845a75ef15346db6a78
       id: 1446058966
       PathAndIcons:
       - ElementName: Master_Event
@@ -596,8 +596,6 @@ MonoBehaviour:
   - /Nano_Projet/Events
   - /Nano_Projet/Events/Master_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event
-  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
   - /Nano_Projet/Events/Master_Event/Battle_Event/Golem
-  - /Nano_Projet/Events/Master_Event/Menu_Event
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
