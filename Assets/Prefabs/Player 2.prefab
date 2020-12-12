@@ -234,7 +234,7 @@ MonoBehaviour:
   healthLostOnDashHit: 50
   healthLostOnBallHit: 20
   timeBeforeBeingAbleToThrow: 0.2
-  facingRight: 1
+  facingRight: 0
   ball: {fileID: 0}
   dashDirection: {x: 0, y: 0}
   WallsLayer:
@@ -258,6 +258,12 @@ MonoBehaviour:
   lastPlateformTouched: {fileID: 0}
   sprite: {fileID: 4389660307044624420}
   animator: {fileID: 7746399521777486186}
+  color: {r: 0.101960786, g: 0.7490196, b: 0.18431373, a: 0.23921569}
+  deathVFXPrefab: {fileID: 3880941499551406483, guid: 5dd40717baae65c498359ff145adea94,
+    type: 3}
+  catchVFXPrefab: {fileID: 5856979016380894863, guid: 2c3c269710b06894da2f5d260e66c066,
+    type: 3}
+  deathDestroyDelay: 0.25
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

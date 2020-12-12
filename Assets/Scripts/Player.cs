@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -64,6 +66,10 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer sprite;
     public Animator animator;
+    public Color color;
+    public GameObject deathVFXPrefab;
+    public GameObject catchVFXPrefab;
+    public float deathDestroyDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -87,9 +93,6 @@ public class Player : MonoBehaviour
         stateManager.Update();
 
         CheckContactPoints();
-
-        alive = !(health < 10);
-
         
         AnimJump(isJumping);
         AnimFalling(!onGround);
@@ -142,11 +145,18 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRun(bool bol) {
-        animator.SetBool("IsRunning", bol);
+        if (onGround)
+        {
+            if (!animator.GetBool("IsRunning") && bol)
+                VFXManager.Spawn(VFXManager.Instance.Run, transform.position, facingRight);
+            animator.SetBool("IsRunning", bol);
+        }
     }
 
 
     public void AnimJump(bool bol) {
+        if (!animator.GetBool("IsJumping") && bol)
+            VFXManager.Spawn(VFXManager.Instance.Jump, transform.position);
         animator.SetBool("IsJumping", bol);
     }
 
@@ -155,6 +165,8 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRecovery(bool bol) {
+        if (!animator.GetBool("OnGround") && bol)
+            VFXManager.Spawn(VFXManager.Instance.FallImpact, transform.position);
         animator.SetBool("OnGround", bol);
     }
 
@@ -214,6 +226,7 @@ public class Player : MonoBehaviour
     public bool CatchBall(Ball ball) {
         if (ball.Catch(this)) {
             this.ball = ball;
+            VFXManager.Spawn(catchVFXPrefab, transform.position);
             return true;
         }
         return false;
@@ -222,6 +235,7 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             ball.Throw(inputManager.GetRightStickValue(), throwPower);
+            VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, transform.position);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
             UpdateFacingDirection(0.1f);
@@ -229,14 +243,34 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void looseHealthBallHit() {
-        if (CameraManager.Instance != null) CameraManager.Instance.Shake(0.2f, 0.5f);
-        health -= healthLostOnBallHit;
+    public void LoseHealth(float amount)
+    {
+        health -= amount;
+        if (health < 10 && alive)
+        {
+            alive = false;
+            CameraManager.Instance.Zoom(transform.position).onComplete += () =>
+            {
+                VFXManager.Spawn(deathVFXPrefab, transform.position);
+                StartCoroutine(Death());
+            };
+        }
     }
 
-    public void looseHealthDashHit() {
-        if (CameraManager.Instance != null) CameraManager.Instance.Shake(0.5f, 0.5f);
-        health -= healthLostOnDashHit;
+    private IEnumerator Death()
+    {
+        yield return new WaitForSeconds(deathDestroyDelay);
+        Destroy(gameObject);
+    }
+
+    public void LoseHealthBallHit() {
+        CameraManager.Instance.Shake(0.2f, 0.5f);
+        LoseHealth(healthLostOnBallHit);
+    }
+
+    public void LoseHealthDashHit() {
+        CameraManager.Instance.Shake(0.5f, 0.5f);
+        LoseHealth(healthLostOnDashHit);
     }
 
     public void ThrowKnockBack() {
@@ -271,9 +305,9 @@ public class Player : MonoBehaviour
         stateManager.ToHoldStun(stunDuration);
     }
 
-    public void LooseHealth() {
+    public void LoseHealthTick() {
         if (!HasBall())
-            health -= decay * Time.deltaTime;
+            LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
         rb.velocity = speed;
@@ -327,6 +361,7 @@ public class Player : MonoBehaviour
 
     public void SetDashDirection() {
         dashDirection = inputManager.GetRightStickValue().normalized;
+        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, facingRight);
     }
 
     private void OnDrawGizmos() {

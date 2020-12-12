@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 7433136271738114374}
   - component: {fileID: 3565814429772109132}
   m_Layer: 9
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   timeBetweenDash: 1
   jumpScale: 14
   coyoteTime: 0.2
+  timeBetweenJump: 0.3
   gravity: 2.74
   lowGravity: 1.66
   highGravity: 8
@@ -238,6 +239,12 @@ MonoBehaviour:
   lastPlateformTouched: {fileID: 0}
   sprite: {fileID: 4389660307044624420}
   animator: {fileID: 4214769422458712844}
+  color: {r: 0.09803922, g: 0.54901963, b: 0.7490196, a: 0.23921569}
+  deathVFXPrefab: {fileID: 5613484594186088430, guid: 6663260c031fbeb46a9d14ffa77177b2,
+    type: 3}
+  catchVFXPrefab: {fileID: 5856979016380894863, guid: 434953e356192f9449c1b44eeca7deac,
+    type: 3}
+  deathDestroyDelay: 0.25
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
