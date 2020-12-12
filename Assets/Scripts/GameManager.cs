@@ -2,6 +2,7 @@
 using HealthBarsPackage;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -32,6 +33,12 @@ public class GameManager : MonoBehaviour
         if (level == null) {
             CreateLevel();
             SetHealthBars();
+        }
+    }
+
+    void Update() {
+        if (Input.GetKeyDown("r")) {
+            SceneManager.LoadScene("BaseLevel");
         }
     }
 
