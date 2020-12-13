@@ -247,9 +247,9 @@ MonoBehaviour:
   playerNumber: 1
   rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
-  speedWithBall: 5
-  speedWithoutBall: 6
-  dashPower: 22
+  speedWithBall: 6
+  speedWithoutBall: 7
+  dashPower: 25
   dashDuration: 0.2
   timeBetweenDash: 1
   jumpScale: 14
@@ -299,6 +299,7 @@ MonoBehaviour:
   deathDestroyDelay: 0.25
   BallTransform: {fileID: 3008860780208246999}
   dashCooldownIndicator: {fileID: 3127144914970763625}
+  angleCorrection: 12
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
