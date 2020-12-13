@@ -64,7 +64,7 @@ public abstract class State : StateInterface
 				AudioManager.Ball_Hit(player.gameObject);
                 ball.FakeCollision();
                 player.animator.Play("hit");
-                ball.Hit();
+                ball.Hit(true);
                 player.LoseHealthBallHit();
                 player.ToStunState();
             } else if (!ball.charged) {
@@ -102,6 +102,7 @@ public abstract class State : StateInterface
             player.animator.Play("hit");
             Ball ball = player.ball;
             ball.Free();
+            ball.ShowImpact(true);
             player.ball = null;
             ball.SetSpeedWhenFreeFromDash();
 

@@ -26,13 +26,25 @@ public class VFXManager : MonoBehaviour
         Spawn(prefab, pos).GetComponent<SpriteRenderer>().flipX = flip;
     }
 
-    public static void Spawn(GameObject prefab, Vector2 pos, Color color)
+    public static void Spawn(GameObject prefab, Vector2 pos, Color color, bool isHittingPlayer)
     {
-        Spawn(prefab, pos).GetComponent<VisualEffect>().SetVector4("Color", color); 
+        GameObject FX = Spawn(prefab, pos);
+        FX.GetComponent<VisualEffect>().SetVector4("Color", color * 5);
+        if (isHittingPlayer)
+            FX.transform.localScale *= 2f;
     }
 
     public static GameObject Spawn(GameObject prefab, Vector2 pos)
     {
         return Instantiate(prefab, pos, Quaternion.identity);
+    }
+    
+    public static void Spawn(GameObject prefab, Transform parent, bool facingRight)
+    {
+        GameObject FX = Instantiate(prefab, parent);
+        if (facingRight)
+            FX.transform.localPosition = Vector3.back/2;
+        else 
+            FX.transform.localPosition = Vector3.forward/2;
     }
 }
