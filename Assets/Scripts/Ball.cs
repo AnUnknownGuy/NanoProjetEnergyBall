@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
     [HideInInspector] public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
     [HideInInspector] public bool charged = false;
     
+    [Header("Visual Effects")]
     public float collisionRadius = 0.25f;
     public VisualEffect ballEffect;
     public VisualEffect trailEffect;
@@ -36,6 +37,13 @@ public class Ball : MonoBehaviour
     private Gradient trailGradient;
     private GradientColorKey[] trailColorKeys;
     public float trailYScaleDiviser = 20f;
+
+    [Header("Start Animation")] 
+    public float apparitionDelay = 1.5f;
+    public float apparitionDuration = 1f;
+    public float moveDuration = 1f;
+    public float moveYOffset = 2f;
+    public float simulationDelay = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -64,9 +72,18 @@ public class Ball : MonoBehaviour
 
     private IEnumerator GrowBall()
     {
-        yield return new WaitForSeconds(1.5f);
-        transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack).OnComplete(
-            () => rb.simulated = true);
+        yield return new WaitForSeconds(apparitionDelay);
+        
+        Vector3 movedPosition = transform.localPosition + new Vector3(0, -moveYOffset, 0);
+        transform.DOScale(Vector3.one, apparitionDuration).SetEase(Ease.OutBack)
+            .OnComplete(() => transform.DOLocalMove(movedPosition, moveDuration).SetEase(Ease.InOutCubic)
+                .OnComplete(() => StartCoroutine(ActivateSimulation())));
+    }
+
+    private IEnumerator ActivateSimulation()
+    {
+        yield return new WaitForSeconds(simulationDelay);
+        rb.simulated = true;
     }
 
     // Update is called once per frame

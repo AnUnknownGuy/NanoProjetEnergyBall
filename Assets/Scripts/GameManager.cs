@@ -157,13 +157,22 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         StartCoroutine(ShowOneCount(count1));
         yield return new WaitForSeconds(1);
-        StartCoroutine(ShowOneCount(go));
+        StartCoroutine(ShowGo(go));
     }
 
     private IEnumerator ShowOneCount(Image image) {
         image.enabled = true;
         image.DOFade(0, 1.0f).SetEase(Ease.InCubic);
         yield return new WaitForSeconds(1);
+        image.enabled = false;
+        image.DOFade(1, 0);
+    }
+
+    private IEnumerator ShowGo(Image image) {
+        image.enabled = true;
+        image.DOFade(0, 0.5f).SetEase(Ease.InCubic);
+        image.transform.DOScale(3, 0.5f).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(0.5f);
         image.enabled = false;
         image.DOFade(1, 0);
     }
