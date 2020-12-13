@@ -15,22 +15,27 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
 
+    public float fadeTime = 0.5f;
+    public float timeBlack = 1f;
+
+    public float timeBeforeInputStart;
+
     [SerializeField] private Point pointP1A;
     [SerializeField] private Point pointP1B;
     [SerializeField] private Point pointP2A;
     [SerializeField] private Point pointP2B;
 
-    public float timeBeforeRestart = 2;
-    public float fadeTime = 0.5f;
+    public float timeBeforeRestart = 2, timeBeforeCountDown = 3;
 
     private bool restarting = false;
 
     void Start()
     {
-        if (level == null) {
-            CreateLevel();
-            SetHealthBars();
+        timeBeforeInputStart =  timeBeforeCountDown + 3;
 
+        if (level == null) {
+
+            StartCoroutine(StartLevel());
             //AudioManager.Battle_Scene_Stop(gameObject);
             //AudioManager.Battle_Scene(gameObject);
         }
@@ -38,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("r")) {
+            AudioManager.Ambiance_Stop();
             AudioManager.Battle_Scene_Stop();
             SceneManager.LoadScene("BaseLevel");
         }
@@ -45,8 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel() {
         if (!restarting) {
-            AudioManager.Start_Horn(gameObject);
-            StartCoroutine(Restart(fadeTime));
+            StartCoroutine(Restart());
             restarting = true;
         }
     }
@@ -88,21 +93,34 @@ public class GameManager : MonoBehaviour
         Debug.Log("winner is :" + winner);
     }
 
-    private IEnumerator Restart(float time) {
+    private IEnumerator Restart() {
 
-        transitionPanel.DOFade(1, time/2);
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(timeBeforeRestart);
+        transitionPanel.DOFade(1, fadeTime);
 
-        level.Stop();
-        Destroy(level.gameObject);
-        CreateLevel();
-        SetHealthBars();
-        restarting = false;
+
         if (logger != null) {
             logger.Restart();
         }
 
-        transitionPanel.DOFade(0, time / 2);
+        level.Stop();
+        Destroy(level.gameObject);
+        
+        StartCoroutine(StartLevel());
+    }
+
+    private IEnumerator StartLevel() {
+        yield return new WaitForSeconds(timeBlack);
+        CreateLevel();
+        SetHealthBars();
+        restarting = false;
+
+        transitionPanel.DOFade(0, fadeTime);
+
+        yield return new WaitForSeconds(timeBeforeCountDown);
+        AudioManager.Countdown(gameObject);
+        yield return new WaitForSeconds(3);
+        AudioManager.Start_Horn(gameObject);
     }
 
     private void CreateLevel() {

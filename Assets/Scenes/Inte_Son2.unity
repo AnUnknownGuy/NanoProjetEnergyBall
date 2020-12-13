@@ -490,7 +490,13 @@ MonoBehaviour:
   health2: {fileID: 1913530858}
   level: {fileID: 0}
   logger: {fileID: 1065509723}
+  transitionPanel: {fileID: 0}
+  pointP1A: {fileID: 0}
+  pointP1B: {fileID: 0}
+  pointP2A: {fileID: 0}
+  pointP2B: {fileID: 0}
   timeBeforeRestart: 2
+  fadeTime: 0.5
 --- !u!4 &1065509722
 Transform:
   m_ObjectHideFlags: 0
