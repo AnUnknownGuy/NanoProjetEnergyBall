@@ -98,8 +98,6 @@ public class Ball : MonoBehaviour
 
     public void Uncharge()
     {
-        if (charged)
-            VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color);
         ballEffect.SetVector4("Color", ballColor);
         AudioManager.Ball_Idle();
         charged = false;
@@ -110,7 +108,14 @@ public class Ball : MonoBehaviour
 
     }
 
-    public void Hit() {
+    public void Hit(bool isHittingPlayer) {
+        if (charged)
+        {
+            Debug.Log("IMPACT");
+            GameObject FX = VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color);
+            if (isHittingPlayer)
+                FX.transform.localScale *= 2f;
+        }
         Uncharge();
         MoveToPreviousPlayer();
     }
@@ -165,11 +170,11 @@ public class Ball : MonoBehaviour
 
             if ((collision.gameObject.tag == "plateform") && collision.GetContact(0).normalImpulse != 0) {
                 AudioManager.Ball_Bounce(gameObject);
-                Hit();
+                Hit(false);
             }
             if (collision.gameObject.tag == "wall") {
                 if (charged) {
-                    Hit();
+                    Hit(false);
                 }
                 AudioManager.Ball_Bounce(gameObject);
             }

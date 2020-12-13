@@ -21,14 +21,18 @@ public class VFXManager : MonoBehaviour
         else Destroy(this);
     }
 
-    public static void Spawn(GameObject prefab, Vector2 pos, bool flip)
+    public static GameObject Spawn(GameObject prefab, Vector2 pos, bool flip)
     {
-        Spawn(prefab, pos).GetComponent<SpriteRenderer>().flipX = flip;
+        GameObject FX = Spawn(prefab, pos);
+        FX.GetComponent<SpriteRenderer>().flipX = flip;
+        return FX;
     }
 
-    public static void Spawn(GameObject prefab, Vector2 pos, Color color)
+    public static GameObject Spawn(GameObject prefab, Vector2 pos, Color color)
     {
-        Spawn(prefab, pos).GetComponent<VisualEffect>().SetVector4("Color", color); 
+        GameObject FX = Spawn(prefab, pos);
+        FX.GetComponent<VisualEffect>().SetVector4("Color", color);
+        return FX;
     }
 
     public static GameObject Spawn(GameObject prefab, Vector2 pos)
