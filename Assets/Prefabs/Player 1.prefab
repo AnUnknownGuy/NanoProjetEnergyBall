@@ -271,7 +271,7 @@ MonoBehaviour:
   lastPlateformTouched: {fileID: 0}
   sprite: {fileID: 4389660307044624420}
   animator: {fileID: 4214769422458712844}
-  color: {r: 0.29803923, g: 1, b: 1, a: 1}
+  color: {r: 0.07843137, g: 0.71542245, b: 1, a: 1}
   deathVFXPrefab: {fileID: 5613484594186088430, guid: 6663260c031fbeb46a9d14ffa77177b2,
     type: 3}
   catchVFXPrefab: {fileID: 5856979016380894863, guid: 434953e356192f9449c1b44eeca7deac,
