@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public float inputThresholdJump = 0.3f;
-    public float inputThresholdFastFall = -0.1f;
+    public float inputThresholdFastFall = -0.3f;
     public float inputBufferDuration = 0.2f;
 
     private float deadZoneRightStick = 0.2f;
@@ -169,7 +169,6 @@ public class InputManager : MonoBehaviour
         if (settings.jumpWithStick && previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold) {
             JumpStop();
         }
-        
         previousLeftStickValue = new CustomInput(value);
     }
 

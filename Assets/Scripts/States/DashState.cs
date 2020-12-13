@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿using System.Runtime.CompilerServices;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DashState : TemporaryState
 {
     public float stunDurationDashInterruptedByWall = 0.2f;
-
-
     private float dashStartTimestamp;
 
     public DashState(Player player, float stunTime) : base(player, stunTime) {
@@ -18,12 +17,14 @@ public class DashState : TemporaryState
         base.Start();
         player.stateManager.numberOfDash++;
         dashStartTimestamp = Time.time;
+        player.isDashing = true;
         player.SetSpeed(Vector2.zero);
         player.canDash = false;
         player.SetDashDirection();
         player.StopGravity();
         player.ToFallingLayer();
         player.animator.Play("dash go");
+        player.dashCooldownIndicator.Launch();
     }
 
     public override void Update() {
@@ -33,6 +34,7 @@ public class DashState : TemporaryState
 
     public override void Stop() {
         base.Stop();
+        player.isDashing = false;
         player.stateManager.timeInDash += Time.time - dashStartTimestamp;
         player.SetSpeed(Vector2.zero);
         player.SetNormalGravity();

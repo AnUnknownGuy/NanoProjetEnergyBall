@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8257105204860484892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 8257105205116417471}
   m_Father: {fileID: 0}
@@ -96,7 +96,6 @@ MonoBehaviour:
   previousPlayertouchedTimeStamp: 0
   timeBeforeballCanBeCatchBySamePlayer: 0.2
   collisionRadius: 0.36
-  ballColor: {r: 1, g: 0.9634524, b: 0.8349056, a: 1}
   ballEffect: {fileID: 5748852595879151655}
 --- !u!58 &2554137973294974170
 CircleCollider2D:

@@ -18,7 +18,7 @@ public class MoveState : State {
         base.Update();
 
         if (player.onGround && player.rb.velocity.y <= 0) {
-            if (player.inputManager.GetLeftStickValue().y > player.inputManager.inputThresholdFastFall) {
+            if (player.inputManager.GetLeftStickValue().y > player.inputManager.inputThresholdFastFall && !player.isDashing) {
                 player.ToBaseLayer();
             }
 
