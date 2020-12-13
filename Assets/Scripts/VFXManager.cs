@@ -38,4 +38,13 @@ public class VFXManager : MonoBehaviour
     {
         return Instantiate(prefab, pos, Quaternion.identity);
     }
+    
+    public static void Spawn(GameObject prefab, Transform parent, bool facingRight)
+    {
+        GameObject FX = Instantiate(prefab, parent);
+        if (facingRight)
+            FX.transform.localPosition = Vector3.back/2;
+        else 
+            FX.transform.localPosition = Vector3.forward/2;
+    }
 }
