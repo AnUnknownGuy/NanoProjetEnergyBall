@@ -121,6 +121,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &399026127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6666148444975019853, guid: 305ab3094aca97e49a80d8057ad3c90c,
+    type: 3}
+  m_PrefabInstance: {fileID: 595420175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &399026128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399026127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4146930dd224c7341ac09f489d583bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundBanks:
+  - bank:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: ba12cc51b2d94e5428231845214f65ec,
+        type: 2}
+    asynchronous: 0
+    decodeCompressedData: 0
+    loadOnAwake: 1
+    loadingScene: {fileID: 102900000, guid: 360ee58012d21ad4bbc6235f9b6aa1f6, type: 3}
+    unloadingScene: {fileID: 0}
+    loadingDelay: 0
+    unloadingDelay: 0
+    isLoaded: 0
 --- !u!1001 &534844609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -372,24 +404,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
-        type: 3}
-      propertyPath: navigate.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 1604e05860a3ad0409a10e2dc1570943,
-        type: 2}
-    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
-        type: 3}
-      propertyPath: validate.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 0987fb8fd5955f048b5c7fe52087406a,
-        type: 2}
-    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
-        type: 3}
-      propertyPath: begin.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 82215db320dc3d94291d898ba9208981,
-        type: 2}
     - target: {fileID: 2188522885565807407, guid: 60df29cc47916e6408d8affc94c2300a,
         type: 3}
       propertyPath: m_Name
@@ -470,7 +484,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6666148444975019855, guid: 305ab3094aca97e49a80d8057ad3c90c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 305ab3094aca97e49a80d8057ad3c90c, type: 3}
 --- !u!1 &1065509720
 GameObject:
@@ -508,7 +523,13 @@ MonoBehaviour:
   health2: {fileID: 1913530858}
   level: {fileID: 0}
   logger: {fileID: 1065509723}
+  transitionPanel: {fileID: 0}
+  pointP1A: {fileID: 0}
+  pointP1B: {fileID: 0}
+  pointP2A: {fileID: 0}
+  pointP2B: {fileID: 0}
   timeBeforeRestart: 2
+  fadeTime: 0.5
 --- !u!4 &1065509722
 Transform:
   m_ObjectHideFlags: 0

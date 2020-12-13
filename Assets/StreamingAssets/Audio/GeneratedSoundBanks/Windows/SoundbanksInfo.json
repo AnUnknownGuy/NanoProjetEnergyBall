@@ -60,7 +60,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "3986403512",
+    "Hash": "1473062302",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -213,6 +213,23 @@
       ]
      },
      {
+      "Id": "2175797879",
+      "Name": "Play_Countdown",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Countdown",
+      "GUID": "{B6FF3455-B804-4F18-8970-46810258F6A5}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.000000",
+      "DurationMax": "4.000000",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "307361953",
+        "Language": "SFX",
+        "ShortName": "Countdown.wav",
+        "Path": "SFX\\Countdown_831183D2.wem"
+       }
+      ]
+     },
+     {
       "Id": "3719516685",
       "Name": "Play_Dash_Blue",
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Blue",
@@ -318,6 +335,23 @@
         "Language": "SFX",
         "ShortName": "Death_green.wav",
         "Path": "SFX\\Death_green_D4B036B6.wem"
+       }
+      ]
+     },
+     {
+      "Id": "3833288947",
+      "Name": "Play_Downer",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Downer",
+      "GUID": "{76E72490-99FA-419A-8416-8A683B3D89BA}",
+      "DurationType": "OneShot",
+      "DurationMin": "8.384013",
+      "DurationMax": "8.384013",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "448362090",
+        "Language": "SFX",
+        "ShortName": "Downer.wav",
+        "Path": "SFX\\Downer_05842A19.wem"
        }
       ]
      },

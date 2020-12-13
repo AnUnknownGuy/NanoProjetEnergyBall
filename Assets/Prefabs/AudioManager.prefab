@@ -118,10 +118,30 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 0987fb8fd5955f048b5c7fe52087406a,
       type: 2}
-  begin:
+  begin_game:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 82215db320dc3d94291d898ba9208981,
+      type: 2}
+  countdown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c59ae2e9067828240b1cff6e6c05edc2,
+      type: 2}
+  downer:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 70cdd2c93318d8249a8e4d5286581840,
+      type: 2}
+  death_green:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 13e951df005ba4b46a25769877888a0d,
+      type: 2}
+  death_blue:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0248b770d16fe6e4ea817b59406bcaa3,
       type: 2}
   ball_velocity:
     idInternal: 0

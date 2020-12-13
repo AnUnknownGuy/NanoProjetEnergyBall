@@ -125,7 +125,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585938159053052074
+    m_lastTime: -8585937910582898525
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -198,6 +198,20 @@ MonoBehaviour:
       - ElementName: Play_Bounce
         ObjectType: 3
       Path: Master_Event\Battle_Event\Ball\Play_Bounce
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Countdown
+      guid: 5534ffb604b8184f897046810258f6a5
+      id: 2175797879
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Countdown
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Countdown
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -278,6 +292,20 @@ MonoBehaviour:
       - ElementName: Play_Death_Green
         ObjectType: 3
       Path: Master_Event\Battle_Event\Golem\Play_Death_Green
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Downer
+      guid: 9024e776fa999a4184168a683b3d89ba
+      id: 3833288947
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Downer
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Downer
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -394,7 +422,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: aac4c458b5230443993348f7c83af6d1
     GuidInternal: 
-    m_lastTime: -8585938159053124599
+    m_lastTime: -8585938025419219461
     List: []
   - PhysicalPath: Events\Master_Event.wwu
     PathAndIcons:
@@ -414,7 +442,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Menu_Event
     guid: d513c5fcc4507c46b8be2452a4cb6bcc
     GuidInternal: 
-    m_lastTime: -8585939813710030655
+    m_lastTime: -8585937933994187606
     List:
     - name: Play_Ambiance_lp
       guid: 696696f1b783f644a179428e37f6cd0c
@@ -640,9 +668,5 @@ MonoBehaviour:
   ExpandedItems:
   - /Nano_Projet
   - /Nano_Projet/Events
-  - /Nano_Projet/Events/Master_Event
-  - /Nano_Projet/Events/Master_Event/Battle_Event
-  - /Nano_Projet/Events/Master_Event/Battle_Event/Golem
-  - /Nano_Projet/Events/Master_Event/Menu_Event
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

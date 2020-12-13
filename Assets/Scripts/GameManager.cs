@@ -38,8 +38,9 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("r")) {
+            AudioManager.Ambiance_Stop();
             AudioManager.Battle_Scene_Stop();
-            SceneManager.LoadScene("BaseLevel");
+            SceneManager.LoadScene("Inte_Son2");
         }
     }
 

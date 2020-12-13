@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3986403512">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1473062302">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -97,6 +97,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2175797879" Name="Play_Countdown" ObjectPath="\Events\Master_Event\Battle_Event\Play_Countdown" GUID="{B6FF3455-B804-4F18-8970-46810258F6A5}" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000">
+					<IncludedMemoryFiles>
+						<File Id="307361953" Language="SFX">
+							<ShortName>Countdown.wav</ShortName>
+							<Path>SFX\Countdown_831183D2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.610293" DurationMax="0.808066">
 					<IncludedMemoryFiles>
 						<File Id="95179653" Language="SFX">
@@ -150,6 +158,14 @@
 						<File Id="937358229" Language="SFX">
 							<ShortName>Death_green.wav</ShortName>
 							<Path>SFX\Death_green_D4B036B6.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3833288947" Name="Play_Downer" ObjectPath="\Events\Master_Event\Battle_Event\Play_Downer" GUID="{76E72490-99FA-419A-8416-8A683B3D89BA}" DurationType="OneShot" DurationMin="8.384013" DurationMax="8.384013">
+					<IncludedMemoryFiles>
+						<File Id="448362090" Language="SFX">
+							<ShortName>Downer.wav</ShortName>
+							<Path>SFX\Downer_05842A19.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
