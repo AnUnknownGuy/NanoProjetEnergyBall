@@ -47,8 +47,8 @@ public class LevelManager : MonoBehaviour
             if (!player1.alive || !player2.alive) {
                 restarting = true;
 
-                player1.ToStunState(5);
-                player2.ToStunState(5);
+                player1.inputManager.enabled = false;
+                player2.inputManager.enabled = false;
 
             }
         }
