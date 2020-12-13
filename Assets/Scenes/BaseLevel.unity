@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -570,12 +570,15 @@ MonoBehaviour:
   level: {fileID: 0}
   logger: {fileID: 1065509723}
   transitionPanel: {fileID: 342518202}
+  fadeTime: 0.5
+  timeBlack: 1
+  timeBeforeInputStart: 3
   pointP1A: {fileID: 97701330}
   pointP1B: {fileID: 2089419075}
   pointP2A: {fileID: 1481487687}
   pointP2B: {fileID: 767439714}
   timeBeforeRestart: 2
-  fadeTime: 0.5
+  timeBeforeCountDown: 3
 --- !u!4 &1065509722
 Transform:
   m_ObjectHideFlags: 0
