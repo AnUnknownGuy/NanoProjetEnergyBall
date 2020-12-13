@@ -14,6 +14,12 @@ public class GameManager : MonoBehaviour
     public SendLog logger;
 
     public Image transitionPanel;
+    public Image greyPanel;
+    public Image victoryPanel;
+    public Button replayButton;
+    public Button mainMenuButton;
+    public Text replayText;
+    public Text mainMenuText;
 
     public float fadeTimeIn = 0.5f;
     public float fadeTimeOut = 1f;
@@ -46,10 +52,20 @@ public class GameManager : MonoBehaviour
 
     void Update() {
         if (Input.GetKeyDown("r")) {
-            AudioManager.Ambiance_Stop();
-            AudioManager.Battle_Scene_Stop();
-            SceneManager.LoadScene("BaseLevel");
+            RestartScene();
         }
+    }
+
+    public void RestartScene() {
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
+        SceneManager.LoadScene("BaseLevel");
+    }
+
+    public void ToMainMenu() {
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
+        SceneManager.LoadScene("MainMenuAlex");
     }
 
     public void RestartLevel() {
@@ -93,18 +109,29 @@ public class GameManager : MonoBehaviour
     }
 
     public void End(string winner) {
-        Debug.Log("winner is :" + winner);
-
-        StartCoroutine(StopLevel());
-
-
         AudioManager.Ambiance_Stop();
         AudioManager.Battle_Scene_Stop();
+
+        StartCoroutine(ShowVictory());
+    }
+
+    private IEnumerator ShowVictory() {
+
+        greyPanel.DOFade(0.5f, 1);
+        victoryPanel.DOFade(1f, 1);
+
+        yield return new WaitForSeconds(2);
+
+        replayButton.image.DOFade(1, 1);
+        mainMenuButton.image.DOFade(1, 1);
+        replayText.DOFade(1, 1);
+        mainMenuText.DOFade(1, 1);
     }
 
     private IEnumerator Restart() {
 
         StartCoroutine(StopLevel());
+        transitionPanel.DOFade(1, fadeTimeIn);
 
         yield return new WaitForSeconds(fadeTimeIn + timeBeforeRestart);
 

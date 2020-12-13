@@ -47,16 +47,15 @@ public class LevelManager : MonoBehaviour
             if (!player1.alive || !player2.alive) {
                 restarting = true;
 
-                player1.inputManager.enabled = false;
-                player2.inputManager.enabled = false;
+
+                player1.SetInactiveFor(1000);
+                player2.SetInactiveFor(1000);
 
             }
         }
         
     }
     public void Stop() {
-        //input1.Stop();
-        //input2.Stop();
         ball.StopSound();
     }
 }
