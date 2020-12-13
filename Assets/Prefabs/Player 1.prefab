@@ -238,14 +238,14 @@ MonoBehaviour:
   timeBetweenJump: 0.3
   gravity: 2.74
   lowGravity: 2
-  highGravity: 8
+  highGravity: 6
   throwPower: 25
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
   health: 1000
   decay: 25
   healthLostOnDashHit: 75
-  healthLostOnBallHit: 40
+  healthLostOnBallHit: 50
   timeBeforeBeingAbleToThrow: 0.2
   facingRight: 1
   ball: {fileID: 0}
@@ -348,6 +348,7 @@ MonoBehaviour:
   inputBufferDuration: 0.2
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}
+  timerBeforeInputStart: 0.5
   player: {fileID: 4389660307696137376}
 --- !u!114 &3565814429772109132
 MonoBehaviour:

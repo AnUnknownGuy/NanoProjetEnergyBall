@@ -32,6 +32,10 @@ public class MoveState : State {
             isJumping = false;
         }
     }
+    public override void GroundTouched() {
+        if (player.inputManager.GetLeftStickValue().y > player.inputManager.inputThresholdFastFall)
+            player.ToBaseLayer();
+    }
 
     override public bool JumpSignal() {
         if (coyoteTimer + player.coyoteTime > Time.time && player.rb.velocity.y <= 0 && dontJumpBefore + player.timeBetweenJump <= Time.time) {

@@ -11,7 +11,6 @@ public class Ball : MonoBehaviour
     public PhysicsMaterial2D material;
 
     public bool sleeping;
-    private float timerUntilCatchable = 0;
 
     public Vector2 speedWhenFreeFromDash = new Vector2(0, 10);
 
@@ -25,7 +24,7 @@ public class Ball : MonoBehaviour
     [HideInInspector] public Player previousPlayer;
     [HideInInspector] public Player previousPlayertouched;
     [HideInInspector] public float previousPlayertouchedTimeStamp;
-    [HideInInspector] public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
+    [HideInInspector] public float timeBeforeballCanBeCatchBySamePlayer = 0.20f;
     [HideInInspector] public bool charged = false;
     
     public float collisionRadius = 0.25f;
@@ -100,7 +99,7 @@ public class Ball : MonoBehaviour
     }
 
     public bool Catch(Player player) {
-        if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
+        if (!sleeping) {
             SetBallColor(player.color);
             this.player = player;
             sleeping = true;
@@ -112,6 +111,8 @@ public class Ball : MonoBehaviour
     }
 
     public void Throw(Vector2 dir, float force) {
+
+            previousPlayertouchedTimeStamp = Time.time;
             Charge();
             Free();
             rb.velocity = Vector2.zero;
@@ -124,7 +125,6 @@ public class Ball : MonoBehaviour
         player = null;
         sleeping = false;
         rb.WakeUp();
-        timerUntilCatchable = Time.time;
     }
 
     [SerializeField] private GameObject tornade;

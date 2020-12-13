@@ -40,10 +40,7 @@ public class GameManager : MonoBehaviour
         timeBeforeInputStart =  timeBeforeCountDown + 3;
 
         if (level == null) {
-
             StartCoroutine(StartLevel());
-            //AudioManager.Battle_Scene_Stop(gameObject);
-            //AudioManager.Battle_Scene(gameObject);
         }
     }
 

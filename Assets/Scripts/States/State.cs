@@ -68,14 +68,14 @@ public abstract class State : StateInterface
                 player.LoseHealthBallHit();
                 player.ToStunState();
             } else if (!ball.charged) {
-                if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
+                if (ball.previousPlayer == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
 
                     if (player.CatchBall(ball)) {
                         player.ToHoldState();
 						AudioManager.Ball_Get(player.gameObject);
 					}
 
-                } else if (ball.previousPlayertouched != player) {
+                } else if (ball.previousPlayer != player) {
 
                     if (player.CatchBall(ball)) {
                         player.ToHoldState();
@@ -83,8 +83,6 @@ public abstract class State : StateInterface
 					}
                 }
             }
-            ball.previousPlayertouched = player;
-            ball.previousPlayertouchedTimeStamp = Time.time;
         }
         
     }
