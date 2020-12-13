@@ -111,10 +111,7 @@ public class Ball : MonoBehaviour
     public void Hit(bool isHittingPlayer) {
         if (charged)
         {
-            Debug.Log("IMPACT");
-            GameObject FX = VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color);
-            if (isHittingPlayer)
-                FX.transform.localScale *= 2f;
+            VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color, isHittingPlayer);
         }
         Uncharge();
         MoveToPreviousPlayer();
