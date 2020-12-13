@@ -300,7 +300,7 @@ public class Player : MonoBehaviour
     public void LoseHealth(float amount)
     {
         health -= amount;
-        if (health < 10 && alive)
+        if (health < 0 && alive)
         {
             alive = false;
             CameraManager.Instance.Zoom(transform.position).onComplete += () =>
