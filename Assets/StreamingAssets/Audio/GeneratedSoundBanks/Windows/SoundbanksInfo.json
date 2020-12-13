@@ -60,7 +60,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "1473062302",
+    "Hash": "1445012998",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -310,14 +310,14 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Death_Blue",
       "GUID": "{FB925AFC-4290-4E57-9347-3A0A782CCF70}",
       "DurationType": "OneShot",
-      "DurationMin": "1.710564",
-      "DurationMax": "1.710564",
+      "DurationMin": "1.168068",
+      "DurationMax": "1.168068",
       "IncludedMemoryFiles": [
        {
         "Id": "645271635",
         "Language": "SFX",
         "ShortName": "Death_blue.wav",
-        "Path": "SFX\\Death_blue_CC3FFDCD.wem"
+        "Path": "SFX\\Death_blue_B36B1DB2.wem"
        }
       ]
      },
@@ -327,14 +327,14 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Death_Green",
       "GUID": "{1F3D1A56-C3C9-4E07-93BD-2E7B636F6489}",
       "DurationType": "OneShot",
-      "DurationMin": "1.735265",
-      "DurationMax": "1.735265",
+      "DurationMin": "0.855282",
+      "DurationMax": "0.855282",
       "IncludedMemoryFiles": [
        {
         "Id": "937358229",
         "Language": "SFX",
         "ShortName": "Death_green.wav",
-        "Path": "SFX\\Death_green_D4B036B6.wem"
+        "Path": "SFX\\Death_green_8AF888DA.wem"
        }
       ]
      },
@@ -369,23 +369,6 @@
         "Language": "SFX",
         "ShortName": "Fight_Announcement.wav",
         "Path": "SFX\\Fight_Announcement_1DCF14DD.wem"
-       }
-      ]
-     },
-     {
-      "Id": "640421124",
-      "Name": "Play_Fill_Round",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Fill_Round",
-      "GUID": "{9FC2FBC4-3A20-4B92-ABB1-89D31ADDDEFD}",
-      "DurationType": "OneShot",
-      "DurationMin": "7.349941",
-      "DurationMax": "7.349941",
-      "IncludedMemoryFiles": [
-       {
-        "Id": "661159119",
-        "Language": "SFX",
-        "ShortName": "Fill_Round.wav",
-        "Path": "SFX\\Fill_Round_991F3735.wem"
        }
       ]
      },
@@ -540,6 +523,54 @@
         "Path": "SFX\\Validate_05842A19.wem"
        }
       ]
+     },
+     {
+      "Id": "2955987680",
+      "Name": "Play_Win",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Win",
+      "GUID": "{9FC2FBC4-3A20-4B92-ABB1-89D31ADDDEFD}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.673885",
+      "DurationMax": "6.673885",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "376430735",
+        "Language": "SFX",
+        "ShortName": "Shout_Green_Win.wav",
+        "Path": "SFX\\Shout_Green_Win_05842A19.wem"
+       },
+       {
+        "Id": "384039423",
+        "Language": "SFX",
+        "ShortName": "Shout_Win.wav",
+        "Path": "SFX\\Shout_Win_05842A19.wem"
+       },
+       {
+        "Id": "661159119",
+        "Language": "SFX",
+        "ShortName": "Fill_Round.wav",
+        "Path": "SFX\\Fill_Round_1630AE96.wem"
+       }
+      ],
+      "DefaultSwitchValue": "{E4568A29-F76F-4AA7-9081-A60A3C5B8226}",
+      "SwitchContainers": [
+       {
+        "SwitchValue": "{E4568A29-F76F-4AA7-9081-A60A3C5B8226}",
+        "Media": [
+         {
+          "Id": "384039423"
+         }
+        ]
+       },
+       {
+        "SwitchValue": "{67741BD6-0B28-480C-90A0-2EB24CCE3103}",
+        "Media": [
+         {
+          "Id": "376430735"
+         }
+        ]
+       }
+      ]
      }
     ],
     "GameParameters": [
@@ -548,6 +579,28 @@
       "Name": "Ball_Velocity",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Ball\\Ball_Velocity",
       "GUID": "{1CD115A3-D473-49FC-9EE2-682D699AF661}"
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "979765101",
+      "Name": "Win",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Win",
+      "GUID": "{CFB1CC96-6E11-4F3B-9E56-888BD65075DF}",
+      "Switches": [
+       {
+        "Id": "1325827433",
+        "Name": "Blue",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Win\\Blue",
+        "GUID": "{E4568A29-F76F-4AA7-9081-A60A3C5B8226}"
+       },
+       {
+        "Id": "4147287986",
+        "Name": "Green",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Win\\Green",
+        "GUID": "{67741BD6-0B28-480C-90A0-2EB24CCE3103}"
+       }
+      ]
      }
     ]
    }

@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event downer;
     public AK.Wwise.Event death_green;
     public AK.Wwise.Event death_blue;
+    public AK.Wwise.Event win;
 
 
     [Space(10)]
@@ -42,6 +43,8 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.RTPC ball_velocity;
     public AK.Wwise.State ball_idle;
     public AK.Wwise.State ball_charged;
+    public AK.Wwise.Switch win_blue;
+    public AK.Wwise.Switch win_green;
 
 
     // Start is called before the first frame update
@@ -136,6 +139,10 @@ public class AudioManager : MonoBehaviour
     {
         if (exist) instance.death_blue.Post(gameObject);
     }
+    public static void Win(GameObject gameObject)
+    {
+        if (exist) instance.win.Post(gameObject);
+    }
 
 
     public static void Ball_Velocity(float value)
@@ -151,6 +158,14 @@ public class AudioManager : MonoBehaviour
     public static void Ball_Charegd()
     {
         if (exist) instance.ball_charged.SetValue();
+    }
+    public static void Win_Blue(GameObject gameObject)
+    {
+        if (exist) instance.win_blue.SetValue(gameObject);
+    }
+    public static void Win_Green(GameObject gameObject)
+    {
+        if (exist) instance.win_green.SetValue(gameObject);
     }
 
 

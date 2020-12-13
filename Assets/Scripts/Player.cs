@@ -261,6 +261,7 @@ public class Player : MonoBehaviour
     private IEnumerator Death()
     {
         yield return new WaitForSeconds(deathDestroyDelay);
+        AudioManager.Death_Blue(gameObject);
         Destroy(gameObject);
     }
 

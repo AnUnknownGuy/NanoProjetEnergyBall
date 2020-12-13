@@ -125,7 +125,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585937910582898525
+    m_lastTime: -8585937442087564936
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -323,20 +323,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_Fill_Round
-      guid: c4fbc29f203a924babb189d31adddefd
-      id: 640421124
-      PathAndIcons:
-      - ElementName: Master_Event
-        ObjectType: 12
-      - ElementName: Battle_Event
-        ObjectType: 12
-      - ElementName: Play_Fill_Round
-        ObjectType: 3
-      Path: Master_Event\Battle_Event\Play_Fill_Round
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Play_Get
       guid: eed1f652f321d44dad4be1e40994d33d
       id: 2354553126
@@ -412,6 +398,20 @@ MonoBehaviour:
       - ElementName: Play_Throw_Hit
         ObjectType: 3
       Path: Master_Event\Battle_Event\Ball\Play_Throw_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Win
+      guid: c4fbc29f203a924babb189d31adddefd
+      id: 2955987680
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Win
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Win
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
