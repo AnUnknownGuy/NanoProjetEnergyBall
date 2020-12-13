@@ -1,5 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
-	44671744	Play_Death_Green			\Master_Event\Battle_Event\Golem\Play_Death_Green	
+	1172822028	Play_Death			\Master_Event\Battle_Event\Golem\Play_Death	
 	1446058966	Play_Dash_Green			\Master_Event\Battle_Event\Golem\Play_Dash_Green	
 	1648095864	Play_Validate			\Master_Event\Menu_Event\Play_Validate	
 	1977644338	Play_Throw			\Master_Event\Battle_Event\Golem\Play_Throw	
@@ -19,7 +19,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	3689126666	Play_Jump			\Master_Event\Battle_Event\Golem\Play_Jump	
 	3719516685	Play_Dash_Blue			\Master_Event\Battle_Event\Golem\Play_Dash_Blue	
 	3833288947	Play_Downer			\Master_Event\Battle_Event\Play_Downer	
-	3889313835	Play_Death_Blue			\Master_Event\Battle_Event\Golem\Play_Death_Blue	
 	3893482503	Play_Navigate			\Master_Event\Menu_Event\Play_Navigate	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -53,7 +52,7 @@ Effect plug-ins	ID	Name	Type				Notes
 	842393375	Wwise_Time_Stretch_(Custom)	Wwise Time Stretch			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	15777823	Throw_hit_electricty	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_electricty_E2CE090D.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Throw_Hit\Throw_hit_electricty		14437
+	15777823	Throw_hit_electricty	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_electricty_E2CE090D.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Bounce\Throw_hit_electricty		14437
 	59480555	Throw_ball	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_ball_BEE76F35.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Throw\Throw_ball		17187
 	66757109	Begin	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Begin_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Menu\Begin\Begin		71593
 	83435579	Ball_Air_Crystal	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Crystal_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Texture\Ball_Air_Crystal		214256
@@ -78,8 +77,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	547198134	Dash_Golem_V5_02	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem_V5_02_29D3A7BB.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Green\Dash\Dash_var\Dash_Golem_V5_02		8742
 	593916673	Throw_hit_bass	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_bass_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Throw_Hit\Throw_hit_bass		9619
 	622696685	Fight	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Fight_Announcement_1DCF14DD.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Start\Fight_Announcement\Fight		29792
-	645271635	Death_blue	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Death_blue_B36B1DB2.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Death\Death_blue		16906
-	661159119	Fill_Round	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Fill_Round_1630AE96.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Start\Win\Fill\Fill_Round		107213
+	645271635	Death_blue	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Death_blue_8A7115D0.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Death\Death\Death_blue		16906
+	661159119	Fill_Round	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Fill_Round_B9E9408B.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Start\Win\Fill\Fill_Round		107213
 	664081031	Battle_music	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Battle_music_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\Battle_music\Battle_music		3691560
 	711092926	Dash_Golem-002	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_Golem-002_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Dash\Dash_var\Dash_Golem-002		10459
 	783420610	Lava_amb_03	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Lava_amb_012C6986.wem		\Actor-Mixer Hierarchy\Nano_Projet\Ambience\Ambiance_lp\Lava_amb_03		169926
@@ -87,7 +86,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	860187217	Navigate	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Golem_FT_tight-008_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Menu\Navigate\Navigate		2065
 	879510387	Lava_amb_01	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Lava_amb_6EDAC622.wem		\Actor-Mixer Hierarchy\Nano_Projet\Ambience\Ambiance_lp\Lava_amb_01		200509
 	928899835	Ball_Air_Tone1	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Ball_Air_Tone1_6AF693E7.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Air_Velocity\Air_Velocity_Tone\Ball_Air_Tone1		206530
-	937358229	Death_green	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Death_green_8AF888DA.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Green\Death\Death_green		18602
+	937358229	Death_green	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Death_green_EFB65CB2.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Blue\Death\Death\Death_green		18602
 	968729543	End_tail	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\End_tail-zic_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\Music\End_tail\End_tail		795497
 	983204019	Dash_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Dash_hit_8DBD26AE.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Golems\Golem_Green\Dash_Hit\Dash_hit		9667
 	984157997	Throw_hit	D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Windows\SFX\Throw_hit_05842A19.wem		\Actor-Mixer Hierarchy\Nano_Projet\SFX\Ball\Throw_Hit\Throw_hit		5689
