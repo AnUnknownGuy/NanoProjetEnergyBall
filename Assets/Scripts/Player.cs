@@ -130,7 +130,11 @@ public class Player : MonoBehaviour
                 rb.velocity = new Vector2(x * speedWithoutBall, rb.velocity.y);
             }
 
-            facingRight = (rb.velocity.x > 0);
+            if (facingRight != rb.velocity.x > 0)
+            {
+                facingRight = !facingRight;
+                if (onGround) RunFX();
+            }
 
             UpdateFacingDirection(0.2f);
             AnimRun(true);
@@ -162,16 +166,19 @@ public class Player : MonoBehaviour
     public void AnimRun(bool bol) {
         if (onGround)
         {
-            if (!animator.GetBool("IsRunning") && bol) {
-                Vector2 p = transform.position;
-                p  += bottomOffset/2;
-                VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
-            }
+            if (!animator.GetBool("IsRunning") && bol)
+                RunFX();
             animator.SetBool("IsRunning", bol);
         }
     }
 
-
+    public void RunFX()
+    {
+        Vector2 p = transform.position;
+        p  += bottomOffset/2;
+        VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
+    }
+    
     public void StartDecayTimer() {
         timeStampDecaying = Time.time + timeBeforeDecaying;
     }
@@ -411,8 +418,6 @@ public class Player : MonoBehaviour
 
         Vector2 p = transform.position;
         p += bottomOffset / 2;
-        VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
-
         VFXManager.Spawn(VFXManager.Instance.Dash, p, dashDirection.x > 0);
     }
 
