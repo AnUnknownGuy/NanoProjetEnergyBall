@@ -172,6 +172,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         image.enabled = false;
         image.DOFade(1, 0);
+        image.transform.localScale = new Vector3(0.5f, 0.5f, 1);
     }
 
     
