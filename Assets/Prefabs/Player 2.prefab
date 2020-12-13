@@ -247,8 +247,8 @@ MonoBehaviour:
   playerNumber: 1
   rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
-  speedWithBall: 6
-  speedWithoutBall: 7
+  speedWithBall: 5.5
+  speedWithoutBall: 6.5
   dashPower: 25
   dashDuration: 0.2
   timeBetweenDash: 1
