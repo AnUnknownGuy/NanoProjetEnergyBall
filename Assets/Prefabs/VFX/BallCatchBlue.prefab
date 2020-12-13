@@ -97,10 +97,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 839855746465011908, guid: 920ee17c0f64fe64e93c478ba09c8314,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 839855746465011908, guid: 920ee17c0f64fe64e93c478ba09c8314,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2566076499716737801, guid: 920ee17c0f64fe64e93c478ba09c8314,
         type: 3}
       propertyPath: m_Name
-      value: VisualFXPrefab
+      value: BallCatchBlue
       objectReference: {fileID: 0}
     - target: {fileID: 4065758107310951119, guid: 920ee17c0f64fe64e93c478ba09c8314,
         type: 3}

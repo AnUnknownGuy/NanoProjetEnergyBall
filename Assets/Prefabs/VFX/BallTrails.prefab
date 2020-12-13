@@ -82,6 +82,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2009300528307593673, guid: 86ef461bf6d80fd448a26d36836169ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009300528307593673, guid: 86ef461bf6d80fd448a26d36836169ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2894060840874832834, guid: 86ef461bf6d80fd448a26d36836169ec,
         type: 3}
       propertyPath: m_Asset
@@ -91,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 3736075151750558212, guid: 86ef461bf6d80fd448a26d36836169ec,
         type: 3}
       propertyPath: m_Name
-      value: VisualFXPrefab
+      value: BallTrails
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ef461bf6d80fd448a26d36836169ec, type: 3}

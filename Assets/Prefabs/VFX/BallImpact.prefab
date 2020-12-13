@@ -97,10 +97,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1001366563197742599, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001366563197742599, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2728861641517891018, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}
       propertyPath: m_Name
-      value: VisualFXPrefab
+      value: BallImpact
       objectReference: {fileID: 0}
     - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}

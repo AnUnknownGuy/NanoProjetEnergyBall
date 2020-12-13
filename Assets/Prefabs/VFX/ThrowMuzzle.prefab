@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 2058645917597468584, guid: 66114f2c370577b4f875313ebd678564,
         type: 3}
       propertyPath: m_Name
-      value: VisualFXPrefab
+      value: ThrowMuzzle
       objectReference: {fileID: 0}
     - target: {fileID: 3794998670298092645, guid: 66114f2c370577b4f875313ebd678564,
         type: 3}
@@ -72,6 +72,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794998670298092645, guid: 66114f2c370577b4f875313ebd678564,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4373878627074521352, guid: 66114f2c370577b4f875313ebd678564,
         type: 3}
