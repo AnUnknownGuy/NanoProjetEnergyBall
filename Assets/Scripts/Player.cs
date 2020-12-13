@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    enum PlayerNumber
+    {
+        Joueur1,
+        Joueur2
+    }
+    [SerializeField] private PlayerNumber playerNumber;
+
     [HideInInspector]
     public StateManager stateManager;
-
+    
     [HideInInspector]
     public Rigidbody2D rb;
 
@@ -72,22 +79,24 @@ public class Player : MonoBehaviour
     public float deathDestroyDelay;
     
     public Transform BallTransform;
+    public DashCooldownIndicator dashCooldownIndicator;
 
+    private float timeBeforeDecaying = 1f;
+    private float timeStampDecaying;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stateManager = new StateManager(this);
         onGroundChangeTimeStamp = Time.time;
-
+        dashCooldownIndicator.Player = this;
         if (facingRight) {
             transform.rotation = Quaternion.Euler(0,0,0);
         } else {
             transform.rotation = Quaternion.Euler(0,180,0);
         }
+        timeStampDecaying = Time.time;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -134,12 +143,17 @@ public class Player : MonoBehaviour
 
         if (facingRight) {
             //transform.rotation = Quaternion.Euler(0,0,0);
-
-            transform.DORotateQuaternion(Quaternion.Euler(0, 0, 0), duration);
+            if(playerNumber == PlayerNumber.Joueur1)
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 0, 0), duration);
+            else
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 90, 0), duration);
 
         } else {
             //transform.rotation = Quaternion.Euler(0, 180, 0);
-            transform.DORotateQuaternion(Quaternion.Euler(0, 180, 0), duration);
+            if(playerNumber == PlayerNumber.Joueur1)
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, 180, 0), duration);
+            else
+                animator.transform.DORotateQuaternion(Quaternion.Euler(0, -90, 0), duration);
         }
 
     }
@@ -147,16 +161,27 @@ public class Player : MonoBehaviour
     public void AnimRun(bool bol) {
         if (onGround)
         {
-            if (!animator.GetBool("IsRunning") && bol)
-                VFXManager.Spawn(VFXManager.Instance.Run, transform.position, facingRight);
+            if (!animator.GetBool("IsRunning") && bol) {
+                Vector2 p = transform.position;
+                p  += bottomOffset/2;
+                VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
+            }
             animator.SetBool("IsRunning", bol);
         }
     }
 
 
+    public void StartDecayTimer() {
+        timeStampDecaying = Time.time + timeBeforeDecaying;
+    }
+
     public void AnimJump(bool bol) {
-        if (!animator.GetBool("IsJumping") && bol)
-            VFXManager.Spawn(VFXManager.Instance.Jump, transform.position);
+        if (!animator.GetBool("IsJumping") && bol) {
+            Vector2 p = transform.position;
+            p += bottomOffset/2;
+            VFXManager.Spawn(VFXManager.Instance.Jump, p);
+        }
+
         animator.SetBool("IsJumping", bol);
     }
 
@@ -165,8 +190,12 @@ public class Player : MonoBehaviour
     }
 
     public void AnimRecovery(bool bol) {
-        if (!animator.GetBool("OnGround") && bol)
-            VFXManager.Spawn(VFXManager.Instance.FallImpact, transform.position);
+        if (!animator.GetBool("OnGround") && bol) {
+
+            Vector2 p = transform.position;
+            p += bottomOffset/2;
+            VFXManager.Spawn(VFXManager.Instance.FallImpact, p);
+        }
         animator.SetBool("OnGround", bol);
     }
 
@@ -190,6 +219,7 @@ public class Player : MonoBehaviour
 
         if (previousOnground != onGround) {
             if (onGround) {
+                stateManager.OnGroundTouched();
                 timeInAir += Time.time - onGroundChangeTimeStamp;
             } else {
                 timeOnGround += Time.time - onGroundChangeTimeStamp;
@@ -309,7 +339,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseHealthTick() {
-        if (!HasBall())
+        if (timeStampDecaying < Time.time && !HasBall())
             LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
@@ -364,7 +394,12 @@ public class Player : MonoBehaviour
 
     public void SetDashDirection() {
         dashDirection = inputManager.GetRightStickValue().normalized;
-        VFXManager.Spawn(VFXManager.Instance.Dash, transform.position, dashDirection.x > 0);
+
+        Vector2 p = transform.position;
+        p += bottomOffset / 2;
+        VFXManager.Spawn(VFXManager.Instance.Run, p, facingRight);
+
+        VFXManager.Spawn(VFXManager.Instance.Dash, p, dashDirection.x > 0);
     }
 
     private void OnDrawGizmos() {

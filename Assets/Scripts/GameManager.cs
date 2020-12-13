@@ -15,13 +15,10 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
 
-    public Point point1;
-    public Point point2;
-    public Point point3;
-
-    private string winner1, winner2, winner3;
-    private int round = 0;
-    private bool ended = false;
+    [SerializeField] private Point pointP1A;
+    [SerializeField] private Point pointP1B;
+    [SerializeField] private Point pointP2A;
+    [SerializeField] private Point pointP2B;
 
     public float timeBeforeRestart = 2;
     public float fadeTime = 0.5f;
@@ -33,11 +30,15 @@ public class GameManager : MonoBehaviour
         if (level == null) {
             CreateLevel();
             SetHealthBars();
+
+            //AudioManager.Battle_Scene_Stop(gameObject);
+            //AudioManager.Battle_Scene(gameObject);
         }
     }
 
     void Update() {
         if (Input.GetKeyDown("r")) {
+            AudioManager.Battle_Scene_Stop();
             SceneManager.LoadScene("BaseLevel");
         }
     }
@@ -55,69 +56,35 @@ public class GameManager : MonoBehaviour
         health2.player = level.player2;
     }
 
-    public void Win(string winner) {
-        if(round == 0) {
-            winner1 = winner;
-
-            if (winner == "P1") {
-                point1.SetBlue();
-            } else if (winner == "P2") {
-                point1.SetGreen();
-            } else {
-                point1.SetBlue();
-                point2.SetGreen();
-                round++;
-            }
-
-        } else if (round == 1) {
-            winner2 = winner;
-            if (winner == "P1") {
-                point2.SetBlue();
-            } else if (winner == "P2") {
-                point2.SetGreen();
-            } else {
-
-                point2.SetBlue();
-                point3.SetGreen();
-
-                End(winner1);
-            }
-        } else if (round == 2) {
-
-            if (winner == "P1") {
-                point3.SetBlue();
-            } else if (winner == "P2") {
-                point3.SetGreen();
-            } else {
-                End(winner);
-            }
-
-            winner3 = winner;
+    
+    public void Win(string winner)
+    {
+        switch (winner)
+        {
+            case "P1":
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                break;
+            case "P2":
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
+            default: // DRAW
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
         }
-
-        if (logger != null) {
-            logger.Send(winner);
+        if(pointP1B.IsActive() || pointP2B.IsActive())
+        {
+            End(winner);
+            return;
         }
-
-        if (!ended) {
-            if (round == 1) {
-                if (winner1 == winner2) {
-                    End(winner1);
-                } else {
-                    RestartLevel();
-                }
-            } else if (round == 2) {
-                End(winner3);
-            } else {
-                RestartLevel();
-            }
-        }
-        round++;
+        RestartLevel();
     }
 
-
     public void End(string winner) {
-        ended = true;
         Debug.Log("winner is :" + winner);
     }
 

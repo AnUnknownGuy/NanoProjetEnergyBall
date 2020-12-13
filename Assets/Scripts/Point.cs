@@ -20,4 +20,9 @@ public class Point : MonoBehaviour
         green.enabled = true;
     }
 
+    public bool IsActive()
+    {
+        return !none.enabled;
+    }
+
 }
