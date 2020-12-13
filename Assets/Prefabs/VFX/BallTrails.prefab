@@ -103,5 +103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallTrails
       objectReference: {fileID: 0}
+    - target: {fileID: 6518612834873602270, guid: 86ef461bf6d80fd448a26d36836169ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86ef461bf6d80fd448a26d36836169ec, type: 3}

@@ -19,25 +19,21 @@ public class Ball : MonoBehaviour
     private float maxSpeedSound = 15;
     private float speedSound = 0;
 
-    [HideInInspector]
-    public Player player;
-
-    [HideInInspector]
-    public bool charged = false;
-    [HideInInspector]
-    public Player previousPlayer;
-
-    [HideInInspector]
-    public Player previousPlayertouched;
-    [HideInInspector]
-    public float previousPlayertouchedTimeStamp;
-    [HideInInspector]
-    public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
-
+    [HideInInspector] public Player player;
+    [HideInInspector] public Player previousPlayer;
+    [HideInInspector] public Player previousPlayertouched;
+    [HideInInspector] public float previousPlayertouchedTimeStamp;
+    [HideInInspector] public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
+    [HideInInspector] public bool charged = false;
+    
     public float collisionRadius = 0.25f;
     public VisualEffect ballEffect;
+    public VisualEffect trailEffect;
+    public Transform trailAnchor;
     private Color ballColor;
-
+    private Gradient trailGradient;
+    private GradientColorKey[] trailColorKeys;
+    public float trailYScaleDiviser = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +43,12 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
+        
         ballColor = ballEffect.GetVector4("Color");
+        trailGradient = trailEffect.GetGradient("ColorOverLife");
+        trailColorKeys = trailGradient.colorKeys;
+        
+        SetBallColor(ballColor);
     }
 
     // Update is called once per frame
@@ -58,12 +59,31 @@ public class Ball : MonoBehaviour
         if (player != null) {
             transform.position = player.BallTransform.position;
         }
+
+        AdjustTrails();
+    }
+
+    private void SetBallColor(Color color)
+    {
+        ballEffect.SetVector4("Color", color * 3);
+        
+        for (int key = 0; key < trailColorKeys.Length; key++)
+            trailColorKeys[key].color = color;
+        
+        trailGradient.colorKeys = trailColorKeys;
+        trailEffect.SetGradient("ColorOverLife", trailGradient);
+    }
+
+    private void AdjustTrails()
+    {
+        trailAnchor.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, rb.velocity));
+        trailEffect.transform.localScale = new Vector3(1, 
+            (player == null) ? rb.velocity.magnitude / trailYScaleDiviser : 0, 1);
     }
 
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
-
-            ballEffect.SetVector4("Color", player.color * 3);
+            SetBallColor(player.color);
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -98,7 +118,7 @@ public class Ball : MonoBehaviour
 
     public void Uncharge()
     {
-        ballEffect.SetVector4("Color", ballColor);
+        SetBallColor(ballColor);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
@@ -159,7 +179,7 @@ public class Ball : MonoBehaviour
     public void SetSpeedWhenFreeFromDash() {
         SetSpeed(speedWhenFreeFromDash);
 
-        ballEffect.SetVector4("Color", ballColor);
+        SetBallColor(ballColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
