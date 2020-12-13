@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
 
-    public float fadeTime = 0.5f;
+    public float fadeTimeIn = 0.5f;
+    public float fadeTimeOut = 1f;
     public float timeBlack = 1f;
 
     public float timeBeforeInputStart;
@@ -91,21 +92,20 @@ public class GameManager : MonoBehaviour
 
     public void End(string winner) {
         Debug.Log("winner is :" + winner);
+
+        StartCoroutine(StopLevel());
+
+
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
     }
 
     private IEnumerator Restart() {
 
-        yield return new WaitForSeconds(timeBeforeRestart);
-        transitionPanel.DOFade(1, fadeTime);
+        StartCoroutine(StopLevel());
 
+        yield return new WaitForSeconds(fadeTimeIn + timeBeforeRestart);
 
-        if (logger != null) {
-            logger.Restart();
-        }
-
-        level.Stop();
-        Destroy(level.gameObject);
-        
         StartCoroutine(StartLevel());
     }
 
@@ -115,12 +115,27 @@ public class GameManager : MonoBehaviour
         SetHealthBars();
         restarting = false;
 
-        transitionPanel.DOFade(0, fadeTime);
+        transitionPanel.DOFade(0, fadeTimeOut);
 
         yield return new WaitForSeconds(timeBeforeCountDown);
         AudioManager.Countdown(gameObject);
         yield return new WaitForSeconds(3);
         AudioManager.Start_Horn(gameObject);
+    }
+
+    private IEnumerator StopLevel() {
+
+        yield return new WaitForSeconds(timeBeforeRestart);
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
+
+
+        if (logger != null) {
+            logger.Restart();
+        }
+
+        level.Stop();
+        Destroy(level.gameObject);
     }
 
     private void CreateLevel() {

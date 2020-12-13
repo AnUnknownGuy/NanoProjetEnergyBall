@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="1445012998">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2842404903">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -145,19 +145,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3889313835" Name="Play_Death_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Death_Blue" GUID="{FB925AFC-4290-4E57-9347-3A0A782CCF70}" DurationType="OneShot" DurationMin="1.168068" DurationMax="1.168068">
+				<Event Id="1172822028" Name="Play_Death" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Death" GUID="{FB925AFC-4290-4E57-9347-3A0A782CCF70}" DurationType="OneShot" DurationMin="0.855282" DurationMax="1.168068">
 					<IncludedMemoryFiles>
 						<File Id="645271635" Language="SFX">
 							<ShortName>Death_blue.wav</ShortName>
-							<Path>SFX\Death_blue_B36B1DB2.wem</Path>
+							<Path>SFX\Death_blue_8A7115D0.wem</Path>
 						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="44671744" Name="Play_Death_Green" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Death_Green" GUID="{1F3D1A56-C3C9-4E07-93BD-2E7B636F6489}" DurationType="OneShot" DurationMin="0.855282" DurationMax="0.855282">
-					<IncludedMemoryFiles>
 						<File Id="937358229" Language="SFX">
 							<ShortName>Death_green.wav</ShortName>
-							<Path>SFX\Death_green_8AF888DA.wem</Path>
+							<Path>SFX\Death_green_EFB65CB2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -185,11 +181,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="6.267256" DurationMax="6.267256">
+				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="4.296017" DurationMax="4.296017">
 					<IncludedMemoryFiles>
 						<File Id="841306342" Language="SFX">
 							<ShortName>Horn_Start.wav</ShortName>
-							<Path>SFX\Horn_Start_05842A19.wem</Path>
+							<Path>SFX\Horn_Start_418AD9E8.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -265,7 +261,7 @@
 						</File>
 						<File Id="661159119" Language="SFX">
 							<ShortName>Fill_Round.wav</ShortName>
-							<Path>SFX\Fill_Round_1630AE96.wem</Path>
+							<Path>SFX\Fill_Round_B9E9408B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 					<DefaultSwitchValue>{E4568A29-F76F-4AA7-9081-A60A3C5B8226}</DefaultSwitchValue>

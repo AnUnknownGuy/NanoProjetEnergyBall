@@ -22,8 +22,7 @@ namespace AK
         static const AkUniqueID PLAY_DASH_BLUE = 3719516685U;
         static const AkUniqueID PLAY_DASH_GREEN = 1446058966U;
         static const AkUniqueID PLAY_DASH_HIT = 2481879868U;
-        static const AkUniqueID PLAY_DEATH_BLUE = 3889313835U;
-        static const AkUniqueID PLAY_DEATH_GREEN = 44671744U;
+        static const AkUniqueID PLAY_DEATH = 1172822028U;
         static const AkUniqueID PLAY_DOWNER = 3833288947U;
         static const AkUniqueID PLAY_FIGHT_ANNOUNCEMENT = 2301463414U;
         static const AkUniqueID PLAY_GET = 2354553126U;

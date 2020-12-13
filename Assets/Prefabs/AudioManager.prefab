@@ -133,12 +133,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 70cdd2c93318d8249a8e4d5286581840,
       type: 2}
-  death_green:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 13e951df005ba4b46a25769877888a0d,
-      type: 2}
-  death_blue:
+  death:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 0248b770d16fe6e4ea817b59406bcaa3,
