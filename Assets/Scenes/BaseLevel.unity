@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -313,42 +313,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1278843578015788010, guid: b505131e75a013b4cb6393f7dac6d1c6,
+    - target: {fileID: 1278843577132092239, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 90eb16534415eb345a94ba12ffab9b35,
+      objectReference: {fileID: 21300000, guid: 8eb66c8caa354214db1e67717c36e67c,
         type: 3}
-    - target: {fileID: 3443072890054807077, guid: b505131e75a013b4cb6393f7dac6d1c6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -86
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443072890054807077, guid: b505131e75a013b4cb6393f7dac6d1c6,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -500
-      objectReference: {fileID: 0}
-    - target: {fileID: 3443072891466985088, guid: b505131e75a013b4cb6393f7dac6d1c6,
+    - target: {fileID: 3212281726358763248, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -86
+      value: 240
       objectReference: {fileID: 0}
-    - target: {fileID: 3443072891466985088, guid: b505131e75a013b4cb6393f7dac6d1c6,
+    - target: {fileID: 3212281726358763248, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500
+      value: 162
       objectReference: {fileID: 0}
-    - target: {fileID: 4696060409432596471, guid: b505131e75a013b4cb6393f7dac6d1c6,
+    - target: {fileID: 5523396753165619696, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9f3accdb779a3db479cebfddd66a4f9c,
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523396754024673621, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
-    - target: {fileID: 5924226988485387863, guid: b505131e75a013b4cb6393f7dac6d1c6,
-        type: 3}
-      propertyPath: m_Name
-      value: Point P2 B
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6576613508401603948, guid: b505131e75a013b4cb6393f7dac6d1c6,
         type: 3}
@@ -459,16 +448,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6576613508401603953, guid: b505131e75a013b4cb6393f7dac6d1c6,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1172253086}
-    - target: {fileID: 8087585201202788515, guid: b505131e75a013b4cb6393f7dac6d1c6,
-        type: 3}
-      propertyPath: m_Name
-      value: Point P2 A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b505131e75a013b4cb6393f7dac6d1c6, type: 3}
