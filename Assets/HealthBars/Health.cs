@@ -36,10 +36,13 @@ namespace HealthBarsPackage
 
         private float lastHealth;
         private void Update() {
-            if (lastHealth == _player.health) return;
-            fill.fillAmount = _player.health/maxHealth;
-            lastHealth = _player.health;
-            damage.Set();
+            if (_player != null) {
+                if (lastHealth == _player.health) return;
+                fill.fillAmount = _player.health / maxHealth;
+                lastHealth = _player.health;
+                damage.Set();
+            }
+            
         }
     }
 }
