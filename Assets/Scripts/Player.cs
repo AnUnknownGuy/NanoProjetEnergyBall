@@ -81,8 +81,8 @@ public class Player : MonoBehaviour
     public Transform BallTransform;
     public DashCooldownIndicator dashCooldownIndicator;
 
-
-    private bool isDecaying = true;
+    private float timeBeforeDecaying = 1f;
+    private float timeStampDecaying;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,9 +95,8 @@ public class Player : MonoBehaviour
         } else {
             transform.rotation = Quaternion.Euler(0,180,0);
         }
+        timeStampDecaying = Time.time;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -171,12 +170,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void StopDecay() {
-        isDecaying = false;
-    }
 
-    public void StartDecay() {
-        isDecaying = true;
+    public void StartDecayTimer() {
+        timeStampDecaying = Time.time + timeBeforeDecaying;
     }
 
     public void AnimJump(bool bol) {
@@ -343,7 +339,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseHealthTick() {
-        if (isDecaying)
+        if (timeStampDecaying < Time.time && !HasBall())
             LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
