@@ -164,6 +164,11 @@ MonoBehaviour:
   trailEffect: {fileID: 7796131246385698142}
   trailAnchor: {fileID: 1939071821965095963}
   trailYScaleDiviser: 20
+  apparitionDelay: 1.5
+  apparitionDuration: 1
+  moveDuration: 3.5
+  moveYOffset: -5
+  simulationDelay: 0
   tornade: {fileID: 7072047561413531357}
   tornade_mat: {fileID: 2100000, guid: b6add1cad1f932447ab9b9262d53cb7a, type: 2}
 --- !u!58 &2554137973294974170
