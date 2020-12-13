@@ -109,12 +109,14 @@ public class Ball : MonoBehaviour
     }
 
     public void Hit(bool isHittingPlayer) {
-        if (charged)
-        {
-            VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color, isHittingPlayer);
-        }
+        if (charged) ShowImpact(isHittingPlayer);
         Uncharge();
         MoveToPreviousPlayer();
+    }
+
+    public void ShowImpact(bool isHittingPlayer)
+    {
+        VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color, isHittingPlayer);
     }
 
     public void SetSpeed(Vector2 speed) {
