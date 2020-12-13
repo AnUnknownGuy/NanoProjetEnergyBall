@@ -975,5 +975,20 @@ PrefabInstance:
       propertyPath: pointP2B
       value: 
       objectReference: {fileID: 767439714}
+    - target: {fileID: 7176903946862637019, guid: 87d060fc4cd579d44bd26a8b750c2cba,
+        type: 3}
+      propertyPath: timeBeforeCountDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176903946862637019, guid: 87d060fc4cd579d44bd26a8b750c2cba,
+        type: 3}
+      propertyPath: timeBlack
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7176903946862637019, guid: 87d060fc4cd579d44bd26a8b750c2cba,
+        type: 3}
+      propertyPath: timeBeforeInputStart
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87d060fc4cd579d44bd26a8b750c2cba, type: 3}

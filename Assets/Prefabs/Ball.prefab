@@ -164,7 +164,7 @@ MonoBehaviour:
   trailEffect: {fileID: 7796131246385698142}
   trailAnchor: {fileID: 1939071821965095963}
   trailYScaleDiviser: 20
-  apparitionDelay: 1.5
+  apparitionDelay: 0.5
   apparitionDuration: 1
   moveDuration: 3.5
   moveYOffset: -5
