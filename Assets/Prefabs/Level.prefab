@@ -1350,6 +1350,11 @@ PrefabInstance:
       propertyPath: healthLostOnBallHit
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 4389660307696137376, guid: a24adbfda363d9c4b87d251d47a68731,
+        type: 3}
+      propertyPath: decay
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4389660307696137377, guid: a24adbfda363d9c4b87d251d47a68731,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1690,6 +1695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389660307696137376, guid: c9543691236e6734faec7d704b31116a,
+        type: 3}
+      propertyPath: collisionRadius
+      value: 0.29
       objectReference: {fileID: 0}
     - target: {fileID: 4389660307696137377, guid: c9543691236e6734faec7d704b31116a,
         type: 3}

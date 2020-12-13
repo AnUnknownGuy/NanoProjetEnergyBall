@@ -28,7 +28,7 @@ public class InputManager : MonoBehaviour
     public PlayerInput playerInput; 
     public PlayerSettings settings;
 	
-    private float timerBeforeInputStart = 0.5f;
+    public float timerBeforeInputStart = 0.5f;
     private float timeStart;
 
     public Player player;
