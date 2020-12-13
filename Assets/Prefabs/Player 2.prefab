@@ -363,10 +363,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputThresholdJump: 0.3
-  inputThresholdFastFall: -0.6
+  inputThresholdFastFall: -1
   inputBufferDuration: 0.2
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}
+  timerBeforeInputStart: 0.5
   player: {fileID: 4389660307696137376}
 --- !u!114 &3565814429772109132
 MonoBehaviour:
