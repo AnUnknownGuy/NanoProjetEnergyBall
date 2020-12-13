@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2f956dd4e58d84aaa62300e913e3f2, type: 3}
   m_Name: FB925AFC-4290-4E57-9347-3A0A782CCF70
   m_EditorClassIdentifier: 
-  objectName: Play_Death_Blue
-  id: 3889313835
+  objectName: Play_Death
+  id: 1172822028
   guid: FB925AFC-4290-4E57-9347-3A0A782CCF70
