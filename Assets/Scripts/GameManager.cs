@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
 
     private bool restarting = false;
 
+    public Image count1;
+    public Image count2;
+    public Image count3;
+    public Image go;
+
     void Start()
     {
         timeBeforeInputStart =  timeBeforeCountDown + 3;
@@ -109,6 +114,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartLevel());
     }
 
+
     private IEnumerator StartLevel() {
         yield return new WaitForSeconds(timeBlack);
         CreateLevel();
@@ -118,6 +124,7 @@ public class GameManager : MonoBehaviour
         transitionPanel.DOFade(0, fadeTimeOut);
 
         yield return new WaitForSeconds(timeBeforeCountDown);
+        StartCoroutine(ShowCountDown());
         AudioManager.Countdown(gameObject);
         yield return new WaitForSeconds(3);
         AudioManager.Start_Horn(gameObject);
@@ -143,6 +150,24 @@ public class GameManager : MonoBehaviour
         level.gameManager = this;
     }
     
+    private IEnumerator ShowCountDown() {
+        StartCoroutine(ShowOneCount(count3));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowOneCount(count2));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowOneCount(count1));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowOneCount(go));
+    }
+
+    private IEnumerator ShowOneCount(Image image) {
+        image.enabled = true;
+        image.DOFade(0, 1.0f).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(1);
+        image.enabled = false;
+        image.DOFade(1, 0);
+    }
+
     
     public static void PauseGame()
     {
