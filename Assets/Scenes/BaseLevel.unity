@@ -570,7 +570,8 @@ MonoBehaviour:
   level: {fileID: 0}
   logger: {fileID: 1065509723}
   transitionPanel: {fileID: 342518202}
-  fadeTime: 0.5
+  fadeTimeIn: 0.5
+  fadeTimeOut: 1
   timeBlack: 1
   timeBeforeInputStart: 3
   pointP1A: {fileID: 97701330}

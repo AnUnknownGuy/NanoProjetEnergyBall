@@ -92,22 +92,20 @@ public class GameManager : MonoBehaviour
 
     public void End(string winner) {
         Debug.Log("winner is :" + winner);
+
+        StartCoroutine(StopLevel());
+
+
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
     }
 
     private IEnumerator Restart() {
 
-        yield return new WaitForSeconds(timeBeforeRestart);
-        transitionPanel.DOFade(1, fadeTimeIn);
-        yield return new WaitForSeconds(fadeTimeIn);
+        StartCoroutine(StopLevel());
 
+        yield return new WaitForSeconds(fadeTimeIn + timeBeforeRestart);
 
-        if (logger != null) {
-            logger.Restart();
-        }
-
-        level.Stop();
-        Destroy(level.gameObject);
-        
         StartCoroutine(StartLevel());
     }
 
@@ -123,6 +121,21 @@ public class GameManager : MonoBehaviour
         AudioManager.Countdown(gameObject);
         yield return new WaitForSeconds(3);
         AudioManager.Start_Horn(gameObject);
+    }
+
+    private IEnumerator StopLevel() {
+
+        yield return new WaitForSeconds(timeBeforeRestart);
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
+
+
+        if (logger != null) {
+            logger.Restart();
+        }
+
+        level.Stop();
+        Destroy(level.gameObject);
     }
 
     private void CreateLevel() {
