@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using DG.Tweening;
+using UnityEngine;
 using UnityEngine.VFX;
 
 public class Ball : MonoBehaviour
@@ -49,6 +51,22 @@ public class Ball : MonoBehaviour
         trailColorKeys = trailGradient.colorKeys;
         
         SetBallColor(ballColor);
+
+        BallSpawnAnimation();
+    }
+
+    private void BallSpawnAnimation()
+    {
+        transform.localScale = Vector3.zero;
+        rb.simulated = false;
+        StartCoroutine(GrowBall());
+    }
+
+    private IEnumerator GrowBall()
+    {
+        yield return new WaitForSeconds(1.5f);
+        transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack).OnComplete(
+            () => rb.simulated = true);
     }
 
     // Update is called once per frame
