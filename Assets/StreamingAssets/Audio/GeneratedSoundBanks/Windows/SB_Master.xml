@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3388902369">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2842404903">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -181,11 +181,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="6.267256" DurationMax="6.267256">
+				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="4.296017" DurationMax="4.296017">
 					<IncludedMemoryFiles>
 						<File Id="841306342" Language="SFX">
 							<ShortName>Horn_Start.wav</ShortName>
-							<Path>SFX\Horn_Start_05842A19.wem</Path>
+							<Path>SFX\Horn_Start_418AD9E8.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
