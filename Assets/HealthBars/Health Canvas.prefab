@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6576613508401603953}
   - component: {fileID: 6576613508401603954}
   - component: {fileID: 6576613508401603955}
+  - component: {fileID: 200221026352963662}
   m_Layer: 5
   m_Name: Health Canvas
   m_TagString: Untagged
@@ -100,6 +101,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &200221026352963662
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6576613508401603948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 086273a5394310a41ac133ec104ff521, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &1970358174305554710
 Animator:
   serializedVersion: 3
@@ -194,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 8398249760664602892, guid: 792c3431dec37f049b9e4792dfd7278c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 8398249760664602892, guid: 792c3431dec37f049b9e4792dfd7278c,
         type: 3}
@@ -325,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 8398249760664602892, guid: 792c3431dec37f049b9e4792dfd7278c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103
+      value: 97
       objectReference: {fileID: 0}
     - target: {fileID: 8398249760664602892, guid: 792c3431dec37f049b9e4792dfd7278c,
         type: 3}
