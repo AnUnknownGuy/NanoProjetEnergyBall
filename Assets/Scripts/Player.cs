@@ -223,6 +223,7 @@ public class Player : MonoBehaviour
 
         if (previousOnground != onGround) {
             if (onGround) {
+                stateManager.OnGroundTouched();
                 timeInAir += Time.time - onGroundChangeTimeStamp;
             } else {
                 timeOnGround += Time.time - onGroundChangeTimeStamp;

@@ -30,6 +30,9 @@ public abstract class State : StateInterface
     public virtual void WalkSignal(float x) {
 
     }
+    public virtual  void GroundTouched() {
+        player.ToBaseLayer();
+    }
 
     public virtual bool ActionSignal() {
         return false;

@@ -230,22 +230,22 @@ MonoBehaviour:
   inputManager: {fileID: 7433136271738114374}
   speedWithBall: 5
   speedWithoutBall: 6
-  dashPower: 15
+  dashPower: 22
   dashDuration: 0.2
   timeBetweenDash: 1
   jumpScale: 14
   coyoteTime: 0.2
   timeBetweenJump: 0.3
   gravity: 2.74
-  lowGravity: 1.66
+  lowGravity: 2
   highGravity: 8
   throwPower: 25
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
   health: 1000
   decay: 25
-  healthLostOnDashHit: 50
-  healthLostOnBallHit: 20
+  healthLostOnDashHit: 75
+  healthLostOnBallHit: 40
   timeBeforeBeingAbleToThrow: 0.2
   facingRight: 1
   ball: {fileID: 0}
