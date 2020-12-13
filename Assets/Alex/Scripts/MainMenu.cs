@@ -14,7 +14,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame ()
     {
+        AudioManager.Begin(gameObject);
         SceneManager.LoadScene("BaseLevel");
+    }
+
+    public void Validate()
+    {
+        AudioManager.Validate(gameObject);
+        
     }
 
     public void QuitGame()
