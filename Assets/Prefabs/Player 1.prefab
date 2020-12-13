@@ -228,9 +228,9 @@ MonoBehaviour:
   playerNumber: 0
   rb: {fileID: 0}
   inputManager: {fileID: 7433136271738114374}
-  speedWithBall: 5
-  speedWithoutBall: 6
-  dashPower: 22
+  speedWithBall: 5.5
+  speedWithoutBall: 6.5
+  dashPower: 25
   dashDuration: 0.2
   timeBetweenDash: 1
   jumpScale: 14
@@ -266,6 +266,7 @@ MonoBehaviour:
   isJumping: 0
   alive: 1
   isFastFalling: 0
+  isDashing: 0
   timeOnGround: 0
   timeInAir: 0
   lastPlateformTouched: {fileID: 0}
@@ -279,6 +280,7 @@ MonoBehaviour:
   deathDestroyDelay: 0.25
   BallTransform: {fileID: 909395786908513041}
   dashCooldownIndicator: {fileID: 2996456870535759941}
+  angleCorrection: 12
 --- !u!70 &537298462269677206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -342,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputThresholdJump: 0.3
-  inputThresholdFastFall: -0.2
+  inputThresholdFastFall: -0.6
   inputBufferDuration: 0.2
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}

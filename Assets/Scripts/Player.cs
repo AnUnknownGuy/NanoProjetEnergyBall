@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
+    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false, isDashing = false;
 
     //Log
     [HideInInspector] public float timeOnGround = 0;
@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
 
     private float timeBeforeDecaying = 1f;
     private float timeStampDecaying;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -262,9 +263,20 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    [SerializeField] private float angleCorrection = 12;
+    private Vector2 AimAssist(Vector2 direction, Vector2 targetPosition)
+    {
+        Vector2 pointOther = new Vector2(targetPosition.x - transform.position.x, targetPosition.y - transform.position.y).normalized;
+        float angle = Vector2.Angle(direction, pointOther);
+        if(angle < angleCorrection) direction = pointOther;
+        return direction;
+    }
+
     public void ThrowBall() {
         if (HasBall()) {
-            ball.Throw(inputManager.GetRightStickValue(), throwPower);
+            Transform target = GameObject.Find(playerNumber==PlayerNumber.Joueur1?"Player2":"Player1").transform;
+            Vector2 direction = AimAssist(inputManager.GetRightStickValue(), target.position);
+            ball.Throw(direction, throwPower);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
             UpdateFacingDirection(0.1f);
@@ -393,7 +405,9 @@ public class Player : MonoBehaviour
     }
 
     public void SetDashDirection() {
+        Transform target = GameObject.Find("Ball").transform;
         dashDirection = inputManager.GetRightStickValue().normalized;
+        dashDirection = AimAssist(dashDirection, target.position);
 
         Vector2 p = transform.position;
         p += bottomOffset / 2;
