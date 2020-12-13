@@ -102,6 +102,7 @@ public abstract class State : StateInterface
             player.animator.Play("hit");
             Ball ball = player.ball;
             ball.Free();
+            ball.previousPlayer = otherPlayer;
             ball.ShowImpact(true);
             player.ball = null;
             ball.SetSpeedWhenFreeFromDash();
