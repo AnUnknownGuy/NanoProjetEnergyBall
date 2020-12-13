@@ -99,7 +99,7 @@ public class Ball : MonoBehaviour
     }
 
     public bool Catch(Player player) {
-        if (!sleeping) {
+        if (!sleeping && previousPlayertouchedTimeStamp + timeBeforeballCanBeCatchBySamePlayer < Time.time) {
             SetBallColor(player.color);
             this.player = player;
             sleeping = true;
@@ -122,6 +122,7 @@ public class Ball : MonoBehaviour
     public void Free() {
         previousPlayer = player;
         previousPlayer.StartDecayTimer();
+        previousPlayertouchedTimeStamp = Time.time;
         player = null;
         sleeping = false;
         rb.WakeUp();
