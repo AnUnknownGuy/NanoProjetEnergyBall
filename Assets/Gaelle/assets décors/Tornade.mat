@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tornade
+  m_Shader: {fileID: -6465566751694194690, guid: f885cd33e6521e2429e125759f5e7610,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_1A5EB43E: 38.8
+    - Vector1_1EBD5BF4: 4.1
+    - Vector1_20F6B329: 5.49
+    - Vector1_35C75C81: 2
+    - Vector1_6BC1E528: 50
+    - Vector1_6DE69586: 6.66
+    - Vector1_8C687741: 139.71
+    - Vector1_D1FD0E97: 83.54
+    - Vector1_D8F075CA: 20
+    - Vector1_E42A00A0: 2.77
+    - Vector1_EC7DA329: 0
+    - Vector1_EF8AC28D: -25.93
+    - Vector1_F3BA827F: 108.71
+    m_Colors:
+    - Color_7644DEA4: {r: 0, g: 0, b: 0, a: 0}
+    - Color_8449A1A4: {r: 0.13207549, g: 0.08908621, b: 0, a: 0}
+    - Color_C1BAA65D: {r: 1, g: 0.033639804, b: 0, a: 0}
+    - Color_FBA9FEB4: {r: 0.43529412, g: 0.15036187, b: 0, a: 0}
+    - Vector2_EADC0626: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_F28099DE: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Vector2_F576E127: {r: 2, g: 2, b: 0, a: 0}
