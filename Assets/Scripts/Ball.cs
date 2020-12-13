@@ -64,8 +64,9 @@ public class Ball : MonoBehaviour
 
     private IEnumerator GrowBall()
     {
-        yield return new WaitForSeconds(1);
-        transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack).OnComplete(() => rb.simulated = true);
+        yield return new WaitForSeconds(1.5f);
+        transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBack).OnComplete(
+            () => rb.simulated = true);
     }
 
     // Update is called once per frame
