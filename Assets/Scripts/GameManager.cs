@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
     public Image greyPanel;
-    public Image victoryPanel;
+    public Image victoryImageBlue;
+    public Image victoryImageGreen;
     public Button replayButton;
     public Button mainMenuButton;
     public Text replayText;
@@ -35,6 +36,8 @@ public class GameManager : MonoBehaviour
     public float timeBeforeRestart = 2, timeBeforeCountDown = 3;
 
     private bool restarting = false;
+
+    private Image victoryImage;
 
     public Image count1;
     public Image count2;
@@ -127,15 +130,33 @@ public class GameManager : MonoBehaviour
         AudioManager.Ambiance_Stop();
         AudioManager.Battle_Scene_Stop();
 
+
+        if (winner == "P1") {
+            AudioManager.Win_Blue(gameObject);
+            victoryImage = victoryImageBlue;
+        } else {
+            AudioManager.Win_Green(gameObject);
+            victoryImage = victoryImageGreen;
+        }
+
+
         StartCoroutine(ShowVictory());
     }
 
     private IEnumerator ShowVictory() {
 
-        greyPanel.DOFade(0.5f, 1);
-        victoryPanel.DOFade(1f, 1);
+        yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(2);
+        greyPanel.DOFade(0.75f, 0.5f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        AudioManager.Win(gameObject);
+        yield return new WaitForSeconds(0.15f);
+
+        victoryImage.DOFade(1f, 0);
+
+        yield return new WaitForSeconds(1);
         replayButton.interactable = true;
         mainMenuButton.interactable = true;
         replayButton.image.DOFade(1, 1);
