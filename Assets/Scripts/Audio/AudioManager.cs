@@ -151,7 +151,7 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_idle.SetValue();
     }
 
-    public static void Ball_Charegd()
+    public static void Ball_Charged()
     {
         if (exist) instance.ball_charged.SetValue();
     }

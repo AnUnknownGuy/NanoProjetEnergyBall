@@ -321,13 +321,19 @@ public class Player : MonoBehaviour
     public void LoseHealthBallHit() {
         CameraManager.Instance.Shake(0.2f, 0.5f);
         LoseHealth(healthLostOnBallHit);
-        //Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.2f);
+        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if(playerNumber==PlayerNumber.Joueur1) gameManager.health1.Flare();
+        else gameManager.health2.Flare();
+        // Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.2f);
     }
 
     public void LoseHealthDashHit() {
         CameraManager.Instance.Shake(0.5f, 0.5f);
         LoseHealth(healthLostOnDashHit);
-        //Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.5f);
+        GameManager gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if(playerNumber==PlayerNumber.Joueur1) gameManager.health1.Flare();
+        else gameManager.health2.Flare();
+        // Vibration.Vibrate(inputManager.playerInput, 1.0f, 0.5f);
     }
 
     public void ThrowKnockBack() {

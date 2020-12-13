@@ -127,16 +127,22 @@ public class Ball : MonoBehaviour
         timerUntilCatchable = Time.time;
     }
 
+    [SerializeField] private GameObject tornade;
+    [SerializeField] private Material tornade_mat;
+
     public void Charge() {
-        AudioManager.Ball_Charegd();
+        AudioManager.Ball_Charged();
         previousPlayer = player;
         rb.gravityScale = 0;
         charged = true;
+        tornade.SetActive(true);
+        tornade_mat.SetColor("MainColor", player.GetComponent<Player>().color * 1);
     }
 
     public void Uncharge()
     {
         SetBallColor(ballColor);
+        tornade.SetActive(false);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;

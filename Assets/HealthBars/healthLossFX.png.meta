@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 93ef585d4481dbc4ab19e2f24af0178e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1352447195460863605
+    second: healthLossFX_0
+  - first:
+      213: 1956297169892728547
+    second: healthLossFX_1
+  - first:
+      213: 8977493177489862406
+    second: healthLossFX_2
+  - first:
+      213: 957182436160217286
+    second: healthLossFX_3
+  - first:
+      213: 3598376041764171459
+    second: healthLossFX_4
+  - first:
+      213: -2868489593879288734
+    second: healthLossFX_5
+  - first:
+      213: -326147202822855157
+    second: healthLossFX_6
+  - first:
+      213: 8546778848138005717
+    second: healthLossFX_7
+  - first:
+      213: 1150069834093535823
+    second: healthLossFX_8
+  - first:
+      213: 6768937853530067896
+    second: healthLossFX_9
+  - first:
+      213: 6021595464145051280
+    second: healthLossFX_10
+  - first:
+      213: -461710080477114107
+    second: healthLossFX_11
+  - first:
+      213: 8416901786230389602
+    second: healthLossFX_12
+  - first:
+      213: 1612282689497655800
+    second: healthLossFX_13
+  - first:
+      213: -5505765376127190298
+    second: healthLossFX_14
+  - first:
+      213: 3508251286409808688
+    second: healthLossFX_15
+  - first:
+      213: -4135417038263970638
+    second: healthLossFX_16
+  - first:
+      213: -3583261202126309417
+    second: healthLossFX_17
+  - first:
+      213: 7141609931413495741
+    second: healthLossFX_18
+  - first:
+      213: 8625189767689070964
+    second: healthLossFX_19
+  - first:
+      213: 966836202665421081
+    second: healthLossFX_20
+  - first:
+      213: 1081666797650508471
+    second: healthLossFX_21
+  - first:
+      213: 1156374919589592948
+    second: healthLossFX_22
+  - first:
+      213: 5051990878396368350
+    second: healthLossFX_23
+  - first:
+      213: -3525514045899366166
+    second: healthLossFX_24
+  - first:
+      213: 1809396431501503571
+    second: healthLossFX_25
+  - first:
+      213: 1310454178693726700
+    second: healthLossFX_26
+  - first:
+      213: -1850137683302226699
+    second: healthLossFX_27
+  - first:
+      213: 7805863654136297186
+    second: healthLossFX_28
+  - first:
+      213: 7868029285859433489
+    second: healthLossFX_29
+  - first:
+      213: 431492756691551312
+    second: healthLossFX_30
+  - first:
+      213: -6276657864402409643
+    second: healthLossFX_31
+  - first:
+      213: -4095889038754149619
+    second: healthLossFX_32
+  - first:
+      213: -8321235096745969039
+    second: healthLossFX_33
+  - first:
+      213: -6183000419145920138
+    second: healthLossFX_34
+  - first:
+      213: 8078807022587851053
+    second: healthLossFX_35
+  - first:
+      213: 4602003104629164281
+    second: healthLossFX_36
+  - first:
+      213: -4983110863629577361
+    second: healthLossFX_37
+  - first:
+      213: -4377507320727697161
+    second: healthLossFX_38
+  - first:
+      213: -1432951274666887691
+    second: healthLossFX_39
+  - first:
+      213: 1453694441838431458
+    second: healthLossFX_40
+  - first:
+      213: 4026372644943620586
+    second: healthLossFX_41
+  - first:
+      213: -1903328814291452687
+    second: healthLossFX_42
+  - first:
+      213: -2757199320561389152
+    second: healthLossFX_43
+  - first:
+      213: -899706633568798129
+    second: healthLossFX_44
+  - first:
+      213: 6206214559844335626
+    second: healthLossFX_45
+  - first:
+      213: -560254205933275841
+    second: healthLossFX_46
+  - first:
+      213: 4394993219329713561
+    second: healthLossFX_47
+  - first:
+      213: -6543697472725104055
+    second: healthLossFX_48
+  - first:
+      213: -644895681208037794
+    second: healthLossFX_49
+  - first:
+      213: -8763176176019718788
+    second: healthLossFX_50
+  - first:
+      213: -7313208597715013561
+    second: healthLossFX_51
+  - first:
+      213: -5976866185546256815
+    second: healthLossFX_52
+  - first:
+      213: -6443013369511825070
+    second: healthLossFX_53
+  - first:
+      213: -3398813804757498849
+    second: healthLossFX_54
+  - first:
+      213: 3763281342496208173
+    second: healthLossFX_55
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: healthLossFX_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5760be60f8bd4c210800000000000000
+      internalID: 1352447195460863605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healthLossFX_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eede8e39e9262b10800000000000000
+      internalID: 1956297169892728547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healthLossFX_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fa6c9ea76769c70800000000000000
+      internalID: 8977493177489862406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: healthLossFX_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0a294ba58984d00800000000000000
+      internalID: 957182436160217286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
