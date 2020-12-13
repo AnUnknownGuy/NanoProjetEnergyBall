@@ -154,6 +154,8 @@ public class Ball : MonoBehaviour
 
     public void SetSpeedWhenFreeFromDash() {
         SetSpeed(speedWhenFreeFromDash);
+
+        ballEffect.SetVector4("Color", ballColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
