@@ -19,7 +19,7 @@
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "3602638939",
+    "Hash": "3975799962",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -60,7 +60,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "3388902369",
+    "Hash": "2842404903",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -384,14 +384,14 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Horn",
       "GUID": "{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}",
       "DurationType": "OneShot",
-      "DurationMin": "6.267256",
-      "DurationMax": "6.267256",
+      "DurationMin": "4.296017",
+      "DurationMax": "4.296017",
       "IncludedMemoryFiles": [
        {
         "Id": "841306342",
         "Language": "SFX",
         "ShortName": "Horn_Start.wav",
-        "Path": "SFX\\Horn_Start_05842A19.wem"
+        "Path": "SFX\\Horn_Start_418AD9E8.wem"
        }
       ]
      },
