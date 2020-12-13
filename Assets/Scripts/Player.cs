@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
     public DashCooldownIndicator dashCooldownIndicator;
 
     private float timeBeforeDecaying = 1f;
-    private float timeStampDecaying;
+    private float timeStampDecaying = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -96,7 +96,6 @@ public class Player : MonoBehaviour
         } else {
             transform.rotation = Quaternion.Euler(0,180,0);
         }
-        timeStampDecaying = Time.time;
     }
 
     // Update is called once per frame
@@ -119,6 +118,11 @@ public class Player : MonoBehaviour
 
         facingRight = (rb.velocity.x > 0);
         UpdateFacingDirection(0.1f);
+    }
+
+    public void SetInactiveFor(float time) {
+        inputManager.timerBeforeInputStart = time;
+        timeStampDecaying = Time.time + time;
     }
 
     public void Walk(float x)
@@ -296,7 +300,7 @@ public class Player : MonoBehaviour
     public void LoseHealth(float amount)
     {
         health -= amount;
-        if (health < 10 && alive)
+        if (health < 0 && alive)
         {
             alive = false;
             CameraManager.Instance.Zoom(transform.position).onComplete += () =>
@@ -310,6 +314,7 @@ public class Player : MonoBehaviour
     private IEnumerator Death()
     {
         yield return new WaitForSeconds(deathDestroyDelay);
+        AudioManager.Death(gameObject);
         Destroy(gameObject);
     }
 

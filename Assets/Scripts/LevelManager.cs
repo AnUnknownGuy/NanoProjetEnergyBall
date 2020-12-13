@@ -16,6 +16,10 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (gameManager != null) {
+            player1.SetInactiveFor(gameManager.timeBeforeInputStart);
+            player2.SetInactiveFor(gameManager.timeBeforeInputStart);
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +41,7 @@ public class LevelManager : MonoBehaviour
             } else if (!player2.alive) {
                 //Debug.Log("PLAYER 1 WINS !");
                 gameManager.Win("P1");
+                
             }
 
             if (!player1.alive || !player2.alive) {

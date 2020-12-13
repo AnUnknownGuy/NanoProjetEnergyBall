@@ -8,7 +8,7 @@
 		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3478454159">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="2842404903">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -97,7 +97,15 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.609190" DurationMax="0.808066">
+				<Event Id="2175797879" Name="Play_Countdown" ObjectPath="\Events\Master_Event\Battle_Event\Play_Countdown" GUID="{B6FF3455-B804-4F18-8970-46810258F6A5}" DurationType="OneShot" DurationMin="4.000000" DurationMax="4.000000">
+					<IncludedMemoryFiles>
+						<File Id="307361953" Language="SFX">
+							<ShortName>Countdown.wav</ShortName>
+							<Path>SFX\Countdown_831183D2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3719516685" Name="Play_Dash_Blue" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Dash_Blue" GUID="{1128561E-0FCA-421E-8835-FCE5225FB88A}" DurationType="OneShot" DurationMin="0.610293" DurationMax="0.808066">
 					<IncludedMemoryFiles>
 						<File Id="95179653" Language="SFX">
 							<ShortName>Dash_Golem_v3 (good).wav</ShortName>
@@ -105,7 +113,7 @@
 						</File>
 						<File Id="262242056" Language="SFX">
 							<ShortName>Dash_Golem_V5.wav</ShortName>
-							<Path>SFX\Dash_Golem_V5_01CC9B23.wem</Path>
+							<Path>SFX\Dash_Golem_V5_F4DCA6A2.wem</Path>
 						</File>
 						<File Id="547198134" Language="SFX">
 							<ShortName>Dash_Golem_V5_02.wav</ShortName>
@@ -137,6 +145,26 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1172822028" Name="Play_Death" ObjectPath="\Events\Master_Event\Battle_Event\Golem\Play_Death" GUID="{FB925AFC-4290-4E57-9347-3A0A782CCF70}" DurationType="OneShot" DurationMin="0.855282" DurationMax="1.168068">
+					<IncludedMemoryFiles>
+						<File Id="645271635" Language="SFX">
+							<ShortName>Death_blue.wav</ShortName>
+							<Path>SFX\Death_blue_8A7115D0.wem</Path>
+						</File>
+						<File Id="937358229" Language="SFX">
+							<ShortName>Death_green.wav</ShortName>
+							<Path>SFX\Death_green_EFB65CB2.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3833288947" Name="Play_Downer" ObjectPath="\Events\Master_Event\Battle_Event\Play_Downer" GUID="{76E72490-99FA-419A-8416-8A683B3D89BA}" DurationType="OneShot" DurationMin="8.384013" DurationMax="8.384013">
+					<IncludedMemoryFiles>
+						<File Id="448362090" Language="SFX">
+							<ShortName>Downer.wav</ShortName>
+							<Path>SFX\Downer_05842A19.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2301463414" Name="Play_Fight_Announcement" ObjectPath="\Events\Master_Event\Battle_Event\Play_Fight_Announcement" GUID="{2CBBB0DD-9E90-45E3-8C8D-5B5630630F52}" DurationType="OneShot" DurationMin="3.185706" DurationMax="3.185706">
 					<IncludedMemoryFiles>
 						<File Id="622696685" Language="SFX">
@@ -153,11 +181,11 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="8.043265" DurationMax="8.043265">
+				<Event Id="2956245481" Name="Play_Horn" ObjectPath="\Events\Master_Event\Battle_Event\Play_Horn" GUID="{A01D5430-1FF3-4DE5-B66D-E3C9D0DCACDC}" DurationType="OneShot" DurationMin="4.296017" DurationMax="4.296017">
 					<IncludedMemoryFiles>
-						<File Id="538924343" Language="SFX">
-							<ShortName>Start_Horn.wav</ShortName>
-							<Path>SFX\Start_Horn_05842A19.wem</Path>
+						<File Id="841306342" Language="SFX">
+							<ShortName>Horn_Start.wav</ShortName>
+							<Path>SFX\Horn_Start_418AD9E8.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -221,10 +249,47 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2955987680" Name="Play_Win" ObjectPath="\Events\Master_Event\Battle_Event\Play_Win" GUID="{9FC2FBC4-3A20-4B92-ABB1-89D31ADDDEFD}" DurationType="OneShot" DurationMin="6.673885" DurationMax="6.673885">
+					<IncludedMemoryFiles>
+						<File Id="376430735" Language="SFX">
+							<ShortName>Shout_Green_Win.wav</ShortName>
+							<Path>SFX\Shout_Green_Win_05842A19.wem</Path>
+						</File>
+						<File Id="384039423" Language="SFX">
+							<ShortName>Shout_Win.wav</ShortName>
+							<Path>SFX\Shout_Win_05842A19.wem</Path>
+						</File>
+						<File Id="661159119" Language="SFX">
+							<ShortName>Fill_Round.wav</ShortName>
+							<Path>SFX\Fill_Round_B9E9408B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{E4568A29-F76F-4AA7-9081-A60A3C5B8226}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{E4568A29-F76F-4AA7-9081-A60A3C5B8226}">
+							<Media>
+								<File Id="384039423"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{67741BD6-0B28-480C-90A0-2EB24CCE3103}">
+							<Media>
+								<File Id="376430735"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="145148864" Name="Ball_Velocity" ObjectPath="\Game Parameters\Default Work Unit\Ball\Ball_Velocity" GUID="{1CD115A3-D473-49FC-9EE2-682D699AF661}"/>
 			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="979765101" Name="Win" ObjectPath="\Switches\Default Work Unit\Win" GUID="{CFB1CC96-6E11-4F3B-9E56-888BD65075DF}">
+					<Switches>
+						<Switch Id="1325827433" Name="Blue" ObjectPath="\Switches\Default Work Unit\Win\Blue" GUID="{E4568A29-F76F-4AA7-9081-A60A3C5B8226}"/>
+						<Switch Id="4147287986" Name="Green" ObjectPath="\Switches\Default Work Unit\Win\Green" GUID="{67741BD6-0B28-480C-90A0-2EB24CCE3103}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

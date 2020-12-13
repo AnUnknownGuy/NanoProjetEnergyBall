@@ -39,6 +39,7 @@ public class CameraManager : MonoBehaviour
         zoom.OnComplete(() => mainCam.DOOrthoSize(initialSize, zoomDuration).SetEase(Ease.OutCubic));
         
         Time.timeScale = timeScale;
+        AudioManager.Downer(gameObject);
         StartCoroutine(ResetTimeScale(zoomDuration));
 
         return zoom;

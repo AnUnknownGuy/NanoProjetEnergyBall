@@ -511,6 +511,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tornade
       objectReference: {fileID: 0}
+    - target: {fileID: 2222717060602872860, guid: d26fb93bd6dce6b45bb0f1932b7a7c91,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d26fb93bd6dce6b45bb0f1932b7a7c91, type: 3}
 --- !u!4 &7597332213025786983 stripped

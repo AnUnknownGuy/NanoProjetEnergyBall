@@ -125,7 +125,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Battle_Event
     guid: d3ba6db7ee705f4380512a6f4a197575
     GuidInternal: 
-    m_lastTime: -8585938260275243878
+    m_lastTime: -8585937397047466178
     List:
     - name: Ball
       guid: 5370bf6d3284a945aeeb83f3ad8719d2
@@ -201,6 +201,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Countdown
+      guid: 5534ffb604b8184f897046810258f6a5
+      id: 2175797879
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Countdown
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Countdown
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Dash_Blue
       guid: 1e562811ca0f1e428835fce5225fb88a
       id: 3719516685
@@ -246,6 +260,36 @@ MonoBehaviour:
       - ElementName: Play_Dash_Hit
         ObjectType: 3
       Path: Master_Event\Battle_Event\Golem\Play_Dash_Hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Death
+      guid: fc5a92fb9042574e93473a0a782ccf70
+      id: 1172822028
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Golem
+        ObjectType: 4
+      - ElementName: Play_Death
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Golem\Play_Death
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Downer
+      guid: 9024e776fa999a4184168a683b3d89ba
+      id: 3833288947
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Downer
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Downer
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -341,6 +385,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Win
+      guid: c4fbc29f203a924babb189d31adddefd
+      id: 2955987680
+      PathAndIcons:
+      - ElementName: Master_Event
+        ObjectType: 12
+      - ElementName: Battle_Event
+        ObjectType: 12
+      - ElementName: Play_Win
+        ObjectType: 3
+      Path: Master_Event\Battle_Event\Play_Win
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -348,7 +406,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: aac4c458b5230443993348f7c83af6d1
     GuidInternal: 
-    m_lastTime: -8585939160296097797
+    m_lastTime: -8585938025419219461
     List: []
   - PhysicalPath: Events\Master_Event.wwu
     PathAndIcons:
@@ -368,7 +426,7 @@ MonoBehaviour:
     ParentPath: Master_Event\Menu_Event
     guid: d513c5fcc4507c46b8be2452a4cb6bcc
     GuidInternal: 
-    m_lastTime: -8585939813710030655
+    m_lastTime: -8585937933994187606
     List:
     - name: Play_Ambiance_lp
       guid: 696696f1b783f644a179428e37f6cd0c
@@ -579,8 +637,33 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a796b1a71417a040a41a2839968827c0
     GuidInternal: 
-    m_lastTime: -8585942175397971822
-    List: []
+    m_lastTime: -8585937439860462546
+    List:
+    - name: Win
+      guid: 96ccb1cf116e3b4f9e56888bd65075df
+      id: 979765101
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Win
+        ObjectType: 11
+      Path: Default Work Unit\Win
+      values:
+      - name: Blue
+        guid: 298a56e46ff7a74a9081a60a3c5b8226
+        id: 1325827433
+        PathAndIcons:
+        - ElementName: Blue
+          ObjectType: 10
+      - name: Green
+        guid: d61b7467280b0c4890a02eb24cce3103
+        id: 4147287986
+        PathAndIcons:
+        - ElementName: Green
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -596,6 +679,7 @@ MonoBehaviour:
   - /Nano_Projet/Events
   - /Nano_Projet/Events/Master_Event
   - /Nano_Projet/Events/Master_Event/Battle_Event
+  - /Nano_Projet/Events/Master_Event/Battle_Event/Ball
   - /Nano_Projet/Events/Master_Event/Battle_Event/Golem
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

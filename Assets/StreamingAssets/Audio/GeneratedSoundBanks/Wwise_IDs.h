@@ -18,9 +18,12 @@ namespace AK
         static const AkUniqueID PLAY_BATTLE_MUSIC = 2862166672U;
         static const AkUniqueID PLAY_BEGIN = 2375588297U;
         static const AkUniqueID PLAY_BOUNCE = 3465618802U;
+        static const AkUniqueID PLAY_COUNTDOWN = 2175797879U;
         static const AkUniqueID PLAY_DASH_BLUE = 3719516685U;
         static const AkUniqueID PLAY_DASH_GREEN = 1446058966U;
         static const AkUniqueID PLAY_DASH_HIT = 2481879868U;
+        static const AkUniqueID PLAY_DEATH = 1172822028U;
+        static const AkUniqueID PLAY_DOWNER = 3833288947U;
         static const AkUniqueID PLAY_FIGHT_ANNOUNCEMENT = 2301463414U;
         static const AkUniqueID PLAY_GET = 2354553126U;
         static const AkUniqueID PLAY_HORN = 2956245481U;
@@ -30,6 +33,7 @@ namespace AK
         static const AkUniqueID PLAY_THROW = 1977644338U;
         static const AkUniqueID PLAY_THROW_HIT = 3286906532U;
         static const AkUniqueID PLAY_VALIDATE = 1648095864U;
+        static const AkUniqueID PLAY_WIN = 2955987680U;
     } // namespace EVENTS
 
     namespace STATES
@@ -47,6 +51,21 @@ namespace AK
         } // namespace BALL
 
     } // namespace STATES
+
+    namespace SWITCHES
+    {
+        namespace WIN
+        {
+            static const AkUniqueID GROUP = 979765101U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID BLUE = 1325827433U;
+                static const AkUniqueID GREEN = 4147287986U;
+            } // namespace SWITCH
+        } // namespace WIN
+
+    } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {

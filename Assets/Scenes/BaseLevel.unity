@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -570,12 +570,16 @@ MonoBehaviour:
   level: {fileID: 0}
   logger: {fileID: 1065509723}
   transitionPanel: {fileID: 342518202}
+  fadeTimeIn: 0.5
+  fadeTimeOut: 1
+  timeBlack: 1
+  timeBeforeInputStart: 3
   pointP1A: {fileID: 97701330}
   pointP1B: {fileID: 2089419075}
   pointP2A: {fileID: 1481487687}
   pointP2B: {fileID: 767439714}
   timeBeforeRestart: 2
-  fadeTime: 0.5
+  timeBeforeCountDown: 3
 --- !u!4 &1065509722
 Transform:
   m_ObjectHideFlags: 0
@@ -604,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1065509721}
-  activated: 0
+  activated: 1
 --- !u!1 &1172253083
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,12 +843,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2188522885565807405, guid: 60df29cc47916e6408d8affc94c2300a,
-        type: 3}
-      propertyPath: dash.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: fead847aa17315144afefcfa0421c91a,
-        type: 2}
     - target: {fileID: 2188522885565807407, guid: 60df29cc47916e6408d8affc94c2300a,
         type: 3}
       propertyPath: m_Name
