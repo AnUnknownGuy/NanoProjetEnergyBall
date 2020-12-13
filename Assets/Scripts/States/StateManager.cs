@@ -94,12 +94,20 @@ public class StateManager
         currentState.BallEntered(ball);
     }
 
+    public void OnGroundTouched() {
+        currentState.GroundTouched();
+    }
+
     public void OnDashEntered(Player otherPlayer) {
         currentState.DashEntered(otherPlayer);
     }
 
     public void OnWallCollided(Vector2 collisionDirection) {
         currentState.WallCollided(collisionDirection);
+    }
+
+    public void OnPlateformCollided(GameObject plateforme) {
+        currentState.PlateformCollided(plateforme);
     }
 
 

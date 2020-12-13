@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 
 public class Ball : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Ball : MonoBehaviour
     public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
 
     public float collisionRadius = 0.25f;
+    public VisualEffect ballEffect;
+    private Color ballColor;
 
 
     // Start is called before the first frame update
@@ -44,7 +47,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
-        
+        ballColor = ballEffect.GetVector4("Color");
     }
 
     // Update is called once per frame
@@ -53,12 +56,14 @@ public class Ball : MonoBehaviour
         GetSpeedSound();
         AudioManager.Ball_Velocity(speedSound);
         if (player != null) {
-            transform.position = player.transform.position;
+            transform.position = player.BallTransform.position;
         }
     }
 
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
+
+            ballEffect.SetVector4("Color", player.color * 3);
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -76,6 +81,8 @@ public class Ball : MonoBehaviour
     }
 
     public void Free() {
+        previousPlayer = player;
+        previousPlayer.StartDecayTimer();
         player = null;
         sleeping = false;
         rb.WakeUp();
@@ -89,7 +96,11 @@ public class Ball : MonoBehaviour
         charged = true;
     }
 
-    public void Uncharge() {
+    public void Uncharge()
+    {
+        if (charged)
+            VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color);
+        ballEffect.SetVector4("Color", ballColor);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
@@ -130,6 +141,10 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void StopSound() {
+        AudioManager.Ball_Air_Stop(gameObject);
+    }
+
     private void OnDrawGizmos() {
         //Gizmos.color = Color.green;
 
@@ -139,6 +154,8 @@ public class Ball : MonoBehaviour
 
     public void SetSpeedWhenFreeFromDash() {
         SetSpeed(speedWhenFreeFromDash);
+
+        ballEffect.SetVector4("Color", ballColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

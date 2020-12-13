@@ -16,7 +16,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "1295042314",
+    "Hash": "3478454159",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -73,19 +73,52 @@
       ]
      },
      {
+      "Id": "2857391773",
+      "Name": "Play_Ambiance_lp",
+      "ObjectPath": "\\Events\\Master_Event\\Menu_Event\\Play_Ambiance_lp",
+      "GUID": "{F1966669-83B7-44F6-A179-428E37F6CD0C}",
+      "DurationType": "Infinite",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "426454150",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_AD50A9CF.wem"
+       },
+       {
+        "Id": "783420610",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_012C6986.wem"
+       },
+       {
+        "Id": "879510387",
+        "Language": "SFX",
+        "ShortName": "Lava_amb.wav",
+        "Path": "SFX\\Lava_amb_6EDAC622.wem"
+       }
+      ]
+     },
+     {
       "Id": "2862166672",
       "Name": "Play_Battle_music",
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Battle_music",
       "GUID": "{767A7F56-7A68-44A8-B7B0-6D53702D50EF}",
       "DurationType": "OneShot",
-      "DurationMin": "180.807297",
-      "DurationMax": "180.807297",
+      "DurationMin": "220.716782",
+      "DurationMax": "220.716782",
       "IncludedMemoryFiles": [
        {
         "Id": "664081031",
         "Language": "SFX",
         "ShortName": "Battle_music.wav",
         "Path": "SFX\\Battle_music_05842A19.wem"
+       },
+       {
+        "Id": "968729543",
+        "Language": "SFX",
+        "ShortName": "End_tail-zic.wav",
+        "Path": "SFX\\End_tail-zic_05842A19.wem"
        }
       ]
      },
@@ -112,9 +145,15 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Ball\\Play_Bounce",
       "GUID": "{CF842F4D-BEC7-4665-93AB-A5281E38855E}",
       "DurationType": "OneShot",
-      "DurationMin": "0.598979",
-      "DurationMax": "0.598979",
+      "DurationMin": "1.586508",
+      "DurationMax": "1.586508",
       "IncludedMemoryFiles": [
+       {
+        "Id": "15777823",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_electricty.wav",
+        "Path": "SFX\\Throw_hit_electricty_E2CE090D.wem"
+       },
        {
         "Id": "527997742",
         "Language": "SFX",
@@ -130,9 +169,9 @@
       ]
      },
      {
-      "Id": "223895672",
-      "Name": "Play_Dash_Haug",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Haug",
+      "Id": "3719516685",
+      "Name": "Play_Dash_Blue",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Blue",
       "GUID": "{1128561E-0FCA-421E-8835-FCE5225FB88A}",
       "DurationType": "OneShot",
       "DurationMin": "0.609190",
@@ -159,26 +198,9 @@
       ]
      },
      {
-      "Id": "2481879868",
-      "Name": "Play_Dash_Hit",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Hit",
-      "GUID": "{E0AFC7B6-F6EB-4405-8565-EAB41013967E}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.861408",
-      "DurationMax": "0.966898",
-      "IncludedMemoryFiles": [
-       {
-        "Id": "983204019",
-        "Language": "SFX",
-        "ShortName": "Dash_hit.wav",
-        "Path": "SFX\\Dash_hit_8DBD26AE.wem"
-       }
-      ]
-     },
-     {
-      "Id": "2666681873",
-      "Name": "Play_Dash_Ruud",
-      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Ruud",
+      "Id": "1446058966",
+      "Name": "Play_Dash_Green",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Green",
       "GUID": "{144F14CC-F451-4548-A75E-F15346DB6A78}",
       "DurationType": "OneShot",
       "DurationMin": "0.659941",
@@ -205,6 +227,23 @@
       ]
      },
      {
+      "Id": "2481879868",
+      "Name": "Play_Dash_Hit",
+      "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Dash_Hit",
+      "GUID": "{E0AFC7B6-F6EB-4405-8565-EAB41013967E}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.861408",
+      "DurationMax": "0.966898",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "983204019",
+        "Language": "SFX",
+        "ShortName": "Dash_hit.wav",
+        "Path": "SFX\\Dash_hit_8DBD26AE.wem"
+       }
+      ]
+     },
+     {
       "Id": "2301463414",
       "Name": "Play_Fight_Announcement",
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Play_Fight_Announcement",
@@ -227,14 +266,14 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Ball\\Play_Get",
       "GUID": "{52F6D1EE-21F3-4DD4-AD4B-E1E40994D33D}",
       "DurationType": "OneShot",
-      "DurationMin": "0.527211",
-      "DurationMax": "0.527211",
+      "DurationMin": "0.306825",
+      "DurationMax": "0.306825",
       "IncludedMemoryFiles": [
        {
-        "Id": "21645767",
+        "Id": "307369711",
         "Language": "SFX",
-        "ShortName": "Ball_get.wav",
-        "Path": "SFX\\Ball_get_57480CCF.wem"
+        "ShortName": "Ball_get_short.wav",
+        "Path": "SFX\\Ball_get_short_05842A19.wem"
        }
       ]
      },
@@ -310,14 +349,20 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Golem\\Play_Throw",
       "GUID": "{79A5BC6C-F9B2-4FBA-A237-5D20556AD0D3}",
       "DurationType": "OneShot",
-      "DurationMin": "1.155159",
-      "DurationMax": "1.155159",
+      "DurationMin": "1.831412",
+      "DurationMax": "1.831412",
       "IncludedMemoryFiles": [
+       {
+        "Id": "59480555",
+        "Language": "SFX",
+        "ShortName": "Throw_ball.wav",
+        "Path": "SFX\\Throw_ball_BEE76F35.wem"
+       },
        {
         "Id": "412828376",
         "Language": "SFX",
         "ShortName": "Long_Throw_ball.wav",
-        "Path": "SFX\\Long_Throw_ball_C5B11D74.wem"
+        "Path": "SFX\\Long_Throw_ball_A90AF04F.wem"
        }
       ]
      },
@@ -327,9 +372,21 @@
       "ObjectPath": "\\Events\\Master_Event\\Battle_Event\\Ball\\Play_Throw_Hit",
       "GUID": "{5B083C2C-291B-44F6-8C54-8648F15BB398}",
       "DurationType": "OneShot",
-      "DurationMin": "0.910952",
-      "DurationMax": "0.910952",
+      "DurationMin": "1.586508",
+      "DurationMax": "1.586508",
       "IncludedMemoryFiles": [
+       {
+        "Id": "15777823",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_electricty.wav",
+        "Path": "SFX\\Throw_hit_electricty_E2CE090D.wem"
+       },
+       {
+        "Id": "593916673",
+        "Language": "SFX",
+        "ShortName": "Throw_hit_bass.wav",
+        "Path": "SFX\\Throw_hit_bass_05842A19.wem"
+       },
        {
         "Id": "984157997",
         "Language": "SFX",
