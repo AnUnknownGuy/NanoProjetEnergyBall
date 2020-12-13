@@ -121,6 +121,7 @@ public class Ball : MonoBehaviour
             this.player = player;
             sleeping = true;
             rb.Sleep();
+            tornade.SetActive(false);
             return true;
         }else {
             return false;
