@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     public Image transitionPanel;
 
-    public float fadeTime = 0.5f;
+    public float fadeTimeIn = 0.5f;
+    public float fadeTimeOut = 1f;
     public float timeBlack = 1f;
 
     public float timeBeforeInputStart;
@@ -96,7 +97,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator Restart() {
 
         yield return new WaitForSeconds(timeBeforeRestart);
-        transitionPanel.DOFade(1, fadeTime);
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
 
 
         if (logger != null) {
@@ -115,7 +117,7 @@ public class GameManager : MonoBehaviour
         SetHealthBars();
         restarting = false;
 
-        transitionPanel.DOFade(0, fadeTime);
+        transitionPanel.DOFade(0, fadeTimeOut);
 
         yield return new WaitForSeconds(timeBeforeCountDown);
         AudioManager.Countdown(gameObject);
