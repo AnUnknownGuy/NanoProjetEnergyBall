@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 
 public class Ball : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Ball : MonoBehaviour
     public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
 
     public float collisionRadius = 0.25f;
+    public VisualEffect ballEffect;
+    private Color ballColor;
 
 
     // Start is called before the first frame update
@@ -44,7 +47,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
-        
+        ballColor = ballEffect.GetVector4("Color");
     }
 
     // Update is called once per frame
@@ -53,12 +56,14 @@ public class Ball : MonoBehaviour
         GetSpeedSound();
         AudioManager.Ball_Velocity(speedSound);
         if (player != null) {
-            transform.position = player.transform.position;
+            transform.position = player.BallTransform.position;
         }
     }
 
     public bool Catch(Player player) {
         if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
+
+            ballEffect.SetVector4("Color", player.color * 3);
             this.player = player;
             sleeping = true;
             rb.Sleep();
@@ -76,6 +81,8 @@ public class Ball : MonoBehaviour
     }
 
     public void Free() {
+        previousPlayer = player;
+        previousPlayer.StartDecayTimer();
         player = null;
         sleeping = false;
         rb.WakeUp();
@@ -89,7 +96,9 @@ public class Ball : MonoBehaviour
         charged = true;
     }
 
-    public void Uncharge() {
+    public void Uncharge()
+    {
+        ballEffect.SetVector4("Color", ballColor);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
@@ -99,9 +108,15 @@ public class Ball : MonoBehaviour
 
     }
 
-    public void Hit() {
+    public void Hit(bool isHittingPlayer) {
+        if (charged) ShowImpact(isHittingPlayer);
         Uncharge();
         MoveToPreviousPlayer();
+    }
+
+    public void ShowImpact(bool isHittingPlayer)
+    {
+        VFXManager.Spawn(VFXManager.Instance.BallImpact, transform.position, previousPlayer.color, isHittingPlayer);
     }
 
     public void SetSpeed(Vector2 speed) {
@@ -130,6 +145,10 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public void StopSound() {
+        AudioManager.Ball_Air_Stop(gameObject);
+    }
+
     private void OnDrawGizmos() {
         //Gizmos.color = Color.green;
 
@@ -139,6 +158,8 @@ public class Ball : MonoBehaviour
 
     public void SetSpeedWhenFreeFromDash() {
         SetSpeed(speedWhenFreeFromDash);
+
+        ballEffect.SetVector4("Color", ballColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -150,11 +171,11 @@ public class Ball : MonoBehaviour
 
             if ((collision.gameObject.tag == "plateform") && collision.GetContact(0).normalImpulse != 0) {
                 AudioManager.Ball_Bounce(gameObject);
-                Hit();
+                Hit(false);
             }
             if (collision.gameObject.tag == "wall") {
                 if (charged) {
-                    Hit();
+                    Hit(false);
                 }
                 AudioManager.Ball_Bounce(gameObject);
             }

@@ -25,8 +25,7 @@ namespace HealthBarsPackage
 
         private void Awake() {
             fill = GetComponent<Image>();
-            if(_player) Reset();
-            else Debug.LogError("No player bound to healthBar !");
+            // Dont call reset : it is called when setting _player
         }
 
         private void Reset() {

@@ -3,21 +3,19 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public float inputSpeedThresholdJump = 0.3f;
-    public float inputSpeedThresholdFastFall = 0.2f;
+    public float inputThresholdJump = 0.3f;
+    public float inputThresholdFastFall = -0.3f;
     public float inputBufferDuration = 0.2f;
 
     private float deadZoneRightStick = 0.2f;
     private bool canHaveActionOnRightStick = true;
 
-    public float timeBetweenStickUpdate = 0.1f;
-
     private float minimumRightStickSize = 0.05f;
 
-    private Input previousLeftStickValue;
+    private CustomInput previousLeftStickValue;
     private Vector2 leftSpeed;
 
-    private Input previousRightStickValue;
+    private CustomInput previousRightStickValue;
     private Vector2 rightSpeed;
 
     public float stopJumpThreshhold = 0.5f;
@@ -30,15 +28,15 @@ public class InputManager : MonoBehaviour
     public PlayerInput playerInput; 
     public PlayerSettings settings;
 	
-    private float timerBeforeInputStart = 0.5f;
+    public float timerBeforeInputStart = 0.5f;
     private float timeStart;
 
     public Player player;
 
     void Start()
     {
-        previousLeftStickValue = new Input(Vector2.zero, 0);
-        previousRightStickValue = new Input(new Vector2(0, -0.1f), 0);
+        previousLeftStickValue = new CustomInput(Vector2.zero, 0);
+        previousRightStickValue = new CustomInput(new Vector2(0, -0.1f), 0);
 
         leftSpeed = Vector2.zero;
         rightSpeed = Vector2.zero;
@@ -98,7 +96,7 @@ public class InputManager : MonoBehaviour
     public void LeftShoulder(InputAction.CallbackContext context) {
         if (context.performed && !settings.jumpWithStick) {
             JumpProcess();
-            if (previousLeftStickValue.value.y < 0) 
+            if (previousLeftStickValue.value.y < inputThresholdFastFall) 
                 FastFallProcess();
         } else if (context.canceled) {
             JumpStop();
@@ -148,28 +146,30 @@ public class InputManager : MonoBehaviour
         }
         
         if (value.magnitude >= minimumRightStickSize) {
-            previousRightStickValue = new Input(value);
+            previousRightStickValue = new CustomInput(value);
         } else if (value.magnitude != 0) {
-            previousRightStickValue = new Input(value.normalized / (1 / minimumRightStickSize));
+            previousRightStickValue = new CustomInput(value.normalized / (1 / minimumRightStickSize));
         } else {
-            previousRightStickValue = new Input(previousRightStickValue.value.normalized / (1 / minimumRightStickSize));
+            previousRightStickValue = new CustomInput(previousRightStickValue.value.normalized / (1 / minimumRightStickSize));
         }
     }
 
     void LeftStickProcess(Vector2 value)
     {
-        float verticalMovement = value.y - previousLeftStickValue.value.y;
+        float verticalMovement = value.y;
         
         if (settings.jumpWithStick 
-            && verticalMovement >= inputSpeedThresholdJump
-            && previousLeftStickValue.value.magnitude < value.magnitude)
+            && verticalMovement >= inputThresholdJump
+            && previousLeftStickValue.value.magnitude < value.magnitude) {
             JumpProcess();
-        if (verticalMovement <= -inputSpeedThresholdFastFall)
+        }
+        if (verticalMovement <= inputThresholdFastFall) {
             FastFallProcess();
-        if (previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold)
+        }
+        if (settings.jumpWithStick && previousLeftStickValue.value.y > stopJumpThreshhold && value.y < stopJumpThreshhold) {
             JumpStop();
-        
-        previousLeftStickValue = new Input(value);
+        }
+        previousLeftStickValue = new CustomInput(value);
     }
 
     void ActionProcess() {
@@ -212,15 +212,15 @@ public class InputManager : MonoBehaviour
     }
 }
 
-struct Input {
+struct CustomInput {
     public Vector2 value;
     public float timeStamp;
 
-    public Input(Vector2 v) : this(v, Time.time) {
+    public CustomInput(Vector2 v) : this(v, Time.time) {
 
     }
 
-    public Input(Vector2 v, float t) {
+    public CustomInput(Vector2 v, float t) {
         value = v;
         timeStamp = Time.time;
     }

@@ -1,6 +1,9 @@
-﻿using HealthBarsPackage;
+﻿using DG.Tweening;
+using HealthBarsPackage;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,28 +13,45 @@ public class GameManager : MonoBehaviour
     public LevelManager level;
     public SendLog logger;
 
-    public float timeBeforeRestart = 2;
+    public Image transitionPanel;
+
+    public float fadeTime = 0.5f;
+    public float timeBlack = 1f;
+
+    public float timeBeforeInputStart;
+
+    [SerializeField] private Point pointP1A;
+    [SerializeField] private Point pointP1B;
+    [SerializeField] private Point pointP2A;
+    [SerializeField] private Point pointP2B;
+
+    public float timeBeforeRestart = 2, timeBeforeCountDown = 3;
 
     private bool restarting = false;
 
-    // Start is called before the first frame update
     void Start()
     {
+        timeBeforeInputStart =  timeBeforeCountDown + 3;
+
         if (level == null) {
-            CreateLevel();
-            SetHealthBars();
+
+            StartCoroutine(StartLevel());
+            //AudioManager.Battle_Scene_Stop(gameObject);
+            //AudioManager.Battle_Scene(gameObject);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+        if (Input.GetKeyDown("r")) {
+            AudioManager.Ambiance_Stop();
+            AudioManager.Battle_Scene_Stop();
+            SceneManager.LoadScene("BaseLevel");
+        }
     }
 
     public void RestartLevel() {
         if (!restarting) {
-            StartCoroutine(Restart(timeBeforeRestart));
+            StartCoroutine(Restart());
             restarting = true;
         }
     }
@@ -41,22 +61,66 @@ public class GameManager : MonoBehaviour
         health2.player = level.player2;
     }
 
-    public void Win(string winner) {
-        if (logger != null) {
-            logger.Send(winner);
+    
+    public void Win(string winner)
+    {
+        switch (winner)
+        {
+            case "P1":
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                break;
+            case "P2":
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
+            default: // DRAW
+                if (!pointP1A.IsActive()) pointP1A.SetBlue();
+                else pointP1B.SetBlue();
+                if (!pointP2A.IsActive()) pointP2A.SetGreen();
+                else pointP2B.SetGreen();
+                break;
         }
+        if(pointP1B.IsActive() || pointP2B.IsActive())
+        {
+            End(winner);
+            return;
+        }
+        RestartLevel();
     }
 
-    private IEnumerator Restart(float time) {
-        yield return new WaitForSeconds(time);
-        level.Stop();
-        Destroy(level.gameObject);
-        CreateLevel();
-        SetHealthBars();
-        restarting = false;
+    public void End(string winner) {
+        Debug.Log("winner is :" + winner);
+    }
+
+    private IEnumerator Restart() {
+
+        yield return new WaitForSeconds(timeBeforeRestart);
+        transitionPanel.DOFade(1, fadeTime);
+
+
         if (logger != null) {
             logger.Restart();
         }
+
+        level.Stop();
+        Destroy(level.gameObject);
+        
+        StartCoroutine(StartLevel());
+    }
+
+    private IEnumerator StartLevel() {
+        yield return new WaitForSeconds(timeBlack);
+        CreateLevel();
+        SetHealthBars();
+        restarting = false;
+
+        transitionPanel.DOFade(0, fadeTime);
+
+        yield return new WaitForSeconds(timeBeforeCountDown);
+        AudioManager.Countdown(gameObject);
+        yield return new WaitForSeconds(3);
+        AudioManager.Start_Horn(gameObject);
     }
 
     private void CreateLevel() {
@@ -74,4 +138,5 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
 }

@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2188522885565807407}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5910456, y: -6.6983447, z: 66.64555}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43,10 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f694e9fd4d5ab4aba55dda7a60119b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dash:
+  dash_green:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 98a7c122b56999646b7e580e13301d94,
+      type: 2}
+  dash_blue:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fead847aa17315144afefcfa0421c91a,
       type: 2}
   jump:
     idInternal: 0
@@ -57,6 +62,11 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: b28dd416358daa44b951caf08460669b,
+      type: 2}
+  music_menu:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ba6b9e9832c17d7429a7c0d6f2d489a6,
       type: 2}
   ball_get:
     idInternal: 0
@@ -88,6 +98,56 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 6fabd91430cbd8340996049bd502e2f2,
       type: 2}
+  start_horn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2d5d70d06f771cd418652754a3c5e5f5,
+      type: 2}
+  ambiance:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a4a2a4d18edd2d644abc4bf6ddc541cd,
+      type: 2}
+  navigate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1604e05860a3ad0409a10e2dc1570943,
+      type: 2}
+  validate:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0987fb8fd5955f048b5c7fe52087406a,
+      type: 2}
+  begin_game:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 82215db320dc3d94291d898ba9208981,
+      type: 2}
+  countdown:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c59ae2e9067828240b1cff6e6c05edc2,
+      type: 2}
+  downer:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 70cdd2c93318d8249a8e4d5286581840,
+      type: 2}
+  death_green:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 13e951df005ba4b46a25769877888a0d,
+      type: 2}
+  death_blue:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0248b770d16fe6e4ea817b59406bcaa3,
+      type: 2}
+  win:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 47252830283102842b8fd8717fcf384c,
+      type: 2}
   ball_velocity:
     idInternal: 0
     valueGuidInternal: 
@@ -106,4 +166,18 @@ MonoBehaviour:
     groupIdInternal: 0
     groupGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: f9c4f8e2a0f8bc041bfe4977f6b2caef,
+      type: 2}
+  win_blue:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 479e0c32d76dda34892869d06d7b2ed2,
+      type: 2}
+  win_green:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: dc721c9eb0a2d37458a43092b632f78c,
       type: 2}

@@ -26,6 +26,11 @@ namespace HealthBarsPackage
         private float fadeLerpRatio = 0;
 
         private void Awake() {
+            Load();
+        }
+
+        public void Load()
+        {
             fill = GetComponent<Image>();
             health.GetComponent<Health>().RegisterFade(this);
             previousHealthValue = 1;
@@ -65,6 +70,7 @@ namespace HealthBarsPackage
             {
                 case Mode.slide :
                     fadeSpeed = (fill.fillAmount - health.fillAmount)/timeToFade;
+                    if (fadeSpeed < 0) fadeSpeed = 0;
                     break;
 
                 case Mode.fade:

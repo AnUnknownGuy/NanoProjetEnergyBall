@@ -31,6 +31,11 @@ public abstract class State : StateInterface
 
     }
 
+    public virtual  void GroundTouched() {
+        if (!player.isDashing)
+            player.ToBaseLayer();
+    }
+
     public virtual bool ActionSignal() {
         return false;
     }
@@ -48,7 +53,7 @@ public abstract class State : StateInterface
     }
 
     public virtual void Update() {
-        player.LooseHealth();
+        player.LoseHealthTick();
     }
 
     public virtual void BallEntered(Ball ball) {
@@ -58,8 +63,9 @@ public abstract class State : StateInterface
                 player.SetSpeed(ball.GetSpeed() * 0.2f);
 				AudioManager.Ball_Hit(player.gameObject);
                 ball.FakeCollision();
-                ball.Hit();
-                player.looseHealthBallHit();
+                player.animator.Play("hit");
+                ball.Hit(true);
+                player.LoseHealthBallHit();
                 player.ToStunState();
             } else if (!ball.charged) {
                 if (ball.previousPlayertouched == player && ball.previousPlayertouchedTimeStamp + ball.timeBeforeballCanBeCatchBySamePlayer < Time.time) {
@@ -93,8 +99,10 @@ public abstract class State : StateInterface
             AudioManager.Dash_Hit(player.gameObject);
             player.stateManager.numberHittedByDash++;
 
+            player.animator.Play("hit");
             Ball ball = player.ball;
             ball.Free();
+            ball.ShowImpact(true);
             player.ball = null;
             ball.SetSpeedWhenFreeFromDash();
 
@@ -104,11 +112,15 @@ public abstract class State : StateInterface
 
             otherPlayer.SetSpeed(Vector2.zero);
             otherPlayer.ToBaseState();
-            player.looseHealthDashHit();
+            player.LoseHealthDashHit();
         }
     }
 
     public virtual void WallCollided(Vector2 collisionDirection) {
         
+    }
+
+    public virtual void PlateformCollided(GameObject plateforme) {
+        player.lastPlateformTouched = plateforme;
     }
 }
