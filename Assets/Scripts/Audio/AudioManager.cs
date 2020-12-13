@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 
@@ -53,7 +54,17 @@ public class AudioManager : MonoBehaviour
         exist = true;
         instance = this;
 
-        Battle_Scene(gameObject);
+        if (SceneManager.GetActiveScene().name == "MainMenuAlex")
+        {
+            Music_Menu(gameObject);
+        }
+
+        if (SceneManager.GetActiveScene().name == "BaseLevel")
+        {
+            Battle_Scene(gameObject);
+        }
+
+        
         Ambiance(gameObject);
     }
 
