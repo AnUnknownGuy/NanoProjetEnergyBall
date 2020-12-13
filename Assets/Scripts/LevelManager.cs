@@ -33,10 +33,14 @@ public class LevelManager : MonoBehaviour
                 gameManager.Win("DRAW");
             } else if (!player1.alive) {
                 //Debug.Log("PLAYER 2 WINS !");
+                AudioManager.Death_Green(gameObject);
                 gameManager.Win("P2");
+                
             } else if (!player2.alive) {
                 //Debug.Log("PLAYER 1 WINS !");
+                AudioManager.Death_Blue(gameObject);
                 gameManager.Win("P1");
+                
             }
 
             if (!player1.alive || !player2.alive) {
