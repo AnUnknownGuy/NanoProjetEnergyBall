@@ -57,14 +57,29 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartScene() {
+        StartCoroutine(CoRestartScene());
+    }
+
+    private IEnumerator CoRestartScene() {
+
         AudioManager.Ambiance_Stop();
         AudioManager.Battle_Scene_Stop();
+
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
         SceneManager.LoadScene("BaseLevel");
     }
 
     public void ToMainMenu() {
+        StartCoroutine(CoToMainMenu());
+    }
+
+    private IEnumerator CoToMainMenu() {
         AudioManager.Ambiance_Stop();
         AudioManager.Battle_Scene_Stop();
+
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
         SceneManager.LoadScene("MainMenuAlex");
     }
 
@@ -121,7 +136,8 @@ public class GameManager : MonoBehaviour
         victoryPanel.DOFade(1f, 1);
 
         yield return new WaitForSeconds(2);
-
+        replayButton.interactable = true;
+        mainMenuButton.interactable = true;
         replayButton.image.DOFade(1, 1);
         mainMenuButton.image.DOFade(1, 1);
         replayText.DOFade(1, 1);
