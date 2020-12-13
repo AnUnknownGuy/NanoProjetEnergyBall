@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
+    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false, isDashing = false;
 
     //Log
     [HideInInspector] public float timeOnGround = 0;
@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
 
     private float timeBeforeDecaying = 1f;
     private float timeStampDecaying;
+
     // Start is called before the first frame update
     void Start()
     {

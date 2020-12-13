@@ -17,6 +17,7 @@ public class DashState : TemporaryState
         base.Start();
         player.stateManager.numberOfDash++;
         dashStartTimestamp = Time.time;
+        player.isDashing = true;
         player.SetSpeed(Vector2.zero);
         player.canDash = false;
         player.SetDashDirection();
@@ -33,6 +34,7 @@ public class DashState : TemporaryState
 
     public override void Stop() {
         base.Stop();
+        player.isDashing = false;
         player.stateManager.timeInDash += Time.time - dashStartTimestamp;
         player.SetSpeed(Vector2.zero);
         player.SetNormalGravity();

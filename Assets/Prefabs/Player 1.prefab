@@ -266,6 +266,7 @@ MonoBehaviour:
   isJumping: 0
   alive: 1
   isFastFalling: 0
+  isDashing: 0
   timeOnGround: 0
   timeInAir: 0
   lastPlateformTouched: {fileID: 0}
@@ -342,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputThresholdJump: 0.3
-  inputThresholdFastFall: -0.2
+  inputThresholdFastFall: -0.6
   inputBufferDuration: 0.2
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}
