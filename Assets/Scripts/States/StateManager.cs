@@ -94,6 +94,10 @@ public class StateManager
         currentState.BallEntered(ball);
     }
 
+    public void OnGroundTouched() {
+        currentState.GroundTouched();
+    }
+
     public void OnDashEntered(Player otherPlayer) {
         currentState.DashEntered(otherPlayer);
     }

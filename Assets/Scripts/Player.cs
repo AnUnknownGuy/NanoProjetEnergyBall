@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     public Vector2 bottomOffset, rightOffset, leftOffset;
     public float collisionRadius = 0.25f, catchRadius = 0.30f;
 
-    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false;
+    [HideInInspector] public bool onGround = false, onPlateform = false, canDash = true, onWallRight = false, onWallLeft = false, isJumping = false, alive = true, isFastFalling = false, isDashing = false;
 
     //Log
     [HideInInspector] public float timeOnGround = 0;
@@ -81,8 +81,9 @@ public class Player : MonoBehaviour
     public Transform BallTransform;
     public DashCooldownIndicator dashCooldownIndicator;
 
+    private float timeBeforeDecaying = 1f;
+    private float timeStampDecaying;
 
-    private bool isDecaying = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -95,9 +96,8 @@ public class Player : MonoBehaviour
         } else {
             transform.rotation = Quaternion.Euler(0,180,0);
         }
+        timeStampDecaying = Time.time;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -171,12 +171,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void StopDecay() {
-        isDecaying = false;
-    }
 
-    public void StartDecay() {
-        isDecaying = true;
+    public void StartDecayTimer() {
+        timeStampDecaying = Time.time + timeBeforeDecaying;
     }
 
     public void AnimJump(bool bol) {
@@ -223,6 +220,7 @@ public class Player : MonoBehaviour
 
         if (previousOnground != onGround) {
             if (onGround) {
+                stateManager.OnGroundTouched();
                 timeInAir += Time.time - onGroundChangeTimeStamp;
             } else {
                 timeOnGround += Time.time - onGroundChangeTimeStamp;
@@ -265,9 +263,21 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    [SerializeField] private float angleCorrection = 12;
+    private Vector2 AimAssist(Vector2 direction, Vector2 targetPosition)
+    {
+        Vector2 pointOther = new Vector2(targetPosition.x - transform.position.x, targetPosition.y - transform.position.y).normalized;
+        float angle = Vector2.Angle(direction, pointOther);
+        if(angle < angleCorrection) direction = pointOther;
+        return direction;
+    }
+
     public void ThrowBall() {
         if (HasBall()) {
-            ball.Throw(inputManager.GetRightStickValue(), throwPower);
+            Transform target = GameObject.Find(playerNumber==PlayerNumber.Joueur1?"Player2":"Player1").transform;
+            Vector2 direction = AimAssist(inputManager.GetRightStickValue(), target.position);
+            ball.Throw(direction, throwPower);
+
             VFXManager.Spawn(VFXManager.Instance.ThrowMuzzle, BallTransform.position);
             Vibration.Vibrate(inputManager.playerInput, 0.5f, 0.2f);
 
@@ -342,7 +352,7 @@ public class Player : MonoBehaviour
     }
 
     public void LoseHealthTick() {
-        if (isDecaying)
+        if (timeStampDecaying < Time.time && !HasBall())
             LoseHealth(decay * Time.deltaTime);
     }
     public void SetSpeed(Vector2 speed) {
@@ -396,7 +406,9 @@ public class Player : MonoBehaviour
     }
 
     public void SetDashDirection() {
+        Transform target = GameObject.Find("Ball").transform;
         dashDirection = inputManager.GetRightStickValue().normalized;
+        dashDirection = AimAssist(dashDirection, target.position);
 
         Vector2 p = transform.position;
         p += bottomOffset / 2;

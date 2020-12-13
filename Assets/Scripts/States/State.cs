@@ -31,6 +31,11 @@ public abstract class State : StateInterface
 
     }
 
+    public virtual  void GroundTouched() {
+        if (!player.isDashing)
+            player.ToBaseLayer();
+    }
+
     public virtual bool ActionSignal() {
         return false;
     }
