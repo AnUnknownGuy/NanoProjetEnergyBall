@@ -8,6 +8,7 @@ namespace HealthBarsPackage
     {
 
         private Image fill; // autofind
+        [SerializeField] private Animator animator = default;
 
         private Damage damage; // autoregister
         public void RegisterFade(Damage damage){
@@ -36,10 +37,18 @@ namespace HealthBarsPackage
 
         private float lastHealth;
         private void Update() {
-            if (lastHealth == _player.health) return;
-            fill.fillAmount = _player.health/maxHealth;
-            lastHealth = _player.health;
-            damage.Set();
+            if (_player != null) {
+                if (lastHealth == _player.health) return;
+                fill.fillAmount = _player.health / maxHealth;
+                lastHealth = _player.health;
+                damage.Set();
+            }
+            
+        }
+
+        public void Flare()
+        {
+            animator.SetTrigger("Flare");
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 public class VFX_destructor : MonoBehaviour
 {
     private VisualEffect anim;
-    public float lifetime = 5.0f;
+    public float lifetime = 2.0f;
     
     // Start is called before the first frame update
     void Start()

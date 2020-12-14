@@ -32,8 +32,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event begin_game;
     public AK.Wwise.Event countdown;
     public AK.Wwise.Event downer;
-    public AK.Wwise.Event death_green;
-    public AK.Wwise.Event death_blue;
+    public AK.Wwise.Event death;
     public AK.Wwise.Event win;
 
 
@@ -142,14 +141,11 @@ public class AudioManager : MonoBehaviour
     {
         if (exist) instance.downer.Post(gameObject);
     }
-    public static void Death_Green(GameObject gameObject)
+    public static void Death(GameObject gameObject)
     {
-        if (exist) instance.death_green.Post(gameObject);
+        if (exist) instance.death.Post(gameObject);
     }
-    public static void Death_Blue(GameObject gameObject)
-    {
-        if (exist) instance.death_blue.Post(gameObject);
-    }
+    
     public static void Win(GameObject gameObject)
     {
         if (exist) instance.win.Post(gameObject);
@@ -166,7 +162,7 @@ public class AudioManager : MonoBehaviour
         if (exist) instance.ball_idle.SetValue();
     }
 
-    public static void Ball_Charegd()
+    public static void Ball_Charged()
     {
         if (exist) instance.ball_charged.SetValue();
     }

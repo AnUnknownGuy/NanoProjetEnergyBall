@@ -29,9 +29,13 @@ public class VFXManager : MonoBehaviour
     public static void Spawn(GameObject prefab, Vector2 pos, Color color, bool isHittingPlayer)
     {
         GameObject FX = Spawn(prefab, pos);
-        FX.GetComponent<VisualEffect>().SetVector4("Color", color * 5);
+            
         if (isHittingPlayer)
             FX.transform.localScale *= 2f;
+        
+        VisualEffect VFX = FX.GetComponent<VisualEffect>();
+        VFX.SetVector4("Color", color * 5);
+        VFX.playRate = 2.5f;
     }
 
     public static GameObject Spawn(GameObject prefab, Vector2 pos)

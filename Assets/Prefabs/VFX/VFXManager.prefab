@@ -48,7 +48,7 @@ MonoBehaviour:
   Jump: {fileID: 7692632852601857436, guid: d250db6c73d290747aead1ca9b08250a, type: 3}
   FallImpact: {fileID: 5477424619959522764, guid: 0c3721513a9a1ec48a334118e463a9f6,
     type: 3}
-  BallImpact: {fileID: 5856979016380894863, guid: f8db4d2061e64474fbd5fb6b1e9d62d9,
+  BallImpact: {fileID: 3736075151750558212, guid: 86ef461bf6d80fd448a26d36836169ec,
     type: 3}
-  ThrowMuzzle: {fileID: 5856979016380894863, guid: a078b0ce7e5bcc64b8c1cbfef561bd25,
+  ThrowMuzzle: {fileID: 2728572034772684223, guid: 09d61938d905e464aac3643d75bec298,
     type: 3}

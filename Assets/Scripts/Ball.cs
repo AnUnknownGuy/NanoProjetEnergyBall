@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using DG.Tweening;
+using UnityEngine;
 using UnityEngine.VFX;
 
 public class Ball : MonoBehaviour
@@ -9,7 +11,6 @@ public class Ball : MonoBehaviour
     public PhysicsMaterial2D material;
 
     public bool sleeping;
-    private float timerUntilCatchable = 0;
 
     public Vector2 speedWhenFreeFromDash = new Vector2(0, 10);
 
@@ -19,25 +20,29 @@ public class Ball : MonoBehaviour
     private float maxSpeedSound = 15;
     private float speedSound = 0;
 
-    [HideInInspector]
-    public Player player;
-
-    [HideInInspector]
-    public bool charged = false;
-    [HideInInspector]
-    public Player previousPlayer;
-
-    [HideInInspector]
-    public Player previousPlayertouched;
-    [HideInInspector]
-    public float previousPlayertouchedTimeStamp;
-    [HideInInspector]
-    public float timeBeforeballCanBeCatchBySamePlayer = 0.2f;
-
+    [HideInInspector] public Player player;
+    [HideInInspector] public Player previousPlayer;
+    [HideInInspector] public Player previousPlayertouched;
+    [HideInInspector] public float previousPlayertouchedTimeStamp;
+    [HideInInspector] public float timeBeforeballCanBeCatchBySamePlayer = 0.20f;
+    [HideInInspector] public bool charged = false;
+    
+    [Header("Visual Effects")]
     public float collisionRadius = 0.25f;
     public VisualEffect ballEffect;
+    public VisualEffect trailEffect;
+    public Transform trailAnchor;
     private Color ballColor;
+    private Gradient trailGradient;
+    private GradientColorKey[] trailColorKeys;
+    public float trailYScaleDiviser = 20f;
 
+    [Header("Start Animation")] 
+    public float apparitionDelay = 1.5f;
+    public float apparitionDuration = 1f;
+    public float moveDuration = 1f;
+    public float moveYOffset = 2f;
+    public float simulationDelay = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +52,37 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravity;
         sleeping = false;
+        
         ballColor = ballEffect.GetVector4("Color");
+        trailGradient = trailEffect.GetGradient("ColorOverLife");
+        trailColorKeys = trailGradient.colorKeys;
+        
+        SetBallColor(ballColor);
+
+        BallSpawnAnimation();
+    }
+
+    private void BallSpawnAnimation()
+    {
+        transform.localScale = Vector3.zero;
+        rb.simulated = false;
+        StartCoroutine(GrowBall());
+    }
+
+    private IEnumerator GrowBall()
+    {
+        yield return new WaitForSeconds(apparitionDelay);
+        
+        Vector3 movedPosition = transform.localPosition + new Vector3(0, -moveYOffset, 0);
+        transform.DOScale(Vector3.one, apparitionDuration).SetEase(Ease.OutBack)
+            .OnComplete(() => transform.DOLocalMove(movedPosition, moveDuration).SetEase(Ease.InOutCubic)
+                .OnComplete(() => StartCoroutine(ActivateSimulation())));
+    }
+
+    private IEnumerator ActivateSimulation()
+    {
+        yield return new WaitForSeconds(simulationDelay);
+        rb.simulated = true;
     }
 
     // Update is called once per frame
@@ -58,15 +93,35 @@ public class Ball : MonoBehaviour
         if (player != null) {
             transform.position = player.BallTransform.position;
         }
+
+        AdjustTrails();
+    }
+
+    private void SetBallColor(Color color)
+    {
+        ballEffect.SetVector4("Color", color * 3);
+        
+        for (int key = 0; key < trailColorKeys.Length; key++)
+            trailColorKeys[key].color = color;
+        
+        trailGradient.colorKeys = trailColorKeys;
+        trailEffect.SetGradient("ColorOverLife", trailGradient);
+    }
+
+    private void AdjustTrails()
+    {
+        trailAnchor.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, rb.velocity));
+        trailEffect.transform.localScale = new Vector3(1, 
+            (player == null) ? rb.velocity.magnitude / trailYScaleDiviser : 0, 1);
     }
 
     public bool Catch(Player player) {
-        if (!sleeping && timerUntilCatchable + 0.2f < Time.time) {
-
-            ballEffect.SetVector4("Color", player.color * 3);
+        if (!sleeping && previousPlayertouchedTimeStamp + timeBeforeballCanBeCatchBySamePlayer < Time.time) {
+            SetBallColor(player.color);
             this.player = player;
             sleeping = true;
             rb.Sleep();
+            tornade.SetActive(false);
             return true;
         }else {
             return false;
@@ -74,6 +129,8 @@ public class Ball : MonoBehaviour
     }
 
     public void Throw(Vector2 dir, float force) {
+
+            previousPlayertouchedTimeStamp = Time.time;
             Charge();
             Free();
             rb.velocity = Vector2.zero;
@@ -83,22 +140,28 @@ public class Ball : MonoBehaviour
     public void Free() {
         previousPlayer = player;
         previousPlayer.StartDecayTimer();
+        previousPlayertouchedTimeStamp = Time.time;
         player = null;
         sleeping = false;
         rb.WakeUp();
-        timerUntilCatchable = Time.time;
     }
 
+    [SerializeField] private GameObject tornade;
+    [SerializeField] private Material tornade_mat;
+
     public void Charge() {
-        AudioManager.Ball_Charegd();
+        AudioManager.Ball_Charged();
         previousPlayer = player;
         rb.gravityScale = 0;
         charged = true;
+        tornade.SetActive(true);
+        tornade_mat.SetColor("MainColor", player.GetComponent<Player>().color * 1);
     }
 
     public void Uncharge()
     {
-        ballEffect.SetVector4("Color", ballColor);
+        SetBallColor(ballColor);
+        tornade.SetActive(false);
         AudioManager.Ball_Idle();
         charged = false;
         rb.gravityScale = gravity;
@@ -159,7 +222,7 @@ public class Ball : MonoBehaviour
     public void SetSpeedWhenFreeFromDash() {
         SetSpeed(speedWhenFreeFromDash);
 
-        ballEffect.SetVector4("Color", ballColor);
+        SetBallColor(ballColor);
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

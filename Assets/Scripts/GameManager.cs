@@ -14,8 +14,14 @@ public class GameManager : MonoBehaviour
     public SendLog logger;
 
     public Image transitionPanel;
+    public Image greyPanel;
+    public Image victoryImageBlue;
+    public Image victoryImageGreen;
+    public Button replayButton;
+    public Button mainMenuButton;
 
-    public float fadeTime = 0.5f;
+    public float fadeTimeIn = 0.5f;
+    public float fadeTimeOut = 1f;
     public float timeBlack = 1f;
 
     public float timeBeforeInputStart;
@@ -29,24 +35,53 @@ public class GameManager : MonoBehaviour
 
     private bool restarting = false;
 
+    private Image victoryImage;
+
+    public Image count1;
+    public Image count2;
+    public Image count3;
+    public Image go;
+
     void Start()
     {
         timeBeforeInputStart =  timeBeforeCountDown + 3;
 
         if (level == null) {
-
             StartCoroutine(StartLevel());
-            //AudioManager.Battle_Scene_Stop(gameObject);
-            //AudioManager.Battle_Scene(gameObject);
         }
     }
 
     void Update() {
         if (Input.GetKeyDown("r")) {
-            AudioManager.Ambiance_Stop();
-            AudioManager.Battle_Scene_Stop();
-            SceneManager.LoadScene("BaseLevel");
+            RestartScene();
         }
+    }
+
+    public void RestartScene() {
+        StartCoroutine(CoRestartScene());
+    }
+
+    private IEnumerator CoRestartScene() {
+
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
+
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
+        SceneManager.LoadScene("BaseLevel");
+    }
+
+    public void ToMainMenu() {
+        StartCoroutine(CoToMainMenu());
+    }
+
+    private IEnumerator CoToMainMenu() {
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
+
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
+        SceneManager.LoadScene("MainMenuAlex");
     }
 
     public void RestartLevel() {
@@ -90,13 +125,74 @@ public class GameManager : MonoBehaviour
     }
 
     public void End(string winner) {
-        Debug.Log("winner is :" + winner);
+        AudioManager.Ambiance_Stop();
+        AudioManager.Battle_Scene_Stop();
+
+
+        if (winner == "P1") {
+            AudioManager.Win_Blue(gameObject);
+            victoryImage = victoryImageBlue;
+        } else {
+            AudioManager.Win_Green(gameObject);
+            victoryImage = victoryImageGreen;
+        }
+
+
+        StartCoroutine(ShowVictory());
+    }
+
+    private IEnumerator ShowVictory() {
+
+        yield return new WaitForSeconds(1f);
+
+        greyPanel.DOFade(0.75f, 0.5f);
+
+        yield return new WaitForSeconds(0.5f);
+
+        AudioManager.Win(gameObject);
+        yield return new WaitForSeconds(0.15f);
+
+        victoryImage.DOFade(1f, 0);
+
+        yield return new WaitForSeconds(1);
+        replayButton.interactable = true;
+        mainMenuButton.interactable = true;
+        replayButton.Select();
+        replayButton.image.DOFade(1, 1);
+        mainMenuButton.image.DOFade(1, 1);
     }
 
     private IEnumerator Restart() {
 
+        StartCoroutine(StopLevel());
+        transitionPanel.DOFade(1, fadeTimeIn);
+
+        yield return new WaitForSeconds(fadeTimeIn + timeBeforeRestart);
+
+        StartCoroutine(StartLevel());
+    }
+
+
+    private IEnumerator StartLevel() {
+        yield return new WaitForSeconds(timeBlack);
+        CreateLevel();
+        SetHealthBars();
+        restarting = false;
+
+        transitionPanel.DOFade(0, fadeTimeOut);
+
+        yield return new WaitForSeconds(timeBeforeCountDown);
+        StartCoroutine(ShowCountDown());
+        AudioManager.Countdown(gameObject);
+        yield return new WaitForSeconds(3);
+        AudioManager.Start_Horn(gameObject);
+    }
+
+    private IEnumerator StopLevel() {
+
         yield return new WaitForSeconds(timeBeforeRestart);
-        transitionPanel.DOFade(1, fadeTime);
+        transitionPanel.DOFade(1, fadeTimeIn);
+        yield return new WaitForSeconds(fadeTimeIn);
 
 
         if (logger != null) {
@@ -105,22 +201,6 @@ public class GameManager : MonoBehaviour
 
         level.Stop();
         Destroy(level.gameObject);
-        
-        StartCoroutine(StartLevel());
-    }
-
-    private IEnumerator StartLevel() {
-        yield return new WaitForSeconds(timeBlack);
-        CreateLevel();
-        SetHealthBars();
-        restarting = false;
-
-        transitionPanel.DOFade(0, fadeTime);
-
-        yield return new WaitForSeconds(timeBeforeCountDown);
-        AudioManager.Countdown(gameObject);
-        yield return new WaitForSeconds(3);
-        AudioManager.Start_Horn(gameObject);
     }
 
     private void CreateLevel() {
@@ -128,6 +208,34 @@ public class GameManager : MonoBehaviour
         level.gameManager = this;
     }
     
+    private IEnumerator ShowCountDown() {
+        StartCoroutine(ShowOneCount(count3));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowOneCount(count2));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowOneCount(count1));
+        yield return new WaitForSeconds(1);
+        StartCoroutine(ShowGo(go));
+    }
+
+    private IEnumerator ShowOneCount(Image image) {
+        image.enabled = true;
+        image.DOFade(0, 1.0f).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(1);
+        image.enabled = false;
+        image.DOFade(1, 0);
+    }
+
+    private IEnumerator ShowGo(Image image) {
+        image.enabled = true;
+        image.DOFade(0, 0.5f).SetEase(Ease.InCubic);
+        image.transform.DOScale(3, 0.5f).SetEase(Ease.InCubic);
+        yield return new WaitForSeconds(0.5f);
+        image.enabled = false;
+        image.DOFade(1, 0);
+        image.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+    }
+
     
     public static void PauseGame()
     {

@@ -238,14 +238,14 @@ MonoBehaviour:
   timeBetweenJump: 0.3
   gravity: 2.74
   lowGravity: 2
-  highGravity: 8
+  highGravity: 6
   throwPower: 25
   hitStunDuration: 0.8
   hitSpeedTransfert: 0.8
   health: 1000
   decay: 25
   healthLostOnDashHit: 75
-  healthLostOnBallHit: 40
+  healthLostOnBallHit: 50
   timeBeforeBeingAbleToThrow: 0.2
   facingRight: 1
   ball: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   color: {r: 0.07843137, g: 0.71542245, b: 1, a: 1}
   deathVFXPrefab: {fileID: 5613484594186088430, guid: 6663260c031fbeb46a9d14ffa77177b2,
     type: 3}
-  catchVFXPrefab: {fileID: 5856979016380894863, guid: 434953e356192f9449c1b44eeca7deac,
+  catchVFXPrefab: {fileID: 639056435311151451, guid: 937de5c9da938514dbfc60771a737cf3,
     type: 3}
   deathDestroyDelay: 0.25
   BallTransform: {fileID: 909395786908513041}
@@ -348,6 +348,7 @@ MonoBehaviour:
   inputBufferDuration: 0.2
   stopJumpThreshhold: 0.5
   playerInput: {fileID: 3565814429772109132}
+  timerBeforeInputStart: 0.5
   player: {fileID: 4389660307696137376}
 --- !u!114 &3565814429772109132
 MonoBehaviour:
