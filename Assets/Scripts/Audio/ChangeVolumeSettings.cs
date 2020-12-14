@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +10,6 @@ public class ChangeVolumeSettings : MonoBehaviour
     public float masterVolume;
     public float musicVolume;
     public float SFXVolume;
-
 
     public void SetSpecificVolume(string whatValue)
     { 
