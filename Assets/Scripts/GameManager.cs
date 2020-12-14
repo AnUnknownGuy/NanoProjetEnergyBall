@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     public Image victoryImageGreen;
     public Button replayButton;
     public Button mainMenuButton;
-    public Text replayText;
-    public Text mainMenuText;
 
     public float fadeTimeIn = 0.5f;
     public float fadeTimeOut = 1f;
@@ -159,10 +157,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         replayButton.interactable = true;
         mainMenuButton.interactable = true;
+        replayButton.Select();
         replayButton.image.DOFade(1, 1);
         mainMenuButton.image.DOFade(1, 1);
-        replayText.DOFade(1, 1);
-        mainMenuText.DOFade(1, 1);
     }
 
     private IEnumerator Restart() {
