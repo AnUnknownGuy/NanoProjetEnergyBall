@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Hosting;
 using UnityEngine;
@@ -6,19 +7,13 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     public GameObject Activatable;
-    
-    public void Activate(float delay = 0f)
-    {
-        StartCoroutine(Activation(delay));
-    }
 
-    private IEnumerator Activation(float delay)
+    public void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(delay);
         Activatable.SetActive(true);
     }
 
-    public void Disactivate()
+    public void OnTriggerExit(Collider other)
     {
         Activatable.SetActive(false);
     }
