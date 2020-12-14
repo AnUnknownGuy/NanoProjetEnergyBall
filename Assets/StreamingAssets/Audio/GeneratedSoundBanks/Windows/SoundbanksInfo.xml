@@ -23,7 +23,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\MasterVolume" GUID="{C746E66C-CA61-44CA-8E2B-FFF43F6B79D9}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="4272730190">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3161088547">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
