@@ -60,7 +60,7 @@
     "Id": "1579730687",
     "GUID": "{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}",
     "Language": "SFX",
-    "Hash": "3161088547",
+    "Hash": "872203414",
     "ObjectPath": "\\SoundBanks\\Nano_Projet\\SB_Master",
     "ShortName": "SB_Master",
     "Path": "SB_Master.bnk",
@@ -156,7 +156,7 @@
         "Id": "664081031",
         "Language": "SFX",
         "ShortName": "Battle_music.wav",
-        "Path": "SFX\\Battle_music_05842A19.wem"
+        "Path": "SFX\\Battle_music_D27CEA93.wem"
        },
        {
         "Id": "968729543",

@@ -23,7 +23,7 @@
 				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\MasterVolume" GUID="{C746E66C-CA61-44CA-8E2B-FFF43F6B79D9}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="3161088547">
+		<SoundBank Id="1579730687" GUID="{DAF1453A-DDFB-4BBD-8EF1-A00708252BAB}" Language="SFX" Hash="872203414">
 			<ObjectPath>\SoundBanks\Nano_Projet\SB_Master</ObjectPath>
 			<ShortName>SB_Master</ShortName>
 			<Path>SB_Master.bnk</Path>
@@ -80,7 +80,7 @@
 					<IncludedMemoryFiles>
 						<File Id="664081031" Language="SFX">
 							<ShortName>Battle_music.wav</ShortName>
-							<Path>SFX\Battle_music_05842A19.wem</Path>
+							<Path>SFX\Battle_music_D27CEA93.wem</Path>
 						</File>
 						<File Id="968729543" Language="SFX">
 							<ShortName>End_tail-zic.wav</ShortName>
