@@ -274,8 +274,9 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    [SerializeField] private float angleCorrection = 12;
-    private Vector2 AimAssist(Vector2 direction, Vector2 targetPosition)
+    [SerializeField] private float angleCorrectionShoot = 12;
+    [SerializeField] private float angleCorrectionDash = 12;
+    private Vector2 AimAssist(Vector2 direction, Vector2 targetPosition, float angleCorrection)
     {
         Vector2 pointOther = new Vector2(targetPosition.x - transform.position.x, targetPosition.y - transform.position.y).normalized;
         float angle = Vector2.Angle(direction, pointOther);
@@ -286,7 +287,7 @@ public class Player : MonoBehaviour
     public void ThrowBall() {
         if (HasBall()) {
             Transform target = GameObject.Find(playerNumber==PlayerNumber.Joueur1?"Player2":"Player1").transform;
-            Vector2 direction = AimAssist(inputManager.GetRightStickValue(), target.position);
+            Vector2 direction = AimAssist(inputManager.GetRightStickValue(), target.position, angleCorrectionShoot);
             ball.Throw(direction, throwPower);
 
             facingRight = inputManager.GetRightStickValue().x > 0;
@@ -425,7 +426,7 @@ public class Player : MonoBehaviour
     public void SetDashDirection() {
         Transform target = GameObject.Find("Ball").transform;
         dashDirection = inputManager.GetRightStickValue().normalized;
-        dashDirection = AimAssist(dashDirection, target.position);
+        dashDirection = AimAssist(dashDirection, target.position, angleCorrectionDash);
 
         Vector2 p = transform.position;
         p += bottomOffset / 2;
