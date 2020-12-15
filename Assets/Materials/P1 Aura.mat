@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: P1 Aura
+  m_Shader: {fileID: -6465566751694194690, guid: f885cd33e6521e2429e125759f5e7610,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_1A5EB43E: 5
+    - Vector1_1EBD5BF4: 0
+    - Vector1_20F6B329: 5.49
+    - Vector1_35C75C81: 2
+    - Vector1_6BC1E528: 10
+    - Vector1_6DE69586: 7
+    - Vector1_8C687741: 0
+    - Vector1_D1FD0E97: 50
+    - Vector1_D8F075CA: 20
+    - Vector1_E42A00A0: 2.77
+    - Vector1_EC7DA329: 0
+    - Vector1_EF8AC28D: 50
+    - Vector1_F3BA827F: 1
+    m_Colors:
+    - Color_7644DEA4: {r: 0, g: 0, b: 0, a: 0}
+    - Color_8449A1A4: {r: 2, g: 2, b: 2, a: 1}
+    - Color_C1BAA65D: {r: 4, g: 3.7071624, b: 0, a: 1}
+    - Color_FBA9FEB4: {r: 0.03137255, g: 8, b: 0, a: 1}
+    - MainColor: {r: 0, g: 1.0846089, b: 1.418, a: 1}
+    - Vector2_EADC0626: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_F28099DE: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_F576E127: {r: 1, g: 1, b: 1, a: 1}
