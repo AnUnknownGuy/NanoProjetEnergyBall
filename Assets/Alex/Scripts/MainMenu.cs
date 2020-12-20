@@ -2,14 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    private GameObject selectedItem;
+
     private void Start()
     {
-        GetComponentInChildren<Button>().Select();
+        selectedItem = EventSystem.current.firstSelectedGameObject;
+    }
+
+    private void Update()
+    {
+        if (!EventSystem.current.currentSelectedGameObject)
+            selectedItem.GetComponent<Selectable>().Select();
+        else if (!Equals(selectedItem, EventSystem.current.currentSelectedGameObject))
+            selectedItem = EventSystem.current.currentSelectedGameObject;
     }
 
     public void PlayGame ()
@@ -21,7 +32,6 @@ public class MainMenu : MonoBehaviour
     public void Validate()
     {
         AudioManager.Validate(gameObject);
-        
     }
 
     public void QuitGame()
