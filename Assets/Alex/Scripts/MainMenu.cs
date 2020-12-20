@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -18,9 +19,15 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         if (!EventSystem.current.currentSelectedGameObject)
+        {
             selectedItem.GetComponent<Selectable>().Select();
+        }
         else if (!Equals(selectedItem, EventSystem.current.currentSelectedGameObject))
+        {
             selectedItem = EventSystem.current.currentSelectedGameObject;
+            selectedItem.GetComponent<CameraTarget>().GoToTarget();
+        }
+        //if (EventSystem.)
     }
 
     public void PlayGame ()
