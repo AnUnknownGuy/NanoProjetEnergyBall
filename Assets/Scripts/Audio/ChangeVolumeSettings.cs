@@ -1,42 +1,58 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AK.Wwise;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChangeVolumeSettings : MonoBehaviour
 {
     public Slider thisSlider;
-    public float masterVolume;
-    public float musicVolume;
-    public float SFXVolume;
+    public string OptionName;
+    private float rtpcValue;
+    private int type = (int)AkQueryRTPCValue.RTPCValue_Global;
 
-    public void SetSpecificVolume(string whatValue)
-    { 
-       float sliderValue = thisSlider.value;
+    private static float master = 100;
+    private static float music = 100;
+    private static float SFX = 100;
 
-        if (whatValue == "Master")
+    private void Start()
+    {
+        // AKRESULT result = AkSoundEngine.GetRTPCValue(OptionName, null, 0, out rtpcValue, ref type);
+        // if (result == AKRESULT.AK_Success)
+        //     thisSlider.value = rtpcValue;
+        // else 
+        //     Debug.LogWarning(result.ToString());
+
+        switch (OptionName)
         {
-            Debug.Log("changed master volume to:" + thisSlider.value);
-            masterVolume = thisSlider.value;
-            AkSoundEngine.SetRTPCValue("MasterVolume", masterVolume);
-         
-         }
-
-        if (whatValue == "Music")
-         {
-            // Debug.Log("changed music volume to:" + thisSlider.value);
-            musicVolume = thisSlider.value;
-            AkSoundEngine.SetRTPCValue("MusicVolume", musicVolume);
-         }
-
-         if (whatValue == "SFX")
-        {
-            //Debug.Log("changed SFX volume to:" + thisSlider.value);
-            SFXVolume = thisSlider.value;
-            AkSoundEngine.SetRTPCValue("SFXVolume", SFXVolume);
+            case "Master":
+                thisSlider.value = master;
+                break;
+            case "Music":
+                thisSlider.value = music;
+                break;
+            case "SFX":
+                thisSlider.value = SFX;
+                break;
         }
-
     }
 
+    public void SetVolume()
+    {
+        AkSoundEngine.SetRTPCValue(OptionName + "Volume", thisSlider.value);
+        
+        switch (OptionName)
+        {
+            case "Master":
+                master = thisSlider.value;
+                break;
+            case "Music":
+                music = thisSlider.value;
+                break;
+            case "SFX":
+                SFX = thisSlider.value;
+                break;
+        }
+    }
 }

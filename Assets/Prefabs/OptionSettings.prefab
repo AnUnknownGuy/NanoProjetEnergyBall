@@ -1032,6 +1032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7867222952793996251}
   - component: {fileID: 7867222952793996250}
+  - component: {fileID: 2939063423149661260}
   - component: {fileID: 7867222952793996253}
   m_Layer: 0
   m_Name: MusicrSliderSettings
@@ -1085,7 +1086,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.764151, g: 0.6943378, b: 0.68124783, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.366901, b: 0.366901, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1123,6 +1124,19 @@ MonoBehaviour:
           m_StringArgument: Music
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2939063423149661260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867222952793996248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82385573c5f39fd4eb6bc70c80df88a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cancellationTarget: {fileID: 0}
 --- !u!114 &7867222952793996253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,6 +1163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7867222952903481274}
   - component: {fileID: 7867222952903481277}
+  - component: {fileID: 4641496996353364017}
   - component: {fileID: 7867222952903481276}
   m_Layer: 0
   m_Name: SFXSliderSettings
@@ -1202,7 +1217,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7647059, g: 0.69411767, b: 0.68235296, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.366901, b: 0.366901, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1240,6 +1255,19 @@ MonoBehaviour:
           m_StringArgument: SFX
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4641496996353364017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867222952903481275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82385573c5f39fd4eb6bc70c80df88a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cancellationTarget: {fileID: 0}
 --- !u!114 &7867222952903481276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,6 +1478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7867222953292653207}
   - component: {fileID: 7867222953292653206}
+  - component: {fileID: 1038198634907261786}
   - component: {fileID: 7867222953292653193}
   m_Layer: 0
   m_Name: MasterSliderSettings
@@ -1503,7 +1532,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7647059, g: 0.69411767, b: 0.68235296, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.366901, b: 0.366901, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1541,6 +1570,19 @@ MonoBehaviour:
           m_StringArgument: Master
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1038198634907261786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867222953292653204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82385573c5f39fd4eb6bc70c80df88a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cancellationTarget: {fileID: 0}
 --- !u!114 &7867222953292653193
 MonoBehaviour:
   m_ObjectHideFlags: 0

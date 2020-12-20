@@ -213,7 +213,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1131,7 +1131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCamera: {fileID: 1951003498}
-  OptionSettings: {fileID: 1525627773}
 --- !u!1001 &247007500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1423,6 +1422,7 @@ GameObject:
   - component: {fileID: 314337445}
   - component: {fileID: 314337444}
   - component: {fileID: 314337443}
+  - component: {fileID: 314337447}
   m_Layer: 5
   m_Name: ControlsButton
   m_TagString: Untagged
@@ -1443,12 +1443,12 @@ RectTransform:
   m_Children:
   - {fileID: 282523}
   m_Father: {fileID: 1045919240}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -649.6, y: -350}
-  m_SizeDelta: {x: 330.65, y: 99.87161}
+  m_AnchoredPosition: {x: -646.55, y: -250}
+  m_SizeDelta: {x: 365.07, y: 99.87161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314337443
 MonoBehaviour:
@@ -1505,18 +1505,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 986195207}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045919241}
         m_MethodName: Validate
         m_Mode: 1
@@ -1565,6 +1553,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314337441}
   m_CullTransparentMesh: 0
+--- !u!114 &314337447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314337441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4772b4ec0c41974a8165190d711b986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 986195207}
 --- !u!1001 &318170338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2539,7 +2540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 865187753}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &527643589
@@ -3842,6 +3843,7 @@ GameObject:
   - component: {fileID: 865187756}
   - component: {fileID: 865187755}
   - component: {fileID: 865187758}
+  - component: {fileID: 865187759}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -3912,18 +3914,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1951003498}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045919241}
         m_MethodName: PlayGame
         m_Mode: 1
@@ -3982,6 +3972,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &865187759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865187753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4772b4ec0c41974a8165190d711b986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1951003498}
+--- !u!114 &880491380 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7867222953292653206, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7867222952766325913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &888751263
@@ -4877,26 +4892,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1045919240
-Transform:
+--- !u!224 &1045919240
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045919239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.486755, y: 133.3118, z: -371.88586}
+  m_LocalPosition: {x: 0, y: 0, z: -371.88586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 865187754}
-  - {fileID: 1198060827}
   - {fileID: 314337442}
   - {fileID: 1251583231}
+  - {fileID: 1198060827}
   - {fileID: 1619961774}
   - {fileID: 1083746073}
   m_Father: {fileID: 244263412}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -28.486755, y: 133.3118}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045919241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5434,6 +5454,8 @@ GameObject:
   - component: {fileID: 1198060829}
   - component: {fileID: 1198060828}
   - component: {fileID: 1198060831}
+  - component: {fileID: 1198060833}
+  - component: {fileID: 1198060832}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -5454,11 +5476,11 @@ RectTransform:
   m_Children:
   - {fileID: 1641292913}
   m_Father: {fileID: 1045919240}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -666, y: -250}
+  m_AnchoredPosition: {x: -665.9999, y: -450}
   m_SizeDelta: {x: 330.31516, y: 99.87161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198060828
@@ -5504,20 +5526,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCamera
-        m_Mode: 2
+      - m_Target: {fileID: 1045919241}
+        m_MethodName: Validate
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1617274253}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1045919241}
-        m_MethodName: Validate
+      - m_Target: {fileID: 880491380}
+        m_MethodName: Select
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5576,6 +5597,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1198060832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198060826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4772b4ec0c41974a8165190d711b986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1617274253}
+--- !u!114 &1198060833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198060826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 747fc8a2ba714ab40932ea58240a6e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectable: {fileID: 880491380}
 --- !u!1001 &1217895794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5965,6 +6012,7 @@ GameObject:
   - component: {fileID: 1251583233}
   - component: {fileID: 1251583232}
   - component: {fileID: 1251583235}
+  - component: {fileID: 1251583236}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -5985,11 +6033,11 @@ RectTransform:
   m_Children:
   - {fileID: 1073725962}
   m_Father: {fileID: 1045919240}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -674, y: -450}
+  m_AnchoredPosition: {x: -674, y: -350}
   m_SizeDelta: {x: 313.97702, y: 99.87161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251583232
@@ -6035,18 +6083,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2028257070}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045919241}
         m_MethodName: Validate
         m_Mode: 1
@@ -6107,6 +6143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1251583236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251583230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4772b4ec0c41974a8165190d711b986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2028257070}
 --- !u!4 &1262865949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46ec658c29aa37f429c39c2006a6f2ec,
@@ -7525,7 +7574,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617274251}
-  m_LocalRotation: {x: -0.0072669596, y: 0.100534864, z: 0.00073436403, w: 0.9949068}
+  m_LocalRotation: {x: -0.007266959, y: 0.100534864, z: 0.00073436403, w: 0.9949068}
   m_LocalPosition: {x: -866.9, y: 217, z: -1736.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7594,6 +7643,7 @@ GameObject:
   - component: {fileID: 1619961776}
   - component: {fileID: 1619961775}
   - component: {fileID: 1619961778}
+  - component: {fileID: 1619961779}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -7664,18 +7714,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 244263413}
-        m_MethodName: UpdateCamera
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 842369973}
-          m_ObjectArgumentAssemblyTypeName: Cinemachine.CinemachineVirtualCamera,
-            Cinemachine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1045919241}
         m_MethodName: QuitGame
         m_Mode: 1
@@ -7736,6 +7774,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1619961779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619961773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4772b4ec0c41974a8165190d711b986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 842369973}
 --- !u!1 &1641292912
 GameObject:
   m_ObjectHideFlags: 0
@@ -10712,6 +10763,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1045919240}
     m_Modifications:
+    - target: {fileID: 1038198634907261786, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: cancellationTarget
+      value: 
+      objectReference: {fileID: 1198060828}
+    - target: {fileID: 2939063423149661260, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: cancellationTarget
+      value: 
+      objectReference: {fileID: 1198060828}
+    - target: {fileID: 4641496996353364017, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: cancellationTarget
+      value: 
+      objectReference: {fileID: 1198060828}
     - target: {fileID: 6980409608612647610, guid: 9b2b4e00d786eb14bbf24594bec061f9,
         type: 3}
       propertyPath: m_IsActive
@@ -10852,6 +10918,36 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7867222952793996250, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222952793996250, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222952793996253, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: OptionName
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222952903481276, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: OptionName
+      value: SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222952903481277, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222952903481277, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7867222953150555700, guid: 9b2b4e00d786eb14bbf24594bec061f9,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -10860,6 +10956,21 @@ PrefabInstance:
     - target: {fileID: 7867222953150555700, guid: 9b2b4e00d786eb14bbf24594bec061f9,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222953292653193, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: OptionName
+      value: Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222953292653206, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867222953292653206, guid: 9b2b4e00d786eb14bbf24594bec061f9,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7867222953330027092, guid: 9b2b4e00d786eb14bbf24594bec061f9,

@@ -1,15 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
 public class UITransitionManager : MonoBehaviour
 {
+    public static UITransitionManager instance;
+    
     public CinemachineVirtualCamera currentCamera;
-    public Activator OptionSettings;
 
     public void Start()
     {
+        instance = this;
         currentCamera.Priority++;
     }
 
