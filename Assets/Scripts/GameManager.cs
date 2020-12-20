@@ -2,6 +2,7 @@
 using HealthBarsPackage;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
     public Image count2;
     public Image count3;
     public Image go;
+    
+    private GameObject selectedItem;
 
     void Start()
     {
@@ -55,6 +58,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("r")) {
             RestartScene();
         }
+        
+        if (selectedItem && !EventSystem.current.currentSelectedGameObject)
+            selectedItem.GetComponent<Selectable>().Select();
+        else if (!Equals(selectedItem, EventSystem.current.currentSelectedGameObject))
+            selectedItem = EventSystem.current.currentSelectedGameObject;
     }
 
     public void RestartScene() {
@@ -158,6 +166,7 @@ public class GameManager : MonoBehaviour
         replayButton.interactable = true;
         mainMenuButton.interactable = true;
         replayButton.Select();
+        selectedItem = replayButton.gameObject;
         replayButton.image.DOFade(1, 1);
         mainMenuButton.image.DOFade(1, 1);
     }
