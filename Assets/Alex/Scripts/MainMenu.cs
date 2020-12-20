@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
         else if (!Equals(selectedItem, EventSystem.current.currentSelectedGameObject))
         {
             selectedItem = EventSystem.current.currentSelectedGameObject;
-            selectedItem.GetComponent<CameraTarget>().GoToTarget();
+            selectedItem?.GetComponent<CameraTarget>()?.GoToTarget();
         }
         //if (EventSystem.)
     }
