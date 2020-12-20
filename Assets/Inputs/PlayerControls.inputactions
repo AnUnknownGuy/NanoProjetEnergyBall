@@ -137,6 +137,17 @@
                 },
                 {
                     "name": "",
+                    "id": "674a695e-8d6b-45e2-8282-3637936c9163",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "09d191ca-33c9-47ba-beb6-baba5c65bf17",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",

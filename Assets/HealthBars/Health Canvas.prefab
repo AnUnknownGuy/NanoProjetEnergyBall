@@ -282,6 +282,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bar P2
       objectReference: {fileID: 0}
+    - target: {fileID: 5403068656822873283, guid: 792c3431dec37f049b9e4792dfd7278c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aa8708fcfee88ae40ac22a8764b17250,
+        type: 3}
     - target: {fileID: 8398249760664602892, guid: 792c3431dec37f049b9e4792dfd7278c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -391,6 +397,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633543498732228988, guid: 792c3431dec37f049b9e4792dfd7278c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -310
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633543498732228988, guid: 792c3431dec37f049b9e4792dfd7278c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 177
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 792c3431dec37f049b9e4792dfd7278c, type: 3}

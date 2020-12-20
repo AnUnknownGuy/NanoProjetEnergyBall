@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\</ProjectRoot>
+		<SourceFilesRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Unity\NanoProjetEnergyBall\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Enjmin\Projets\Nano_Projet\Repo_Wwise\Nano_Projet\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1355168291" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="2576550196">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="SFXVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\SFXVolume" GUID="{3A6EF91B-713A-4727-817C-B19EB81EBB22}"/>
+				<GameParameter Id="1006694123" Name="Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\Music_Volume" GUID="{0ED2C6EA-CC18-406D-89F3-E541F7BADBF3}"/>
+				<GameParameter Id="2177191951" Name="Horn_Volume" ObjectPath="\Game Parameters\Default Work Unit\Horn_Volume" GUID="{2494DFA6-0DE1-41C2-956F-649E836A2362}"/>
+				<GameParameter Id="2346531308" Name="MusicVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\MusicVolume" GUID="{CEBDAF46-4B98-4ED8-99DC-A20BDD4F5797}"/>
+				<GameParameter Id="2918011349" Name="MasterVolume" ObjectPath="\Game Parameters\Default Work Unit\VolumeSettings\MasterVolume" GUID="{C746E66C-CA61-44CA-8E2B-FFF43F6B79D9}"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

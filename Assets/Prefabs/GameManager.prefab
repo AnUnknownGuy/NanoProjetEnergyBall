@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 7190118690452302726}
   - component: {fileID: 6400776034197881055}
   - component: {fileID: 5561062759135223141}
+  - component: {fileID: 853247691}
   m_Layer: 0
   m_Name: MainMenu Button
   m_TagString: Untagged
@@ -203,6 +204,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &853247691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929557714485066236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6615297056545445807
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,12 +772,10 @@ MonoBehaviour:
   victoryImageGreen: {fileID: 4686734903040594025}
   replayButton: {fileID: 450185120928875104}
   mainMenuButton: {fileID: 5561062759135223141}
-  replayText: {fileID: 0}
-  mainMenuText: {fileID: 0}
   fadeTimeIn: 0.5
   fadeTimeOut: 1
-  timeBlack: 1
-  timeBeforeInputStart: 3
+  timeBlack: 0.5
+  timeBeforeInputStart: 2
   pointP1A: {fileID: 0}
   pointP1B: {fileID: 0}
   pointP2A: {fileID: 0}
@@ -1125,6 +1136,7 @@ GameObject:
   - component: {fileID: 1294959079025029790}
   - component: {fileID: 4191416527106455338}
   - component: {fileID: 450185120928875104}
+  - component: {fileID: 1134683025}
   m_Layer: 0
   m_Name: Replay Button
   m_TagString: Untagged
@@ -1242,3 +1254,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1134683025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095745520087293094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821a504495a89424bb8e4dac6752f216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

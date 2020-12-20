@@ -1,0 +1,34 @@
+{
+ "PluginInfo": {
+  "Project": "Nano_Projet",
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "Plugins": [
+   {
+    "Name": "Wwise Guitar Distortion",
+    "ID": "8257539",
+    "DLL": "AkGuitarDistortion"
+   },
+   {
+    "Name": "Wwise Meter",
+    "ID": "8454147",
+    "DLL": "AkSoundEngineDLL"
+   },
+   {
+    "Name": "Wwise Time Stretch",
+    "ID": "8519683",
+    "DLL": "AkTimeStretch"
+   },
+   {
+    "Name": "System",
+    "ID": "11403271",
+    "DLL": "DefaultSink"
+   },
+   {
+    "Name": "No Output",
+    "ID": "11862023",
+    "DLL": "DefaultSink"
+   }
+  ]
+ }
+}
