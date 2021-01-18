@@ -100,12 +100,12 @@ PrefabInstance:
     - target: {fileID: 1001366563197742599, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1001366563197742599, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2728861641517891018, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}
@@ -114,9 +114,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
         type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
       propertyPath: m_Asset
       value: 
       objectReference: {fileID: 8926484042661614526, guid: 9dc8a8190ba4a6d468a2df5957893849,
         type: 3}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
+      value: 1.5078533
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Name
+      value: Color
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480567858386697228, guid: ebeb61e0b4b926e43b16b2e1cf914f67,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Overridden
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebeb61e0b4b926e43b16b2e1cf914f67, type: 3}

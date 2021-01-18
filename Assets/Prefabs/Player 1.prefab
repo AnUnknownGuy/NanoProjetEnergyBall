@@ -899,65 +899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2040054367234587298, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.7656
-      objectReference: {fileID: 0}
-    - target: {fileID: 2040054367234587298, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.7656
-      objectReference: {fileID: 0}
-    - target: {fileID: 2040054367234587298, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.7656
-      objectReference: {fileID: 0}
-    - target: {fileID: 3419215343038034763, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.17254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 3419215343038034763, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 3419215343038034763, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.98823535
-      objectReference: {fileID: 0}
     - target: {fileID: 5528750493052611920, guid: c10e424914d48fe4aa89afae4b00c73a,
         type: 3}
       propertyPath: m_Name
       value: DashAnchor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068344626545463949, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3647867
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068344626545463949, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3647867
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068344626545463949, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3647867
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068344626545463949, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068344626545463949, guid: c10e424914d48fe4aa89afae4b00c73a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.001472155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10e424914d48fe4aa89afae4b00c73a, type: 3}

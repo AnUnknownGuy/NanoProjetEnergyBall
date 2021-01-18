@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -429,7 +430,8 @@ public class Player : MonoBehaviour
         Transform target = GameObject.Find("Ball").transform;
         dashDirection = inputManager.GetRightStickValue().normalized;
         dashDirection = AimAssist(dashDirection, target.position, angleCorrectionDash);
-        dashAura.transform.LookAt(new Vector3(dashDirection.x, dashDirection.y, 0));
+        Debug.Log("DashDirection: " + dashDirection);
+        dashAura.transform.eulerAngles =  new Vector3(0, 0, (float)( 180 / Math.PI * Math.Atan2(dashDirection.y, dashDirection.x)));
         dashAura.SetTrigger("Play");
         Vector2 p = transform.position;
         p += bottomOffset / 2;
