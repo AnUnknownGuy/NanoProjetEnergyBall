@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -83,6 +84,8 @@ public class Player : MonoBehaviour
 
     private float timeBeforeDecaying = 1f;
     private float timeStampDecaying = 0;
+
+    [SerializeField] Animator dashAura = default;
 
     // Start is called before the first frame update
     void Start()
@@ -427,7 +430,9 @@ public class Player : MonoBehaviour
         Transform target = GameObject.Find("Ball").transform;
         dashDirection = inputManager.GetRightStickValue().normalized;
         dashDirection = AimAssist(dashDirection, target.position, angleCorrectionDash);
-
+        Debug.Log("DashDirection: " + dashDirection);
+        dashAura.transform.eulerAngles =  new Vector3(0, 0, (float)( 180 / Math.PI * Math.Atan2(dashDirection.y, dashDirection.x)));
+        dashAura.SetTrigger("Play");
         Vector2 p = transform.position;
         p += bottomOffset / 2;
         VFXManager.Spawn(VFXManager.Instance.Dash, p, dashDirection.x > 0);
